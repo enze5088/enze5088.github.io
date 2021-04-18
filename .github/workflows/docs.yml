@@ -8,6 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  env:
+    ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   docs:
     runs-on: ubuntu-latest
 
