@@ -70,3 +70,5 @@ package-lock.json
 
 # useless files
 templete
+scripts/gh-pages
+scripts/gh-pages.pub
