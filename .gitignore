@@ -72,3 +72,5 @@ package-lock.json
 templete
 scripts/gh-pages
 scripts/gh-pages.pub
+gh-pages
+gh-pages.pub
