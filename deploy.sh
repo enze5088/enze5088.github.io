@@ -32,7 +32,7 @@ git commit -m "${msg}"
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f $githubUrl master:gh-pages
+# if you are deploying to https://<USERNAME>.github.io/<REPO>:gh-pages
+git push -f $githubUrl master
 
 cd -
