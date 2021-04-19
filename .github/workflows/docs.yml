@@ -35,7 +35,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-          GITHUB_TOKEN: ${{ secrets.BLOG }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 
       # 如果缓存没有命中，安装依赖
@@ -52,7 +52,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.BLOG }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           username: ${{ secrets.username }}
         with:
           # 部署到 gh-pages 分支
