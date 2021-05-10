@@ -10,12 +10,11 @@ module.exports = {
     lineNumbers: false,
   },
   themeConfig: {
-    logo: "/assets/1.jpg",
     smoothScroll: true,
     nav: require("./config/nav"),
     sidebar: require("./config/sidebar"),
     lastUpdated: "Last Updated",
-    repo: "mp5088643/mp5088643.github.io",
+    repo: "https://github.com/mp5088643",
     editLinks: false,
   },
 };
