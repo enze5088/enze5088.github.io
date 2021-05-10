@@ -1,8 +1,18 @@
 ---
 home: true
 heroImage: /assets/1.jpg
-actionText: 进入博客
-actionLink: category/
+actionBtn:
+  text: 进入博客
+  link: /category/
+  type: primary
+  ghost: false
+  size: large
+preactionBtn:
+  text: 与我联系
+  link: /aboutMe/
+  type: primary
+  ghost: true
+  size: large
 features:
 - title: 自强
   details: 日日当精进，但求无愧。

@@ -2,9 +2,9 @@
 title: 图文预训练模型总结
 ---
 
-# 图文预训练模型总结
+# 待定
 
-
+#  图文预训练模型总结
 
 ### **3. 图像-文本多模态预训练模型**
 
@@ -18,9 +18,9 @@ title: 图文预训练模型总结
 
 ViLBERT模型图如图1所示，Co-attention-transformer模块如图2所示。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVUdgpQlo72blcDPayvqulicrIia0Urq83YQvrhPfzdAND0wIal3gPvXI6w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图1 ViLBERT模型图
+图1 ViLBERT模型图
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVUHcP3GbjluWibxJMJxZQQ1uQtEiajAB2rcWfibIftyEo2tvNQZnaClIP2g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图2 Co-attention transformer模块
+图2 Co-attention transformer模块
 
 **预训练任务**
 
@@ -28,7 +28,7 @@ ViLBERT模型图如图1所示，Co-attention-transformer模块如图2所示。
 
 **掩蔽图像预测（masked multi-modal modelling）** 通过掩蔽经过Faster R-CNN提取到的预候选区域，使模型通过对应文本以及其他区域的图像预测出被遮掩区域的类别。
 
-**图片-文本对齐（multi-modal alignment）** 给定构造好的图文关系对，让模型来判断文本是否是对应图片的描述，具体是使用<IMG>以及<CLS>表示来判断文本是否是对于图像的描述。
+**图片-文本对齐（multi-modal alignment）** 给定构造好的图文关系对，让模型来判断文本是否是对应图片的描述，具体是使用`<IMG>`以及`<CLS>`表示来判断文本是否是对于图像的描述。
 
 **下游任务**
 
@@ -40,7 +40,7 @@ ViLBERT模型图如图1所示，Co-attention-transformer模块如图2所示。
 
 类似于ViLBERT，对于文本和图像经过Embedding层之后被送入各自的单模态编码器，然后通过跨模态编码器进行融合。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVUyibKrOicqd7Ce2Ty1iaTAHnIMDSfFicQhcIqiaCFlL3nHF75x7liafwfUOaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图3 LXMERT模型图
+图3 LXMERT模型图
 
 **预训练任务**
 
@@ -54,7 +54,7 @@ ViLBERT模型图如图1所示，Co-attention-transformer模块如图2所示。
 
 **图像问答（Image Question Answering）** 作者使用了有关图像问答的任务，训练数据是关于图像的文本问题。当图像和文本问题匹配时，要求模型预测这些图像有关的文本问题的答案。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVUXwwjrKKkQyoeP2sY7sibzLHceMGCUzZgRErlB3YA3BoCUJEibKahNlFA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图4 LXMERT预训练任务
+图4 LXMERT预训练任务
 
 作者将该模型在多个下游任务上进行了测试，分别在视觉问答任务（Visual Question Answering）、面向现实世界视觉推理（Visual Reasoning in the Real World）等取得了很好的效果。
 
@@ -64,9 +64,9 @@ ViLBERT模型图如图1所示，Co-attention-transformer模块如图2所示。
 
 模型结构采用双流架构，对于图像和文本分别使用单模编码器进行编码然后使用跨模态Transformer实现两个模态的信息交融。值得一提的是该模型引入了场景图信息，通过将场景图知识融入多模态预训练中，使得模型更能精准把握图像和文本之间细粒度的对齐信息。模型图如图5所示。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVUQictbPB3LibpwriapLPH0Qx0Vab1dLGR2UIDhibUttMzzz7cbxkBxSjY4A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图5 RNIE-ViL模型图
+图5 RNIE-ViL模型图
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVUVt2nH7ibK4hFEIfZyJtCMB4RFPGJ8l6RnVicBBDMwMbbGMT5Q5hnBa7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图6 场景图实例
+图6 场景图实例
 
 模型在预训练任务中融入了场景图（如图6所示）的信息。场景图中有目标（objects）、属性（attributes）、关系（relationships）三种类别。
 
@@ -86,7 +86,7 @@ ViLBERT模型图如图1所示，Co-attention-transformer模块如图2所示。
 
 **模型细节**
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVUNLFiaHLyP0xyibe4NHEsDjZBRBD8RjAYWDas2m98IgMb442LauA1aDzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图7 VL-BERT模型图
+图7 VL-BERT模型图
 
 模型架构与BERT相似，如图7所示。整个模型的输入有四部分embedding。
 
@@ -114,7 +114,7 @@ ViLBERT模型图如图1所示，Co-attention-transformer模块如图2所示。
 
 **模型细节**
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVULY0T9WRKe7gUkL4Gbm74HrfBkoaKawpfymyYdRBSCqGZrddgbt04ag/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)图8 Image-BERT模型图
+图8 Image-BERT模型图
 
 ImageBERT在图像Embedding层添加了图像位置编码，即将通过Faster R-CNN得到的物体对应的ROI区域相对于全局图的位置信息，编码为五维向量，作为位置编码添加进图像的特征表示中。
 
@@ -133,6 +133,4 @@ ImageBERT在图像Embedding层添加了图像位置编码，即将通过Faster R
 作者在MSCOCO以及Filcker30k数据上分别测试模型在图像检索（Image Retrieval）以及文本检索（Sentence Retrieval）任务上的性能，取得了一定的提升。
 
 表1 图像-文本预训练模型概览表
-
-![图片](https://mmbiz.qpic.cn/mmbiz_png/58FUuNaBUjob2EkMWh0dfl0bY8icwqjVU3JBZxl82Qalbw9mRfRjldg6ibvjZuzB0GoHtL7RBsJotr3mFk05xIoA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
