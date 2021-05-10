@@ -9,11 +9,6 @@ module.exports = [
     text: "📒博文",
     link: "/category/"
   },
-    // Nav 3
-  {
-    text: "杂谈",
-    link: "/article/"
-  },
     // Nav 4
   {
     text: "项目",
