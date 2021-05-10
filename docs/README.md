@@ -2,7 +2,7 @@
 home: true
 heroImage: /assets/1.jpg
 actionText: 进入博客
-actionLink: /category/
+actionLink: category/
 features:
 - title: 自强
   details: 日日当精进，但求无愧。
