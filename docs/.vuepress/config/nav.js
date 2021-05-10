@@ -10,6 +10,10 @@ module.exports = [
     link: "/category/"
   },
   {
+    text: "杂谈",
+    link: "/category/"
+  },
+  {
     text: "项目",
     link: "/project/"
   },
