@@ -69,6 +69,7 @@ package-lock.json
 /coverage
 
 # useless files
+templete
 scripts/gh-pages
 scripts/gh-pages.pub
 gh-pages
