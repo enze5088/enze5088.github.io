@@ -11,7 +11,7 @@
   "author": "Feng L.H.",
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.5.2",
+    "vuepress": "^1.5.2"
   },
   "dependencies": {
     "core-js": "^2.6.11",
