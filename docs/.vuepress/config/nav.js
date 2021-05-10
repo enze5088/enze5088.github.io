@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     text: "杂谈",
-    link: "/category/"
+    link: "/article/"
   },
   {
     text: "项目",
