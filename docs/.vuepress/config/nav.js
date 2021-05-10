@@ -36,7 +36,7 @@ module.exports = [
       },
       {
         text: "关于我",
-        link: "/AboutMe/",
+        link: "/aboutMe/",
       },
     ],
     
