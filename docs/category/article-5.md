@@ -14,13 +14,11 @@ title: The attention in Transformer
 
 2. 问：自注意力(self-attention)的计算公式是怎样的？
    
-   答：   
-
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right) = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\} 
+   答：其中Q,K,V为query,key,value.
 
 $$ \text { Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_{k}}}\right) V$$
 
-   其中Q,K,V为query,key,value.
+   
 
 3. 问：Multi-Head Attention是什么，有什么作用？
 
