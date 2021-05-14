@@ -18,4 +18,13 @@ module.exports = {
     repo: "mp5088643/mp5088643.github.io",
     editLinks: false,
   },
+  plugins: [
+    [
+        // 支持数学公式
+        // https://vuepress.github.io/zh/plugins/mathjax/
+        // npm install -D vuepress-plugin-mathjax
+        'vuepress-plugin-mathjax',
+        {}
+    ]
+]
 };

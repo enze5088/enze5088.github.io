@@ -1,9 +1,4 @@
 ---
-title: The attention in Transformer
-
----
-
-```
 <head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script type="text/x-mathjax-config">
@@ -15,9 +10,11 @@ title: The attention in Transformer
         });
     </script>
 </head>
-```
+title: The attention in Transformer
 
-#  The attention in transformer （面经总结）
+---
+
+# The attention in transformer （面经总结）
 
 在NLP算法相关的面试里，Transformer显然是重中之重。而attention机制显然又是其中的高频问题。下面这一文章将带诸位来更详细的了解。
 
