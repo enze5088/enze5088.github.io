@@ -20,11 +20,18 @@ module.exports = {
   },
   plugins: [
     [
-        // 支持数学公式
-        // https://vuepress.github.io/zh/plugins/mathjax/
-        // npm install -D vuepress-plugin-mathjax
-        'vuepress-plugin-mathjax',
-        {}
-    ]
-]
+      "md-enhance",
+      {
+        mark:true,
+        tex: true,
+        // your options
+      },
+      "@mr-hope/comment",
+      {
+        // 配置选项
+        type:'valine',
+        pageInfo:['author', 'visitor', 'time', 'category', 'tag', 'reading-time'],
+      },
+    ],
+  ],
 };

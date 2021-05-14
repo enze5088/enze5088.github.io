@@ -13,11 +13,13 @@ title: The attention in Transformer
 1. 问：Transformer里多头注意力机制/自注意力机制的计算过程是怎样的？
 
 2. 问：自注意力(self-attention)的计算公式是怎样的？
+   
+   答：   
 
-   答：
-   $$
-   \text { Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_{k}}}\right) V \tag{1}
-   $$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right) = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\} 
+
+$$ \text { Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_{k}}}\right) V$$
+
    其中Q,K,V为query,key,value.
 
 3. 问：Multi-Head Attention是什么，有什么作用？
@@ -36,15 +38,13 @@ title: The attention in Transformer
 
 为了深入理解transformer中attention的应用。我们不妨先来回归一下 transformer的模型结构。套用这张经典的图片，可以看到，transformer采用的是典型的encoder-decoder架构。
 
-> ![img](D:\demo\mp5088643.github.io\docs\category\The_transformer_encoders_decoders.png)
-
 而encoder和decoder又是由什么组成的呢？
 
-![image-20210514191635335](D:\demo\mp5088643.github.io\docs\category\image-20210514191635335.png)
 
 
 
-对于公式(1)其实很好理解，注意力公式主要就是算 $ V $ 的加权后的表示，说到加权，必要得有权重啊。权重就是前面的$\operatorname{softmax}(*)$部分，为什么要加$\operatorname{softmax}$ ，因为权重必须为概率分布即和为1。  里面部分$\frac{Q K^{T}}{\sqrt{d_{k}}}$算的就是注意力的原始分数，通过计算Q(query)与K(key)的点积得到相似度分数，其中$\sqrt{d_{k}}$起到一个调节作用，不至于过大或过小，导致 $\operatorname{softmax}$ 之后就非0即1。因此这种注意力的形式也叫缩放点积注意力机制。
+
+对于公式(1)其实很好理解，注意力公式主要就是算 $V$ 的加权后的表示，说到加权，必要得有权重啊。权重就是前面的$\operatorname{softmax}(*)$部分，为什么要加$\operatorname{softmax}$ ，因为权重必须为概率分布即和为1。  里面部分$\frac{Q K^{T}}{\sqrt{d_{k}}}$算的就是注意力的原始分数，通过计算Q(query)与K(key)的点积得到相似度分数，其中$\sqrt{d_{k}}$起到一个调节作用，不至于过大或过小，导致 $\operatorname{softmax}$ 之后就非0即1。因此这种注意力的形式也叫缩放点积注意力机制。
 
 
 

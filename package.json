@@ -11,7 +11,10 @@
   "author": "Feng L.H.",
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.5.2"
+    "@maginapp/vuepress-plugin-katex": "^1.0.11",
+    "@mr-hope/vuepress-plugin-comment": "^1.16.0",
+    "vuepress": "^1.5.2",
+    "vuepress-plugin-md-enhance": "^1.16.0"
   },
   "dependencies": {
     "core-js": "^2.6.11",
