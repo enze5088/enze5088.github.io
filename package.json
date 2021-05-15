@@ -9,8 +9,12 @@
     "docs:dev": "vuepress dev ./docs",
     "docs:eject-theme": "vuepress eject-hope ./docs"
   },
+  "deploy": "bash deploy.sh",
   "devDependencies": {
     "vuepress": "^1.8.2",
     "vuepress-theme-hope": "^1.16.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/mp5088643/mp5088643.github.io.git",
+  "author": "苗圃 <pu.miao@foxmail.com>"
 }
