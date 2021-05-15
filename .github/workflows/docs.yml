@@ -40,13 +40,12 @@ jobs:
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn --frozen-lockfile
+        if: steps.lerna-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
         # run: yarn install
       - name: yarn upgrade
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run:  |
-          yarn install
+        run:  
           yarn upgrade-interactive
       # 运行构建脚本
       - name: Build VuePress site
