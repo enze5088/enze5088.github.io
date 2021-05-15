@@ -49,7 +49,7 @@ jobs:
           yarn install
           yarn upgrade-interactive
       # 运行构建脚本
-      - name: Install and Build VuePress site
+      - name: Build VuePress site
         run: yarn run build
 
       # 查看 workflow 的文档来获取更多信息
@@ -62,6 +62,6 @@ jobs:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
+          build_dir: /dist
           jekyll: False
 
