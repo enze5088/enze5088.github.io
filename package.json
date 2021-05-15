@@ -4,6 +4,7 @@
   "description": "A project of vuepress-theme-hope",
   "license": "MIT",
   "scripts": {
+    "dev": "vuepress dev docs",
     "build":"vuepress build docs",
     "docs:build": "vuepress build ./docs",
     "docs:clean-dev": "vuepress dev ./docs --no-cache",
