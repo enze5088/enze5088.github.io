@@ -32,7 +32,7 @@ module.exports = config({
   },
 
   themeConfig: {
-    logo: "./logo_o.png",
+    logo: "/logo_o.png",
     hostname: "https://enze5088.github.io/",
 
     author: "吐槽菌",
