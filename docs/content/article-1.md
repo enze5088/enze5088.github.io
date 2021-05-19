@@ -4,6 +4,44 @@ title: 图文预训练模型总结
 
 # 图文预训练模型总结
 
+
+
+### Inductive bias
+
+#### 2.1.1 什么是 Inductive bias
+
+Inductive bias 是指在通过人为偏好，认为某一种解决方案优先于其他解决方案。这里的解决方案既可以指数据假设上，也可以指模型设计等。在深度学习时代，卷积神经网络认为信息具有空间局部性，可以用滑动卷积共享权重方式降低参数空间和提高性能；循环神经网络强调时序信息时间顺序的重要性；图神经网络则是认为中心节点与邻居节点的相似性会更好引导信息流动。可以说深度学习时代，不同网络结构的创新就体现了不同的归纳性偏。
+
+#### 2.1.2 图像数据的 Inductive bias
+
+- Local prior
+
+  图像具有 locality（局域性），例如一个像素与它邻近的像素更相关，与它远离的像素更不相关。
+
+- Global capacity
+
+  图像还具有 long-rangeS dependencies，例如一个像素与距离更远的像素同属于一个物体的相关性。
+
+- Positional prior
+
+  有些图像有 positional prior，例如人脸图片中，脸一般在图像中间位置，眼睛总是在脸部上方，嘴巴总是在脸部下方。
+
+### 2.2 CV任务的网络结构
+
+#### 2.2.1 MLP
+
+MLP 的工作模式可以是这样的：将 feature map 展开成一维向量，通过 FC层，最终再 reshape 成原来 feature map 的形状。因为 FC 的参数的作用是与位置相关的，因此 FC 就有建模 positional prior 的能力。又因为输出 feature map 的每一个点都与输入 feature map 的每一个点有关，所以 FC 也有捕捉 long-range dependencies 的能力。
+
+#### 2.2.2 CNN
+
+CNN 通过手工设计卷积核尺寸、个数、stride 等超参数，进而在数据上自动学习卷积核参数。CNN 具有捕捉 local prior 的能力，在图像识别任务中取得成功。但是传统的 CNN 只能通过加深卷积层数、增大感受野来建模 long-range dependencies。这种建模 long-range dependencies 的模式效率较低，并且可能导致优化困难。
+
+#### 2.2.3 Transformer
+
+Transformer 最早被用于 NLP 任务。最近 ViT[3] 等论文将 Transformer 用于 CV，取得了成功。Transformer 中的 self-attention，具有 global capacity 和 positional prior，MLP-Blocks 具有 global capacity。但是由于 Vision Transformer 不具有建模 local prior 的能力，因此需要大量的训练数据。最近这些基于 Transformer 的研究表明，更长的训练时间、更多的参数、更多的数据和或更多的正则化，就足以恢复像 ImageNet 分类这样复杂任务的重要先验。
+
+
+
 ### **3. 图像-文本多模态预训练模型**
 
 #### **3.1 Cross-Stream**
