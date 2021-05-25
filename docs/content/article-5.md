@@ -48,11 +48,9 @@ Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble
 
 <img src="./article-5\40cf3d31c1c0dca24872bd9fc1fc429f.jpg" alt="preview" style="zoom:50%;" />
 
-![image-20210525022950224](article-5\image-20210525022950224.png)
+<img src="article-5\image20210525022950224.png" alt="image20210525022950224" style="zoom: 67%;" />
 
-Encoder-Decoder Attention如图所示，
-
-在解码器中，Decoder block比Encoder中多了个encoder-decoder attention。在encoder-decoder attention中， $Q$来自于解码器的上一个输出， $K$ 和 $V$则来自于与编码器的输出。其计算方式完全和encoder的过程相同。
+Encoder-Decoder Attention如图所示，在解码器中，Decoder block比Encoder中多了个encoder-decoder attention。在encoder-decoder attention中， $Q$来自于解码器的上一个输出， $K$ 和 $V$则来自于与编码器的输出。其计算方式完全和encoder的过程相同。
 
 因为在机器翻译中，解码过程是一个顺序操作的过程，也就是当解码第 ![[公式]](https://www.zhihu.com/equation?tex=k) 个特征向量时，我们只能看到第 ![[公式]](https://www.zhihu.com/equation?tex=k-1) 及其之前的解码结果，也把这种情况下的multi-head attention叫做masked multi-head attention。
 
