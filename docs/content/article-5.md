@@ -4,7 +4,7 @@ title: The attention in Transformer
 
 # The attention in transformer （面经总结）
 
-在NLP算法相关的面试里，Transformer显然是重中之重。而attention机制显然又是其中的高频问题。下笔者总结，在Transformer中，attention相关的高频提问主要有如下几个问题。
+在NLP算法相关的面试里，Transformer显然是重中之重。而Attention机制显然又是其中的高频问题。笔者总结，在Transformer中，attention相关的高频提问主要有如下几个问题。
 
 ## 面经问题
 
