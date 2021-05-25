@@ -20,7 +20,7 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 
 答：
 
-![image-20210525031947534](article-5\image-20210525031947534.png)
+![image-20210525031947534](./article-5\image-20210525031947534.png)
 
 > 1. 将输入单词转化成嵌入向量(自注意力计算之前)；
 > 2. 根据嵌入向量得到 $q$ ,$k$ ,$v$三个向量；self-attention 中，$q,k,v$由 embedding 的结果经过不同的线性变换得到，维度都是 $h_{hidden} \times l_{src}$
@@ -36,7 +36,7 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 
 Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble），在这里我们以 ![[公式]](https://www.zhihu.com/equation?tex=h%3D8) 举例说明。Multi-Head Attention的输出分成3步
 
-> 1. 将数据 ![[公式]](https://www.zhihu.com/equation?tex=X+) 分别输入到图13所示的8个self-attention中，得到8个加权后的特征矩阵 ![[公式]](https://www.zhihu.com/equation?tex=Z_i%2C+i%5Cin%5C%7B1%2C2%2C...%2C8%5C%7D) 。
+> 1. 将数据 $X$分别输入到图13所示的8个self-attention中，得到8个加权后的特征矩阵 ![[公式]](https://www.zhihu.com/equation?tex=Z_i%2C+i%5Cin%5C%7B1%2C2%2C...%2C8%5C%7D) 。
 > 2. 将8个 ![[公式]](https://www.zhihu.com/equation?tex=Z_i) 按列拼成一个大的特征矩阵；
 > 3. 特征矩阵经过一层全连接后得到输出 ![[公式]](https://www.zhihu.com/equation?tex=Z) 。
 
