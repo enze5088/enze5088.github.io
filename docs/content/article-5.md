@@ -20,7 +20,7 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 
 答：
 
-![image-20210525031947534](./article-5\image-20210525031947534.png)
+<img src="./article-5\image-20210525031947534.png" alt="image-20210525031947534" style="zoom:50%;" />
 
 > 1. 将输入单词转化成嵌入向量(自注意力计算之前)；
 > 2. 根据嵌入向量得到 $q$ ,$k$ ,$v$三个向量；self-attention 中，$q,k,v$由 embedding 的结果经过不同的线性变换得到，维度都是 $h_{hidden} \times l_{src}$
@@ -46,7 +46,7 @@ Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble
 
 答：
 
-![preview](article-5\v2-40cf3d31c1c0dca24872bd9fc1fc429f_r.jpg)
+<img src="./article-5\40cf3d31c1c0dca24872bd9fc1fc429f.jpg" alt="preview" style="zoom:50%;" />
 
 ![image-20210525022950224](article-5\image-20210525022950224.png)
 
