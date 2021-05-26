@@ -19,8 +19,9 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 ### 2.问：Transformer里自注意力机制的计算过程是怎样的？
 
 答：
-
+<div align=center>
 <img src="./image20210525031947534.png" alt="image-20210525031947534" style="zoom:50%;" align="center"/>
+</div>
 
 > 1. 将输入单词转化成嵌入向量(自注意力计算之前)；
 > 2. 根据嵌入向量得到 $q$ ,$k$ ,$v$三个向量；self-attention 中，$q,k,v$由 embedding 的结果经过不同的线性变换得到，维度都是 $h_{hidden} \times l_{src}$
@@ -46,9 +47,10 @@ Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble
 
 答：
 
-<img src="./40cf3d31c1c0dca24872bd9fc1fc429f.jpg" alt="preview" style="zoom:50%;" align="center"/>
-
-<img src="./image20210525022950224.png" alt="image20210525022950224" style="zoom: 67%;" align="center" />
+<div align=center>
+    <img src="./40cf3d31c1c0dca24872bd9fc1fc429f.jpg" alt="preview" style="zoom:50%;"/>
+    <img src="./image20210525022950224.png" alt="image20210525022950224" style="zoom: 67%;" align="center"/>
+</div>
 
 Encoder-Decoder Attention如图所示，在解码器中，Decoder block比Encoder中多了个encoder-decoder attention。在encoder-decoder attention中， $Q$来自于解码器的上一个输出， $K$ 和 $V$则来自于与编码器的输出。其计算方式完全和encoder的过程相同。
 
