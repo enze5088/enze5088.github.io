@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # The attention in transformer （面经问题总结）
 
 在NLP算法相关的面试里，Transformer和其中的Attention机制显然是重中之重。相关的高频提问主要有如下几个问题。
