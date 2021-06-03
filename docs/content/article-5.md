@@ -1,12 +1,6 @@
----
-title: The attention in Transformer
----
+# The attention in transformer （面经问题总结）
 
-# The attention in transformer （面经总结）
-
-在NLP算法相关的面试里，Transformer显然是重中之重。而Attention机制显然又是其中的高频问题。笔者总结，在Transformer中，attention相关的高频提问主要有如下几个问题。
-
-## 面经问题
+在NLP算法相关的面试里，Transformer和其中的Attention机制显然是重中之重。相关的高频提问主要有如下几个问题。
 
 ### 1. 问：自注意力(self-attention)的计算公式是怎样的？
 
@@ -22,10 +16,10 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 
 <img src="./image20210525031947534.png" alt="image-20210525031947534" style="zoom:50%;" align="center"/>
 
-> 1. 将输入单词转化成嵌入向量(自注意力计算之前)；
-> 2. 根据嵌入向量得到 $q$ ,$k$ ,$v$三个向量；self-attention 中，$q,k,v$由 embedding 的结果经过不同的线性变换得到，维度都是 $h_{hidden} \times l_{src}$
-> 3. 为每个向量计算一个score：$score=q\cdot{k}$ ；
-> 4. 为了梯度的稳定，Transformer使用了score归一化，即除以 $\sqrt{d_{k}}$ ；
+> 1. 将输入单词列表(句子)转化成嵌入向量列表$[word_1,word_2,word_3.....word_n]$
+> 2. 根据嵌入向量得到 $q$ ,$k$ ,$v$三个向量以及对应的列表,$[q_1,q_2...q_n],[k_1,k_2...k_n],[v_1,v_2...v_n]$；self-attention 中，$q,k,v$由 embedding 的结果经过不同的线性变换得到，维度都是 $h_{hidden} \times l_{src}$ (前两步都是在自注意力计算之前)；
+> 3. 为每个向量计算一个score：$score=q\cdot{k}$ ；($q*[k_1,k_2..k_n]$)
+> 4. 为了梯度的稳定，Transformer使用了score归一化，具体论证见下文,即除以 $\sqrt{d_{k}}$ ；
 > 5. 对score施以softmax激活函数；
 > 6. softmax点乘Value值 $v$ ，得到加权的每个输入向量的评分 $v$  ；
 > 7. 相加之后得到最终的输出结果 $z:z=\sum{v}$ 。
@@ -36,11 +30,11 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 
 Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble），在这里我们以 ![[公式]](https://www.zhihu.com/equation?tex=h%3D8) 举例说明。Multi-Head Attention的输出分成3步
 
-> 1. 将数据 $X$分别输入到图13所示的8个self-attention中，得到8个加权后的特征矩阵 ![[公式]](https://www.zhihu.com/equation?tex=Z_i%2C+i%5Cin%5C%7B1%2C2%2C...%2C8%5C%7D) 。
+> 1. 将数据 $X$分别输入到8个self-attention中，得到8个加权后的特征矩阵 ![[公式]](https://www.zhihu.com/equation?tex=Z_i%2C+i%5Cin%5C%7B1%2C2%2C...%2C8%5C%7D) 。
 > 2. 将8个 ![[公式]](https://www.zhihu.com/equation?tex=Z_i) 按列拼成一个大的特征矩阵；
 > 3. 特征矩阵经过一层全连接后得到输出 ![[公式]](https://www.zhihu.com/equation?tex=Z) 。
 
-原论文中表明，将模型分为多个头，形成多个子空间，可以让模型去关注不同方面的信息。
+原论文中认为，将模型分为多个头，期望其形成多个相互独立子空间，可以让模型去关注不同方面的信息。但是也有很多论文不这么认为。也有人认为是计算复杂度的取舍（BERT中，multi-head 与直接使用768*768矩阵统一计算，有什么区别？ - 苏剑林的回答 - 知乎 https://www.zhihu.com/question/446385446/answer/1752279087）。同时multi-head相对来说也比较冗余，mask掉一定比例的head对结果影响不大。
 
 ### 4.问：Transformer的中的attention机制，其中self-attention和encoder-decoder attention之间的关系？
 
@@ -53,10 +47,15 @@ Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble
 <div align=center>
     <img src="./image20210525022950224.png" alt="image20210525022950224" style="zoom: 67%;" align="center"/>
     <div/>
+Encoder-Decoder Attention如图所示，编码器一般有两层，自注意力和前馈神经网络（不算正则化和残差连接），解码器则一般有三层：
 
-Encoder-Decoder Attention如图所示，在解码器中，Decoder block比Encoder中多了个encoder-decoder attention。在encoder-decoder attention中， $Q$来自于解码器的上一个输出， $K$ 和 $V$则来自于与编码器的输出。其计算方式完全和encoder的过程相同。
+- 自注意力层
+- Encoder-Decoder Attention 层
+- 与位置无关的前馈网络层
 
-因为在机器翻译中，解码过程是一个顺序操作的过程，也就是当解码第 ![[公式]](https://www.zhihu.com/equation?tex=k) 个特征向量时，我们只能看到第 ![[公式]](https://www.zhihu.com/equation?tex=k-1) 及其之前的解码结果，也把这种情况下的multi-head attention叫做masked multi-head attention。
+在解码器中，Decoder block比Encoder中多了个Encoder-Decoder Attention。在Encoder-Decoder Attention中， $Q$来自上一层的自注意力层， 而其则从编码器的输出中获取$K$ 矩阵和 $V$矩阵。其计算方式完全和encoder的过程相同。
+
+因为在机器翻译这类问题里，解码过程是一个顺序操作的过程，也就是当解码第 ![[公式]](https://www.zhihu.com/equation?tex=k) 个特征向量时，我们只能看到第 ![[公式]](https://www.zhihu.com/equation?tex=k-1) 及其之前的解码结果，类似于LSTM根据前一个来生成后一个的过程。所以也把这种情况下的multi-head attention叫做masked multi-head attention。
 
 ### 5.问：都有哪些不同类型的注意力，其公式及计算过程和复杂度差异有什么区别。
 
@@ -109,7 +108,7 @@ $$
 
 > 1.计算任意向量$h_i$与向量$s_1,s_2,... ,s_n$的attention权重
 >
-> 2.然后拼接$h_i-s_1$通过一个特定的线性层计算出其分数，再拼接$h_i-k_2$重复通过线性层计算，...，直到所有的均计算出一个结果
+> 2.然后拼接$h_i-s_1$通过一个特定的线性层计算出其分数，再拼接$h_i-s_2$重复通过线性层计算，...，直到所有的均计算出一个结果
 >
 > 3.再把所有结果通过$softmax$。
 
@@ -117,9 +116,9 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{c}_{t}=\sum_{i=1}^{n} \alpha_{t, i} \boldsymbol{h}_{i} \quad ; 输出的上下文向量 y_{t}\\
-\alpha_{t, i}=\operatorname{align}\left(y_{t}, x_{i}\right) \quad; 两个单词y_{t}和x_{i}的对齐情况\\
-=\frac{\exp \left(\operatorname{score}\left(s_{t-1}, \boldsymbol{h}_{i}\right)\right)}{\sum_{i^{\prime}=1}^{n} \exp \left(\operatorname{score}\left(\boldsymbol{s}_{t-1}, \boldsymbol{h}_{i^{\prime}}\right)\right)} \quad ; 对自定义的对齐分数进行 softmax
+\mathbf{c}_{t}=&\sum_{i=1}^{n} \alpha_{t, i} \boldsymbol{h}_{i} \quad ; 输出的上下文向量 y_{t}&\\
+\alpha_{t, i}=&\operatorname{align}\left(y_{t}, x_{i}\right) \quad; 两个单词y_{t}和x_{i}的对齐情况&\\
+=&\frac{\exp \left(\operatorname{score}\left(s_{t-1}, \boldsymbol{h}_{i}\right)\right)}{\sum_{i^{\prime}=1}^{n} \exp \left(\operatorname{score}\left(\boldsymbol{s}_{t-1}, \boldsymbol{h}_{i^{\prime}}\right)\right)} \quad ; 对自定义的对齐分数进行 softmax&
 \end{aligned} \tag{5}
 $$
 
@@ -138,7 +137,7 @@ f_{score(i,j)}=F\left(s_{i}, h_{j}\right)=s_{i}^{T} h_{j} \tag{7}
 $$
 而上述的计算过程不变，依次对任意的$s_i,h_j$求出其乘性注意力分数,然后统一再$softmax$。细心的同学也应该已经发现了，这个过程对于序列$\textbf{H}$和$\textbf{S}$而言,就是矩阵相乘的过程。
 
-Dot Product Attention 和 Additive Attention两者在复杂度上是相似的，但是Dot Product Attention在实践中往往要更快速、具有更高效的存储，因为它可以使用矩阵操作更高效地实现。Additive Attention增加了三个可学习的矩阵，所以相比另外两个效果会更好，但是同时增加了更多的模型参数，计算效率会较低。而Self Attention则如上文所讲，对于一句话引入了$q,k,v$三个矩阵，也保证了计算速度,所以综合来看是最好的。其计算过程如上述内容。
+Dot Product Attention 和 Additive Attention两者在复杂度上是相似的，Additive Attention增加了三个可学习的矩阵，所以相比另外两个效果会更好，同时也增加了更多的模型参数，计算效率会较低。而且Dot Product Attention因为是直接坐矩阵运算，在实际情况下一般会更快一些与高效一些，因为一般的深度学习框架底层都有对矩阵运算的一些优化，有很多的并行算法和硬件加速，比如5X5的矩阵相加，框架底层可能会是25个数字同时计算。手动计算则是for循环一个一个相加。速度就会差上很多。而Self Attention则如上文所讲，对于一句话引入了$q,k,v$三个矩阵，也保证了计算速度,所以综合来看是最好的。其计算过程如上述内容。
 
 同时我们也可以看到，对于任意两个维度为$d_k$的元素$s_i,h_j$相乘，在$d_k$较小时二者表现相似，但是$d_k$较大时，Dot Product Attention表现不如Additive Attention，因为$d_k$较大时点积之后的结果较大，方差也会变大，求softmax之后，梯度会很小,容易梯度消失，不利于计算，需要做一定的缩放。所以才会有了进一步的Scaled Dot-Product Attention 
 $$
