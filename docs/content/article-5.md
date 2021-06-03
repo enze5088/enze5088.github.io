@@ -1,6 +1,8 @@
 # The attention in transformer （面经问题总结）
 
-在NLP算法相关的面试里，Transformer和其中的Attention机制显然是重中之重。相关的高频提问主要有如下几个问题。
+---
+
+在NLP算法相关的面试里，Transformer和其中的Attention机制显然是重中之重。而相关的高频提问笔者总结主要有如下几个问题形式。
 
 ### 1. 问：自注意力(self-attention)的计算公式是怎样的？
 
@@ -8,13 +10,15 @@
 
 $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_{k}}}\right)V  \tag{1}$$
 
-其中$Q,K,V$为$query,key,value$，加 $softmax$ 是因为权重必须为概率分布即和为1
+其中$Q,K,V$为$query,key,value$， 而$softmax$ 的作用是使得输出权重的概率分布和为1
 
 ### 2.问：Transformer里自注意力机制的计算过程是怎样的？
 
 答：
 
-<img src="./image20210525031947534.png" alt="image-20210525031947534" style="zoom:50%;" align="center"/>
+<div align="center">
+<img src="https://www.hualigs.cn/image/60b88b2c3c9ab.jpg" alt="image-20210525031947534" style="zoom:50%;" align="center"/>
+</div>
 
 > 1. 将输入单词列表(句子)转化成嵌入向量列表$[word_1,word_2,word_3.....word_n]$
 > 2. 根据嵌入向量得到 $q$ ,$k$ ,$v$三个向量以及对应的列表,$[q_1,q_2...q_n],[k_1,k_2...k_n],[v_1,v_2...v_n]$；self-attention 中，$q,k,v$由 embedding 的结果经过不同的线性变换得到，维度都是 $h_{hidden} \times l_{src}$ (前两步都是在自注意力计算之前)；
@@ -22,32 +26,30 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 > 4. 为了梯度的稳定，Transformer使用了score归一化，具体论证见下文,即除以 $\sqrt{d_{k}}$ ；
 > 5. 对score施以softmax激活函数；
 > 6. softmax点乘Value值 $v$ ，得到加权的每个输入向量的评分 $v$  ；
-> 7. 相加之后得到最终的输出结果 $z:z=\sum{v}$ 。
+> 7. 相加之后得到最终的输出结果 $z:z=\sum_{i=1}^{n}{v}$ 。
 
 ### 3.问：Multi-Head Attention是什么，有什么作用？
 
-答：
-
-Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble），在这里我们以 ![[公式]](https://www.zhihu.com/equation?tex=h%3D8) 举例说明。Multi-Head Attention的输出分成3步
+答：Multi-Head Attention相当于 $h$ 个不同的self-attention的集成（ensemble），在这里我们以 ![[公式]](https://www.zhihu.com/equation?tex=h%3D8) 举例说明。Multi-Head Attention的输出分成3步
 
 > 1. 将数据 $X$分别输入到8个self-attention中，得到8个加权后的特征矩阵 ![[公式]](https://www.zhihu.com/equation?tex=Z_i%2C+i%5Cin%5C%7B1%2C2%2C...%2C8%5C%7D) 。
 > 2. 将8个 ![[公式]](https://www.zhihu.com/equation?tex=Z_i) 按列拼成一个大的特征矩阵；
 > 3. 特征矩阵经过一层全连接后得到输出 ![[公式]](https://www.zhihu.com/equation?tex=Z) 。
 
-原论文中认为，将模型分为多个头，期望其形成多个相互独立子空间，可以让模型去关注不同方面的信息。但是也有很多论文不这么认为。也有人认为是计算复杂度的取舍（BERT中，multi-head 与直接使用768*768矩阵统一计算，有什么区别？ - 苏剑林的回答 - 知乎 https://www.zhihu.com/question/446385446/answer/1752279087）。同时multi-head相对来说也比较冗余，mask掉一定比例的head对结果影响不大。
+原论文中认为，将模型分为多个头，期望其形成多个相互独立子空间，可以让模型去关注不同方面的信息。但是也有很多论文不这么认为。也有人认为是计算复杂度的取舍（BERT中，multi-head 与直接使用768*768矩阵统一计算，有什么区别？ - 苏剑林的回答 - 知乎 https://www.zhihu.com/question/446385446/answer/1752279087），同时multi-head相对来说也比较冗余，mask掉一定比例的head对结果影响不大。
 
-### 4.问：Transformer的中的attention机制，其中self-attention和encoder-decoder attention之间的关系？
+### 4.问：Transformer的中的Attention机制，其中Self-Attention和Encoder-DecoderAttention之间的关系？
 
 答：
 
-<div align=center>
-    <img src="./40cf3d31c1c0dca24872bd9fc1fc429f.jpg" alt="preview" style="zoom:50%;" align="center"/>
-</div>
+<div align="center">
+    <img src="article-5.assets/60b88b6b67d05.jpg"  style="zoom:50%;" align="center"/>
+    <p></p>
+    <img src="https://www.hualigs.cn/image/60b88b8da7f06.jpg" alt="image20210525022950224" style="zoom: 67%;" align="center"/>
+<div/>
 
-<div align=center>
-    <img src="./image20210525022950224.png" alt="image20210525022950224" style="zoom: 67%;" align="center"/>
-    <div/>
 Encoder-Decoder Attention如图所示，编码器一般有两层，自注意力和前馈神经网络（不算正则化和残差连接），解码器则一般有三层：
+
 
 - 自注意力层
 - Encoder-Decoder Attention 层
@@ -228,10 +230,6 @@ class MultiHeadedAttention(nn.Module):
         x = x.transpose(1, 2).contiguous().view(nbatches, -1, self.h * self.d_k)
         return self.linears[-1](x)
 ```
-
-
-
-
 
 ## 参考
 

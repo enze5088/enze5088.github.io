@@ -66,7 +66,20 @@ module.exports = config({
     sidebar: {
 
       "/content/": ["article-1","article-2","article-3","article-4","article-5"],
-      "/articles/": ["article-1","article-2","article-3"]
+
+      "/articles/":[
+        "article-1" /* /baz.html */,
+        "article-2" /* /baz.html */,
+        {
+        title: "笔记",
+        prefix: "notion/",
+        children: [
+            "article-3",
+            "article-4",
+        ],
+        },
+      ]
+
     },
 
 
