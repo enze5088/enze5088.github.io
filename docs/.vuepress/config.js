@@ -63,11 +63,10 @@ module.exports = config({
       },
 
     ],
-
     sidebar: {
 
       "/content/": ["article-1","article-2","article-3","article-4","article-5"],
-      "/articles/": ["article-1","article-2"]
+      "/articles/": ["article-1","article-2","article-3"]
     },
 
 
