@@ -71,9 +71,10 @@ module.exports = config({
         "article-1" /* /baz.html */,
         "article-2" /* /baz.html */,
         {
-        title: "笔记",
+        title: "琐记",
         prefix: "notion/",
         children: [
+            "article-2",
             "article-3",
             "article-4",
         ],
