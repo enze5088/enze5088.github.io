@@ -44,7 +44,8 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 
 <div align="center">
     <img src="article-5.assets/60b88b6b67d05.jpg"  style="zoom:50%;" align="center"/>
-    <p></p>
+<div/>
+<div align="center">
     <img src="https://www.hualigs.cn/image/60b88b8da7f06.jpg" alt="image20210525022950224" style="zoom: 67%;" align="center"/>
 <div/>
 
