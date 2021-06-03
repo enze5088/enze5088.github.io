@@ -43,11 +43,12 @@ $$\text{Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_
 答：
 
 <div align="center">
-    <img src="article-5.assets/60b88b6b67d05.jpg"  style="zoom:50%;" align="center"/>
+    <img src="https://www.hualigs.cn/image/60b88b6b67d05.jpg"  style="zoom:50%;" align="center"/>
 <div/>
 <div align="center">
     <img src="https://www.hualigs.cn/image/60b88b8da7f06.jpg" alt="image20210525022950224" style="zoom: 67%;" align="center"/>
 <div/>
+
 
 Encoder-Decoder Attention如图所示，编码器一般有两层，自注意力和前馈神经网络（不算正则化和残差连接），解码器则一般有三层：
 
