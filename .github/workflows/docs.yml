@@ -43,9 +43,7 @@ jobs:
         if: steps.lerna-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
         # run: yarn install
-      - name: yarn upgrade
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn upgrade-interactive
+
       # 运行构建脚本
       - name: Build VuePress site
         run: yarn run build
