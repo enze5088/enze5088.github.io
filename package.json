@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build":"vuepress build docs",
+    "build": "vuepress build docs",
     "docs:build": "vuepress build ./docs",
     "docs:clean-dev": "vuepress dev ./docs --no-cache",
     "docs:dev": "vuepress dev ./docs",
@@ -17,5 +17,8 @@
   },
   "main": "index.js",
   "repository": "https://github.com/mp5088643/mp5088643.github.io.git",
-  "author": "苗圃 <pu.miao@foxmail.com>"
+  "author": "苗圃 <pu.miao@foxmail.com>",
+  "dependencies": {
+    "package": "^1.0.1"
+  }
 }
