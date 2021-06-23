@@ -52,13 +52,13 @@ module.exports = config({
         icon: "note",
       },
       {
-        text: "About Me",
+        text: "关于我",
         icon: "info",
         items: [
           { text: "zhihu", link: "https://www.zhihu.com/people/algorithm-supplement", icon: "support" },
           { text: "github", link: "https://github.com/enze5088", icon: "github" },
           { text: "博客园", link: "https://www.cnblogs.com/baiyunwanglai/", icon: "blog" },
-          { text: "关于我", link: "/aboutme/",  icon: "locate"}
+          { text: "About Me", link: "/aboutme/",  icon: "locate"}
         ],
       },
 
