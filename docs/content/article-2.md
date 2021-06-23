@@ -2,11 +2,11 @@
 title: 对比学习论文列表
 ---
 
-# Contrastive Learning
+# Contrastive Learning and Pre-trained model
 
-对比学习总结
+对比学习、预训练模型等总结
 
-## Paper List
+## Contrastive Learning Paper List
 
 论文总结
 
@@ -16,6 +16,9 @@ title: 对比学习论文列表
 | :----------------------------------------------------------- | ---------- | ------------------------------------------------------------ |
 | [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https://arxiv.org/abs/2104.08821) |     | [[Torch](https://github.com/princeton-nlp/SimCSE)] |
 | [Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere](http://proceedings.mlr.press/v119/wang20k/wang20k.pdf) | ICML2020 | [[Torch]](https://github.com/SsnL/align_uniform) |
+| [ConSERT: A Contrastive Framework for Self-Supervised Sentence Representation Transfer](https://arxiv.org/abs/2105.11741) | ACL 2021 | [github](https://github.com/yym6472/ConSERT) |
+
+
 
 ### Computer Vision
 
@@ -28,4 +31,10 @@ title: 对比学习论文列表
 | [BYOL - Bootstrap your own latent: A new approach to self-supervised Learning](https://arxiv.org/pdf/2006.07733.pdf) |            | [JAX(official)](https://github.com/deepmind/deepmind-research/tree/master/byol), [Torch](https://github.com/PatrickHua/SimSiam/blob/main/models/byol.py) |
 | [SwAV - Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://arxiv.org/pdf/2006.09882.pdf) | NIPS20     | [Torch(official)](https://github.com/facebookresearch/swav), [Torch](https://github.com/PatrickHua/SimSiam/blob/main/models/swav.py) |
 | [SimSiam - Exploring Simple Siamese Representation Learning](https://arxiv.org/pdf/2011.10566.pdf) |            | [Torch](https://github.com/PatrickHua/SimSiam/blob/main/models/simsiam.py) |
+
+### Other
+
+| Title                                                        | Conference | Codes                                  |
+| ------------------------------------------------------------ | ---------- | -------------------------------------- |
+| [[HCL] - Contrastive Learning With Hard Negative Samples](https://github.com/joshr17/HCL) | ICLR 2021  | [Link](https://github.com/joshr17/HCL) |
 

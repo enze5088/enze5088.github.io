@@ -1,5 +1,8 @@
-# VuePress博客
+# Blog
 
 ---
 
-利用VuePress与GithubPage搭建的个人博客
+个人博客与学术主页 
+
+基于VuePress 与 vuepress-theme-hope
+

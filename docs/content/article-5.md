@@ -1,7 +1,5 @@
 # The attention in transformer （面经问题总结）
 
----
-
 在NLP算法相关的面试里，Transformer和其中的Attention机制显然是重中之重。而相关的高频提问笔者总结主要有如下几个问题形式。
 
 ### 1. 问：自注意力(self-attention)的计算公式是怎样的？
@@ -76,19 +74,16 @@ Encoder-Decoder Attention如图所示，编码器一般有两层，自注意力�
 
 **Additive Attention**(加性注意力模型)
 
-
 $$
-s(x_i,q)=v^{T}tanh(W{x_i}+Uq) \tag{2} 
+s(x_i,q)=v^{T}tanh(W{x_i}+Uq) \tag{2}
 $$
 
 **dot product attention** （乘性注意力/点积模型）
-
 $$
 S(x_i,q)=x^{T}_{i}q \tag{3}
 $$
 
 **Scaled Dot-Product Attention**(缩放点积模型)：
-
 $$
 S(x_i,q)=x^{T}_{i}q/\sqrt{d_k} \tag{4}
 $$

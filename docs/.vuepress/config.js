@@ -52,7 +52,7 @@ module.exports = config({
         icon: "note",
       },
       {
-        text: "关于本站",
+        text: "About Me",
         icon: "info",
         items: [
           { text: "zhihu", link: "https://www.zhihu.com/people/algorithm-supplement", icon: "support" },
