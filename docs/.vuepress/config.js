@@ -73,7 +73,7 @@ module.exports = config({
         {
         title: "琐记",
         prefix: "notion/",
-        children: [
+        children: ["article-1",
             "article-2",
             "article-3",
             "article-4",

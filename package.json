@@ -19,6 +19,7 @@
   "repository": "https://github.com/mp5088643/mp5088643.github.io.git",
   "author": "苗圃 <pu.miao@foxmail.com>",
   "dependencies": {
+    "algoliasearch": "^4.0.0",
     "package": "^1.0.1"
   }
 }
