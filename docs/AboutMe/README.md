@@ -4,7 +4,7 @@ title: About Me
 
 # About Me
 
-## Hi there 👋
+### Hi there 👋
 
 I will be joining the WeiBo Ai Lab at Sina Group as a research engineer. I received my Master's Degree in June 2021 from the Artificial Intelligence Academy, the University of the Chinese Academy of Sciences.
 
