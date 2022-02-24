@@ -27,8 +27,8 @@ module.exports = config({
 
   locales: {
     "/": {
-      lang: "zh-CN",
-    }
+      lang: "zh-CN"
+    },
   },
 
   themeConfig: {
@@ -63,6 +63,7 @@ module.exports = config({
       },
 
     ],
+
     sidebar: {
 
       "/content/": ["article-1","article-2","article-3","article-4","article-5"],
@@ -83,6 +84,7 @@ module.exports = config({
       ]
 
     },
+
 
 
     blog: {
@@ -107,7 +109,6 @@ module.exports = config({
     },
 
     copyright: true,
-    chunkRename:false,
 
     git: {
       timezone: "Asia/Shanghai",
@@ -130,7 +131,7 @@ module.exports = config({
     },
 
     pwa: {
-      favicon: "/logo.png",
+      favicon: "/favicon.ico",
       cachePic: true,
       apple: {
         icon: "/assets/icon/apple-icon-152.png",
