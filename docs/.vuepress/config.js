@@ -70,6 +70,7 @@ module.exports = config({
       "/articles/":[
         "article-1" /* /baz.html */,
         "article-2" /* /baz.html */,
+        "article-3",
         {
         title: "琐记",
         prefix: "notion/",
@@ -89,7 +90,7 @@ module.exports = config({
       sidebarDisplay: "mobile",
       links: {
         Zhihu: "https://www.zhihu.com/people/algorithm-supplement",
-        Email: "mp5088643@qq.com",
+        Email: "pu.miao@foxmail.com",
         Github: "https://github.com/enze5088",
       },
     },
