@@ -73,3 +73,8 @@ scripts/gh-pages.pub
 gh-pages
 gh-pages.pub
 docs/category/Transformer面经总结.pdf
+
+node_modules/
+src\src/.vuepress/.cache/
+src\src/.vuepress/.temp/
+src\src/.vuepress/dist/
