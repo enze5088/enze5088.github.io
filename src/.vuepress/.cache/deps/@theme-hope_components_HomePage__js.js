@@ -1,15 +1,15 @@
 import {
-  AutoLink_default
-} from "./chunk-SA6HJ7ZD.js";
+  DropTransition_default
+} from "./chunk-IG3IAW45.js";
 import {
   MarkdownContent_default
 } from "./chunk-BPXOLMLA.js";
 import {
+  AutoLink_default
+} from "./chunk-SA6HJ7ZD.js";
+import {
   Icon_default
 } from "./chunk-KZQVGG2I.js";
-import {
-  DropTransition_default
-} from "./chunk-IG3IAW45.js";
 import {
   isLinkExternal
 } from "./chunk-LS4IQIE6.js";

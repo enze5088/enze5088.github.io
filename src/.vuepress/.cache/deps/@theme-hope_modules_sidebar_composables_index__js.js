@@ -5,12 +5,12 @@ import {
   setupSidebarItems,
   sidebarItemsSymbol,
   useSidebarItems
-} from "./chunk-E5DEU2JU.js";
+} from "./chunk-JEOZOFBK.js";
+import "./chunk-VHCPYUCC.js";
+import "./chunk-VHNLTIDY.js";
 import "./chunk-SA6HJ7ZD.js";
 import "./chunk-KZQVGG2I.js";
 import "./chunk-LS4IQIE6.js";
-import "./chunk-VHCPYUCC.js";
-import "./chunk-VHNLTIDY.js";
 import "./chunk-FECFGNAG.js";
 import "./chunk-U27KJSRC.js";
 import "./chunk-YACYAO4R.js";

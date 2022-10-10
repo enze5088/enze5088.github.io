@@ -1,6 +1,6 @@
 import {
   useMetaLocale
-} from "./chunk-H74RA7IP.js";
+} from "./chunk-AQETWNEL.js";
 import {
   dt
 } from "./chunk-VHNLTIDY.js";
@@ -88,4 +88,4 @@ var TOC_default = defineComponent({
 export {
   TOC_default
 };
-//# sourceMappingURL=chunk-476NR4LZ.js.map
+//# sourceMappingURL=chunk-6MRMUC3E.js.map

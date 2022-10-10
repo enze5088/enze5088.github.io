@@ -1,36 +1,24 @@
 import {
-  useDarkMode
-} from "./chunk-JNW2AO4U.js";
-import {
   EditIcon
 } from "./chunk-KQUDX27P.js";
 import {
-  useSidebarItems
-} from "./chunk-E5DEU2JU.js";
-import {
-  AutoLink_default
-} from "./chunk-SA6HJ7ZD.js";
-import {
-  MarkdownContent_default
-} from "./chunk-BPXOLMLA.js";
-import {
-  Icon_default
-} from "./chunk-KZQVGG2I.js";
+  useDarkMode
+} from "./chunk-JNW2AO4U.js";
 import {
   TOC_default
-} from "./chunk-476NR4LZ.js";
+} from "./chunk-6MRMUC3E.js";
 import {
   PageInfo_default,
   useContributors,
   useEditLink,
   useUpdateTime
-} from "./chunk-H74RA7IP.js";
+} from "./chunk-AQETWNEL.js";
 import {
   getAncestorLinks
 } from "./chunk-TQJYOK4F.js";
 import {
-  isPlainObject
-} from "./chunk-LS4IQIE6.js";
+  useSidebarItems
+} from "./chunk-JEOZOFBK.js";
 import {
   useAutoLink,
   useNavigate,
@@ -42,6 +30,18 @@ import {
   Xe,
   et
 } from "./chunk-VHNLTIDY.js";
+import {
+  MarkdownContent_default
+} from "./chunk-BPXOLMLA.js";
+import {
+  AutoLink_default
+} from "./chunk-SA6HJ7ZD.js";
+import {
+  Icon_default
+} from "./chunk-KZQVGG2I.js";
+import {
+  isPlainObject
+} from "./chunk-LS4IQIE6.js";
 import {
   client_exports
 } from "./chunk-FECFGNAG.js";
