@@ -15,6 +15,7 @@ export const zhSidebar = sidebar({
       icon: "note",
       prefix: "posts/",
       children: "structure",
+      
     },
   ],
 });
