@@ -18,7 +18,7 @@ import {
 } from "./chunk-TQJYOK4F.js";
 import {
   useSidebarItems
-} from "./chunk-JEOZOFBK.js";
+} from "./chunk-K3RPZ344.js";
 import {
   useAutoLink,
   useNavigate,

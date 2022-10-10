@@ -77,7 +77,7 @@ var renderChildren = (children) => {
 var resolvePrefix = (prefix = "", path = "") => path.startsWith("/") ? path : `${ensureEndingSlash(prefix)}${path}`;
 
 // src/.vuepress/.temp/theme-hope/sidebar.js
-var sidebarData = { "/en/": ["README.md", { "text": "Features Demo", "icon": "discover", "collapsable": true, "prefix": "demo/", "children": ["page.md", "markdown.md", "disable.md", "encrypt.md"] }, "intro.md", "slides.md"], "/aboutme/": ["README.md", "README_EN.md"], "/posts/": ["readme.md", { "text": "\u4EE3\u7801\u7B14\u8BB0", "collapsable": true, "prefix": "code/", "children": ["README.md", "1.md"] }, { "text": "\u79D1\u7814\u968F\u60F3", "collapsable": true, "prefix": "articles/", "children": ["README.md", "Untitled.md", "article-1.md", "article-2.md", "article-3.md"] }, { "text": "\u70BC\u4E39\u624B\u672D", "collapsable": true, "prefix": "paper/", "children": ["README.md", "1.md"] }, { "text": "\u968F\u624B\u8BB0\u5F55", "collapsable": true, "prefix": "note/", "children": ["README.md"] }, { "text": "\u6742\u4E03\u6742\u516B", "collapsable": true, "prefix": "other/", "children": ["README.md"] }, "cherry.md", "dragonfruit.md", "strawberry.md", "tomato.md"] };
+var sidebarData = { "/en/": ["README.md", { "text": "Features Demo", "icon": "discover", "collapsable": true, "prefix": "demo/", "children": ["page.md", "markdown.md", "disable.md", "encrypt.md"] }, "intro.md", "slides.md"], "/aboutme/": ["README.md", "README_EN.md"], "/posts/": ["readme.md", { "text": "\u4EE3\u7801\u7B14\u8BB0", "collapsable": true, "prefix": "code/", "children": ["README.md", "1.md"] }, { "text": "\u79D1\u7814\u968F\u60F3", "collapsable": true, "prefix": "articles/", "children": ["README.md", "article-1.md", "article-2.md", "article-4.md", "article-3.md"] }, { "text": "\u70BC\u4E39\u624B\u672D", "collapsable": true, "prefix": "paper/", "children": ["README.md", "1.md"] }, { "text": "\u6742\u4E03\u6742\u516B", "collapsable": true, "prefix": "other/", "children": ["README.md"] }] };
 
 // node_modules/vuepress-theme-hope/lib/client/modules/sidebar/composables/resolveConfig.js
 var headerToSidebarItem = (header, headerDepth) => {
@@ -170,4 +170,4 @@ export {
   setupSidebarItems,
   useSidebarItems
 };
-//# sourceMappingURL=chunk-JEOZOFBK.js.map
+//# sourceMappingURL=chunk-K3RPZ344.js.map

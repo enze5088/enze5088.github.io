@@ -25,17 +25,17 @@ step 1、进入到本地仓库的目录。
 
 下面所有操作，如无特别说明，都是在你的本地仓库的目录下操作。比如我的本地仓库为`/from-liujuanjuan-the-craft-of-selfteaching`
 
-[![image](article-3.assets/54422899-6938e880-474a-11e9-8768-27ac24673e28.png)](https://user-images.githubusercontent.com/31027645/54422899-6938e880-474a-11e9-8768-27ac24673e28.png)
+[![image](article_3_assets/54422899-6938e880-474a-11e9-8768-27ac24673e28.png)](https://user-images.githubusercontent.com/31027645/54422899-6938e880-474a-11e9-8768-27ac24673e28.png)
 
 step 2、执行命令 `git remote -v` 查看你的远程仓库的路径：
 
-[![image](article-3.assets/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png)](https://user-images.githubusercontent.com/31027645/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png)
+[![image](article_3_assets/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png)](https://user-images.githubusercontent.com/31027645/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png)
 
 如果只有上面2行，说明你未设置 `upstream` （中文叫：上游代码库）。一般情况下，设置好一次 `upstream` 后就无需重复设置。
 
 step 3、执行命令 `git remote add upstream https://github.com/selfteaching/the-craft-of-selfteaching.git` 把 xiaolai 的仓库设置为你的 `upstream` 。这个命令执行后，没有任何返回信息；所以再次执行命令 `git remote -v` 检查是否成功。
 
-[![image](article-3.assets/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png)](https://user-images.githubusercontent.com/31027645/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png)
+[![image](article_3_assets/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png)](https://user-images.githubusercontent.com/31027645/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png)
 
 step 4、执行命令 `git status` 检查本地是否有未提交的修改。如果有，则把你本地的有效修改，先从本地仓库推送到你的github仓库。最后再执行一次 `git status` 检查本地已无未提交的修改。
 
@@ -56,21 +56,21 @@ git add -A` 或者 `git add filename`
 
 step 5、执行命令 `git fetch upstream` 抓取 xiaolai 原仓库的更新：
 
-[![image](article-3.assets/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png)](https://user-images.githubusercontent.com/31027645/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png)
+[![image](article_3_assets/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png)](https://user-images.githubusercontent.com/31027645/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png)
 
 step 6、执行命令 `git checkout master` 切换到 master 分支：
 
-[![image](article-3.assets/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png)](https://user-images.githubusercontent.com/31027645/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png)
+[![image](article_3_assets/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png)](https://user-images.githubusercontent.com/31027645/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png)
 
 step 7、执行命令 `git merge upstream/master` 合并远程的master分支：
 
-[![image](article-3.assets/54449526-47128b00-4789-11e9-9add-09217eb91a68.png)](https://user-images.githubusercontent.com/31027645/54449526-47128b00-4789-11e9-9add-09217eb91a68.png)
+[![image](article_3_assets/54449526-47128b00-4789-11e9-9add-09217eb91a68.png)](https://user-images.githubusercontent.com/31027645/54449526-47128b00-4789-11e9-9add-09217eb91a68.png)
 
 step 8、执行命令 `git push `把本地仓库向github仓库（你fork到自己名下的仓库）推送修改
 
 如果担心自己不小心改了哪里，可以再次执行命令 `git status` 检查哪些文件有变化。这个操作仅是检查，不会改变任何状态，放心用。
 
-[![image](article-3.assets/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png)](https://user-images.githubusercontent.com/31027645/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png)
+[![image](article_3_assets/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png)](https://user-images.githubusercontent.com/31027645/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png)
 
 现在你已经解决了fork的仓库和原仓库版本不一致的问题。可以放心向 xiaolai 发起 pull request 了。如果以上操作你花了不少时间，而 xiaolai 的仓库 又恰好更新了。很好，一次新的练习机会来了……
 

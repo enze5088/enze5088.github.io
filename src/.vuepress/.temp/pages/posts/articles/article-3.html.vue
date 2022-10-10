@@ -21,12 +21,12 @@
 <h3 id="merge前的设定" tabindex="-1"><a class="header-anchor" href="#merge前的设定" aria-hidden="true">#</a> merge前的设定</h3>
 <p>step 1、进入到本地仓库的目录。</p>
 <p>下面所有操作，如无特别说明，都是在你的本地仓库的目录下操作。比如我的本地仓库为<code v-pre>/from-liujuanjuan-the-craft-of-selfteaching</code></p>
-<p><a href="https://user-images.githubusercontent.com/31027645/54422899-6938e880-474a-11e9-8768-27ac24673e28.png" target="_blank" rel="noopener noreferrer"><img src="article-3.assets/54422899-6938e880-474a-11e9-8768-27ac24673e28.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
+<p><a href="https://user-images.githubusercontent.com/31027645/54422899-6938e880-474a-11e9-8768-27ac24673e28.png" target="_blank" rel="noopener noreferrer"><img src="article_3_assets/54422899-6938e880-474a-11e9-8768-27ac24673e28.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
 <p>step 2、执行命令 <code v-pre>git remote -v</code> 查看你的远程仓库的路径：</p>
-<p><a href="https://user-images.githubusercontent.com/31027645/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png" target="_blank" rel="noopener noreferrer"><img src="article-3.assets/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
+<p><a href="https://user-images.githubusercontent.com/31027645/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png" target="_blank" rel="noopener noreferrer"><img src="article_3_assets/54422975-95ed0000-474a-11e9-96bf-1018d6bc06f2.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
 <p>如果只有上面2行，说明你未设置 <code v-pre>upstream</code> （中文叫：上游代码库）。一般情况下，设置好一次 <code v-pre>upstream</code> 后就无需重复设置。</p>
 <p>step 3、执行命令 <code v-pre>git remote add upstream https://github.com/selfteaching/the-craft-of-selfteaching.git</code> 把 xiaolai 的仓库设置为你的 <code v-pre>upstream</code> 。这个命令执行后，没有任何返回信息；所以再次执行命令 <code v-pre>git remote -v</code> 检查是否成功。</p>
-<p><a href="https://user-images.githubusercontent.com/31027645/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png" target="_blank" rel="noopener noreferrer"><img src="article-3.assets/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
+<p><a href="https://user-images.githubusercontent.com/31027645/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png" target="_blank" rel="noopener noreferrer"><img src="article_3_assets/54423107-d8aed800-474a-11e9-9ab8-7bb901181283.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
 <p>step 4、执行命令 <code v-pre>git status</code> 检查本地是否有未提交的修改。如果有，则把你本地的有效修改，先从本地仓库推送到你的github仓库。最后再执行一次 <code v-pre>git status</code> 检查本地已无未提交的修改。</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>git add -A` 或者 `git add filename`
 `git commit -m "your note"`
@@ -37,14 +37,14 @@
 <h3 id="merge-的关键命令" tabindex="-1"><a class="header-anchor" href="#merge-的关键命令" aria-hidden="true">#</a> merge 的关键命令</h3>
 <p>以下操作紧接着上面的步骤。</p>
 <p>step 5、执行命令 <code v-pre>git fetch upstream</code> 抓取 xiaolai 原仓库的更新：</p>
-<p><a href="https://user-images.githubusercontent.com/31027645/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png" target="_blank" rel="noopener noreferrer"><img src="article-3.assets/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
+<p><a href="https://user-images.githubusercontent.com/31027645/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png" target="_blank" rel="noopener noreferrer"><img src="article_3_assets/54448734-60b2d300-4787-11e9-9fdf-90fcc2e66052.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
 <p>step 6、执行命令 <code v-pre>git checkout master</code> 切换到 master 分支：</p>
-<p><a href="https://user-images.githubusercontent.com/31027645/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png" target="_blank" rel="noopener noreferrer"><img src="article-3.assets/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
+<p><a href="https://user-images.githubusercontent.com/31027645/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png" target="_blank" rel="noopener noreferrer"><img src="article_3_assets/54448759-6dcfc200-4787-11e9-8bbc-a5beef23ea88.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
 <p>step 7、执行命令 <code v-pre>git merge upstream/master</code> 合并远程的master分支：</p>
-<p><a href="https://user-images.githubusercontent.com/31027645/54449526-47128b00-4789-11e9-9add-09217eb91a68.png" target="_blank" rel="noopener noreferrer"><img src="article-3.assets/54449526-47128b00-4789-11e9-9add-09217eb91a68.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
+<p><a href="https://user-images.githubusercontent.com/31027645/54449526-47128b00-4789-11e9-9add-09217eb91a68.png" target="_blank" rel="noopener noreferrer"><img src="article_3_assets/54449526-47128b00-4789-11e9-9add-09217eb91a68.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
 <p>step 8、执行命令 <code v-pre>git push </code>把本地仓库向github仓库（你fork到自己名下的仓库）推送修改</p>
 <p>如果担心自己不小心改了哪里，可以再次执行命令 <code v-pre>git status</code> 检查哪些文件有变化。这个操作仅是检查，不会改变任何状态，放心用。</p>
-<p><a href="https://user-images.githubusercontent.com/31027645/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png" target="_blank" rel="noopener noreferrer"><img src="article-3.assets/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
+<p><a href="https://user-images.githubusercontent.com/31027645/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png" target="_blank" rel="noopener noreferrer"><img src="article_3_assets/54449665-a07aba00-4789-11e9-9181-bdcc814fffe6.png" alt="image" loading="lazy"><ExternalLinkIcon/></a></p>
 <p>现在你已经解决了fork的仓库和原仓库版本不一致的问题。可以放心向 xiaolai 发起 pull request 了。如果以上操作你花了不少时间，而 xiaolai 的仓库 又恰好更新了。很好，一次新的练习机会来了……</p>
 <h2 id="ps-如何优雅的获得上游最新内容" tabindex="-1"><a class="header-anchor" href="#ps-如何优雅的获得上游最新内容" aria-hidden="true">#</a> PS: 如何优雅的获得上游最新内容?</h2>
 <blockquote>
