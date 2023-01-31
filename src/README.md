@@ -3,7 +3,6 @@ home: true
 icon: home
 title: 主页
 layout: BlogHome
-heroImage: /logo.svg
 bgImage: /venice-1870.jpg
 heroText: 炼丹拾遗
 heroFullScreen: true
