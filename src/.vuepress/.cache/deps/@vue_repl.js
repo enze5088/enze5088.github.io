@@ -30,16 +30,14 @@ import {
   withDirectives,
   withKeys,
   withModifiers
-} from "./chunk-4YVVQK3V.js";
+} from "./chunk-CXZJNWNB.js";
 import {
+  __export,
+  __require,
   normalizeClass,
   normalizeStyle,
   toDisplayString
-} from "./chunk-XYQ66V4O.js";
-import {
-  __export,
-  __require
-} from "./chunk-5E3NKPRU.js";
+} from "./chunk-QPKDW67T.js";
 
 // node_modules/vue/compiler-sfc/index.mjs
 var compiler_sfc_exports = {};
@@ -73,25 +71,76 @@ function makeMap(str, expectsLowerCase) {
   return expectsLowerCase ? (val) => !!map2[val.toLowerCase()] : (val) => !!map2[val];
 }
 var PatchFlagNames = {
-  [1]: `TEXT`,
-  [2]: `CLASS`,
-  [4]: `STYLE`,
-  [8]: `PROPS`,
-  [16]: `FULL_PROPS`,
-  [32]: `HYDRATE_EVENTS`,
-  [64]: `STABLE_FRAGMENT`,
-  [128]: `KEYED_FRAGMENT`,
-  [256]: `UNKEYED_FRAGMENT`,
-  [512]: `NEED_PATCH`,
-  [1024]: `DYNAMIC_SLOTS`,
-  [2048]: `DEV_ROOT_FRAGMENT`,
-  [-1]: `HOISTED`,
-  [-2]: `BAIL`
+  [
+    1
+    /* PatchFlags.TEXT */
+  ]: `TEXT`,
+  [
+    2
+    /* PatchFlags.CLASS */
+  ]: `CLASS`,
+  [
+    4
+    /* PatchFlags.STYLE */
+  ]: `STYLE`,
+  [
+    8
+    /* PatchFlags.PROPS */
+  ]: `PROPS`,
+  [
+    16
+    /* PatchFlags.FULL_PROPS */
+  ]: `FULL_PROPS`,
+  [
+    32
+    /* PatchFlags.HYDRATE_EVENTS */
+  ]: `HYDRATE_EVENTS`,
+  [
+    64
+    /* PatchFlags.STABLE_FRAGMENT */
+  ]: `STABLE_FRAGMENT`,
+  [
+    128
+    /* PatchFlags.KEYED_FRAGMENT */
+  ]: `KEYED_FRAGMENT`,
+  [
+    256
+    /* PatchFlags.UNKEYED_FRAGMENT */
+  ]: `UNKEYED_FRAGMENT`,
+  [
+    512
+    /* PatchFlags.NEED_PATCH */
+  ]: `NEED_PATCH`,
+  [
+    1024
+    /* PatchFlags.DYNAMIC_SLOTS */
+  ]: `DYNAMIC_SLOTS`,
+  [
+    2048
+    /* PatchFlags.DEV_ROOT_FRAGMENT */
+  ]: `DEV_ROOT_FRAGMENT`,
+  [
+    -1
+    /* PatchFlags.HOISTED */
+  ]: `HOISTED`,
+  [
+    -2
+    /* PatchFlags.BAIL */
+  ]: `BAIL`
 };
 var slotFlagsText = {
-  [1]: "STABLE",
-  [2]: "DYNAMIC",
-  [3]: "FORWARDED"
+  [
+    1
+    /* SlotFlags.STABLE */
+  ]: "STABLE",
+  [
+    2
+    /* SlotFlags.DYNAMIC */
+  ]: "DYNAMIC",
+  [
+    3
+    /* SlotFlags.FORWARDED */
+  ]: "FORWARDED"
 };
 var GLOBALS_WHITE_LISTED = "Infinity,undefined,NaN,isFinite,isNaN,parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,BigInt";
 var isGloballyWhitelisted = makeMap(GLOBALS_WHITE_LISTED);
@@ -129,29 +178,6 @@ function generateCodeFrame(source, start = 0, end = source.length) {
   }
   return res.join("\n");
 }
-var specialBooleanAttrs = `itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly`;
-var isBooleanAttr = makeMap(specialBooleanAttrs + `,async,autofocus,autoplay,controls,default,defer,disabled,hidden,loop,open,required,reversed,scoped,seamless,checked,muted,multiple,selected`);
-var unsafeAttrCharRE = /[>/="'\u0009\u000a\u000c\u0020]/;
-var attrValidationCache = {};
-function isSSRSafeAttrName(name) {
-  if (attrValidationCache.hasOwnProperty(name)) {
-    return attrValidationCache[name];
-  }
-  const isUnsafe = unsafeAttrCharRE.test(name);
-  if (isUnsafe) {
-    console.error(`unsafe attribute name: ${name}`);
-  }
-  return attrValidationCache[name] = !isUnsafe;
-}
-var propsToAttrMap = {
-  acceptCharset: "accept-charset",
-  className: "class",
-  htmlFor: "for",
-  httpEquiv: "http-equiv"
-};
-var isNoUnitNumericStyleProp = makeMap(`animation-iteration-count,border-image-outset,border-image-slice,border-image-width,box-flex,box-flex-group,box-ordinal-group,column-count,columns,flex,flex-grow,flex-positive,flex-shrink,flex-negative,flex-order,grid-row,grid-row-end,grid-row-span,grid-row-start,grid-column,grid-column-end,grid-column-span,grid-column-start,font-weight,line-clamp,line-height,opacity,order,orphans,tab-size,widows,z-index,zoom,fill-opacity,flood-opacity,stop-opacity,stroke-dasharray,stroke-dashoffset,stroke-miterlimit,stroke-opacity,stroke-width`);
-var isKnownHtmlAttr = makeMap(`accept,accept-charset,accesskey,action,align,allow,alt,async,autocapitalize,autocomplete,autofocus,autoplay,background,bgcolor,border,buffered,capture,challenge,charset,checked,cite,class,code,codebase,color,cols,colspan,content,contenteditable,contextmenu,controls,coords,crossorigin,csp,data,datetime,decoding,default,defer,dir,dirname,disabled,download,draggable,dropzone,enctype,enterkeyhint,for,form,formaction,formenctype,formmethod,formnovalidate,formtarget,headers,height,hidden,high,href,hreflang,http-equiv,icon,id,importance,integrity,ismap,itemprop,keytype,kind,label,lang,language,loading,list,loop,low,manifest,max,maxlength,minlength,media,min,multiple,muted,name,novalidate,open,optimum,pattern,ping,placeholder,poster,preload,radiogroup,readonly,referrerpolicy,rel,required,reversed,rows,rowspan,sandbox,scope,scoped,selected,shape,size,sizes,slot,span,spellcheck,src,srcdoc,srclang,srcset,start,step,style,summary,tabindex,target,title,translate,type,usemap,value,width,wrap`);
-var isKnownSvgAttr = makeMap(`xmlns,accent-height,accumulate,additive,alignment-baseline,alphabetic,amplitude,arabic-form,ascent,attributeName,attributeType,azimuth,baseFrequency,baseline-shift,baseProfile,bbox,begin,bias,by,calcMode,cap-height,class,clip,clipPathUnits,clip-path,clip-rule,color,color-interpolation,color-interpolation-filters,color-profile,color-rendering,contentScriptType,contentStyleType,crossorigin,cursor,cx,cy,d,decelerate,descent,diffuseConstant,direction,display,divisor,dominant-baseline,dur,dx,dy,edgeMode,elevation,enable-background,end,exponent,fill,fill-opacity,fill-rule,filter,filterRes,filterUnits,flood-color,flood-opacity,font-family,font-size,font-size-adjust,font-stretch,font-style,font-variant,font-weight,format,from,fr,fx,fy,g1,g2,glyph-name,glyph-orientation-horizontal,glyph-orientation-vertical,glyphRef,gradientTransform,gradientUnits,hanging,height,href,hreflang,horiz-adv-x,horiz-origin-x,id,ideographic,image-rendering,in,in2,intercept,k,k1,k2,k3,k4,kernelMatrix,kernelUnitLength,kerning,keyPoints,keySplines,keyTimes,lang,lengthAdjust,letter-spacing,lighting-color,limitingConeAngle,local,marker-end,marker-mid,marker-start,markerHeight,markerUnits,markerWidth,mask,maskContentUnits,maskUnits,mathematical,max,media,method,min,mode,name,numOctaves,offset,opacity,operator,order,orient,orientation,origin,overflow,overline-position,overline-thickness,panose-1,paint-order,path,pathLength,patternContentUnits,patternTransform,patternUnits,ping,pointer-events,points,pointsAtX,pointsAtY,pointsAtZ,preserveAlpha,preserveAspectRatio,primitiveUnits,r,radius,referrerPolicy,refX,refY,rel,rendering-intent,repeatCount,repeatDur,requiredExtensions,requiredFeatures,restart,result,rotate,rx,ry,scale,seed,shape-rendering,slope,spacing,specularConstant,specularExponent,speed,spreadMethod,startOffset,stdDeviation,stemh,stemv,stitchTiles,stop-color,stop-opacity,strikethrough-position,strikethrough-thickness,string,stroke,stroke-dasharray,stroke-dashoffset,stroke-linecap,stroke-linejoin,stroke-miterlimit,stroke-opacity,stroke-width,style,surfaceScale,systemLanguage,tabindex,tableValues,target,targetX,targetY,text-anchor,text-decoration,text-rendering,textLength,to,transform,transform-origin,type,u1,u2,underline-position,underline-thickness,unicode,unicode-bidi,unicode-range,units-per-em,v-alphabetic,v-hanging,v-ideographic,v-mathematical,values,vector-effect,version,vert-adv-y,vert-origin-x,vert-origin-y,viewBox,viewTarget,visibility,width,widths,word-spacing,writing-mode,x,x-height,x1,x2,xChannelSelector,xlink:actuate,xlink:arcrole,xlink:href,xlink:role,xlink:show,xlink:title,xlink:type,xml:base,xml:lang,xml:space,y,y1,y2,yChannelSelector,z,zoomAndPan`);
 function normalizeStyle2(value) {
   if (isArray(value)) {
     const res = {};
@@ -172,10 +198,11 @@ function normalizeStyle2(value) {
   }
 }
 var listDelimiterRE = /;(?![^(]*\))/g;
-var propertyDelimiterRE = /:(.+)/;
+var propertyDelimiterRE = /:([^]+)/;
+var styleCommentRE = /\/\*.*?\*\//gs;
 function parseStringStyle(cssText) {
   const ret = {};
-  cssText.split(listDelimiterRE).forEach((item) => {
+  cssText.replace(styleCommentRE, "").split(listDelimiterRE).forEach((item) => {
     if (item) {
       const tmp = item.split(propertyDelimiterRE);
       tmp.length > 1 && (ret[tmp[0].trim()] = tmp[1].trim());
@@ -191,7 +218,7 @@ function stringifyStyle(styles) {
   for (const key in styles) {
     const value = styles[key];
     const normalizedKey = key.startsWith(`--`) ? key : hyphenate(key);
-    if (isString(value) || typeof value === "number" && isNoUnitNumericStyleProp(normalizedKey)) {
+    if (isString(value) || typeof value === "number") {
       ret += `${normalizedKey}:${value};`;
     }
   }
@@ -223,6 +250,28 @@ var VOID_TAGS = "area,base,br,col,embed,hr,img,input,link,meta,param,source,trac
 var isHTMLTag = makeMap(HTML_TAGS);
 var isSVGTag = makeMap(SVG_TAGS);
 var isVoidTag = makeMap(VOID_TAGS);
+var specialBooleanAttrs = `itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly`;
+var isBooleanAttr = makeMap(specialBooleanAttrs + `,async,autofocus,autoplay,controls,default,defer,disabled,hidden,loop,open,required,reversed,scoped,seamless,checked,muted,multiple,selected`);
+var unsafeAttrCharRE = /[>/="'\u0009\u000a\u000c\u0020]/;
+var attrValidationCache = {};
+function isSSRSafeAttrName(name) {
+  if (attrValidationCache.hasOwnProperty(name)) {
+    return attrValidationCache[name];
+  }
+  const isUnsafe = unsafeAttrCharRE.test(name);
+  if (isUnsafe) {
+    console.error(`unsafe attribute name: ${name}`);
+  }
+  return attrValidationCache[name] = !isUnsafe;
+}
+var propsToAttrMap = {
+  acceptCharset: "accept-charset",
+  className: "class",
+  htmlFor: "for",
+  httpEquiv: "http-equiv"
+};
+var isKnownHtmlAttr = makeMap(`accept,accept-charset,accesskey,action,align,allow,alt,async,autocapitalize,autocomplete,autofocus,autoplay,background,bgcolor,border,buffered,capture,challenge,charset,checked,cite,class,code,codebase,color,cols,colspan,content,contenteditable,contextmenu,controls,coords,crossorigin,csp,data,datetime,decoding,default,defer,dir,dirname,disabled,download,draggable,dropzone,enctype,enterkeyhint,for,form,formaction,formenctype,formmethod,formnovalidate,formtarget,headers,height,hidden,high,href,hreflang,http-equiv,icon,id,importance,integrity,ismap,itemprop,keytype,kind,label,lang,language,loading,list,loop,low,manifest,max,maxlength,minlength,media,min,multiple,muted,name,novalidate,open,optimum,pattern,ping,placeholder,poster,preload,radiogroup,readonly,referrerpolicy,rel,required,reversed,rows,rowspan,sandbox,scope,scoped,selected,shape,size,sizes,slot,span,spellcheck,src,srcdoc,srclang,srcset,start,step,style,summary,tabindex,target,title,translate,type,usemap,value,width,wrap`);
+var isKnownSvgAttr = makeMap(`xmlns,accent-height,accumulate,additive,alignment-baseline,alphabetic,amplitude,arabic-form,ascent,attributeName,attributeType,azimuth,baseFrequency,baseline-shift,baseProfile,bbox,begin,bias,by,calcMode,cap-height,class,clip,clipPathUnits,clip-path,clip-rule,color,color-interpolation,color-interpolation-filters,color-profile,color-rendering,contentScriptType,contentStyleType,crossorigin,cursor,cx,cy,d,decelerate,descent,diffuseConstant,direction,display,divisor,dominant-baseline,dur,dx,dy,edgeMode,elevation,enable-background,end,exponent,fill,fill-opacity,fill-rule,filter,filterRes,filterUnits,flood-color,flood-opacity,font-family,font-size,font-size-adjust,font-stretch,font-style,font-variant,font-weight,format,from,fr,fx,fy,g1,g2,glyph-name,glyph-orientation-horizontal,glyph-orientation-vertical,glyphRef,gradientTransform,gradientUnits,hanging,height,href,hreflang,horiz-adv-x,horiz-origin-x,id,ideographic,image-rendering,in,in2,intercept,k,k1,k2,k3,k4,kernelMatrix,kernelUnitLength,kerning,keyPoints,keySplines,keyTimes,lang,lengthAdjust,letter-spacing,lighting-color,limitingConeAngle,local,marker-end,marker-mid,marker-start,markerHeight,markerUnits,markerWidth,mask,maskContentUnits,maskUnits,mathematical,max,media,method,min,mode,name,numOctaves,offset,opacity,operator,order,orient,orientation,origin,overflow,overline-position,overline-thickness,panose-1,paint-order,path,pathLength,patternContentUnits,patternTransform,patternUnits,ping,pointer-events,points,pointsAtX,pointsAtY,pointsAtZ,preserveAlpha,preserveAspectRatio,primitiveUnits,r,radius,referrerPolicy,refX,refY,rel,rendering-intent,repeatCount,repeatDur,requiredExtensions,requiredFeatures,restart,result,rotate,rx,ry,scale,seed,shape-rendering,slope,spacing,specularConstant,specularExponent,speed,spreadMethod,startOffset,stdDeviation,stemh,stemv,stitchTiles,stop-color,stop-opacity,strikethrough-position,strikethrough-thickness,string,stroke,stroke-dasharray,stroke-dashoffset,stroke-linecap,stroke-linejoin,stroke-miterlimit,stroke-opacity,stroke-width,style,surfaceScale,systemLanguage,tabindex,tableValues,target,targetX,targetY,text-anchor,text-decoration,text-rendering,textLength,to,transform,transform-origin,type,u1,u2,underline-position,underline-thickness,unicode,unicode-bidi,unicode-range,units-per-em,v-alphabetic,v-hanging,v-ideographic,v-mathematical,values,vector-effect,version,vert-adv-y,vert-origin-x,vert-origin-y,viewBox,viewTarget,visibility,width,widths,word-spacing,writing-mode,x,x-height,x1,x2,xChannelSelector,xlink:actuate,xlink:arcrole,xlink:href,xlink:role,xlink:show,xlink:title,xlink:type,xml:base,xml:lang,xml:space,y,y1,y2,yChannelSelector,z,zoomAndPan`);
 var escapeRE = /["'&<>]/;
 function escapeHtml(string2) {
   const str = "" + string2;
@@ -305,6 +354,7 @@ var objectToString = Object.prototype.toString;
 var toTypeString = (value) => objectToString.call(value);
 var isPlainObject = (val) => toTypeString(val) === "[object Object]";
 var isReservedProp = makeMap(
+  // the leading comma is intentional so empty string "" is also included
   ",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted"
 );
 var isBuiltInDirective = makeMap("bind,cloak,else-if,else,for,html,if,model,on,once,pre,show,slot,text,memo");
@@ -341,57 +391,220 @@ function createCompilerError(code, loc, messages, additionalMessage) {
   return error2;
 }
 var errorMessages = {
-  [0]: "Illegal comment.",
-  [1]: "CDATA section is allowed only in XML context.",
-  [2]: "Duplicate attribute.",
-  [3]: "End tag cannot have attributes.",
-  [4]: "Illegal '/' in tags.",
-  [5]: "Unexpected EOF in tag.",
-  [6]: "Unexpected EOF in CDATA section.",
-  [7]: "Unexpected EOF in comment.",
-  [8]: "Unexpected EOF in script.",
-  [9]: "Unexpected EOF in tag.",
-  [10]: "Incorrectly closed comment.",
-  [11]: "Incorrectly opened comment.",
-  [12]: "Illegal tag name. Use '&lt;' to print '<'.",
-  [13]: "Attribute value was expected.",
-  [14]: "End tag name was expected.",
-  [15]: "Whitespace was expected.",
-  [16]: "Unexpected '<!--' in comment.",
-  [17]: `Attribute name cannot contain U+0022 ("), U+0027 ('), and U+003C (<).`,
-  [18]: "Unquoted attribute value cannot contain U+0022 (\"), U+0027 ('), U+003C (<), U+003D (=), and U+0060 (`).",
-  [19]: "Attribute name cannot start with '='.",
-  [21]: "'<?' is allowed only in XML context.",
-  [20]: `Unexpected null character.`,
-  [22]: "Illegal '/' in tags.",
-  [23]: "Invalid end tag.",
-  [24]: "Element is missing end tag.",
-  [25]: "Interpolation end sign was not found.",
-  [27]: "End bracket for dynamic directive argument was not found. Note that dynamic directive argument cannot contain spaces.",
-  [26]: "Legal directive name was expected.",
-  [28]: `v-if/v-else-if is missing expression.`,
-  [29]: `v-if/else branches must use unique keys.`,
-  [30]: `v-else/v-else-if has no adjacent v-if or v-else-if.`,
-  [31]: `v-for is missing expression.`,
-  [32]: `v-for has invalid expression.`,
-  [33]: `<template v-for> key should be placed on the <template> tag.`,
-  [34]: `v-bind is missing expression.`,
-  [35]: `v-on is missing expression.`,
-  [36]: `Unexpected custom directive on <slot> outlet.`,
-  [37]: `Mixed v-slot usage on both the component and nested <template>.When there are multiple named slots, all slots should use <template> syntax to avoid scope ambiguity.`,
-  [38]: `Duplicate slot names found. `,
-  [39]: `Extraneous children found when component already has explicitly named default slot. These children will be ignored.`,
-  [40]: `v-slot can only be used on components or <template> tags.`,
-  [41]: `v-model is missing expression.`,
-  [42]: `v-model value must be a valid JavaScript member expression.`,
-  [43]: `v-model cannot be used on v-for or v-slot scope variables because they are not writable.`,
-  [44]: `Error parsing JavaScript expression: `,
-  [45]: `<KeepAlive> expects exactly one child component.`,
-  [46]: `"prefixIdentifiers" option is not supported in this build of compiler.`,
-  [47]: `ES module mode is not supported in this build of compiler.`,
-  [48]: `"cacheHandlers" option is only supported when the "prefixIdentifiers" option is enabled.`,
-  [49]: `"scopeId" option is only supported in module mode.`,
-  [50]: ``
+  // parse errors
+  [
+    0
+    /* ErrorCodes.ABRUPT_CLOSING_OF_EMPTY_COMMENT */
+  ]: "Illegal comment.",
+  [
+    1
+    /* ErrorCodes.CDATA_IN_HTML_CONTENT */
+  ]: "CDATA section is allowed only in XML context.",
+  [
+    2
+    /* ErrorCodes.DUPLICATE_ATTRIBUTE */
+  ]: "Duplicate attribute.",
+  [
+    3
+    /* ErrorCodes.END_TAG_WITH_ATTRIBUTES */
+  ]: "End tag cannot have attributes.",
+  [
+    4
+    /* ErrorCodes.END_TAG_WITH_TRAILING_SOLIDUS */
+  ]: "Illegal '/' in tags.",
+  [
+    5
+    /* ErrorCodes.EOF_BEFORE_TAG_NAME */
+  ]: "Unexpected EOF in tag.",
+  [
+    6
+    /* ErrorCodes.EOF_IN_CDATA */
+  ]: "Unexpected EOF in CDATA section.",
+  [
+    7
+    /* ErrorCodes.EOF_IN_COMMENT */
+  ]: "Unexpected EOF in comment.",
+  [
+    8
+    /* ErrorCodes.EOF_IN_SCRIPT_HTML_COMMENT_LIKE_TEXT */
+  ]: "Unexpected EOF in script.",
+  [
+    9
+    /* ErrorCodes.EOF_IN_TAG */
+  ]: "Unexpected EOF in tag.",
+  [
+    10
+    /* ErrorCodes.INCORRECTLY_CLOSED_COMMENT */
+  ]: "Incorrectly closed comment.",
+  [
+    11
+    /* ErrorCodes.INCORRECTLY_OPENED_COMMENT */
+  ]: "Incorrectly opened comment.",
+  [
+    12
+    /* ErrorCodes.INVALID_FIRST_CHARACTER_OF_TAG_NAME */
+  ]: "Illegal tag name. Use '&lt;' to print '<'.",
+  [
+    13
+    /* ErrorCodes.MISSING_ATTRIBUTE_VALUE */
+  ]: "Attribute value was expected.",
+  [
+    14
+    /* ErrorCodes.MISSING_END_TAG_NAME */
+  ]: "End tag name was expected.",
+  [
+    15
+    /* ErrorCodes.MISSING_WHITESPACE_BETWEEN_ATTRIBUTES */
+  ]: "Whitespace was expected.",
+  [
+    16
+    /* ErrorCodes.NESTED_COMMENT */
+  ]: "Unexpected '<!--' in comment.",
+  [
+    17
+    /* ErrorCodes.UNEXPECTED_CHARACTER_IN_ATTRIBUTE_NAME */
+  ]: `Attribute name cannot contain U+0022 ("), U+0027 ('), and U+003C (<).`,
+  [
+    18
+    /* ErrorCodes.UNEXPECTED_CHARACTER_IN_UNQUOTED_ATTRIBUTE_VALUE */
+  ]: "Unquoted attribute value cannot contain U+0022 (\"), U+0027 ('), U+003C (<), U+003D (=), and U+0060 (`).",
+  [
+    19
+    /* ErrorCodes.UNEXPECTED_EQUALS_SIGN_BEFORE_ATTRIBUTE_NAME */
+  ]: "Attribute name cannot start with '='.",
+  [
+    21
+    /* ErrorCodes.UNEXPECTED_QUESTION_MARK_INSTEAD_OF_TAG_NAME */
+  ]: "'<?' is allowed only in XML context.",
+  [
+    20
+    /* ErrorCodes.UNEXPECTED_NULL_CHARACTER */
+  ]: `Unexpected null character.`,
+  [
+    22
+    /* ErrorCodes.UNEXPECTED_SOLIDUS_IN_TAG */
+  ]: "Illegal '/' in tags.",
+  // Vue-specific parse errors
+  [
+    23
+    /* ErrorCodes.X_INVALID_END_TAG */
+  ]: "Invalid end tag.",
+  [
+    24
+    /* ErrorCodes.X_MISSING_END_TAG */
+  ]: "Element is missing end tag.",
+  [
+    25
+    /* ErrorCodes.X_MISSING_INTERPOLATION_END */
+  ]: "Interpolation end sign was not found.",
+  [
+    27
+    /* ErrorCodes.X_MISSING_DYNAMIC_DIRECTIVE_ARGUMENT_END */
+  ]: "End bracket for dynamic directive argument was not found. Note that dynamic directive argument cannot contain spaces.",
+  [
+    26
+    /* ErrorCodes.X_MISSING_DIRECTIVE_NAME */
+  ]: "Legal directive name was expected.",
+  // transform errors
+  [
+    28
+    /* ErrorCodes.X_V_IF_NO_EXPRESSION */
+  ]: `v-if/v-else-if is missing expression.`,
+  [
+    29
+    /* ErrorCodes.X_V_IF_SAME_KEY */
+  ]: `v-if/else branches must use unique keys.`,
+  [
+    30
+    /* ErrorCodes.X_V_ELSE_NO_ADJACENT_IF */
+  ]: `v-else/v-else-if has no adjacent v-if or v-else-if.`,
+  [
+    31
+    /* ErrorCodes.X_V_FOR_NO_EXPRESSION */
+  ]: `v-for is missing expression.`,
+  [
+    32
+    /* ErrorCodes.X_V_FOR_MALFORMED_EXPRESSION */
+  ]: `v-for has invalid expression.`,
+  [
+    33
+    /* ErrorCodes.X_V_FOR_TEMPLATE_KEY_PLACEMENT */
+  ]: `<template v-for> key should be placed on the <template> tag.`,
+  [
+    34
+    /* ErrorCodes.X_V_BIND_NO_EXPRESSION */
+  ]: `v-bind is missing expression.`,
+  [
+    35
+    /* ErrorCodes.X_V_ON_NO_EXPRESSION */
+  ]: `v-on is missing expression.`,
+  [
+    36
+    /* ErrorCodes.X_V_SLOT_UNEXPECTED_DIRECTIVE_ON_SLOT_OUTLET */
+  ]: `Unexpected custom directive on <slot> outlet.`,
+  [
+    37
+    /* ErrorCodes.X_V_SLOT_MIXED_SLOT_USAGE */
+  ]: `Mixed v-slot usage on both the component and nested <template>.When there are multiple named slots, all slots should use <template> syntax to avoid scope ambiguity.`,
+  [
+    38
+    /* ErrorCodes.X_V_SLOT_DUPLICATE_SLOT_NAMES */
+  ]: `Duplicate slot names found. `,
+  [
+    39
+    /* ErrorCodes.X_V_SLOT_EXTRANEOUS_DEFAULT_SLOT_CHILDREN */
+  ]: `Extraneous children found when component already has explicitly named default slot. These children will be ignored.`,
+  [
+    40
+    /* ErrorCodes.X_V_SLOT_MISPLACED */
+  ]: `v-slot can only be used on components or <template> tags.`,
+  [
+    41
+    /* ErrorCodes.X_V_MODEL_NO_EXPRESSION */
+  ]: `v-model is missing expression.`,
+  [
+    42
+    /* ErrorCodes.X_V_MODEL_MALFORMED_EXPRESSION */
+  ]: `v-model value must be a valid JavaScript member expression.`,
+  [
+    43
+    /* ErrorCodes.X_V_MODEL_ON_SCOPE_VARIABLE */
+  ]: `v-model cannot be used on v-for or v-slot scope variables because they are not writable.`,
+  [
+    44
+    /* ErrorCodes.X_V_MODEL_ON_PROPS */
+  ]: `v-model cannot be used on a prop, because local prop bindings are not writable.
+Use a v-bind binding combined with a v-on listener that emits update:x event instead.`,
+  [
+    45
+    /* ErrorCodes.X_INVALID_EXPRESSION */
+  ]: `Error parsing JavaScript expression: `,
+  [
+    46
+    /* ErrorCodes.X_KEEP_ALIVE_INVALID_CHILDREN */
+  ]: `<KeepAlive> expects exactly one child component.`,
+  // generic errors
+  [
+    47
+    /* ErrorCodes.X_PREFIX_ID_NOT_SUPPORTED */
+  ]: `"prefixIdentifiers" option is not supported in this build of compiler.`,
+  [
+    48
+    /* ErrorCodes.X_MODULE_MODE_NOT_SUPPORTED */
+  ]: `ES module mode is not supported in this build of compiler.`,
+  [
+    49
+    /* ErrorCodes.X_CACHE_HANDLER_NOT_SUPPORTED */
+  ]: `"cacheHandlers" option is only supported when the "prefixIdentifiers" option is enabled.`,
+  [
+    50
+    /* ErrorCodes.X_SCOPE_ID_NOT_SUPPORTED */
+  ]: `"scopeId" option is only supported in module mode.`,
+  // just to fulfill types
+  [
+    51
+    /* ErrorCodes.__EXTEND_POINT__ */
+  ]: ``
 };
 var FRAGMENT = Symbol(`Fragment`);
 var TELEPORT = Symbol(`Teleport`);
@@ -1969,8 +2182,8 @@ function isTokenType(obj) {
     context.push(types.j_expr, types.j_oTag);
   };
 }
-var nonASCIIidentifierStartChars = "\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16EE-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2118-\u211D\u2124\u2126\u2128\u212A-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2160-\u2188\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u3005-\u3007\u3021-\u3029\u3031-\u3035\u3038-\u303C\u3041-\u3096\u309B-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6EF\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC";
-var nonASCIIidentifierChars = "\u200C\u200D\xB7\u0300-\u036F\u0387\u0483-\u0487\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u0610-\u061A\u064B-\u0669\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED\u06F0-\u06F9\u0711\u0730-\u074A\u07A6-\u07B0\u07C0-\u07C9\u07EB-\u07F3\u07FD\u0816-\u0819\u081B-\u0823\u0825-\u0827\u0829-\u082D\u0859-\u085B\u0898-\u089F\u08CA-\u08E1\u08E3-\u0903\u093A-\u093C\u093E-\u094F\u0951-\u0957\u0962\u0963\u0966-\u096F\u0981-\u0983\u09BC\u09BE-\u09C4\u09C7\u09C8\u09CB-\u09CD\u09D7\u09E2\u09E3\u09E6-\u09EF\u09FE\u0A01-\u0A03\u0A3C\u0A3E-\u0A42\u0A47\u0A48\u0A4B-\u0A4D\u0A51\u0A66-\u0A71\u0A75\u0A81-\u0A83\u0ABC\u0ABE-\u0AC5\u0AC7-\u0AC9\u0ACB-\u0ACD\u0AE2\u0AE3\u0AE6-\u0AEF\u0AFA-\u0AFF\u0B01-\u0B03\u0B3C\u0B3E-\u0B44\u0B47\u0B48\u0B4B-\u0B4D\u0B55-\u0B57\u0B62\u0B63\u0B66-\u0B6F\u0B82\u0BBE-\u0BC2\u0BC6-\u0BC8\u0BCA-\u0BCD\u0BD7\u0BE6-\u0BEF\u0C00-\u0C04\u0C3C\u0C3E-\u0C44\u0C46-\u0C48\u0C4A-\u0C4D\u0C55\u0C56\u0C62\u0C63\u0C66-\u0C6F\u0C81-\u0C83\u0CBC\u0CBE-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CE2\u0CE3\u0CE6-\u0CEF\u0D00-\u0D03\u0D3B\u0D3C\u0D3E-\u0D44\u0D46-\u0D48\u0D4A-\u0D4D\u0D57\u0D62\u0D63\u0D66-\u0D6F\u0D81-\u0D83\u0DCA\u0DCF-\u0DD4\u0DD6\u0DD8-\u0DDF\u0DE6-\u0DEF\u0DF2\u0DF3\u0E31\u0E34-\u0E3A\u0E47-\u0E4E\u0E50-\u0E59\u0EB1\u0EB4-\u0EBC\u0EC8-\u0ECD\u0ED0-\u0ED9\u0F18\u0F19\u0F20-\u0F29\u0F35\u0F37\u0F39\u0F3E\u0F3F\u0F71-\u0F84\u0F86\u0F87\u0F8D-\u0F97\u0F99-\u0FBC\u0FC6\u102B-\u103E\u1040-\u1049\u1056-\u1059\u105E-\u1060\u1062-\u1064\u1067-\u106D\u1071-\u1074\u1082-\u108D\u108F-\u109D\u135D-\u135F\u1369-\u1371\u1712-\u1715\u1732-\u1734\u1752\u1753\u1772\u1773\u17B4-\u17D3\u17DD\u17E0-\u17E9\u180B-\u180D\u180F-\u1819\u18A9\u1920-\u192B\u1930-\u193B\u1946-\u194F\u19D0-\u19DA\u1A17-\u1A1B\u1A55-\u1A5E\u1A60-\u1A7C\u1A7F-\u1A89\u1A90-\u1A99\u1AB0-\u1ABD\u1ABF-\u1ACE\u1B00-\u1B04\u1B34-\u1B44\u1B50-\u1B59\u1B6B-\u1B73\u1B80-\u1B82\u1BA1-\u1BAD\u1BB0-\u1BB9\u1BE6-\u1BF3\u1C24-\u1C37\u1C40-\u1C49\u1C50-\u1C59\u1CD0-\u1CD2\u1CD4-\u1CE8\u1CED\u1CF4\u1CF7-\u1CF9\u1DC0-\u1DFF\u203F\u2040\u2054\u20D0-\u20DC\u20E1\u20E5-\u20F0\u2CEF-\u2CF1\u2D7F\u2DE0-\u2DFF\u302A-\u302F\u3099\u309A\uA620-\uA629\uA66F\uA674-\uA67D\uA69E\uA69F\uA6F0\uA6F1\uA802\uA806\uA80B\uA823-\uA827\uA82C\uA880\uA881\uA8B4-\uA8C5\uA8D0-\uA8D9\uA8E0-\uA8F1\uA8FF-\uA909\uA926-\uA92D\uA947-\uA953\uA980-\uA983\uA9B3-\uA9C0\uA9D0-\uA9D9\uA9E5\uA9F0-\uA9F9\uAA29-\uAA36\uAA43\uAA4C\uAA4D\uAA50-\uAA59\uAA7B-\uAA7D\uAAB0\uAAB2-\uAAB4\uAAB7\uAAB8\uAABE\uAABF\uAAC1\uAAEB-\uAAEF\uAAF5\uAAF6\uABE3-\uABEA\uABEC\uABED\uABF0-\uABF9\uFB1E\uFE00-\uFE0F\uFE20-\uFE2F\uFE33\uFE34\uFE4D-\uFE4F\uFF10-\uFF19\uFF3F";
+var nonASCIIidentifierStartChars = "ªµºÀ-ÖØ-öø-ˁˆ-ˑˠ-ˤˬˮͰ-ʹͶͷͺ-ͽͿΆΈ-ΊΌΎ-ΡΣ-ϵϷ-ҁҊ-ԯԱ-Ֆՙՠ-ֈא-תׯ-ײؠ-يٮٯٱ-ۓەۥۦۮۯۺ-ۼۿܐܒ-ܯݍ-ޥޱߊ-ߪߴߵߺࠀ-ࠕࠚࠤࠨࡀ-ࡘࡠ-ࡪࡰ-ࢇࢉ-ࢎࢠ-ࣉऄ-हऽॐक़-ॡॱ-ঀঅ-ঌএঐও-নপ-রলশ-হঽৎড়ঢ়য়-ৡৰৱৼਅ-ਊਏਐਓ-ਨਪ-ਰਲਲ਼ਵਸ਼ਸਹਖ਼-ੜਫ਼ੲ-ੴઅ-ઍએ-ઑઓ-નપ-રલળવ-હઽૐૠૡૹଅ-ଌଏଐଓ-ନପ-ରଲଳଵ-ହଽଡ଼ଢ଼ୟ-ୡୱஃஅ-ஊஎ-ஐஒ-கஙசஜஞடணதந-பம-ஹௐఅ-ఌఎ-ఐఒ-నప-హఽౘ-ౚౝౠౡಀಅ-ಌಎ-ಐಒ-ನಪ-ಳವ-ಹಽೝೞೠೡೱೲഄ-ഌഎ-ഐഒ-ഺഽൎൔ-ൖൟ-ൡൺ-ൿඅ-ඖක-නඳ-රලව-ෆก-ะาำเ-ๆກຂຄຆ-ຊຌ-ຣລວ-ະາຳຽເ-ໄໆໜ-ໟༀཀ-ཇཉ-ཬྈ-ྌက-ဪဿၐ-ၕၚ-ၝၡၥၦၮ-ၰၵ-ႁႎႠ-ჅჇჍა-ჺჼ-ቈቊ-ቍቐ-ቖቘቚ-ቝበ-ኈኊ-ኍነ-ኰኲ-ኵኸ-ኾዀዂ-ዅወ-ዖዘ-ጐጒ-ጕጘ-ፚᎀ-ᎏᎠ-Ᏽᏸ-ᏽᐁ-ᙬᙯ-ᙿᚁ-ᚚᚠ-ᛪᛮ-ᛸᜀ-ᜑᜟ-ᜱᝀ-ᝑᝠ-ᝬᝮ-ᝰក-ឳៗៜᠠ-ᡸᢀ-ᢨᢪᢰ-ᣵᤀ-ᤞᥐ-ᥭᥰ-ᥴᦀ-ᦫᦰ-ᧉᨀ-ᨖᨠ-ᩔᪧᬅ-ᬳᭅ-ᭌᮃ-ᮠᮮᮯᮺ-ᯥᰀ-ᰣᱍ-ᱏᱚ-ᱽᲀ-ᲈᲐ-ᲺᲽ-Ჿᳩ-ᳬᳮ-ᳳᳵᳶᳺᴀ-ᶿḀ-ἕἘ-Ἕἠ-ὅὈ-Ὅὐ-ὗὙὛὝὟ-ώᾀ-ᾴᾶ-ᾼιῂ-ῄῆ-ῌῐ-ΐῖ-Ίῠ-Ῥῲ-ῴῶ-ῼⁱⁿₐ-ₜℂℇℊ-ℓℕ℘-ℝℤΩℨK-ℹℼ-ℿⅅ-ⅉⅎⅠ-ↈⰀ-ⳤⳫ-ⳮⳲⳳⴀ-ⴥⴧⴭⴰ-ⵧⵯⶀ-ⶖⶠ-ⶦⶨ-ⶮⶰ-ⶶⶸ-ⶾⷀ-ⷆⷈ-ⷎⷐ-ⷖⷘ-ⷞ々-〇〡-〩〱-〵〸-〼ぁ-ゖ゛-ゟァ-ヺー-ヿㄅ-ㄯㄱ-ㆎㆠ-ㆿㇰ-ㇿ㐀-䶿一-ꒌꓐ-ꓽꔀ-ꘌꘐ-ꘟꘪꘫꙀ-ꙮꙿ-ꚝꚠ-ꛯꜗ-ꜟꜢ-ꞈꞋ-ꟊꟐꟑꟓꟕ-ꟙꟲ-ꠁꠃ-ꠅꠇ-ꠊꠌ-ꠢꡀ-ꡳꢂ-ꢳꣲ-ꣷꣻꣽꣾꤊ-ꤥꤰ-ꥆꥠ-ꥼꦄ-ꦲꧏꧠ-ꧤꧦ-ꧯꧺ-ꧾꨀ-ꨨꩀ-ꩂꩄ-ꩋꩠ-ꩶꩺꩾ-ꪯꪱꪵꪶꪹ-ꪽꫀꫂꫛ-ꫝꫠ-ꫪꫲ-ꫴꬁ-ꬆꬉ-ꬎꬑ-ꬖꬠ-ꬦꬨ-ꬮꬰ-ꭚꭜ-ꭩꭰ-ꯢ가-힣ힰ-ퟆퟋ-ퟻ豈-舘並-龎ﬀ-ﬆﬓ-ﬗיִײַ-ﬨשׁ-זּטּ-לּמּנּסּףּפּצּ-ﮱﯓ-ﴽﵐ-ﶏﶒ-ﷇﷰ-ﷻﹰ-ﹴﹶ-ﻼＡ-Ｚａ-ｚｦ-ﾾￂ-ￇￊ-ￏￒ-ￗￚ-ￜ";
+var nonASCIIidentifierChars = "‌‍·̀-ͯ·҃-֑҇-ׇֽֿׁׂׅׄؐ-ًؚ-٩ٰۖ-ۜ۟-۪ۤۧۨ-ۭ۰-۹ܑܰ-݊ަ-ް߀-߉߫-߽߳ࠖ-࠙ࠛ-ࠣࠥ-ࠧࠩ-࡙࠭-࡛࢘-࢟࣊-ࣣ࣡-ःऺ-़ा-ॏ॑-ॗॢॣ०-९ঁ-ঃ়া-ৄেৈো-্ৗৢৣ০-৯৾ਁ-ਃ਼ਾ-ੂੇੈੋ-੍ੑ੦-ੱੵઁ-ઃ઼ા-ૅે-ૉો-્ૢૣ૦-૯ૺ-૿ଁ-ଃ଼ା-ୄେୈୋ-୍୕-ୗୢୣ୦-୯ஂா-ூெ-ைொ-்ௗ௦-௯ఀ-ఄ఼ా-ౄె-ైొ-్ౕౖౢౣ౦-౯ಁ-ಃ಼ಾ-ೄೆ-ೈೊ-್ೕೖೢೣ೦-೯ഀ-ഃ഻഼ാ-ൄെ-ൈൊ-്ൗൢൣ൦-൯ඁ-ඃ්ා-ුූෘ-ෟ෦-෯ෲෳัิ-ฺ็-๎๐-๙ັິ-ຼ່-ໍ໐-໙༘༙༠-༩༹༵༷༾༿ཱ-྄྆྇ྍ-ྗྙ-ྼ࿆ါ-ှ၀-၉ၖ-ၙၞ-ၠၢ-ၤၧ-ၭၱ-ၴႂ-ႍႏ-ႝ፝-፟፩-፱ᜒ-᜕ᜲ-᜴ᝒᝓᝲᝳ឴-៓៝០-៩᠋-᠍᠏-᠙ᢩᤠ-ᤫᤰ-᤻᥆-᥏᧐-᧚ᨗ-ᨛᩕ-ᩞ᩠-᩿᩼-᪉᪐-᪙᪰-᪽ᪿ-ᫎᬀ-ᬄ᬴-᭄᭐-᭙᭫-᭳ᮀ-ᮂᮡ-ᮭ᮰-᮹᯦-᯳ᰤ-᰷᱀-᱉᱐-᱙᳐-᳔᳒-᳨᳭᳴᳷-᳹᷀-᷿‿⁀⁔⃐-⃥⃜⃡-⃰⳯-⵿⳱ⷠ-〪ⷿ-゙゚〯꘠-꘩꙯ꙴ-꙽ꚞꚟ꛰꛱ꠂ꠆ꠋꠣ-ꠧ꠬ꢀꢁꢴ-ꣅ꣐-꣙꣠-꣱ꣿ-꤉ꤦ-꤭ꥇ-꥓ꦀ-ꦃ꦳-꧀꧐-꧙ꧥ꧰-꧹ꨩ-ꨶꩃꩌꩍ꩐-꩙ꩻ-ꩽꪰꪲ-ꪴꪷꪸꪾ꪿꫁ꫫ-ꫯꫵ꫶ꯣ-ꯪ꯬꯭꯰-꯹ﬞ︀-️︠-︯︳︴﹍-﹏０-９＿";
 var nonASCIIidentifierStart = new RegExp("[" + nonASCIIidentifierStartChars + "]");
 var nonASCIIidentifier = new RegExp("[" + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "]");
 nonASCIIidentifierStartChars = nonASCIIidentifierChars = null;
@@ -6398,254 +6611,254 @@ var entities = {
   apos: "'",
   lt: "<",
   gt: ">",
-  nbsp: "\xA0",
-  iexcl: "\xA1",
-  cent: "\xA2",
-  pound: "\xA3",
-  curren: "\xA4",
-  yen: "\xA5",
-  brvbar: "\xA6",
-  sect: "\xA7",
-  uml: "\xA8",
-  copy: "\xA9",
-  ordf: "\xAA",
-  laquo: "\xAB",
-  not: "\xAC",
-  shy: "\xAD",
-  reg: "\xAE",
-  macr: "\xAF",
-  deg: "\xB0",
-  plusmn: "\xB1",
-  sup2: "\xB2",
-  sup3: "\xB3",
-  acute: "\xB4",
-  micro: "\xB5",
-  para: "\xB6",
-  middot: "\xB7",
-  cedil: "\xB8",
-  sup1: "\xB9",
-  ordm: "\xBA",
-  raquo: "\xBB",
-  frac14: "\xBC",
-  frac12: "\xBD",
-  frac34: "\xBE",
-  iquest: "\xBF",
-  Agrave: "\xC0",
-  Aacute: "\xC1",
-  Acirc: "\xC2",
-  Atilde: "\xC3",
-  Auml: "\xC4",
-  Aring: "\xC5",
-  AElig: "\xC6",
-  Ccedil: "\xC7",
-  Egrave: "\xC8",
-  Eacute: "\xC9",
-  Ecirc: "\xCA",
-  Euml: "\xCB",
-  Igrave: "\xCC",
-  Iacute: "\xCD",
-  Icirc: "\xCE",
-  Iuml: "\xCF",
-  ETH: "\xD0",
-  Ntilde: "\xD1",
-  Ograve: "\xD2",
-  Oacute: "\xD3",
-  Ocirc: "\xD4",
-  Otilde: "\xD5",
-  Ouml: "\xD6",
-  times: "\xD7",
-  Oslash: "\xD8",
-  Ugrave: "\xD9",
-  Uacute: "\xDA",
-  Ucirc: "\xDB",
-  Uuml: "\xDC",
-  Yacute: "\xDD",
-  THORN: "\xDE",
-  szlig: "\xDF",
-  agrave: "\xE0",
-  aacute: "\xE1",
-  acirc: "\xE2",
-  atilde: "\xE3",
-  auml: "\xE4",
-  aring: "\xE5",
-  aelig: "\xE6",
-  ccedil: "\xE7",
-  egrave: "\xE8",
-  eacute: "\xE9",
-  ecirc: "\xEA",
-  euml: "\xEB",
-  igrave: "\xEC",
-  iacute: "\xED",
-  icirc: "\xEE",
-  iuml: "\xEF",
-  eth: "\xF0",
-  ntilde: "\xF1",
-  ograve: "\xF2",
-  oacute: "\xF3",
-  ocirc: "\xF4",
-  otilde: "\xF5",
-  ouml: "\xF6",
-  divide: "\xF7",
-  oslash: "\xF8",
-  ugrave: "\xF9",
-  uacute: "\xFA",
-  ucirc: "\xFB",
-  uuml: "\xFC",
-  yacute: "\xFD",
-  thorn: "\xFE",
-  yuml: "\xFF",
-  OElig: "\u0152",
-  oelig: "\u0153",
-  Scaron: "\u0160",
-  scaron: "\u0161",
-  Yuml: "\u0178",
-  fnof: "\u0192",
-  circ: "\u02C6",
-  tilde: "\u02DC",
-  Alpha: "\u0391",
-  Beta: "\u0392",
-  Gamma: "\u0393",
-  Delta: "\u0394",
-  Epsilon: "\u0395",
-  Zeta: "\u0396",
-  Eta: "\u0397",
-  Theta: "\u0398",
-  Iota: "\u0399",
-  Kappa: "\u039A",
-  Lambda: "\u039B",
-  Mu: "\u039C",
-  Nu: "\u039D",
-  Xi: "\u039E",
-  Omicron: "\u039F",
-  Pi: "\u03A0",
-  Rho: "\u03A1",
-  Sigma: "\u03A3",
-  Tau: "\u03A4",
-  Upsilon: "\u03A5",
-  Phi: "\u03A6",
-  Chi: "\u03A7",
-  Psi: "\u03A8",
-  Omega: "\u03A9",
-  alpha: "\u03B1",
-  beta: "\u03B2",
-  gamma: "\u03B3",
-  delta: "\u03B4",
-  epsilon: "\u03B5",
-  zeta: "\u03B6",
-  eta: "\u03B7",
-  theta: "\u03B8",
-  iota: "\u03B9",
-  kappa: "\u03BA",
-  lambda: "\u03BB",
-  mu: "\u03BC",
-  nu: "\u03BD",
-  xi: "\u03BE",
-  omicron: "\u03BF",
-  pi: "\u03C0",
-  rho: "\u03C1",
-  sigmaf: "\u03C2",
-  sigma: "\u03C3",
-  tau: "\u03C4",
-  upsilon: "\u03C5",
-  phi: "\u03C6",
-  chi: "\u03C7",
-  psi: "\u03C8",
-  omega: "\u03C9",
-  thetasym: "\u03D1",
-  upsih: "\u03D2",
-  piv: "\u03D6",
-  ensp: "\u2002",
-  emsp: "\u2003",
-  thinsp: "\u2009",
-  zwnj: "\u200C",
-  zwj: "\u200D",
-  lrm: "\u200E",
-  rlm: "\u200F",
-  ndash: "\u2013",
-  mdash: "\u2014",
-  lsquo: "\u2018",
-  rsquo: "\u2019",
-  sbquo: "\u201A",
-  ldquo: "\u201C",
-  rdquo: "\u201D",
-  bdquo: "\u201E",
-  dagger: "\u2020",
-  Dagger: "\u2021",
-  bull: "\u2022",
-  hellip: "\u2026",
-  permil: "\u2030",
-  prime: "\u2032",
-  Prime: "\u2033",
-  lsaquo: "\u2039",
-  rsaquo: "\u203A",
-  oline: "\u203E",
-  frasl: "\u2044",
-  euro: "\u20AC",
-  image: "\u2111",
-  weierp: "\u2118",
-  real: "\u211C",
-  trade: "\u2122",
-  alefsym: "\u2135",
-  larr: "\u2190",
-  uarr: "\u2191",
-  rarr: "\u2192",
-  darr: "\u2193",
-  harr: "\u2194",
-  crarr: "\u21B5",
-  lArr: "\u21D0",
-  uArr: "\u21D1",
-  rArr: "\u21D2",
-  dArr: "\u21D3",
-  hArr: "\u21D4",
-  forall: "\u2200",
-  part: "\u2202",
-  exist: "\u2203",
-  empty: "\u2205",
-  nabla: "\u2207",
-  isin: "\u2208",
-  notin: "\u2209",
-  ni: "\u220B",
-  prod: "\u220F",
-  sum: "\u2211",
-  minus: "\u2212",
-  lowast: "\u2217",
-  radic: "\u221A",
-  prop: "\u221D",
-  infin: "\u221E",
-  ang: "\u2220",
-  and: "\u2227",
-  or: "\u2228",
-  cap: "\u2229",
-  cup: "\u222A",
-  int: "\u222B",
-  there4: "\u2234",
-  sim: "\u223C",
-  cong: "\u2245",
-  asymp: "\u2248",
-  ne: "\u2260",
-  equiv: "\u2261",
-  le: "\u2264",
-  ge: "\u2265",
-  sub: "\u2282",
-  sup: "\u2283",
-  nsub: "\u2284",
-  sube: "\u2286",
-  supe: "\u2287",
-  oplus: "\u2295",
-  otimes: "\u2297",
-  perp: "\u22A5",
-  sdot: "\u22C5",
-  lceil: "\u2308",
-  rceil: "\u2309",
-  lfloor: "\u230A",
-  rfloor: "\u230B",
-  lang: "\u2329",
-  rang: "\u232A",
-  loz: "\u25CA",
-  spades: "\u2660",
-  clubs: "\u2663",
-  hearts: "\u2665",
-  diams: "\u2666"
+  nbsp: " ",
+  iexcl: "¡",
+  cent: "¢",
+  pound: "£",
+  curren: "¤",
+  yen: "¥",
+  brvbar: "¦",
+  sect: "§",
+  uml: "¨",
+  copy: "©",
+  ordf: "ª",
+  laquo: "«",
+  not: "¬",
+  shy: "­",
+  reg: "®",
+  macr: "¯",
+  deg: "°",
+  plusmn: "±",
+  sup2: "²",
+  sup3: "³",
+  acute: "´",
+  micro: "µ",
+  para: "¶",
+  middot: "·",
+  cedil: "¸",
+  sup1: "¹",
+  ordm: "º",
+  raquo: "»",
+  frac14: "¼",
+  frac12: "½",
+  frac34: "¾",
+  iquest: "¿",
+  Agrave: "À",
+  Aacute: "Á",
+  Acirc: "Â",
+  Atilde: "Ã",
+  Auml: "Ä",
+  Aring: "Å",
+  AElig: "Æ",
+  Ccedil: "Ç",
+  Egrave: "È",
+  Eacute: "É",
+  Ecirc: "Ê",
+  Euml: "Ë",
+  Igrave: "Ì",
+  Iacute: "Í",
+  Icirc: "Î",
+  Iuml: "Ï",
+  ETH: "Ð",
+  Ntilde: "Ñ",
+  Ograve: "Ò",
+  Oacute: "Ó",
+  Ocirc: "Ô",
+  Otilde: "Õ",
+  Ouml: "Ö",
+  times: "×",
+  Oslash: "Ø",
+  Ugrave: "Ù",
+  Uacute: "Ú",
+  Ucirc: "Û",
+  Uuml: "Ü",
+  Yacute: "Ý",
+  THORN: "Þ",
+  szlig: "ß",
+  agrave: "à",
+  aacute: "á",
+  acirc: "â",
+  atilde: "ã",
+  auml: "ä",
+  aring: "å",
+  aelig: "æ",
+  ccedil: "ç",
+  egrave: "è",
+  eacute: "é",
+  ecirc: "ê",
+  euml: "ë",
+  igrave: "ì",
+  iacute: "í",
+  icirc: "î",
+  iuml: "ï",
+  eth: "ð",
+  ntilde: "ñ",
+  ograve: "ò",
+  oacute: "ó",
+  ocirc: "ô",
+  otilde: "õ",
+  ouml: "ö",
+  divide: "÷",
+  oslash: "ø",
+  ugrave: "ù",
+  uacute: "ú",
+  ucirc: "û",
+  uuml: "ü",
+  yacute: "ý",
+  thorn: "þ",
+  yuml: "ÿ",
+  OElig: "Œ",
+  oelig: "œ",
+  Scaron: "Š",
+  scaron: "š",
+  Yuml: "Ÿ",
+  fnof: "ƒ",
+  circ: "ˆ",
+  tilde: "˜",
+  Alpha: "Α",
+  Beta: "Β",
+  Gamma: "Γ",
+  Delta: "Δ",
+  Epsilon: "Ε",
+  Zeta: "Ζ",
+  Eta: "Η",
+  Theta: "Θ",
+  Iota: "Ι",
+  Kappa: "Κ",
+  Lambda: "Λ",
+  Mu: "Μ",
+  Nu: "Ν",
+  Xi: "Ξ",
+  Omicron: "Ο",
+  Pi: "Π",
+  Rho: "Ρ",
+  Sigma: "Σ",
+  Tau: "Τ",
+  Upsilon: "Υ",
+  Phi: "Φ",
+  Chi: "Χ",
+  Psi: "Ψ",
+  Omega: "Ω",
+  alpha: "α",
+  beta: "β",
+  gamma: "γ",
+  delta: "δ",
+  epsilon: "ε",
+  zeta: "ζ",
+  eta: "η",
+  theta: "θ",
+  iota: "ι",
+  kappa: "κ",
+  lambda: "λ",
+  mu: "μ",
+  nu: "ν",
+  xi: "ξ",
+  omicron: "ο",
+  pi: "π",
+  rho: "ρ",
+  sigmaf: "ς",
+  sigma: "σ",
+  tau: "τ",
+  upsilon: "υ",
+  phi: "φ",
+  chi: "χ",
+  psi: "ψ",
+  omega: "ω",
+  thetasym: "ϑ",
+  upsih: "ϒ",
+  piv: "ϖ",
+  ensp: " ",
+  emsp: " ",
+  thinsp: " ",
+  zwnj: "‌",
+  zwj: "‍",
+  lrm: "‎",
+  rlm: "‏",
+  ndash: "–",
+  mdash: "—",
+  lsquo: "‘",
+  rsquo: "’",
+  sbquo: "‚",
+  ldquo: "“",
+  rdquo: "”",
+  bdquo: "„",
+  dagger: "†",
+  Dagger: "‡",
+  bull: "•",
+  hellip: "…",
+  permil: "‰",
+  prime: "′",
+  Prime: "″",
+  lsaquo: "‹",
+  rsaquo: "›",
+  oline: "‾",
+  frasl: "⁄",
+  euro: "€",
+  image: "ℑ",
+  weierp: "℘",
+  real: "ℜ",
+  trade: "™",
+  alefsym: "ℵ",
+  larr: "←",
+  uarr: "↑",
+  rarr: "→",
+  darr: "↓",
+  harr: "↔",
+  crarr: "↵",
+  lArr: "⇐",
+  uArr: "⇑",
+  rArr: "⇒",
+  dArr: "⇓",
+  hArr: "⇔",
+  forall: "∀",
+  part: "∂",
+  exist: "∃",
+  empty: "∅",
+  nabla: "∇",
+  isin: "∈",
+  notin: "∉",
+  ni: "∋",
+  prod: "∏",
+  sum: "∑",
+  minus: "−",
+  lowast: "∗",
+  radic: "√",
+  prop: "∝",
+  infin: "∞",
+  ang: "∠",
+  and: "∧",
+  or: "∨",
+  cap: "∩",
+  cup: "∪",
+  int: "∫",
+  there4: "∴",
+  sim: "∼",
+  cong: "≅",
+  asymp: "≈",
+  ne: "≠",
+  equiv: "≡",
+  le: "≤",
+  ge: "≥",
+  sub: "⊂",
+  sup: "⊃",
+  nsub: "⊄",
+  sube: "⊆",
+  supe: "⊇",
+  oplus: "⊕",
+  otimes: "⊗",
+  perp: "⊥",
+  sdot: "⋅",
+  lceil: "⌈",
+  rceil: "⌉",
+  lfloor: "⌊",
+  rfloor: "⌋",
+  lang: "〈",
+  rang: "〉",
+  loz: "◊",
+  spades: "♠",
+  clubs: "♣",
+  hearts: "♥",
+  diams: "♦"
 };
 var HEX_NUMBER = /^[\da-fA-F]+$/;
 var DECIMAL_NUMBER = /^\d+$/;
@@ -13366,7 +13579,10 @@ function isStaticArgOf(arg, name) {
 }
 function hasDynamicKeyVBind(node2) {
   return node2.props.some(
-    (p) => p.type === 7 && p.name === "bind" && (!p.arg || p.arg.type !== 4 || !p.arg.isStatic)
+    (p) => p.type === 7 && p.name === "bind" && (!p.arg || // v-bind="obj"
+    p.arg.type !== 4 || // v-bind:[_ctx.foo]
+    !p.arg.isStatic)
+    // v-bind:[foo]
   );
 }
 function isText(node2) {
@@ -13413,7 +13629,9 @@ function injectProp(node2, prop, context) {
   } else if (props.type === 14) {
     const first = props.arguments[0];
     if (!isString(first) && first.type === 15) {
-      first.properties.unshift(prop);
+      if (!hasProp(prop, first)) {
+        first.properties.unshift(prop);
+      }
     } else {
       if (props.callee === TO_HANDLERS) {
         propsWithInjection = createCallExpression(context.helper(MERGE_PROPS), [
@@ -13426,12 +13644,7 @@ function injectProp(node2, prop, context) {
     }
     !propsWithInjection && (propsWithInjection = props);
   } else if (props.type === 15) {
-    let alreadyExists = false;
-    if (prop.key.type === 4) {
-      const propKeyName = prop.key.content;
-      alreadyExists = props.properties.some((p) => p.key.type === 4 && p.key.content === propKeyName);
-    }
-    if (!alreadyExists) {
+    if (!hasProp(prop, props)) {
       props.properties.unshift(prop);
     }
     propsWithInjection = props;
@@ -13457,6 +13670,14 @@ function injectProp(node2, prop, context) {
       node2.arguments[2] = propsWithInjection;
     }
   }
+}
+function hasProp(prop, props) {
+  let result2 = false;
+  if (prop.key.type === 4) {
+    const propKeyName = prop.key.content;
+    result2 = props.properties.some((p) => p.key.type === 4 && p.key.content === propKeyName);
+  }
+  return result2;
 }
 function toValidAssetId(name, type) {
   return `_${type}_${name.replace(/[^\w]/g, (searchValue, replaceValue) => {
@@ -13518,37 +13739,64 @@ function makeBlock(node2, { helper, removeHelper, inSSR }) {
   }
 }
 var deprecationData = {
-  ["COMPILER_IS_ON_ELEMENT"]: {
+  [
+    "COMPILER_IS_ON_ELEMENT"
+    /* CompilerDeprecationTypes.COMPILER_IS_ON_ELEMENT */
+  ]: {
     message: `Platform-native elements with "is" prop will no longer be treated as components in Vue 3 unless the "is" value is explicitly prefixed with "vue:".`,
     link: `https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html`
   },
-  ["COMPILER_V_BIND_SYNC"]: {
+  [
+    "COMPILER_V_BIND_SYNC"
+    /* CompilerDeprecationTypes.COMPILER_V_BIND_SYNC */
+  ]: {
     message: (key) => `.sync modifier for v-bind has been removed. Use v-model with argument instead. \`v-bind:${key}.sync\` should be changed to \`v-model:${key}\`.`,
     link: `https://v3-migration.vuejs.org/breaking-changes/v-model.html`
   },
-  ["COMPILER_V_BIND_PROP"]: {
+  [
+    "COMPILER_V_BIND_PROP"
+    /* CompilerDeprecationTypes.COMPILER_V_BIND_PROP */
+  ]: {
     message: `.prop modifier for v-bind has been removed and no longer necessary. Vue 3 will automatically set a binding as DOM property when appropriate.`
   },
-  ["COMPILER_V_BIND_OBJECT_ORDER"]: {
+  [
+    "COMPILER_V_BIND_OBJECT_ORDER"
+    /* CompilerDeprecationTypes.COMPILER_V_BIND_OBJECT_ORDER */
+  ]: {
     message: `v-bind="obj" usage is now order sensitive and behaves like JavaScript object spread: it will now overwrite an existing non-mergeable attribute that appears before v-bind in the case of conflict. To retain 2.x behavior, move v-bind to make it the first attribute. You can also suppress this warning if the usage is intended.`,
     link: `https://v3-migration.vuejs.org/breaking-changes/v-bind.html`
   },
-  ["COMPILER_V_ON_NATIVE"]: {
+  [
+    "COMPILER_V_ON_NATIVE"
+    /* CompilerDeprecationTypes.COMPILER_V_ON_NATIVE */
+  ]: {
     message: `.native modifier for v-on has been removed as is no longer necessary.`,
     link: `https://v3-migration.vuejs.org/breaking-changes/v-on-native-modifier-removed.html`
   },
-  ["COMPILER_V_IF_V_FOR_PRECEDENCE"]: {
+  [
+    "COMPILER_V_IF_V_FOR_PRECEDENCE"
+    /* CompilerDeprecationTypes.COMPILER_V_IF_V_FOR_PRECEDENCE */
+  ]: {
     message: `v-if / v-for precedence when used on the same element has changed in Vue 3: v-if now takes higher precedence and will no longer have access to v-for scope variables. It is best to avoid the ambiguity with <template> tags or use a computed property that filters v-for data source.`,
     link: `https://v3-migration.vuejs.org/breaking-changes/v-if-v-for.html`
   },
-  ["COMPILER_NATIVE_TEMPLATE"]: {
+  [
+    "COMPILER_NATIVE_TEMPLATE"
+    /* CompilerDeprecationTypes.COMPILER_NATIVE_TEMPLATE */
+  ]: {
     message: `<template> with no special directives will render as a native template element instead of its inner content in Vue 3.`
   },
-  ["COMPILER_INLINE_TEMPLATE"]: {
+  [
+    "COMPILER_INLINE_TEMPLATE"
+    /* CompilerDeprecationTypes.COMPILER_INLINE_TEMPLATE */
+  ]: {
     message: `"inline-template" has been removed in Vue 3.`,
     link: `https://v3-migration.vuejs.org/breaking-changes/inline-template-attribute.html`
   },
-  ["COMPILER_FILTER"]: {
+  [
+    "COMPILER_FILTER"
+    /* CompilerDeprecationTypes.COMPILER_FILTERS */
+  ]: {
     message: `filters have been removed in Vue 3. The "|" symbol will be treated as native JavaScript bitwise OR operator. Use method calls or computed properties instead.`,
     link: `https://v3-migration.vuejs.org/breaking-changes/filters.html`
   }
@@ -13653,11 +13901,19 @@ function parseChildren(context, mode, ancestors) {
             if (ns !== 0) {
               node2 = parseCDATA(context, ancestors);
             } else {
-              emitError(context, 1);
+              emitError(
+                context,
+                1
+                /* ErrorCodes.CDATA_IN_HTML_CONTENT */
+              );
               node2 = parseBogusComment(context);
             }
           } else {
-            emitError(context, 11);
+            emitError(
+              context,
+              11
+              /* ErrorCodes.INCORRECTLY_OPENED_COMMENT */
+            );
             node2 = parseBogusComment(context);
           }
         } else if (s[1] === "/") {
@@ -13668,7 +13924,11 @@ function parseChildren(context, mode, ancestors) {
             advanceBy(context, 3);
             continue;
           } else if (/[a-z]/i.test(s[2])) {
-            emitError(context, 23);
+            emitError(
+              context,
+              23
+              /* ErrorCodes.X_INVALID_END_TAG */
+            );
             parseTag(context, 1, parent);
             continue;
           } else {
@@ -13706,7 +13966,7 @@ function parseChildren(context, mode, ancestors) {
           if (!/[^\t\r\n\f ]/.test(node2.content)) {
             const prev = nodes[i - 1];
             const next2 = nodes[i + 1];
-            if (!prev || !next2 || shouldCondense && (prev.type === 3 || next2.type === 3 || prev.type === 1 && next2.type === 1 && /[\r\n]/.test(node2.content))) {
+            if (!prev || !next2 || shouldCondense && (prev.type === 3 && next2.type === 3 || prev.type === 3 && next2.type === 1 || prev.type === 1 && next2.type === 3 || prev.type === 1 && next2.type === 1 && /[\r\n]/.test(node2.content))) {
               removedWhitespace = true;
               nodes[i] = null;
             } else {
@@ -13748,7 +14008,11 @@ function parseCDATA(context, ancestors) {
   advanceBy(context, 9);
   const nodes = parseChildren(context, 3, ancestors);
   if (context.source.length === 0) {
-    emitError(context, 6);
+    emitError(
+      context,
+      6
+      /* ErrorCodes.EOF_IN_CDATA */
+    );
   } else {
     advanceBy(context, 3);
   }
@@ -13761,13 +14025,25 @@ function parseComment(context) {
   if (!match2) {
     content = context.source.slice(4);
     advanceBy(context, context.source.length);
-    emitError(context, 7);
+    emitError(
+      context,
+      7
+      /* ErrorCodes.EOF_IN_COMMENT */
+    );
   } else {
     if (match2.index <= 3) {
-      emitError(context, 0);
+      emitError(
+        context,
+        0
+        /* ErrorCodes.ABRUPT_CLOSING_OF_EMPTY_COMMENT */
+      );
     }
     if (match2[1]) {
-      emitError(context, 10);
+      emitError(
+        context,
+        10
+        /* ErrorCodes.INCORRECTLY_CLOSED_COMMENT */
+      );
     }
     content = context.source.slice(4, match2.index);
     const s = context.source.slice(0, match2.index);
@@ -13775,7 +14051,11 @@ function parseComment(context) {
     while ((nestedIndex = s.indexOf("<!--", prevIndex)) !== -1) {
       advanceBy(context, nestedIndex - prevIndex + 1);
       if (nestedIndex + 4 < s.length) {
-        emitError(context, 16);
+        emitError(
+          context,
+          16
+          /* ErrorCodes.NESTED_COMMENT */
+        );
       }
       prevIndex = nestedIndex + 1;
     }
@@ -13833,7 +14113,11 @@ function parseElement(context, ancestors) {
     if (context.source.length === 0 && element.tag.toLowerCase() === "script") {
       const first = children[0];
       if (first && startsWith(first.loc.source, "<!--")) {
-        emitError(context, 8);
+        emitError(
+          context,
+          8
+          /* ErrorCodes.EOF_IN_SCRIPT_HTML_COMMENT_LIKE_TEXT */
+        );
       }
     }
   }
@@ -13868,11 +14152,19 @@ function parseTag(context, type, parent) {
   }
   let isSelfClosing = false;
   if (context.source.length === 0) {
-    emitError(context, 9);
+    emitError(
+      context,
+      9
+      /* ErrorCodes.EOF_IN_TAG */
+    );
   } else {
     isSelfClosing = startsWith(context.source, "/>");
     if (type === 1 && isSelfClosing) {
-      emitError(context, 4);
+      emitError(
+        context,
+        4
+        /* ErrorCodes.END_TAG_WITH_TRAILING_SOLIDUS */
+      );
     }
     advanceBy(context, isSelfClosing ? 2 : 1);
   }
@@ -13901,6 +14193,7 @@ function parseTag(context, type, parent) {
     children: [],
     loc: getSelection(context, start),
     codegenNode: void 0
+    // to be created during transform phase
   };
 }
 function isComponent(tag2, props, context) {
@@ -13922,7 +14215,10 @@ function isComponent(tag2, props, context) {
     } else {
       if (p.name === "is") {
         return true;
-      } else if (p.name === "bind" && isStaticArgOf(p.arg, "is") && false) {
+      } else if (
+        // :is on plain element - only treat as component in compat mode
+        p.name === "bind" && isStaticArgOf(p.arg, "is") && false
+      ) {
         return true;
       }
     }
@@ -13933,13 +14229,21 @@ function parseAttributes(context, type) {
   const attributeNames = /* @__PURE__ */ new Set();
   while (context.source.length > 0 && !startsWith(context.source, ">") && !startsWith(context.source, "/>")) {
     if (startsWith(context.source, "/")) {
-      emitError(context, 22);
+      emitError(
+        context,
+        22
+        /* ErrorCodes.UNEXPECTED_SOLIDUS_IN_TAG */
+      );
       advanceBy(context, 1);
       advanceSpaces(context);
       continue;
     }
     if (type === 1) {
-      emitError(context, 3);
+      emitError(
+        context,
+        3
+        /* ErrorCodes.END_TAG_WITH_ATTRIBUTES */
+      );
     }
     const attr = parseAttribute(context, attributeNames);
     if (attr.type === 6 && attr.value && attr.name === "class") {
@@ -13949,7 +14253,11 @@ function parseAttributes(context, type) {
       props.push(attr);
     }
     if (/^[^\t\r\n\f />]/.test(context.source)) {
-      emitError(context, 15);
+      emitError(
+        context,
+        15
+        /* ErrorCodes.MISSING_WHITESPACE_BETWEEN_ATTRIBUTES */
+      );
     }
     advanceSpaces(context);
   }
@@ -13960,11 +14268,19 @@ function parseAttribute(context, nameSet) {
   const match2 = /^[^\t\r\n\f />][^\t\r\n\f />=]*/.exec(context.source);
   const name = match2[0];
   if (nameSet.has(name)) {
-    emitError(context, 2);
+    emitError(
+      context,
+      2
+      /* ErrorCodes.DUPLICATE_ATTRIBUTE */
+    );
   }
   nameSet.add(name);
   if (name[0] === "=") {
-    emitError(context, 19);
+    emitError(
+      context,
+      19
+      /* ErrorCodes.UNEXPECTED_EQUALS_SIGN_BEFORE_ATTRIBUTE_NAME */
+    );
   }
   {
     const pattern = /["'<]/g;
@@ -13981,7 +14297,11 @@ function parseAttribute(context, nameSet) {
     advanceSpaces(context);
     value = parseAttributeValue(context);
     if (!value) {
-      emitError(context, 13);
+      emitError(
+        context,
+        13
+        /* ErrorCodes.MISSING_ATTRIBUTE_VALUE */
+      );
     }
   }
   const loc = getSelection(context, start);
@@ -13999,7 +14319,11 @@ function parseAttribute(context, nameSet) {
       if (content.startsWith("[")) {
         isStatic = false;
         if (!content.endsWith("]")) {
-          emitError(context, 27);
+          emitError(
+            context,
+            27
+            /* ErrorCodes.X_MISSING_DYNAMIC_DIRECTIVE_ARGUMENT_END */
+          );
           content = content.slice(1);
         } else {
           content = content.slice(1, content.length - 1);
@@ -14032,6 +14356,8 @@ function parseAttribute(context, nameSet) {
         type: 4,
         content: value.content,
         isStatic: false,
+        // Treat as non-constant by default. This can be potentially set to
+        // other values by `transformExpression` to make it eligible for hoisting.
         constType: 0,
         loc: value.loc
       },
@@ -14041,7 +14367,11 @@ function parseAttribute(context, nameSet) {
     };
   }
   if (!context.inVPre && startsWith(name, "v-")) {
-    emitError(context, 26);
+    emitError(
+      context,
+      26
+      /* ErrorCodes.X_MISSING_DIRECTIVE_NAME */
+    );
   }
   return {
     type: 6,
@@ -14063,9 +14393,19 @@ function parseAttributeValue(context) {
     advanceBy(context, 1);
     const endIndex = context.source.indexOf(quote);
     if (endIndex === -1) {
-      content = parseTextData(context, context.source.length, 4);
+      content = parseTextData(
+        context,
+        context.source.length,
+        4
+        /* TextModes.ATTRIBUTE_VALUE */
+      );
     } else {
-      content = parseTextData(context, endIndex, 4);
+      content = parseTextData(
+        context,
+        endIndex,
+        4
+        /* TextModes.ATTRIBUTE_VALUE */
+      );
       advanceBy(context, 1);
     }
   } else {
@@ -14078,7 +14418,12 @@ function parseAttributeValue(context) {
     while (m = unexpectedChars.exec(match2[0])) {
       emitError(context, 18, m.index);
     }
-    content = parseTextData(context, match2[0].length, 4);
+    content = parseTextData(
+      context,
+      match2[0].length,
+      4
+      /* TextModes.ATTRIBUTE_VALUE */
+    );
   }
   return { content, isQuoted, loc: getSelection(context, start) };
 }
@@ -14086,7 +14431,11 @@ function parseInterpolation(context, mode) {
   const [open, close] = context.options.delimiters;
   const closeIndex = context.source.indexOf(close, open.length);
   if (closeIndex === -1) {
-    emitError(context, 25);
+    emitError(
+      context,
+      25
+      /* ErrorCodes.X_MISSING_INTERPOLATION_END */
+    );
     return void 0;
   }
   const start = getCursor(context);
@@ -14109,6 +14458,7 @@ function parseInterpolation(context, mode) {
     content: {
       type: 4,
       isStatic: false,
+      // Set `isConstant` to false by default and will decide in transformExpression
       constType: 0,
       content,
       loc: getSelection(context, innerStart, innerEnd)
@@ -14139,7 +14489,11 @@ function parseTextData(context, length2, mode) {
   if (mode === 2 || mode === 3 || !rawText.includes("&")) {
     return rawText;
   } else {
-    return context.options.decodeEntities(rawText, mode === 4);
+    return context.options.decodeEntities(
+      rawText,
+      mode === 4
+      /* TextModes.ATTRIBUTE_VALUE */
+    );
   }
 }
 function getCursor(context) {
@@ -14220,6 +14574,8 @@ function hoistStatic(root2, context) {
   walk(
     root2,
     context,
+    // Root node is unfortunately non-hoistable due to potential parent
+    // fallthrough attributes.
     isSingleElementRoot(root2, root2.children[0])
   );
 }
@@ -14305,7 +14661,11 @@ function getConstantType(node2, context) {
         let returnType2 = 3;
         const generatedPropsType = getGeneratedPropsConstantType(node2, context);
         if (generatedPropsType === 0) {
-          constantCache.set(node2, 0);
+          constantCache.set(
+            node2,
+            0
+            /* ConstantTypes.NOT_CONSTANT */
+          );
           return 0;
         }
         if (generatedPropsType < returnType2) {
@@ -14314,7 +14674,11 @@ function getConstantType(node2, context) {
         for (let i = 0; i < node2.children.length; i++) {
           const childType = getConstantType(node2.children[i], context);
           if (childType === 0) {
-            constantCache.set(node2, 0);
+            constantCache.set(
+              node2,
+              0
+              /* ConstantTypes.NOT_CONSTANT */
+            );
             return 0;
           }
           if (childType < returnType2) {
@@ -14327,7 +14691,11 @@ function getConstantType(node2, context) {
             if (p.type === 7 && p.name === "bind" && p.exp) {
               const expType = getConstantType(p.exp, context);
               if (expType === 0) {
-                constantCache.set(node2, 0);
+                constantCache.set(
+                  node2,
+                  0
+                  /* ConstantTypes.NOT_CONSTANT */
+                );
                 return 0;
               }
               if (expType < returnType2) {
@@ -14340,7 +14708,11 @@ function getConstantType(node2, context) {
           for (let i = 0; i < node2.props.length; i++) {
             const p = node2.props[i];
             if (p.type === 7) {
-              constantCache.set(node2, 0);
+              constantCache.set(
+                node2,
+                0
+                /* ConstantTypes.NOT_CONSTANT */
+              );
               return 0;
             }
           }
@@ -14352,7 +14724,11 @@ function getConstantType(node2, context) {
         constantCache.set(node2, returnType2);
         return returnType2;
       } else {
-        constantCache.set(node2, 0);
+        constantCache.set(
+          node2,
+          0
+          /* ConstantTypes.NOT_CONSTANT */
+        );
         return 0;
       }
     case 2:
@@ -14448,6 +14824,7 @@ function getPatchFlag(node2) {
 function createTransformContext(root2, { filename = "", prefixIdentifiers = false, hoistStatic: hoistStatic2 = false, cacheHandlers = false, nodeTransforms = [], directiveTransforms = {}, transformHoist = null, isBuiltInComponent = NOOP, isCustomElement = NOOP, expressionPlugins = [], scopeId = null, slotted = true, ssr = false, inSSR = false, ssrCssVars = ``, bindingMetadata = EMPTY_OBJ, inline = false, isTS = false, onError = defaultOnError, onWarn = defaultOnWarn, compatConfig }) {
   const nameMatch = filename.replace(/\?.*$/, "").match(/([^/\\]+)\.\w+$/);
   const context = {
+    // options
     selfName: nameMatch && capitalize(camelize(nameMatch[1])),
     prefixIdentifiers,
     hoistStatic: hoistStatic2,
@@ -14469,6 +14846,7 @@ function createTransformContext(root2, { filename = "", prefixIdentifiers = fals
     onError,
     onWarn,
     compatConfig,
+    // state
     root: root2,
     helpers: /* @__PURE__ */ new Map(),
     components: /* @__PURE__ */ new Set(),
@@ -14489,6 +14867,7 @@ function createTransformContext(root2, { filename = "", prefixIdentifiers = fals
     currentNode: root2,
     childIndex: 0,
     inVOnce: false,
+    // methods
     helper(name) {
       const count = context.helpers.get(name) || 0;
       context.helpers.set(name, count + 1);
@@ -14567,7 +14946,13 @@ function createTransformContext(root2, { filename = "", prefixIdentifiers = fals
       if (isString(exp))
         exp = createSimpleExpression(exp);
       context.hoists.push(exp);
-      const identifier = createSimpleExpression(`_hoisted_${context.hoists.length}`, false, exp.loc, 2);
+      const identifier = createSimpleExpression(
+        `_hoisted_${context.hoists.length}`,
+        false,
+        exp.loc,
+        2
+        /* ConstantTypes.CAN_HOIST */
+      );
       identifier.hoisted = exp;
       return identifier;
     },
@@ -14620,12 +15005,33 @@ function createRootCodegen(root2, context) {
     }
   } else if (children.length > 1) {
     let patchFlag = 64;
-    let patchFlagText = PatchFlagNames[64];
-    if (children.filter((c) => c.type !== 3).length === 1) {
+    let patchFlagText = PatchFlagNames[
+      64
+      /* PatchFlags.STABLE_FRAGMENT */
+    ];
+    if (children.filter(
+      (c) => c.type !== 3
+      /* NodeTypes.COMMENT */
+    ).length === 1) {
       patchFlag |= 2048;
-      patchFlagText += `, ${PatchFlagNames[2048]}`;
+      patchFlagText += `, ${PatchFlagNames[
+        2048
+        /* PatchFlags.DEV_ROOT_FRAGMENT */
+      ]}`;
     }
-    root2.codegenNode = createVNodeCall(context, helper(FRAGMENT), void 0, root2.children, patchFlag + ` /* ${patchFlagText} */`, void 0, void 0, true, void 0, false);
+    root2.codegenNode = createVNodeCall(
+      context,
+      helper(FRAGMENT),
+      void 0,
+      root2.children,
+      patchFlag + ` /* ${patchFlagText} */`,
+      void 0,
+      void 0,
+      true,
+      void 0,
+      false
+      /* isComponent */
+    );
   } else
     ;
 }
@@ -16043,6 +16449,8 @@ function IndexedSourceMapConsumer(aSourceMap, aSourceMapURL) {
     lastOffset = offset;
     return {
       generatedOffset: {
+        // The offset fields are 0-based, but we use 1-based indices when
+        // encoding/decoding from VLQ.
         generatedLine: offsetLine + 1,
         generatedColumn: offsetColumn + 1
       },
@@ -16515,6 +16923,7 @@ function createCodegenContext(ast, { mode = "function", prefixIdentifiers = mode
       original: {
         line: loc.line,
         column: loc.column - 1
+        // source-map column is 0 based
       },
       generated: {
         line: context.line,
@@ -16606,6 +17015,7 @@ function generate(ast, options = {}) {
     ast,
     code: context.code,
     preamble: isSetupInlined ? preambleContext.code : ``,
+    // SourceMapGenerator does have toJSON() method but it's not in the types
     map: context.map ? context.map.toJSON() : void 0
   };
 }
@@ -16932,7 +17342,10 @@ function genObjectExpression(node2, context) {
     push(`{}`, node2);
     return;
   }
-  const multilines = properties.length > 1 || properties.some((p) => p.value.type !== 4);
+  const multilines = properties.length > 1 || properties.some(
+    (p) => p.value.type !== 4
+    /* NodeTypes.SIMPLE_EXPRESSION */
+  );
   push(multilines ? `{` : `{ `);
   multilines && indent2();
   for (let i = 0; i < properties.length; i++) {
@@ -17018,7 +17431,10 @@ function genConditionalExpression(node2, context) {
   if (!isNested) {
     context.indentLevel--;
   }
-  needNewline && deindent(true);
+  needNewline && deindent(
+    true
+    /* without newline */
+  );
 }
 function genCacheExpression(node2, context) {
   const { push, helper, indent: indent2, deindent, newline } = context;
@@ -17113,6 +17529,13 @@ var WalkerBase = class {
       replace: (node2) => this.replacement = node2
     };
   }
+  /**
+   *
+   * @param {any} parent
+   * @param {string} prop
+   * @param {number} index
+   * @param {BaseNode} node
+   */
   replace(parent, prop, index, node2) {
     if (parent) {
       if (index !== null) {
@@ -17122,6 +17545,12 @@ var WalkerBase = class {
       }
     }
   }
+  /**
+   *
+   * @param {any} parent
+   * @param {string} prop
+   * @param {number} index
+   */
   remove(parent, prop, index) {
     if (parent) {
       if (index !== null) {
@@ -17133,11 +17562,24 @@ var WalkerBase = class {
   }
 };
 var SyncWalker = class extends WalkerBase {
+  /**
+   *
+   * @param {SyncHandler} enter
+   * @param {SyncHandler} leave
+   */
   constructor(enter, leave) {
     super();
     this.enter = enter;
     this.leave = leave;
   }
+  /**
+   *
+   * @param {BaseNode} node
+   * @param {BaseNode} parent
+   * @param {string} [prop]
+   * @param {number} [index]
+   * @returns {BaseNode}
+   */
   visit(node2, parent, prop, index) {
     if (node2) {
       if (this.enter) {
@@ -17455,6 +17897,7 @@ var transformExpression = (node2, context) => {
           dir.exp = processExpression(
             exp,
             context,
+            // slot args must be processed as function params
             dir.name === "slot"
           );
         }
@@ -17545,7 +17988,7 @@ function processExpression(node2, context, asParams = false, asRawStatements = f
       plugins: context.expressionPlugins
     }).program;
   } catch (e) {
-    context.onError(createCompilerError(44, node2.loc, void 0, e.message));
+    context.onError(createCompilerError(45, node2.loc, void 0, e.message));
     return node2;
   }
   const ids = [];
@@ -17572,6 +18015,7 @@ function processExpression(node2, context, asParams = false, asRawStatements = f
       }
     },
     true,
+    // invoke on ALL identifiers
     parentStack,
     knownIds
   );
@@ -17586,11 +18030,17 @@ function processExpression(node2, context, asParams = false, asRawStatements = f
       children.push(leadingText + (id2.prefix || ``));
     }
     const source2 = rawExp.slice(start, end);
-    children.push(createSimpleExpression(id2.name, false, {
-      source: source2,
-      start: advancePositionWithClone(node2.loc.start, source2, start),
-      end: advancePositionWithClone(node2.loc.start, source2, end)
-    }, id2.isConstant ? 3 : 0));
+    children.push(createSimpleExpression(
+      id2.name,
+      false,
+      {
+        source: source2,
+        start: advancePositionWithClone(node2.loc.start, source2, start),
+        end: advancePositionWithClone(node2.loc.start, source2, end)
+      },
+      id2.isConstant ? 3 : 0
+      /* ConstantTypes.NOT_CONSTANT */
+    ));
     if (i === ids.length - 1 && end < rawExp.length) {
       children.push(rawExp.slice(end));
     }
@@ -17685,7 +18135,8 @@ function processIf(node2, dir, context, processCodegen) {
         }
         context.removeNode();
         const branch = createIfBranch(node2, dir);
-        if (comments.length && !(context.parent && context.parent.type === 1 && isBuiltInType(context.parent.tag, "transition"))) {
+        if (comments.length && // #3619 ignore comments if the v-if is direct child of <transition>
+        !(context.parent && context.parent.type === 1 && isBuiltInType(context.parent.tag, "transition"))) {
           branch.children = [...comments, ...branch.children];
         }
         {
@@ -17727,6 +18178,8 @@ function createCodegenNodeForBranch(branch, keyIndex, context) {
     return createConditionalExpression(
       branch.condition,
       createChildrenCodegenNode(branch, keyIndex, context),
+      // make sure to pass in asBlock: true so that the comment node call
+      // closes the current block.
       createCallExpression(context.helper(CREATE_COMMENT), [
         '"v-if"',
         "true"
@@ -17738,7 +18191,13 @@ function createCodegenNodeForBranch(branch, keyIndex, context) {
 }
 function createChildrenCodegenNode(branch, keyIndex, context) {
   const { helper } = context;
-  const keyProperty = createObjectProperty(`key`, createSimpleExpression(`${keyIndex}`, false, locStub, 2));
+  const keyProperty = createObjectProperty(`key`, createSimpleExpression(
+    `${keyIndex}`,
+    false,
+    locStub,
+    2
+    /* ConstantTypes.CAN_HOIST */
+  ));
   const { children } = branch;
   const firstChild = children[0];
   const needFragmentWrapper = children.length !== 1 || firstChild.type !== 1;
@@ -17749,10 +18208,19 @@ function createChildrenCodegenNode(branch, keyIndex, context) {
       return vnodeCall;
     } else {
       let patchFlag = 64;
-      let patchFlagText = PatchFlagNames[64];
-      if (!branch.isTemplateIf && children.filter((c) => c.type !== 3).length === 1) {
+      let patchFlagText = PatchFlagNames[
+        64
+        /* PatchFlags.STABLE_FRAGMENT */
+      ];
+      if (!branch.isTemplateIf && children.filter(
+        (c) => c.type !== 3
+        /* NodeTypes.COMMENT */
+      ).length === 1) {
         patchFlag |= 2048;
-        patchFlagText += `, ${PatchFlagNames[2048]}`;
+        patchFlagText += `, ${PatchFlagNames[
+          2048
+          /* PatchFlags.DEV_ROOT_FRAGMENT */
+        ]}`;
       }
       return createVNodeCall(context, helper(FRAGMENT), createObjectExpression([keyProperty]), children, patchFlag + ` /* ${patchFlagText} */`, void 0, void 0, true, false, false, branch.loc);
     }
@@ -17843,7 +18311,22 @@ var transformFor = createStructuralDirectiveTransform("for", (node2, dir, contex
           injectProp(childBlock, keyProperty, context);
         }
       } else if (needFragmentWrapper) {
-        childBlock = createVNodeCall(context, helper(FRAGMENT), keyProperty ? createObjectExpression([keyProperty]) : void 0, node2.children, 64 + ` /* ${PatchFlagNames[64]} */`, void 0, void 0, true, void 0, false);
+        childBlock = createVNodeCall(
+          context,
+          helper(FRAGMENT),
+          keyProperty ? createObjectExpression([keyProperty]) : void 0,
+          node2.children,
+          64 + ` /* ${PatchFlagNames[
+            64
+            /* PatchFlags.STABLE_FRAGMENT */
+          ]} */`,
+          void 0,
+          void 0,
+          true,
+          void 0,
+          false
+          /* isComponent */
+        );
       } else {
         childBlock = children[0].codegenNode;
         if (isTemplate && keyProperty) {
@@ -17882,7 +18365,12 @@ var transformFor = createStructuralDirectiveTransform("for", (node2, dir, contex
         ]);
         renderExp.arguments.push(loop, createSimpleExpression(`_cache`), createSimpleExpression(String(context.cached++)));
       } else {
-        renderExp.arguments.push(createFunctionExpression(createForLoopParams(forNode.parseResult), childBlock, true));
+        renderExp.arguments.push(createFunctionExpression(
+          createForLoopParams(forNode.parseResult),
+          childBlock,
+          true
+          /* force newline */
+        ));
       }
     };
   });
@@ -17893,6 +18381,8 @@ function processFor(node2, dir, context, processCodegen) {
     return;
   }
   const parseResult = parseForExpression(
+    // can only be simple expression because vFor transform is applied
+    // before expression transform.
     dir.exp,
     context
   );
@@ -18085,7 +18575,12 @@ function buildSlots(node2, context, buildSlotFn = buildClientSlotFn) {
     if (vIf = findDir(slotElement, "if")) {
       hasDynamicSlots = true;
       dynamicSlots.push(createConditionalExpression(vIf.exp, buildDynamicSlot(slotName, slotFunction, conditionalBranchIndex++), defaultFallback));
-    } else if (vElse = findDir(slotElement, /^else(-if)?$/, true)) {
+    } else if (vElse = findDir(
+      slotElement,
+      /^else(-if)?$/,
+      true
+      /* allowEmpty */
+    )) {
       let j = i;
       let prev;
       while (j--) {
@@ -18111,7 +18606,12 @@ function buildSlots(node2, context, buildSlotFn = buildClientSlotFn) {
       if (parseResult) {
         dynamicSlots.push(createCallExpression(context.helper(RENDER_LIST), [
           parseResult.source,
-          createFunctionExpression(createForLoopParams(parseResult), buildDynamicSlot(slotName, slotFunction), true)
+          createFunctionExpression(
+            createForLoopParams(parseResult),
+            buildDynamicSlot(slotName, slotFunction),
+            true
+            /* force newline */
+          )
         ]));
       } else {
         context.onError(createCompilerError(32, vFor.loc));
@@ -18137,7 +18637,10 @@ function buildSlots(node2, context, buildSlotFn = buildClientSlotFn) {
     };
     if (!hasTemplateSlots) {
       slotsProperties.push(buildDefaultSlotProperty(void 0, children));
-    } else if (implicitDefaultChildren.length && implicitDefaultChildren.some((node3) => isNonWhitespaceContent(node3))) {
+    } else if (implicitDefaultChildren.length && // #3766
+    // with whitespace: 'preserve', whitespaces between slots will end up in
+    // implicitDefaultChildren. Ignore if all implicit children are whitespaces.
+    implicitDefaultChildren.some((node3) => isNonWhitespaceContent(node3))) {
       if (hasNamedDefaultSlot) {
         context.onError(createCompilerError(39, implicitDefaultChildren[0].loc));
       } else {
@@ -18148,6 +18651,8 @@ function buildSlots(node2, context, buildSlotFn = buildClientSlotFn) {
   const slotFlag = hasDynamicSlots ? 2 : hasForwardedSlots(node2.children) ? 3 : 1;
   let slots = createObjectExpression(slotsProperties.concat(createObjectProperty(
     `_`,
+    // 2 = compiled but dynamic = can skip normalization, but must run diff
+    // 1 = compiled and static = can skip normalization AND diff as optimized
     createSimpleExpression(slotFlag + ` /* ${slotFlagsText[slotFlag]} */`, false)
   )), loc);
   if (dynamicSlots.length) {
@@ -18216,7 +18721,14 @@ var transformElement = (node2, context) => {
     let vnodeDynamicProps;
     let dynamicPropNames;
     let vnodeDirectives;
-    let shouldUseBlock = isDynamicComponent || vnodeTag === TELEPORT || vnodeTag === SUSPENSE || !isComponent2 && (tag2 === "svg" || tag2 === "foreignObject");
+    let shouldUseBlock = (
+      // dynamic component may resolve to plain elements
+      isDynamicComponent || vnodeTag === TELEPORT || vnodeTag === SUSPENSE || !isComponent2 && // <svg> and <foreignObject> must be forced into blocks so that block
+      // updates inside get proper isSVG flag at runtime. (#639, #643)
+      // This is technically web-specific, but splitting the logic out of core
+      // leads to too much unnecessary complexity.
+      (tag2 === "svg" || tag2 === "foreignObject")
+    );
     if (props.length > 0) {
       const propsBuildResult = buildProps(node2, context, void 0, isComponent2, isDynamicComponent);
       vnodeProps = propsBuildResult.props;
@@ -18233,14 +18745,16 @@ var transformElement = (node2, context) => {
         shouldUseBlock = true;
         patchFlag |= 1024;
         if (node2.children.length > 1) {
-          context.onError(createCompilerError(45, {
+          context.onError(createCompilerError(46, {
             start: node2.children[0].loc.start,
             end: node2.children[node2.children.length - 1].loc.end,
             source: ""
           }));
         }
       }
-      const shouldBuildAsSlots = isComponent2 && vnodeTag !== TELEPORT && vnodeTag !== KEEP_ALIVE;
+      const shouldBuildAsSlots = isComponent2 && // Teleport is not a real component and has dedicated runtime handling
+      vnodeTag !== TELEPORT && // explained above.
+      vnodeTag !== KEEP_ALIVE;
       if (shouldBuildAsSlots) {
         const { slots, hasDynamicSlots } = buildSlots(node2, context);
         vnodeChildren = slots;
@@ -18347,13 +18861,34 @@ function resolveSetupReference(name, context) {
       return PascalName;
     }
   };
-  const fromConst = checkType("setup-const") || checkType("setup-reactive-const");
+  const fromConst = checkType(
+    "setup-const"
+    /* BindingTypes.SETUP_CONST */
+  ) || checkType(
+    "setup-reactive-const"
+    /* BindingTypes.SETUP_REACTIVE_CONST */
+  );
   if (fromConst) {
-    return context.inline ? fromConst : `$setup[${JSON.stringify(fromConst)}]`;
+    return context.inline ? (
+      // in inline mode, const setup bindings (e.g. imports) can be used as-is
+      fromConst
+    ) : `$setup[${JSON.stringify(fromConst)}]`;
   }
-  const fromMaybeRef = checkType("setup-let") || checkType("setup-ref") || checkType("setup-maybe-ref");
+  const fromMaybeRef = checkType(
+    "setup-let"
+    /* BindingTypes.SETUP_LET */
+  ) || checkType(
+    "setup-ref"
+    /* BindingTypes.SETUP_REF */
+  ) || checkType(
+    "setup-maybe-ref"
+    /* BindingTypes.SETUP_MAYBE_REF */
+  );
   if (fromMaybeRef) {
-    return context.inline ? `${context.helperString(UNREF)}(${fromMaybeRef})` : `$setup[${JSON.stringify(fromMaybeRef)}]`;
+    return context.inline ? (
+      // setup scope bindings that may be refs need to be unrefed
+      `${context.helperString(UNREF)}(${fromMaybeRef})`
+    ) : `$setup[${JSON.stringify(fromMaybeRef)}]`;
   }
 }
 function buildProps(node2, context, props = node2.props, isComponent2, isDynamicComponent, ssr = false) {
@@ -18383,7 +18918,11 @@ function buildProps(node2, context, props = node2.props, isComponent2, isDynamic
     if (isStaticExp(key)) {
       const name = key.content;
       const isEventHandler = isOn(name);
-      if (isEventHandler && (!isComponent2 || isDynamicComponent) && name.toLowerCase() !== "onclick" && name !== "onUpdate:modelValue" && !isReservedProp(name)) {
+      if (isEventHandler && (!isComponent2 || isDynamicComponent) && // omit the flag for click handlers because hydration gives click
+      // dedicated fast path.
+      name.toLowerCase() !== "onclick" && // omit v-model handlers
+      name !== "onUpdate:modelValue" && // omit onVnodeXXX hooks
+      !isReservedProp(name)) {
         hasHydrationEventBinding = true;
       }
       if (isEventHandler && isReservedProp(name)) {
@@ -18418,9 +18957,12 @@ function buildProps(node2, context, props = node2.props, isComponent2, isDynamic
         if (context.scopes.vFor > 0) {
           properties.push(createObjectProperty(createSimpleExpression("ref_for", true), createSimpleExpression("true")));
         }
-        if (value && context.inline && context.bindingMetadata[value.content]) {
-          isStatic = false;
-          properties.push(createObjectProperty(createSimpleExpression("ref_key", true), createSimpleExpression(value.content, true, value.loc)));
+        if (value && context.inline) {
+          const binding2 = context.bindingMetadata[value.content];
+          if (binding2 === "setup-let" || binding2 === "setup-ref" || binding2 === "setup-maybe-ref") {
+            isStatic = false;
+            properties.push(createObjectProperty(createSimpleExpression("ref_key", true), createSimpleExpression(value.content, true, value.loc)));
+          }
         }
       }
       if (name === "is" && (isComponentTag(tag2) || value && value.content.startsWith("vue:") || false)) {
@@ -18446,7 +18988,12 @@ function buildProps(node2, context, props = node2.props, isComponent2, isDynamic
       if (isVOn && ssr) {
         continue;
       }
-      if (isVBind && isStaticArgOf(arg, "key") || isVOn && hasChildren && isStaticArgOf(arg, "vue:before-update")) {
+      if (
+        // #938: elements with dynamic keys should be forced into blocks
+        isVBind && isStaticArgOf(arg, "key") || // inline before-update hooks need to force block so that it is invoked
+        // before children
+        isVOn && hasChildren && isStaticArgOf(arg, "vue:before-update")
+      ) {
         shouldUseBlock = true;
       }
       if (isVBind && isStaticArgOf(arg, "ref") && context.scopes.vFor > 0) {
@@ -18548,7 +19095,11 @@ function buildProps(node2, context, props = node2.props, isComponent2, isDynamic
           if (classProp && !isStaticExp(classProp.value)) {
             classProp.value = createCallExpression(context.helper(NORMALIZE_CLASS), [classProp.value]);
           }
-          if (styleProp && (hasStyleBinding || styleProp.value.type === 4 && styleProp.value.content.trim()[0] === `[` || styleProp.value.type === 17)) {
+          if (styleProp && // the static style is compiled into an object,
+          // so use `hasStyleBinding` to ensure that it is a dynamic style binding
+          (hasStyleBinding || styleProp.value.type === 4 && styleProp.value.content.trim()[0] === `[` || // v-bind:style and style both exist,
+          // v-bind:style with static literal object
+          styleProp.value.type === 17)) {
             styleProp.value = createCallExpression(context.helper(NORMALIZE_STYLE), [styleProp.value]);
           }
         } else {
@@ -18717,7 +19268,7 @@ function processSlotOutlet(node2, context) {
     slotProps
   };
 }
-var fnExpRE = /^\s*([\w$_]+|(async\s*)?\([^)]*?\))\s*=>|^\s*(async\s+)?function(?:\s+[\w$]+)?\s*\(/;
+var fnExpRE = /^\s*([\w$_]+|(async\s*)?\([^)]*?\))\s*(:[^=]+)?=>|^\s*(async\s+)?function(?:\s+[\w$]+)?\s*\(/;
 var transformOn = (dir, node2, context, augmentor) => {
   const { loc, modifiers, arg } = dir;
   if (!dir.exp && !modifiers.length) {
@@ -18730,7 +19281,15 @@ var transformOn = (dir, node2, context, augmentor) => {
       if (rawName.startsWith("vue:")) {
         rawName = `vnode-${rawName.slice(4)}`;
       }
-      const eventString = node2.tagType === 1 || rawName.startsWith("vnode") || !/[A-Z]/.test(rawName) ? toHandlerKey(camelize(rawName)) : `on:${rawName}`;
+      const eventString = node2.tagType !== 0 || rawName.startsWith("vnode") || !/[A-Z]/.test(rawName) ? (
+        // for non-element and vnode lifecycle event listeners, auto convert
+        // it to camelCase. See issue #2249
+        toHandlerKey(camelize(rawName))
+      ) : (
+        // preserve case for plain element listeners that have uppercase
+        // letters, as these may be custom elements' custom events
+        `on:${rawName}`
+      );
       eventName = createSimpleExpression(eventString, true, arg.loc);
     } else {
       eventName = createCompoundExpression([
@@ -18757,7 +19316,17 @@ var transformOn = (dir, node2, context, augmentor) => {
       isInlineStatement && context.addIdentifiers(`$event`);
       exp = dir.exp = processExpression(exp, context, false, hasMultipleStatements);
       isInlineStatement && context.removeIdentifiers(`$event`);
-      shouldCache = context.cacheHandlers && !context.inVOnce && !(exp.type === 4 && exp.constType > 0) && !(isMemberExp && node2.tagType === 1) && !hasScopeRef(exp, context.identifiers);
+      shouldCache = context.cacheHandlers && // unnecessary to cache inside v-once
+      !context.inVOnce && // runtime constants don't need to be cached
+      // (this is analyzed by compileScript in SFC <script setup>)
+      !(exp.type === 4 && exp.constType > 0) && // #1541 bail if this is a member exp handler passed to a component -
+      // we need to use the original function to preserve arity,
+      // e.g. <transition> relies on checking cb.length to determine
+      // transition end handling. Inline function is ok since its arity
+      // is preserved even when cached.
+      !(isMemberExp && node2.tagType === 1) && // bail if the function references closure variables (v-for, v-slot)
+      // it must be passed fresh to avoid stale values.
+      !hasScopeRef(exp, context.identifiers);
       if (shouldCache && isMemberExp) {
         if (exp.type === 4) {
           exp.content = `${exp.content} && ${exp.content}(...args)`;
@@ -18867,7 +19436,19 @@ var transformText = (node2, context) => {
           }
         }
       }
-      if (!hasText || children.length === 1 && (node2.type === 0 || node2.type === 1 && node2.tagType === 0 && !node2.props.find((p) => p.type === 7 && !context.directiveTransforms[p.name]) && true)) {
+      if (!hasText || // if this is a plain element with a single text child, leave it
+      // as-is since the runtime has dedicated fast path for this by directly
+      // setting textContent of the element.
+      // for component root it's always normalized anyway.
+      children.length === 1 && (node2.type === 0 || node2.type === 1 && node2.tagType === 0 && // #3756
+      // custom directives can potentially add DOM elements arbitrarily,
+      // we need to avoid setting textContent of the element at runtime
+      // to avoid accidentally overwriting the DOM elements added
+      // by the user through custom directives.
+      !node2.props.find((p) => p.type === 7 && !context.directiveTransforms[p.name]) && // in compat mode, <template> tags with no special directives
+      // will be rendered as a fragment so its children must be
+      // converted into vnodes.
+      true)) {
         return;
       }
       for (let i = 0; i < children.length; i++) {
@@ -18878,7 +19459,10 @@ var transformText = (node2, context) => {
             callArgs.push(child);
           }
           if (!context.ssr && getConstantType(child, context) === 0) {
-            callArgs.push(1 + ` /* ${PatchFlagNames[1]} */`);
+            callArgs.push(1 + ` /* ${PatchFlagNames[
+              1
+              /* PatchFlags.TEXT */
+            ]} */`);
           }
           children[i] = {
             type: 12,
@@ -18904,7 +19488,11 @@ var transformOnce = (node2, context) => {
       context.inVOnce = false;
       const cur = context.currentNode;
       if (cur.codegenNode) {
-        cur.codegenNode = context.cache(cur.codegenNode, true);
+        cur.codegenNode = context.cache(
+          cur.codegenNode,
+          true
+          /* isVNode */
+        );
       }
     };
   }
@@ -18918,7 +19506,11 @@ var transformModel = (dir, node2, context) => {
   const rawExp = exp.loc.source;
   const expString = exp.type === 4 ? exp.content : rawExp;
   const bindingType = context.bindingMetadata[rawExp];
-  const maybeRef = context.inline && bindingType && bindingType !== "setup-const";
+  if (bindingType === "props" || bindingType === "props-aliased") {
+    context.onError(createCompilerError(44, exp.loc));
+    return createTransformProps();
+  }
+  const maybeRef = context.inline && (bindingType === "setup-let" || bindingType === "setup-ref" || bindingType === "setup-maybe-ref");
   if (!expString.trim() || !isMemberExpression(expString, context) && !maybeRef) {
     context.onError(createCompilerError(42, exp.loc));
     return createTransformProps();
@@ -18954,7 +19546,9 @@ var transformModel = (dir, node2, context) => {
     ]);
   }
   const props = [
+    // modelValue: foo
     createObjectProperty(propName, dir.exp),
+    // "onUpdate:modelValue": $event => (foo = $event)
     createObjectProperty(eventName, assignmentExp)
   ];
   if (context.prefixIdentifiers && !context.inVOnce && context.cacheHandlers && !hasScopeRef(exp, context.identifiers)) {
@@ -18963,7 +19557,13 @@ var transformModel = (dir, node2, context) => {
   if (dir.modifiers.length && node2.tagType === 1) {
     const modifiers = dir.modifiers.map((m) => (isSimpleIdentifier(m) ? m : JSON.stringify(m)) + `: true`).join(`, `);
     const modifiersKey = arg ? isStaticExp(arg) ? `${arg.content}Modifiers` : createCompoundExpression([arg, ' + "Modifiers"']) : `modelModifiers`;
-    props.push(createObjectProperty(modifiersKey, createSimpleExpression(`{ ${modifiers} }`, false, dir.loc, 2)));
+    props.push(createObjectProperty(modifiersKey, createSimpleExpression(
+      `{ ${modifiers} }`,
+      false,
+      dir.loc,
+      2
+      /* ConstantTypes.CAN_HOIST */
+    )));
   }
   return createTransformProps(props);
 };
@@ -19003,6 +19603,7 @@ function getBaseTransformPreset(prefixIdentifiers) {
       transformFor,
       ...[],
       ...prefixIdentifiers ? [
+        // order is important
         trackVForSlotScopes,
         transformExpression
       ] : [],
@@ -19023,10 +19624,16 @@ function baseCompile(template, options = {}) {
   const isModuleMode = options.mode === "module";
   const prefixIdentifiers = options.prefixIdentifiers === true || isModuleMode;
   if (!prefixIdentifiers && options.cacheHandlers) {
-    onError(createCompilerError(48));
+    onError(createCompilerError(
+      49
+      /* ErrorCodes.X_CACHE_HANDLER_NOT_SUPPORTED */
+    ));
   }
   if (options.scopeId && !isModuleMode) {
-    onError(createCompilerError(49));
+    onError(createCompilerError(
+      50
+      /* ErrorCodes.X_SCOPE_ID_NOT_SUPPORTED */
+    ));
   }
   const ast = isString(template) ? baseParse(template, options) : template;
   const [nodeTransforms, directiveTransforms] = getBaseTransformPreset(prefixIdentifiers);
@@ -19041,11 +19648,13 @@ function baseCompile(template, options = {}) {
     nodeTransforms: [
       ...nodeTransforms,
       ...options.nodeTransforms || []
+      // user transforms
     ],
     directiveTransforms: extend(
       {},
       directiveTransforms,
       options.directiveTransforms || {}
+      // user transforms
     )
   }));
   return generate(ast, extend({}, options, {
@@ -19080,2233 +19689,2233 @@ var namedCharacterReferences = {
   gt: ">",
   LT: "<",
   lt: "<",
-  "ac;": "\u223E",
-  "af;": "\u2061",
+  "ac;": "∾",
+  "af;": "⁡",
   AMP: "&",
   amp: "&",
-  "ap;": "\u2248",
-  "DD;": "\u2145",
-  "dd;": "\u2146",
-  deg: "\xB0",
-  "ee;": "\u2147",
-  "eg;": "\u2A9A",
-  "el;": "\u2A99",
-  ETH: "\xD0",
-  eth: "\xF0",
-  "gE;": "\u2267",
-  "ge;": "\u2265",
-  "Gg;": "\u22D9",
-  "gg;": "\u226B",
-  "gl;": "\u2277",
+  "ap;": "≈",
+  "DD;": "ⅅ",
+  "dd;": "ⅆ",
+  deg: "°",
+  "ee;": "ⅇ",
+  "eg;": "⪚",
+  "el;": "⪙",
+  ETH: "Ð",
+  eth: "ð",
+  "gE;": "≧",
+  "ge;": "≥",
+  "Gg;": "⋙",
+  "gg;": "≫",
+  "gl;": "≷",
   "GT;": ">",
-  "Gt;": "\u226B",
+  "Gt;": "≫",
   "gt;": ">",
-  "ic;": "\u2063",
-  "ii;": "\u2148",
-  "Im;": "\u2111",
-  "in;": "\u2208",
-  "it;": "\u2062",
-  "lE;": "\u2266",
-  "le;": "\u2264",
-  "lg;": "\u2276",
-  "Ll;": "\u22D8",
-  "ll;": "\u226A",
+  "ic;": "⁣",
+  "ii;": "ⅈ",
+  "Im;": "ℑ",
+  "in;": "∈",
+  "it;": "⁢",
+  "lE;": "≦",
+  "le;": "≤",
+  "lg;": "≶",
+  "Ll;": "⋘",
+  "ll;": "≪",
   "LT;": "<",
-  "Lt;": "\u226A",
+  "Lt;": "≪",
   "lt;": "<",
-  "mp;": "\u2213",
-  "Mu;": "\u039C",
-  "mu;": "\u03BC",
-  "ne;": "\u2260",
-  "ni;": "\u220B",
-  not: "\xAC",
-  "Nu;": "\u039D",
-  "nu;": "\u03BD",
-  "Or;": "\u2A54",
-  "or;": "\u2228",
-  "oS;": "\u24C8",
-  "Pi;": "\u03A0",
-  "pi;": "\u03C0",
-  "pm;": "\xB1",
-  "Pr;": "\u2ABB",
-  "pr;": "\u227A",
-  "Re;": "\u211C",
-  REG: "\xAE",
-  reg: "\xAE",
-  "rx;": "\u211E",
-  "Sc;": "\u2ABC",
-  "sc;": "\u227B",
-  shy: "\xAD",
-  uml: "\xA8",
-  "wp;": "\u2118",
-  "wr;": "\u2240",
-  "Xi;": "\u039E",
-  "xi;": "\u03BE",
-  yen: "\xA5",
-  "acd;": "\u223F",
-  "acE;": "\u223E\u0333",
-  "Acy;": "\u0410",
-  "acy;": "\u0430",
-  "Afr;": "\u{1D504}",
-  "afr;": "\u{1D51E}",
+  "mp;": "∓",
+  "Mu;": "Μ",
+  "mu;": "μ",
+  "ne;": "≠",
+  "ni;": "∋",
+  not: "¬",
+  "Nu;": "Ν",
+  "nu;": "ν",
+  "Or;": "⩔",
+  "or;": "∨",
+  "oS;": "Ⓢ",
+  "Pi;": "Π",
+  "pi;": "π",
+  "pm;": "±",
+  "Pr;": "⪻",
+  "pr;": "≺",
+  "Re;": "ℜ",
+  REG: "®",
+  reg: "®",
+  "rx;": "℞",
+  "Sc;": "⪼",
+  "sc;": "≻",
+  shy: "­",
+  uml: "¨",
+  "wp;": "℘",
+  "wr;": "≀",
+  "Xi;": "Ξ",
+  "xi;": "ξ",
+  yen: "¥",
+  "acd;": "∿",
+  "acE;": "∾̳",
+  "Acy;": "А",
+  "acy;": "а",
+  "Afr;": "𝔄",
+  "afr;": "𝔞",
   "AMP;": "&",
   "amp;": "&",
-  "And;": "\u2A53",
-  "and;": "\u2227",
-  "ang;": "\u2220",
-  "apE;": "\u2A70",
-  "ape;": "\u224A",
+  "And;": "⩓",
+  "and;": "∧",
+  "ang;": "∠",
+  "apE;": "⩰",
+  "ape;": "≊",
   "ast;": "*",
-  Auml: "\xC4",
-  auml: "\xE4",
-  "Bcy;": "\u0411",
-  "bcy;": "\u0431",
-  "Bfr;": "\u{1D505}",
-  "bfr;": "\u{1D51F}",
-  "bne;": "=\u20E5",
-  "bot;": "\u22A5",
-  "Cap;": "\u22D2",
-  "cap;": "\u2229",
-  cent: "\xA2",
-  "Cfr;": "\u212D",
-  "cfr;": "\u{1D520}",
-  "Chi;": "\u03A7",
-  "chi;": "\u03C7",
-  "cir;": "\u25CB",
-  COPY: "\xA9",
-  copy: "\xA9",
-  "Cup;": "\u22D3",
-  "cup;": "\u222A",
-  "Dcy;": "\u0414",
-  "dcy;": "\u0434",
-  "deg;": "\xB0",
-  "Del;": "\u2207",
-  "Dfr;": "\u{1D507}",
-  "dfr;": "\u{1D521}",
-  "die;": "\xA8",
-  "div;": "\xF7",
-  "Dot;": "\xA8",
-  "dot;": "\u02D9",
-  "Ecy;": "\u042D",
-  "ecy;": "\u044D",
-  "Efr;": "\u{1D508}",
-  "efr;": "\u{1D522}",
-  "egs;": "\u2A96",
-  "ell;": "\u2113",
-  "els;": "\u2A95",
-  "ENG;": "\u014A",
-  "eng;": "\u014B",
-  "Eta;": "\u0397",
-  "eta;": "\u03B7",
-  "ETH;": "\xD0",
-  "eth;": "\xF0",
-  Euml: "\xCB",
-  euml: "\xEB",
-  "Fcy;": "\u0424",
-  "fcy;": "\u0444",
-  "Ffr;": "\u{1D509}",
-  "ffr;": "\u{1D523}",
-  "gap;": "\u2A86",
-  "Gcy;": "\u0413",
-  "gcy;": "\u0433",
-  "gEl;": "\u2A8C",
-  "gel;": "\u22DB",
-  "geq;": "\u2265",
-  "ges;": "\u2A7E",
-  "Gfr;": "\u{1D50A}",
-  "gfr;": "\u{1D524}",
-  "ggg;": "\u22D9",
-  "gla;": "\u2AA5",
-  "glE;": "\u2A92",
-  "glj;": "\u2AA4",
-  "gnE;": "\u2269",
-  "gne;": "\u2A88",
+  Auml: "Ä",
+  auml: "ä",
+  "Bcy;": "Б",
+  "bcy;": "б",
+  "Bfr;": "𝔅",
+  "bfr;": "𝔟",
+  "bne;": "=⃥",
+  "bot;": "⊥",
+  "Cap;": "⋒",
+  "cap;": "∩",
+  cent: "¢",
+  "Cfr;": "ℭ",
+  "cfr;": "𝔠",
+  "Chi;": "Χ",
+  "chi;": "χ",
+  "cir;": "○",
+  COPY: "©",
+  copy: "©",
+  "Cup;": "⋓",
+  "cup;": "∪",
+  "Dcy;": "Д",
+  "dcy;": "д",
+  "deg;": "°",
+  "Del;": "∇",
+  "Dfr;": "𝔇",
+  "dfr;": "𝔡",
+  "die;": "¨",
+  "div;": "÷",
+  "Dot;": "¨",
+  "dot;": "˙",
+  "Ecy;": "Э",
+  "ecy;": "э",
+  "Efr;": "𝔈",
+  "efr;": "𝔢",
+  "egs;": "⪖",
+  "ell;": "ℓ",
+  "els;": "⪕",
+  "ENG;": "Ŋ",
+  "eng;": "ŋ",
+  "Eta;": "Η",
+  "eta;": "η",
+  "ETH;": "Ð",
+  "eth;": "ð",
+  Euml: "Ë",
+  euml: "ë",
+  "Fcy;": "Ф",
+  "fcy;": "ф",
+  "Ffr;": "𝔉",
+  "ffr;": "𝔣",
+  "gap;": "⪆",
+  "Gcy;": "Г",
+  "gcy;": "г",
+  "gEl;": "⪌",
+  "gel;": "⋛",
+  "geq;": "≥",
+  "ges;": "⩾",
+  "Gfr;": "𝔊",
+  "gfr;": "𝔤",
+  "ggg;": "⋙",
+  "gla;": "⪥",
+  "glE;": "⪒",
+  "glj;": "⪤",
+  "gnE;": "≩",
+  "gne;": "⪈",
   "Hat;": "^",
-  "Hfr;": "\u210C",
-  "hfr;": "\u{1D525}",
-  "Icy;": "\u0418",
-  "icy;": "\u0438",
-  "iff;": "\u21D4",
-  "Ifr;": "\u2111",
-  "ifr;": "\u{1D526}",
-  "Int;": "\u222C",
-  "int;": "\u222B",
-  Iuml: "\xCF",
-  iuml: "\xEF",
-  "Jcy;": "\u0419",
-  "jcy;": "\u0439",
-  "Jfr;": "\u{1D50D}",
-  "jfr;": "\u{1D527}",
-  "Kcy;": "\u041A",
-  "kcy;": "\u043A",
-  "Kfr;": "\u{1D50E}",
-  "kfr;": "\u{1D528}",
-  "lap;": "\u2A85",
-  "lat;": "\u2AAB",
-  "Lcy;": "\u041B",
-  "lcy;": "\u043B",
-  "lEg;": "\u2A8B",
-  "leg;": "\u22DA",
-  "leq;": "\u2264",
-  "les;": "\u2A7D",
-  "Lfr;": "\u{1D50F}",
-  "lfr;": "\u{1D529}",
-  "lgE;": "\u2A91",
-  "lnE;": "\u2268",
-  "lne;": "\u2A87",
-  "loz;": "\u25CA",
-  "lrm;": "\u200E",
-  "Lsh;": "\u21B0",
-  "lsh;": "\u21B0",
-  macr: "\xAF",
-  "Map;": "\u2905",
-  "map;": "\u21A6",
-  "Mcy;": "\u041C",
-  "mcy;": "\u043C",
-  "Mfr;": "\u{1D510}",
-  "mfr;": "\u{1D52A}",
-  "mho;": "\u2127",
-  "mid;": "\u2223",
-  "nap;": "\u2249",
-  nbsp: "\xA0",
-  "Ncy;": "\u041D",
-  "ncy;": "\u043D",
-  "Nfr;": "\u{1D511}",
-  "nfr;": "\u{1D52B}",
-  "ngE;": "\u2267\u0338",
-  "nge;": "\u2271",
-  "nGg;": "\u22D9\u0338",
-  "nGt;": "\u226B\u20D2",
-  "ngt;": "\u226F",
-  "nis;": "\u22FC",
-  "niv;": "\u220B",
-  "nlE;": "\u2266\u0338",
-  "nle;": "\u2270",
-  "nLl;": "\u22D8\u0338",
-  "nLt;": "\u226A\u20D2",
-  "nlt;": "\u226E",
-  "Not;": "\u2AEC",
-  "not;": "\xAC",
-  "npr;": "\u2280",
-  "nsc;": "\u2281",
+  "Hfr;": "ℌ",
+  "hfr;": "𝔥",
+  "Icy;": "И",
+  "icy;": "и",
+  "iff;": "⇔",
+  "Ifr;": "ℑ",
+  "ifr;": "𝔦",
+  "Int;": "∬",
+  "int;": "∫",
+  Iuml: "Ï",
+  iuml: "ï",
+  "Jcy;": "Й",
+  "jcy;": "й",
+  "Jfr;": "𝔍",
+  "jfr;": "𝔧",
+  "Kcy;": "К",
+  "kcy;": "к",
+  "Kfr;": "𝔎",
+  "kfr;": "𝔨",
+  "lap;": "⪅",
+  "lat;": "⪫",
+  "Lcy;": "Л",
+  "lcy;": "л",
+  "lEg;": "⪋",
+  "leg;": "⋚",
+  "leq;": "≤",
+  "les;": "⩽",
+  "Lfr;": "𝔏",
+  "lfr;": "𝔩",
+  "lgE;": "⪑",
+  "lnE;": "≨",
+  "lne;": "⪇",
+  "loz;": "◊",
+  "lrm;": "‎",
+  "Lsh;": "↰",
+  "lsh;": "↰",
+  macr: "¯",
+  "Map;": "⤅",
+  "map;": "↦",
+  "Mcy;": "М",
+  "mcy;": "м",
+  "Mfr;": "𝔐",
+  "mfr;": "𝔪",
+  "mho;": "℧",
+  "mid;": "∣",
+  "nap;": "≉",
+  nbsp: " ",
+  "Ncy;": "Н",
+  "ncy;": "н",
+  "Nfr;": "𝔑",
+  "nfr;": "𝔫",
+  "ngE;": "≧̸",
+  "nge;": "≱",
+  "nGg;": "⋙̸",
+  "nGt;": "≫⃒",
+  "ngt;": "≯",
+  "nis;": "⋼",
+  "niv;": "∋",
+  "nlE;": "≦̸",
+  "nle;": "≰",
+  "nLl;": "⋘̸",
+  "nLt;": "≪⃒",
+  "nlt;": "≮",
+  "Not;": "⫬",
+  "not;": "¬",
+  "npr;": "⊀",
+  "nsc;": "⊁",
   "num;": "#",
-  "Ocy;": "\u041E",
-  "ocy;": "\u043E",
-  "Ofr;": "\u{1D512}",
-  "ofr;": "\u{1D52C}",
-  "ogt;": "\u29C1",
-  "ohm;": "\u03A9",
-  "olt;": "\u29C0",
-  "ord;": "\u2A5D",
-  ordf: "\xAA",
-  ordm: "\xBA",
-  "orv;": "\u2A5B",
-  Ouml: "\xD6",
-  ouml: "\xF6",
-  "par;": "\u2225",
-  para: "\xB6",
-  "Pcy;": "\u041F",
-  "pcy;": "\u043F",
-  "Pfr;": "\u{1D513}",
-  "pfr;": "\u{1D52D}",
-  "Phi;": "\u03A6",
-  "phi;": "\u03C6",
-  "piv;": "\u03D6",
-  "prE;": "\u2AB3",
-  "pre;": "\u2AAF",
-  "Psi;": "\u03A8",
-  "psi;": "\u03C8",
-  "Qfr;": "\u{1D514}",
-  "qfr;": "\u{1D52E}",
+  "Ocy;": "О",
+  "ocy;": "о",
+  "Ofr;": "𝔒",
+  "ofr;": "𝔬",
+  "ogt;": "⧁",
+  "ohm;": "Ω",
+  "olt;": "⧀",
+  "ord;": "⩝",
+  ordf: "ª",
+  ordm: "º",
+  "orv;": "⩛",
+  Ouml: "Ö",
+  ouml: "ö",
+  "par;": "∥",
+  para: "¶",
+  "Pcy;": "П",
+  "pcy;": "п",
+  "Pfr;": "𝔓",
+  "pfr;": "𝔭",
+  "Phi;": "Φ",
+  "phi;": "φ",
+  "piv;": "ϖ",
+  "prE;": "⪳",
+  "pre;": "⪯",
+  "Psi;": "Ψ",
+  "psi;": "ψ",
+  "Qfr;": "𝔔",
+  "qfr;": "𝔮",
   QUOT: '"',
   quot: '"',
-  "Rcy;": "\u0420",
-  "rcy;": "\u0440",
-  "REG;": "\xAE",
-  "reg;": "\xAE",
-  "Rfr;": "\u211C",
-  "rfr;": "\u{1D52F}",
-  "Rho;": "\u03A1",
-  "rho;": "\u03C1",
-  "rlm;": "\u200F",
-  "Rsh;": "\u21B1",
-  "rsh;": "\u21B1",
-  "scE;": "\u2AB4",
-  "sce;": "\u2AB0",
-  "Scy;": "\u0421",
-  "scy;": "\u0441",
-  sect: "\xA7",
-  "Sfr;": "\u{1D516}",
-  "sfr;": "\u{1D530}",
-  "shy;": "\xAD",
-  "sim;": "\u223C",
-  "smt;": "\u2AAA",
+  "Rcy;": "Р",
+  "rcy;": "р",
+  "REG;": "®",
+  "reg;": "®",
+  "Rfr;": "ℜ",
+  "rfr;": "𝔯",
+  "Rho;": "Ρ",
+  "rho;": "ρ",
+  "rlm;": "‏",
+  "Rsh;": "↱",
+  "rsh;": "↱",
+  "scE;": "⪴",
+  "sce;": "⪰",
+  "Scy;": "С",
+  "scy;": "с",
+  sect: "§",
+  "Sfr;": "𝔖",
+  "sfr;": "𝔰",
+  "shy;": "­",
+  "sim;": "∼",
+  "smt;": "⪪",
   "sol;": "/",
-  "squ;": "\u25A1",
-  "Sub;": "\u22D0",
-  "sub;": "\u2282",
-  "Sum;": "\u2211",
-  "sum;": "\u2211",
-  "Sup;": "\u22D1",
-  "sup;": "\u2283",
-  sup1: "\xB9",
-  sup2: "\xB2",
-  sup3: "\xB3",
+  "squ;": "□",
+  "Sub;": "⋐",
+  "sub;": "⊂",
+  "Sum;": "∑",
+  "sum;": "∑",
+  "Sup;": "⋑",
+  "sup;": "⊃",
+  sup1: "¹",
+  sup2: "²",
+  sup3: "³",
   "Tab;": "	",
-  "Tau;": "\u03A4",
-  "tau;": "\u03C4",
-  "Tcy;": "\u0422",
-  "tcy;": "\u0442",
-  "Tfr;": "\u{1D517}",
-  "tfr;": "\u{1D531}",
-  "top;": "\u22A4",
-  "Ucy;": "\u0423",
-  "ucy;": "\u0443",
-  "Ufr;": "\u{1D518}",
-  "ufr;": "\u{1D532}",
-  "uml;": "\xA8",
-  Uuml: "\xDC",
-  uuml: "\xFC",
-  "Vcy;": "\u0412",
-  "vcy;": "\u0432",
-  "Vee;": "\u22C1",
-  "vee;": "\u2228",
-  "Vfr;": "\u{1D519}",
-  "vfr;": "\u{1D533}",
-  "Wfr;": "\u{1D51A}",
-  "wfr;": "\u{1D534}",
-  "Xfr;": "\u{1D51B}",
-  "xfr;": "\u{1D535}",
-  "Ycy;": "\u042B",
-  "ycy;": "\u044B",
-  "yen;": "\xA5",
-  "Yfr;": "\u{1D51C}",
-  "yfr;": "\u{1D536}",
-  yuml: "\xFF",
-  "Zcy;": "\u0417",
-  "zcy;": "\u0437",
-  "Zfr;": "\u2128",
-  "zfr;": "\u{1D537}",
-  "zwj;": "\u200D",
-  Acirc: "\xC2",
-  acirc: "\xE2",
-  acute: "\xB4",
-  AElig: "\xC6",
-  aelig: "\xE6",
-  "andd;": "\u2A5C",
-  "andv;": "\u2A5A",
-  "ange;": "\u29A4",
-  "Aopf;": "\u{1D538}",
-  "aopf;": "\u{1D552}",
-  "apid;": "\u224B",
+  "Tau;": "Τ",
+  "tau;": "τ",
+  "Tcy;": "Т",
+  "tcy;": "т",
+  "Tfr;": "𝔗",
+  "tfr;": "𝔱",
+  "top;": "⊤",
+  "Ucy;": "У",
+  "ucy;": "у",
+  "Ufr;": "𝔘",
+  "ufr;": "𝔲",
+  "uml;": "¨",
+  Uuml: "Ü",
+  uuml: "ü",
+  "Vcy;": "В",
+  "vcy;": "в",
+  "Vee;": "⋁",
+  "vee;": "∨",
+  "Vfr;": "𝔙",
+  "vfr;": "𝔳",
+  "Wfr;": "𝔚",
+  "wfr;": "𝔴",
+  "Xfr;": "𝔛",
+  "xfr;": "𝔵",
+  "Ycy;": "Ы",
+  "ycy;": "ы",
+  "yen;": "¥",
+  "Yfr;": "𝔜",
+  "yfr;": "𝔶",
+  yuml: "ÿ",
+  "Zcy;": "З",
+  "zcy;": "з",
+  "Zfr;": "ℨ",
+  "zfr;": "𝔷",
+  "zwj;": "‍",
+  Acirc: "Â",
+  acirc: "â",
+  acute: "´",
+  AElig: "Æ",
+  aelig: "æ",
+  "andd;": "⩜",
+  "andv;": "⩚",
+  "ange;": "⦤",
+  "Aopf;": "𝔸",
+  "aopf;": "𝕒",
+  "apid;": "≋",
   "apos;": "'",
-  Aring: "\xC5",
-  aring: "\xE5",
-  "Ascr;": "\u{1D49C}",
-  "ascr;": "\u{1D4B6}",
-  "Auml;": "\xC4",
-  "auml;": "\xE4",
-  "Barv;": "\u2AE7",
-  "bbrk;": "\u23B5",
-  "Beta;": "\u0392",
-  "beta;": "\u03B2",
-  "beth;": "\u2136",
-  "bNot;": "\u2AED",
-  "bnot;": "\u2310",
-  "Bopf;": "\u{1D539}",
-  "bopf;": "\u{1D553}",
-  "boxH;": "\u2550",
-  "boxh;": "\u2500",
-  "boxV;": "\u2551",
-  "boxv;": "\u2502",
-  "Bscr;": "\u212C",
-  "bscr;": "\u{1D4B7}",
-  "bsim;": "\u223D",
+  Aring: "Å",
+  aring: "å",
+  "Ascr;": "𝒜",
+  "ascr;": "𝒶",
+  "Auml;": "Ä",
+  "auml;": "ä",
+  "Barv;": "⫧",
+  "bbrk;": "⎵",
+  "Beta;": "Β",
+  "beta;": "β",
+  "beth;": "ℶ",
+  "bNot;": "⫭",
+  "bnot;": "⌐",
+  "Bopf;": "𝔹",
+  "bopf;": "𝕓",
+  "boxH;": "═",
+  "boxh;": "─",
+  "boxV;": "║",
+  "boxv;": "│",
+  "Bscr;": "ℬ",
+  "bscr;": "𝒷",
+  "bsim;": "∽",
   "bsol;": "\\",
-  "bull;": "\u2022",
-  "bump;": "\u224E",
-  "caps;": "\u2229\uFE00",
-  "Cdot;": "\u010A",
-  "cdot;": "\u010B",
-  cedil: "\xB8",
-  "cent;": "\xA2",
-  "CHcy;": "\u0427",
-  "chcy;": "\u0447",
-  "circ;": "\u02C6",
-  "cirE;": "\u29C3",
-  "cire;": "\u2257",
-  "comp;": "\u2201",
-  "cong;": "\u2245",
-  "Copf;": "\u2102",
-  "copf;": "\u{1D554}",
-  "COPY;": "\xA9",
-  "copy;": "\xA9",
-  "Cscr;": "\u{1D49E}",
-  "cscr;": "\u{1D4B8}",
-  "csub;": "\u2ACF",
-  "csup;": "\u2AD0",
-  "cups;": "\u222A\uFE00",
-  "Darr;": "\u21A1",
-  "dArr;": "\u21D3",
-  "darr;": "\u2193",
-  "dash;": "\u2010",
-  "dHar;": "\u2965",
-  "diam;": "\u22C4",
-  "DJcy;": "\u0402",
-  "djcy;": "\u0452",
-  "Dopf;": "\u{1D53B}",
-  "dopf;": "\u{1D555}",
-  "Dscr;": "\u{1D49F}",
-  "dscr;": "\u{1D4B9}",
-  "DScy;": "\u0405",
-  "dscy;": "\u0455",
-  "dsol;": "\u29F6",
-  "dtri;": "\u25BF",
-  "DZcy;": "\u040F",
-  "dzcy;": "\u045F",
-  "ecir;": "\u2256",
-  Ecirc: "\xCA",
-  ecirc: "\xEA",
-  "Edot;": "\u0116",
-  "eDot;": "\u2251",
-  "edot;": "\u0117",
-  "emsp;": "\u2003",
-  "ensp;": "\u2002",
-  "Eopf;": "\u{1D53C}",
-  "eopf;": "\u{1D556}",
-  "epar;": "\u22D5",
-  "epsi;": "\u03B5",
-  "Escr;": "\u2130",
-  "escr;": "\u212F",
-  "Esim;": "\u2A73",
-  "esim;": "\u2242",
-  "Euml;": "\xCB",
-  "euml;": "\xEB",
-  "euro;": "\u20AC",
+  "bull;": "•",
+  "bump;": "≎",
+  "caps;": "∩︀",
+  "Cdot;": "Ċ",
+  "cdot;": "ċ",
+  cedil: "¸",
+  "cent;": "¢",
+  "CHcy;": "Ч",
+  "chcy;": "ч",
+  "circ;": "ˆ",
+  "cirE;": "⧃",
+  "cire;": "≗",
+  "comp;": "∁",
+  "cong;": "≅",
+  "Copf;": "ℂ",
+  "copf;": "𝕔",
+  "COPY;": "©",
+  "copy;": "©",
+  "Cscr;": "𝒞",
+  "cscr;": "𝒸",
+  "csub;": "⫏",
+  "csup;": "⫐",
+  "cups;": "∪︀",
+  "Darr;": "↡",
+  "dArr;": "⇓",
+  "darr;": "↓",
+  "dash;": "‐",
+  "dHar;": "⥥",
+  "diam;": "⋄",
+  "DJcy;": "Ђ",
+  "djcy;": "ђ",
+  "Dopf;": "𝔻",
+  "dopf;": "𝕕",
+  "Dscr;": "𝒟",
+  "dscr;": "𝒹",
+  "DScy;": "Ѕ",
+  "dscy;": "ѕ",
+  "dsol;": "⧶",
+  "dtri;": "▿",
+  "DZcy;": "Џ",
+  "dzcy;": "џ",
+  "ecir;": "≖",
+  Ecirc: "Ê",
+  ecirc: "ê",
+  "Edot;": "Ė",
+  "eDot;": "≑",
+  "edot;": "ė",
+  "emsp;": " ",
+  "ensp;": " ",
+  "Eopf;": "𝔼",
+  "eopf;": "𝕖",
+  "epar;": "⋕",
+  "epsi;": "ε",
+  "Escr;": "ℰ",
+  "escr;": "ℯ",
+  "Esim;": "⩳",
+  "esim;": "≂",
+  "Euml;": "Ë",
+  "euml;": "ë",
+  "euro;": "€",
   "excl;": "!",
-  "flat;": "\u266D",
-  "fnof;": "\u0192",
-  "Fopf;": "\u{1D53D}",
-  "fopf;": "\u{1D557}",
-  "fork;": "\u22D4",
-  "Fscr;": "\u2131",
-  "fscr;": "\u{1D4BB}",
-  "Gdot;": "\u0120",
-  "gdot;": "\u0121",
-  "geqq;": "\u2267",
-  "gesl;": "\u22DB\uFE00",
-  "GJcy;": "\u0403",
-  "gjcy;": "\u0453",
-  "gnap;": "\u2A8A",
-  "gneq;": "\u2A88",
-  "Gopf;": "\u{1D53E}",
-  "gopf;": "\u{1D558}",
-  "Gscr;": "\u{1D4A2}",
-  "gscr;": "\u210A",
-  "gsim;": "\u2273",
-  "gtcc;": "\u2AA7",
-  "gvnE;": "\u2269\uFE00",
-  "half;": "\xBD",
-  "hArr;": "\u21D4",
-  "harr;": "\u2194",
-  "hbar;": "\u210F",
-  "Hopf;": "\u210D",
-  "hopf;": "\u{1D559}",
-  "Hscr;": "\u210B",
-  "hscr;": "\u{1D4BD}",
-  Icirc: "\xCE",
-  icirc: "\xEE",
-  "Idot;": "\u0130",
-  "IEcy;": "\u0415",
-  "iecy;": "\u0435",
-  iexcl: "\xA1",
-  "imof;": "\u22B7",
-  "IOcy;": "\u0401",
-  "iocy;": "\u0451",
-  "Iopf;": "\u{1D540}",
-  "iopf;": "\u{1D55A}",
-  "Iota;": "\u0399",
-  "iota;": "\u03B9",
-  "Iscr;": "\u2110",
-  "iscr;": "\u{1D4BE}",
-  "isin;": "\u2208",
-  "Iuml;": "\xCF",
-  "iuml;": "\xEF",
-  "Jopf;": "\u{1D541}",
-  "jopf;": "\u{1D55B}",
-  "Jscr;": "\u{1D4A5}",
-  "jscr;": "\u{1D4BF}",
-  "KHcy;": "\u0425",
-  "khcy;": "\u0445",
-  "KJcy;": "\u040C",
-  "kjcy;": "\u045C",
-  "Kopf;": "\u{1D542}",
-  "kopf;": "\u{1D55C}",
-  "Kscr;": "\u{1D4A6}",
-  "kscr;": "\u{1D4C0}",
-  "Lang;": "\u27EA",
-  "lang;": "\u27E8",
-  laquo: "\xAB",
-  "Larr;": "\u219E",
-  "lArr;": "\u21D0",
-  "larr;": "\u2190",
-  "late;": "\u2AAD",
+  "flat;": "♭",
+  "fnof;": "ƒ",
+  "Fopf;": "𝔽",
+  "fopf;": "𝕗",
+  "fork;": "⋔",
+  "Fscr;": "ℱ",
+  "fscr;": "𝒻",
+  "Gdot;": "Ġ",
+  "gdot;": "ġ",
+  "geqq;": "≧",
+  "gesl;": "⋛︀",
+  "GJcy;": "Ѓ",
+  "gjcy;": "ѓ",
+  "gnap;": "⪊",
+  "gneq;": "⪈",
+  "Gopf;": "𝔾",
+  "gopf;": "𝕘",
+  "Gscr;": "𝒢",
+  "gscr;": "ℊ",
+  "gsim;": "≳",
+  "gtcc;": "⪧",
+  "gvnE;": "≩︀",
+  "half;": "½",
+  "hArr;": "⇔",
+  "harr;": "↔",
+  "hbar;": "ℏ",
+  "Hopf;": "ℍ",
+  "hopf;": "𝕙",
+  "Hscr;": "ℋ",
+  "hscr;": "𝒽",
+  Icirc: "Î",
+  icirc: "î",
+  "Idot;": "İ",
+  "IEcy;": "Е",
+  "iecy;": "е",
+  iexcl: "¡",
+  "imof;": "⊷",
+  "IOcy;": "Ё",
+  "iocy;": "ё",
+  "Iopf;": "𝕀",
+  "iopf;": "𝕚",
+  "Iota;": "Ι",
+  "iota;": "ι",
+  "Iscr;": "ℐ",
+  "iscr;": "𝒾",
+  "isin;": "∈",
+  "Iuml;": "Ï",
+  "iuml;": "ï",
+  "Jopf;": "𝕁",
+  "jopf;": "𝕛",
+  "Jscr;": "𝒥",
+  "jscr;": "𝒿",
+  "KHcy;": "Х",
+  "khcy;": "х",
+  "KJcy;": "Ќ",
+  "kjcy;": "ќ",
+  "Kopf;": "𝕂",
+  "kopf;": "𝕜",
+  "Kscr;": "𝒦",
+  "kscr;": "𝓀",
+  "Lang;": "⟪",
+  "lang;": "⟨",
+  laquo: "«",
+  "Larr;": "↞",
+  "lArr;": "⇐",
+  "larr;": "←",
+  "late;": "⪭",
   "lcub;": "{",
-  "ldca;": "\u2936",
-  "ldsh;": "\u21B2",
-  "leqq;": "\u2266",
-  "lesg;": "\u22DA\uFE00",
-  "lHar;": "\u2962",
-  "LJcy;": "\u0409",
-  "ljcy;": "\u0459",
-  "lnap;": "\u2A89",
-  "lneq;": "\u2A87",
-  "Lopf;": "\u{1D543}",
-  "lopf;": "\u{1D55D}",
-  "lozf;": "\u29EB",
+  "ldca;": "⤶",
+  "ldsh;": "↲",
+  "leqq;": "≦",
+  "lesg;": "⋚︀",
+  "lHar;": "⥢",
+  "LJcy;": "Љ",
+  "ljcy;": "љ",
+  "lnap;": "⪉",
+  "lneq;": "⪇",
+  "Lopf;": "𝕃",
+  "lopf;": "𝕝",
+  "lozf;": "⧫",
   "lpar;": "(",
-  "Lscr;": "\u2112",
-  "lscr;": "\u{1D4C1}",
-  "lsim;": "\u2272",
+  "Lscr;": "ℒ",
+  "lscr;": "𝓁",
+  "lsim;": "≲",
   "lsqb;": "[",
-  "ltcc;": "\u2AA6",
-  "ltri;": "\u25C3",
-  "lvnE;": "\u2268\uFE00",
-  "macr;": "\xAF",
-  "male;": "\u2642",
-  "malt;": "\u2720",
-  micro: "\xB5",
-  "mlcp;": "\u2ADB",
-  "mldr;": "\u2026",
-  "Mopf;": "\u{1D544}",
-  "mopf;": "\u{1D55E}",
-  "Mscr;": "\u2133",
-  "mscr;": "\u{1D4C2}",
-  "nang;": "\u2220\u20D2",
-  "napE;": "\u2A70\u0338",
-  "nbsp;": "\xA0",
-  "ncap;": "\u2A43",
-  "ncup;": "\u2A42",
-  "ngeq;": "\u2271",
-  "nges;": "\u2A7E\u0338",
-  "ngtr;": "\u226F",
-  "nGtv;": "\u226B\u0338",
-  "nisd;": "\u22FA",
-  "NJcy;": "\u040A",
-  "njcy;": "\u045A",
-  "nldr;": "\u2025",
-  "nleq;": "\u2270",
-  "nles;": "\u2A7D\u0338",
-  "nLtv;": "\u226A\u0338",
-  "nmid;": "\u2224",
-  "Nopf;": "\u2115",
-  "nopf;": "\u{1D55F}",
-  "npar;": "\u2226",
-  "npre;": "\u2AAF\u0338",
-  "nsce;": "\u2AB0\u0338",
-  "Nscr;": "\u{1D4A9}",
-  "nscr;": "\u{1D4C3}",
-  "nsim;": "\u2241",
-  "nsub;": "\u2284",
-  "nsup;": "\u2285",
-  "ntgl;": "\u2279",
-  "ntlg;": "\u2278",
-  "nvap;": "\u224D\u20D2",
-  "nvge;": "\u2265\u20D2",
-  "nvgt;": ">\u20D2",
-  "nvle;": "\u2264\u20D2",
-  "nvlt;": "<\u20D2",
-  "oast;": "\u229B",
-  "ocir;": "\u229A",
-  Ocirc: "\xD4",
-  ocirc: "\xF4",
-  "odiv;": "\u2A38",
-  "odot;": "\u2299",
-  "ogon;": "\u02DB",
-  "oint;": "\u222E",
-  "omid;": "\u29B6",
-  "Oopf;": "\u{1D546}",
-  "oopf;": "\u{1D560}",
-  "opar;": "\u29B7",
-  "ordf;": "\xAA",
-  "ordm;": "\xBA",
-  "oror;": "\u2A56",
-  "Oscr;": "\u{1D4AA}",
-  "oscr;": "\u2134",
-  "osol;": "\u2298",
-  "Ouml;": "\xD6",
-  "ouml;": "\xF6",
-  "para;": "\xB6",
-  "part;": "\u2202",
-  "perp;": "\u22A5",
-  "phiv;": "\u03D5",
+  "ltcc;": "⪦",
+  "ltri;": "◃",
+  "lvnE;": "≨︀",
+  "macr;": "¯",
+  "male;": "♂",
+  "malt;": "✠",
+  micro: "µ",
+  "mlcp;": "⫛",
+  "mldr;": "…",
+  "Mopf;": "𝕄",
+  "mopf;": "𝕞",
+  "Mscr;": "ℳ",
+  "mscr;": "𝓂",
+  "nang;": "∠⃒",
+  "napE;": "⩰̸",
+  "nbsp;": " ",
+  "ncap;": "⩃",
+  "ncup;": "⩂",
+  "ngeq;": "≱",
+  "nges;": "⩾̸",
+  "ngtr;": "≯",
+  "nGtv;": "≫̸",
+  "nisd;": "⋺",
+  "NJcy;": "Њ",
+  "njcy;": "њ",
+  "nldr;": "‥",
+  "nleq;": "≰",
+  "nles;": "⩽̸",
+  "nLtv;": "≪̸",
+  "nmid;": "∤",
+  "Nopf;": "ℕ",
+  "nopf;": "𝕟",
+  "npar;": "∦",
+  "npre;": "⪯̸",
+  "nsce;": "⪰̸",
+  "Nscr;": "𝒩",
+  "nscr;": "𝓃",
+  "nsim;": "≁",
+  "nsub;": "⊄",
+  "nsup;": "⊅",
+  "ntgl;": "≹",
+  "ntlg;": "≸",
+  "nvap;": "≍⃒",
+  "nvge;": "≥⃒",
+  "nvgt;": ">⃒",
+  "nvle;": "≤⃒",
+  "nvlt;": "<⃒",
+  "oast;": "⊛",
+  "ocir;": "⊚",
+  Ocirc: "Ô",
+  ocirc: "ô",
+  "odiv;": "⨸",
+  "odot;": "⊙",
+  "ogon;": "˛",
+  "oint;": "∮",
+  "omid;": "⦶",
+  "Oopf;": "𝕆",
+  "oopf;": "𝕠",
+  "opar;": "⦷",
+  "ordf;": "ª",
+  "ordm;": "º",
+  "oror;": "⩖",
+  "Oscr;": "𝒪",
+  "oscr;": "ℴ",
+  "osol;": "⊘",
+  "Ouml;": "Ö",
+  "ouml;": "ö",
+  "para;": "¶",
+  "part;": "∂",
+  "perp;": "⊥",
+  "phiv;": "ϕ",
   "plus;": "+",
-  "Popf;": "\u2119",
-  "popf;": "\u{1D561}",
-  pound: "\xA3",
-  "prap;": "\u2AB7",
-  "prec;": "\u227A",
-  "prnE;": "\u2AB5",
-  "prod;": "\u220F",
-  "prop;": "\u221D",
-  "Pscr;": "\u{1D4AB}",
-  "pscr;": "\u{1D4C5}",
-  "qint;": "\u2A0C",
-  "Qopf;": "\u211A",
-  "qopf;": "\u{1D562}",
-  "Qscr;": "\u{1D4AC}",
-  "qscr;": "\u{1D4C6}",
+  "Popf;": "ℙ",
+  "popf;": "𝕡",
+  pound: "£",
+  "prap;": "⪷",
+  "prec;": "≺",
+  "prnE;": "⪵",
+  "prod;": "∏",
+  "prop;": "∝",
+  "Pscr;": "𝒫",
+  "pscr;": "𝓅",
+  "qint;": "⨌",
+  "Qopf;": "ℚ",
+  "qopf;": "𝕢",
+  "Qscr;": "𝒬",
+  "qscr;": "𝓆",
   "QUOT;": '"',
   "quot;": '"',
-  "race;": "\u223D\u0331",
-  "Rang;": "\u27EB",
-  "rang;": "\u27E9",
-  raquo: "\xBB",
-  "Rarr;": "\u21A0",
-  "rArr;": "\u21D2",
-  "rarr;": "\u2192",
+  "race;": "∽̱",
+  "Rang;": "⟫",
+  "rang;": "⟩",
+  raquo: "»",
+  "Rarr;": "↠",
+  "rArr;": "⇒",
+  "rarr;": "→",
   "rcub;": "}",
-  "rdca;": "\u2937",
-  "rdsh;": "\u21B3",
-  "real;": "\u211C",
-  "rect;": "\u25AD",
-  "rHar;": "\u2964",
-  "rhov;": "\u03F1",
-  "ring;": "\u02DA",
-  "Ropf;": "\u211D",
-  "ropf;": "\u{1D563}",
+  "rdca;": "⤷",
+  "rdsh;": "↳",
+  "real;": "ℜ",
+  "rect;": "▭",
+  "rHar;": "⥤",
+  "rhov;": "ϱ",
+  "ring;": "˚",
+  "Ropf;": "ℝ",
+  "ropf;": "𝕣",
   "rpar;": ")",
-  "Rscr;": "\u211B",
-  "rscr;": "\u{1D4C7}",
+  "Rscr;": "ℛ",
+  "rscr;": "𝓇",
   "rsqb;": "]",
-  "rtri;": "\u25B9",
-  "scap;": "\u2AB8",
-  "scnE;": "\u2AB6",
-  "sdot;": "\u22C5",
-  "sect;": "\xA7",
+  "rtri;": "▹",
+  "scap;": "⪸",
+  "scnE;": "⪶",
+  "sdot;": "⋅",
+  "sect;": "§",
   "semi;": ";",
-  "sext;": "\u2736",
-  "SHcy;": "\u0428",
-  "shcy;": "\u0448",
-  "sime;": "\u2243",
-  "simg;": "\u2A9E",
-  "siml;": "\u2A9D",
-  "smid;": "\u2223",
-  "smte;": "\u2AAC",
-  "solb;": "\u29C4",
-  "Sopf;": "\u{1D54A}",
-  "sopf;": "\u{1D564}",
-  "spar;": "\u2225",
-  "Sqrt;": "\u221A",
-  "squf;": "\u25AA",
-  "Sscr;": "\u{1D4AE}",
-  "sscr;": "\u{1D4C8}",
-  "Star;": "\u22C6",
-  "star;": "\u2606",
-  "subE;": "\u2AC5",
-  "sube;": "\u2286",
-  "succ;": "\u227B",
-  "sung;": "\u266A",
-  "sup1;": "\xB9",
-  "sup2;": "\xB2",
-  "sup3;": "\xB3",
-  "supE;": "\u2AC6",
-  "supe;": "\u2287",
-  szlig: "\xDF",
-  "tbrk;": "\u23B4",
-  "tdot;": "\u20DB",
-  THORN: "\xDE",
-  thorn: "\xFE",
-  times: "\xD7",
-  "tint;": "\u222D",
-  "toea;": "\u2928",
-  "Topf;": "\u{1D54B}",
-  "topf;": "\u{1D565}",
-  "tosa;": "\u2929",
-  "trie;": "\u225C",
-  "Tscr;": "\u{1D4AF}",
-  "tscr;": "\u{1D4C9}",
-  "TScy;": "\u0426",
-  "tscy;": "\u0446",
-  "Uarr;": "\u219F",
-  "uArr;": "\u21D1",
-  "uarr;": "\u2191",
-  Ucirc: "\xDB",
-  ucirc: "\xFB",
-  "uHar;": "\u2963",
-  "Uopf;": "\u{1D54C}",
-  "uopf;": "\u{1D566}",
-  "Upsi;": "\u03D2",
-  "upsi;": "\u03C5",
-  "Uscr;": "\u{1D4B0}",
-  "uscr;": "\u{1D4CA}",
-  "utri;": "\u25B5",
-  "Uuml;": "\xDC",
-  "uuml;": "\xFC",
-  "vArr;": "\u21D5",
-  "varr;": "\u2195",
-  "Vbar;": "\u2AEB",
-  "vBar;": "\u2AE8",
-  "Vert;": "\u2016",
+  "sext;": "✶",
+  "SHcy;": "Ш",
+  "shcy;": "ш",
+  "sime;": "≃",
+  "simg;": "⪞",
+  "siml;": "⪝",
+  "smid;": "∣",
+  "smte;": "⪬",
+  "solb;": "⧄",
+  "Sopf;": "𝕊",
+  "sopf;": "𝕤",
+  "spar;": "∥",
+  "Sqrt;": "√",
+  "squf;": "▪",
+  "Sscr;": "𝒮",
+  "sscr;": "𝓈",
+  "Star;": "⋆",
+  "star;": "☆",
+  "subE;": "⫅",
+  "sube;": "⊆",
+  "succ;": "≻",
+  "sung;": "♪",
+  "sup1;": "¹",
+  "sup2;": "²",
+  "sup3;": "³",
+  "supE;": "⫆",
+  "supe;": "⊇",
+  szlig: "ß",
+  "tbrk;": "⎴",
+  "tdot;": "⃛",
+  THORN: "Þ",
+  thorn: "þ",
+  times: "×",
+  "tint;": "∭",
+  "toea;": "⤨",
+  "Topf;": "𝕋",
+  "topf;": "𝕥",
+  "tosa;": "⤩",
+  "trie;": "≜",
+  "Tscr;": "𝒯",
+  "tscr;": "𝓉",
+  "TScy;": "Ц",
+  "tscy;": "ц",
+  "Uarr;": "↟",
+  "uArr;": "⇑",
+  "uarr;": "↑",
+  Ucirc: "Û",
+  ucirc: "û",
+  "uHar;": "⥣",
+  "Uopf;": "𝕌",
+  "uopf;": "𝕦",
+  "Upsi;": "ϒ",
+  "upsi;": "υ",
+  "Uscr;": "𝒰",
+  "uscr;": "𝓊",
+  "utri;": "▵",
+  "Uuml;": "Ü",
+  "uuml;": "ü",
+  "vArr;": "⇕",
+  "varr;": "↕",
+  "Vbar;": "⫫",
+  "vBar;": "⫨",
+  "Vert;": "‖",
   "vert;": "|",
-  "Vopf;": "\u{1D54D}",
-  "vopf;": "\u{1D567}",
-  "Vscr;": "\u{1D4B1}",
-  "vscr;": "\u{1D4CB}",
-  "Wopf;": "\u{1D54E}",
-  "wopf;": "\u{1D568}",
-  "Wscr;": "\u{1D4B2}",
-  "wscr;": "\u{1D4CC}",
-  "xcap;": "\u22C2",
-  "xcup;": "\u22C3",
-  "xmap;": "\u27FC",
-  "xnis;": "\u22FB",
-  "Xopf;": "\u{1D54F}",
-  "xopf;": "\u{1D569}",
-  "Xscr;": "\u{1D4B3}",
-  "xscr;": "\u{1D4CD}",
-  "xvee;": "\u22C1",
-  "YAcy;": "\u042F",
-  "yacy;": "\u044F",
-  "YIcy;": "\u0407",
-  "yicy;": "\u0457",
-  "Yopf;": "\u{1D550}",
-  "yopf;": "\u{1D56A}",
-  "Yscr;": "\u{1D4B4}",
-  "yscr;": "\u{1D4CE}",
-  "YUcy;": "\u042E",
-  "yucy;": "\u044E",
-  "Yuml;": "\u0178",
-  "yuml;": "\xFF",
-  "Zdot;": "\u017B",
-  "zdot;": "\u017C",
-  "Zeta;": "\u0396",
-  "zeta;": "\u03B6",
-  "ZHcy;": "\u0416",
-  "zhcy;": "\u0436",
-  "Zopf;": "\u2124",
-  "zopf;": "\u{1D56B}",
-  "Zscr;": "\u{1D4B5}",
-  "zscr;": "\u{1D4CF}",
-  "zwnj;": "\u200C",
-  Aacute: "\xC1",
-  aacute: "\xE1",
-  "Acirc;": "\xC2",
-  "acirc;": "\xE2",
-  "acute;": "\xB4",
-  "AElig;": "\xC6",
-  "aelig;": "\xE6",
-  Agrave: "\xC0",
-  agrave: "\xE0",
-  "aleph;": "\u2135",
-  "Alpha;": "\u0391",
-  "alpha;": "\u03B1",
-  "Amacr;": "\u0100",
-  "amacr;": "\u0101",
-  "amalg;": "\u2A3F",
-  "angle;": "\u2220",
-  "angrt;": "\u221F",
-  "angst;": "\xC5",
-  "Aogon;": "\u0104",
-  "aogon;": "\u0105",
-  "Aring;": "\xC5",
-  "aring;": "\xE5",
-  "asymp;": "\u2248",
-  Atilde: "\xC3",
-  atilde: "\xE3",
-  "awint;": "\u2A11",
-  "bcong;": "\u224C",
-  "bdquo;": "\u201E",
-  "bepsi;": "\u03F6",
-  "blank;": "\u2423",
-  "blk12;": "\u2592",
-  "blk14;": "\u2591",
-  "blk34;": "\u2593",
-  "block;": "\u2588",
-  "boxDL;": "\u2557",
-  "boxDl;": "\u2556",
-  "boxdL;": "\u2555",
-  "boxdl;": "\u2510",
-  "boxDR;": "\u2554",
-  "boxDr;": "\u2553",
-  "boxdR;": "\u2552",
-  "boxdr;": "\u250C",
-  "boxHD;": "\u2566",
-  "boxHd;": "\u2564",
-  "boxhD;": "\u2565",
-  "boxhd;": "\u252C",
-  "boxHU;": "\u2569",
-  "boxHu;": "\u2567",
-  "boxhU;": "\u2568",
-  "boxhu;": "\u2534",
-  "boxUL;": "\u255D",
-  "boxUl;": "\u255C",
-  "boxuL;": "\u255B",
-  "boxul;": "\u2518",
-  "boxUR;": "\u255A",
-  "boxUr;": "\u2559",
-  "boxuR;": "\u2558",
-  "boxur;": "\u2514",
-  "boxVH;": "\u256C",
-  "boxVh;": "\u256B",
-  "boxvH;": "\u256A",
-  "boxvh;": "\u253C",
-  "boxVL;": "\u2563",
-  "boxVl;": "\u2562",
-  "boxvL;": "\u2561",
-  "boxvl;": "\u2524",
-  "boxVR;": "\u2560",
-  "boxVr;": "\u255F",
-  "boxvR;": "\u255E",
-  "boxvr;": "\u251C",
-  "Breve;": "\u02D8",
-  "breve;": "\u02D8",
-  brvbar: "\xA6",
-  "bsemi;": "\u204F",
-  "bsime;": "\u22CD",
-  "bsolb;": "\u29C5",
-  "bumpE;": "\u2AAE",
-  "bumpe;": "\u224F",
-  "caret;": "\u2041",
-  "caron;": "\u02C7",
-  "ccaps;": "\u2A4D",
-  Ccedil: "\xC7",
-  ccedil: "\xE7",
-  "Ccirc;": "\u0108",
-  "ccirc;": "\u0109",
-  "ccups;": "\u2A4C",
-  "cedil;": "\xB8",
-  "check;": "\u2713",
-  "clubs;": "\u2663",
-  "Colon;": "\u2237",
+  "Vopf;": "𝕍",
+  "vopf;": "𝕧",
+  "Vscr;": "𝒱",
+  "vscr;": "𝓋",
+  "Wopf;": "𝕎",
+  "wopf;": "𝕨",
+  "Wscr;": "𝒲",
+  "wscr;": "𝓌",
+  "xcap;": "⋂",
+  "xcup;": "⋃",
+  "xmap;": "⟼",
+  "xnis;": "⋻",
+  "Xopf;": "𝕏",
+  "xopf;": "𝕩",
+  "Xscr;": "𝒳",
+  "xscr;": "𝓍",
+  "xvee;": "⋁",
+  "YAcy;": "Я",
+  "yacy;": "я",
+  "YIcy;": "Ї",
+  "yicy;": "ї",
+  "Yopf;": "𝕐",
+  "yopf;": "𝕪",
+  "Yscr;": "𝒴",
+  "yscr;": "𝓎",
+  "YUcy;": "Ю",
+  "yucy;": "ю",
+  "Yuml;": "Ÿ",
+  "yuml;": "ÿ",
+  "Zdot;": "Ż",
+  "zdot;": "ż",
+  "Zeta;": "Ζ",
+  "zeta;": "ζ",
+  "ZHcy;": "Ж",
+  "zhcy;": "ж",
+  "Zopf;": "ℤ",
+  "zopf;": "𝕫",
+  "Zscr;": "𝒵",
+  "zscr;": "𝓏",
+  "zwnj;": "‌",
+  Aacute: "Á",
+  aacute: "á",
+  "Acirc;": "Â",
+  "acirc;": "â",
+  "acute;": "´",
+  "AElig;": "Æ",
+  "aelig;": "æ",
+  Agrave: "À",
+  agrave: "à",
+  "aleph;": "ℵ",
+  "Alpha;": "Α",
+  "alpha;": "α",
+  "Amacr;": "Ā",
+  "amacr;": "ā",
+  "amalg;": "⨿",
+  "angle;": "∠",
+  "angrt;": "∟",
+  "angst;": "Å",
+  "Aogon;": "Ą",
+  "aogon;": "ą",
+  "Aring;": "Å",
+  "aring;": "å",
+  "asymp;": "≈",
+  Atilde: "Ã",
+  atilde: "ã",
+  "awint;": "⨑",
+  "bcong;": "≌",
+  "bdquo;": "„",
+  "bepsi;": "϶",
+  "blank;": "␣",
+  "blk12;": "▒",
+  "blk14;": "░",
+  "blk34;": "▓",
+  "block;": "█",
+  "boxDL;": "╗",
+  "boxDl;": "╖",
+  "boxdL;": "╕",
+  "boxdl;": "┐",
+  "boxDR;": "╔",
+  "boxDr;": "╓",
+  "boxdR;": "╒",
+  "boxdr;": "┌",
+  "boxHD;": "╦",
+  "boxHd;": "╤",
+  "boxhD;": "╥",
+  "boxhd;": "┬",
+  "boxHU;": "╩",
+  "boxHu;": "╧",
+  "boxhU;": "╨",
+  "boxhu;": "┴",
+  "boxUL;": "╝",
+  "boxUl;": "╜",
+  "boxuL;": "╛",
+  "boxul;": "┘",
+  "boxUR;": "╚",
+  "boxUr;": "╙",
+  "boxuR;": "╘",
+  "boxur;": "└",
+  "boxVH;": "╬",
+  "boxVh;": "╫",
+  "boxvH;": "╪",
+  "boxvh;": "┼",
+  "boxVL;": "╣",
+  "boxVl;": "╢",
+  "boxvL;": "╡",
+  "boxvl;": "┤",
+  "boxVR;": "╠",
+  "boxVr;": "╟",
+  "boxvR;": "╞",
+  "boxvr;": "├",
+  "Breve;": "˘",
+  "breve;": "˘",
+  brvbar: "¦",
+  "bsemi;": "⁏",
+  "bsime;": "⋍",
+  "bsolb;": "⧅",
+  "bumpE;": "⪮",
+  "bumpe;": "≏",
+  "caret;": "⁁",
+  "caron;": "ˇ",
+  "ccaps;": "⩍",
+  Ccedil: "Ç",
+  ccedil: "ç",
+  "Ccirc;": "Ĉ",
+  "ccirc;": "ĉ",
+  "ccups;": "⩌",
+  "cedil;": "¸",
+  "check;": "✓",
+  "clubs;": "♣",
+  "Colon;": "∷",
   "colon;": ":",
   "comma;": ",",
-  "crarr;": "\u21B5",
-  "Cross;": "\u2A2F",
-  "cross;": "\u2717",
-  "csube;": "\u2AD1",
-  "csupe;": "\u2AD2",
-  "ctdot;": "\u22EF",
-  "cuepr;": "\u22DE",
-  "cuesc;": "\u22DF",
-  "cupor;": "\u2A45",
-  curren: "\xA4",
-  "cuvee;": "\u22CE",
-  "cuwed;": "\u22CF",
-  "cwint;": "\u2231",
-  "Dashv;": "\u2AE4",
-  "dashv;": "\u22A3",
-  "dblac;": "\u02DD",
-  "ddarr;": "\u21CA",
-  "Delta;": "\u0394",
-  "delta;": "\u03B4",
-  "dharl;": "\u21C3",
-  "dharr;": "\u21C2",
-  "diams;": "\u2666",
-  "disin;": "\u22F2",
-  divide: "\xF7",
-  "doteq;": "\u2250",
-  "dtdot;": "\u22F1",
-  "dtrif;": "\u25BE",
-  "duarr;": "\u21F5",
-  "duhar;": "\u296F",
-  Eacute: "\xC9",
-  eacute: "\xE9",
-  "Ecirc;": "\xCA",
-  "ecirc;": "\xEA",
-  "eDDot;": "\u2A77",
-  "efDot;": "\u2252",
-  Egrave: "\xC8",
-  egrave: "\xE8",
-  "Emacr;": "\u0112",
-  "emacr;": "\u0113",
-  "empty;": "\u2205",
-  "Eogon;": "\u0118",
-  "eogon;": "\u0119",
-  "eplus;": "\u2A71",
-  "epsiv;": "\u03F5",
-  "eqsim;": "\u2242",
-  "Equal;": "\u2A75",
-  "equiv;": "\u2261",
-  "erarr;": "\u2971",
-  "erDot;": "\u2253",
-  "esdot;": "\u2250",
-  "exist;": "\u2203",
-  "fflig;": "\uFB00",
-  "filig;": "\uFB01",
+  "crarr;": "↵",
+  "Cross;": "⨯",
+  "cross;": "✗",
+  "csube;": "⫑",
+  "csupe;": "⫒",
+  "ctdot;": "⋯",
+  "cuepr;": "⋞",
+  "cuesc;": "⋟",
+  "cupor;": "⩅",
+  curren: "¤",
+  "cuvee;": "⋎",
+  "cuwed;": "⋏",
+  "cwint;": "∱",
+  "Dashv;": "⫤",
+  "dashv;": "⊣",
+  "dblac;": "˝",
+  "ddarr;": "⇊",
+  "Delta;": "Δ",
+  "delta;": "δ",
+  "dharl;": "⇃",
+  "dharr;": "⇂",
+  "diams;": "♦",
+  "disin;": "⋲",
+  divide: "÷",
+  "doteq;": "≐",
+  "dtdot;": "⋱",
+  "dtrif;": "▾",
+  "duarr;": "⇵",
+  "duhar;": "⥯",
+  Eacute: "É",
+  eacute: "é",
+  "Ecirc;": "Ê",
+  "ecirc;": "ê",
+  "eDDot;": "⩷",
+  "efDot;": "≒",
+  Egrave: "È",
+  egrave: "è",
+  "Emacr;": "Ē",
+  "emacr;": "ē",
+  "empty;": "∅",
+  "Eogon;": "Ę",
+  "eogon;": "ę",
+  "eplus;": "⩱",
+  "epsiv;": "ϵ",
+  "eqsim;": "≂",
+  "Equal;": "⩵",
+  "equiv;": "≡",
+  "erarr;": "⥱",
+  "erDot;": "≓",
+  "esdot;": "≐",
+  "exist;": "∃",
+  "fflig;": "ﬀ",
+  "filig;": "ﬁ",
   "fjlig;": "fj",
-  "fllig;": "\uFB02",
-  "fltns;": "\u25B1",
-  "forkv;": "\u2AD9",
-  frac12: "\xBD",
-  frac14: "\xBC",
-  frac34: "\xBE",
-  "frasl;": "\u2044",
-  "frown;": "\u2322",
-  "Gamma;": "\u0393",
-  "gamma;": "\u03B3",
-  "Gcirc;": "\u011C",
-  "gcirc;": "\u011D",
-  "gescc;": "\u2AA9",
-  "gimel;": "\u2137",
-  "gneqq;": "\u2269",
-  "gnsim;": "\u22E7",
+  "fllig;": "ﬂ",
+  "fltns;": "▱",
+  "forkv;": "⫙",
+  frac12: "½",
+  frac14: "¼",
+  frac34: "¾",
+  "frasl;": "⁄",
+  "frown;": "⌢",
+  "Gamma;": "Γ",
+  "gamma;": "γ",
+  "Gcirc;": "Ĝ",
+  "gcirc;": "ĝ",
+  "gescc;": "⪩",
+  "gimel;": "ℷ",
+  "gneqq;": "≩",
+  "gnsim;": "⋧",
   "grave;": "`",
-  "gsime;": "\u2A8E",
-  "gsiml;": "\u2A90",
-  "gtcir;": "\u2A7A",
-  "gtdot;": "\u22D7",
-  "Hacek;": "\u02C7",
-  "harrw;": "\u21AD",
-  "Hcirc;": "\u0124",
-  "hcirc;": "\u0125",
-  "hoarr;": "\u21FF",
-  Iacute: "\xCD",
-  iacute: "\xED",
-  "Icirc;": "\xCE",
-  "icirc;": "\xEE",
-  "iexcl;": "\xA1",
-  Igrave: "\xCC",
-  igrave: "\xEC",
-  "iiint;": "\u222D",
-  "iiota;": "\u2129",
-  "IJlig;": "\u0132",
-  "ijlig;": "\u0133",
-  "Imacr;": "\u012A",
-  "imacr;": "\u012B",
-  "image;": "\u2111",
-  "imath;": "\u0131",
-  "imped;": "\u01B5",
-  "infin;": "\u221E",
-  "Iogon;": "\u012E",
-  "iogon;": "\u012F",
-  "iprod;": "\u2A3C",
-  iquest: "\xBF",
-  "isinE;": "\u22F9",
-  "isins;": "\u22F4",
-  "isinv;": "\u2208",
-  "Iukcy;": "\u0406",
-  "iukcy;": "\u0456",
-  "Jcirc;": "\u0134",
-  "jcirc;": "\u0135",
-  "jmath;": "\u0237",
-  "Jukcy;": "\u0404",
-  "jukcy;": "\u0454",
-  "Kappa;": "\u039A",
-  "kappa;": "\u03BA",
-  "lAarr;": "\u21DA",
-  "langd;": "\u2991",
-  "laquo;": "\xAB",
-  "larrb;": "\u21E4",
-  "lates;": "\u2AAD\uFE00",
-  "lBarr;": "\u290E",
-  "lbarr;": "\u290C",
-  "lbbrk;": "\u2772",
-  "lbrke;": "\u298B",
-  "lceil;": "\u2308",
-  "ldquo;": "\u201C",
-  "lescc;": "\u2AA8",
-  "lhard;": "\u21BD",
-  "lharu;": "\u21BC",
-  "lhblk;": "\u2584",
-  "llarr;": "\u21C7",
-  "lltri;": "\u25FA",
-  "lneqq;": "\u2268",
-  "lnsim;": "\u22E6",
-  "loang;": "\u27EC",
-  "loarr;": "\u21FD",
-  "lobrk;": "\u27E6",
-  "lopar;": "\u2985",
-  "lrarr;": "\u21C6",
-  "lrhar;": "\u21CB",
-  "lrtri;": "\u22BF",
-  "lsime;": "\u2A8D",
-  "lsimg;": "\u2A8F",
-  "lsquo;": "\u2018",
-  "ltcir;": "\u2A79",
-  "ltdot;": "\u22D6",
-  "ltrie;": "\u22B4",
-  "ltrif;": "\u25C2",
-  "mdash;": "\u2014",
-  "mDDot;": "\u223A",
-  "micro;": "\xB5",
-  middot: "\xB7",
-  "minus;": "\u2212",
-  "mumap;": "\u22B8",
-  "nabla;": "\u2207",
-  "napid;": "\u224B\u0338",
-  "napos;": "\u0149",
-  "natur;": "\u266E",
-  "nbump;": "\u224E\u0338",
-  "ncong;": "\u2247",
-  "ndash;": "\u2013",
-  "neArr;": "\u21D7",
-  "nearr;": "\u2197",
-  "nedot;": "\u2250\u0338",
-  "nesim;": "\u2242\u0338",
-  "ngeqq;": "\u2267\u0338",
-  "ngsim;": "\u2275",
-  "nhArr;": "\u21CE",
-  "nharr;": "\u21AE",
-  "nhpar;": "\u2AF2",
-  "nlArr;": "\u21CD",
-  "nlarr;": "\u219A",
-  "nleqq;": "\u2266\u0338",
-  "nless;": "\u226E",
-  "nlsim;": "\u2274",
-  "nltri;": "\u22EA",
-  "notin;": "\u2209",
-  "notni;": "\u220C",
-  "npart;": "\u2202\u0338",
-  "nprec;": "\u2280",
-  "nrArr;": "\u21CF",
-  "nrarr;": "\u219B",
-  "nrtri;": "\u22EB",
-  "nsime;": "\u2244",
-  "nsmid;": "\u2224",
-  "nspar;": "\u2226",
-  "nsubE;": "\u2AC5\u0338",
-  "nsube;": "\u2288",
-  "nsucc;": "\u2281",
-  "nsupE;": "\u2AC6\u0338",
-  "nsupe;": "\u2289",
-  Ntilde: "\xD1",
-  ntilde: "\xF1",
-  "numsp;": "\u2007",
-  "nvsim;": "\u223C\u20D2",
-  "nwArr;": "\u21D6",
-  "nwarr;": "\u2196",
-  Oacute: "\xD3",
-  oacute: "\xF3",
-  "Ocirc;": "\xD4",
-  "ocirc;": "\xF4",
-  "odash;": "\u229D",
-  "OElig;": "\u0152",
-  "oelig;": "\u0153",
-  "ofcir;": "\u29BF",
-  Ograve: "\xD2",
-  ograve: "\xF2",
-  "ohbar;": "\u29B5",
-  "olarr;": "\u21BA",
-  "olcir;": "\u29BE",
-  "oline;": "\u203E",
-  "Omacr;": "\u014C",
-  "omacr;": "\u014D",
-  "Omega;": "\u03A9",
-  "omega;": "\u03C9",
-  "operp;": "\u29B9",
-  "oplus;": "\u2295",
-  "orarr;": "\u21BB",
-  "order;": "\u2134",
-  Oslash: "\xD8",
-  oslash: "\xF8",
-  Otilde: "\xD5",
-  otilde: "\xF5",
-  "ovbar;": "\u233D",
-  "parsl;": "\u2AFD",
-  "phone;": "\u260E",
-  "plusb;": "\u229E",
-  "pluse;": "\u2A72",
-  plusmn: "\xB1",
-  "pound;": "\xA3",
-  "prcue;": "\u227C",
-  "Prime;": "\u2033",
-  "prime;": "\u2032",
-  "prnap;": "\u2AB9",
-  "prsim;": "\u227E",
+  "gsime;": "⪎",
+  "gsiml;": "⪐",
+  "gtcir;": "⩺",
+  "gtdot;": "⋗",
+  "Hacek;": "ˇ",
+  "harrw;": "↭",
+  "Hcirc;": "Ĥ",
+  "hcirc;": "ĥ",
+  "hoarr;": "⇿",
+  Iacute: "Í",
+  iacute: "í",
+  "Icirc;": "Î",
+  "icirc;": "î",
+  "iexcl;": "¡",
+  Igrave: "Ì",
+  igrave: "ì",
+  "iiint;": "∭",
+  "iiota;": "℩",
+  "IJlig;": "Ĳ",
+  "ijlig;": "ĳ",
+  "Imacr;": "Ī",
+  "imacr;": "ī",
+  "image;": "ℑ",
+  "imath;": "ı",
+  "imped;": "Ƶ",
+  "infin;": "∞",
+  "Iogon;": "Į",
+  "iogon;": "į",
+  "iprod;": "⨼",
+  iquest: "¿",
+  "isinE;": "⋹",
+  "isins;": "⋴",
+  "isinv;": "∈",
+  "Iukcy;": "І",
+  "iukcy;": "і",
+  "Jcirc;": "Ĵ",
+  "jcirc;": "ĵ",
+  "jmath;": "ȷ",
+  "Jukcy;": "Є",
+  "jukcy;": "є",
+  "Kappa;": "Κ",
+  "kappa;": "κ",
+  "lAarr;": "⇚",
+  "langd;": "⦑",
+  "laquo;": "«",
+  "larrb;": "⇤",
+  "lates;": "⪭︀",
+  "lBarr;": "⤎",
+  "lbarr;": "⤌",
+  "lbbrk;": "❲",
+  "lbrke;": "⦋",
+  "lceil;": "⌈",
+  "ldquo;": "“",
+  "lescc;": "⪨",
+  "lhard;": "↽",
+  "lharu;": "↼",
+  "lhblk;": "▄",
+  "llarr;": "⇇",
+  "lltri;": "◺",
+  "lneqq;": "≨",
+  "lnsim;": "⋦",
+  "loang;": "⟬",
+  "loarr;": "⇽",
+  "lobrk;": "⟦",
+  "lopar;": "⦅",
+  "lrarr;": "⇆",
+  "lrhar;": "⇋",
+  "lrtri;": "⊿",
+  "lsime;": "⪍",
+  "lsimg;": "⪏",
+  "lsquo;": "‘",
+  "ltcir;": "⩹",
+  "ltdot;": "⋖",
+  "ltrie;": "⊴",
+  "ltrif;": "◂",
+  "mdash;": "—",
+  "mDDot;": "∺",
+  "micro;": "µ",
+  middot: "·",
+  "minus;": "−",
+  "mumap;": "⊸",
+  "nabla;": "∇",
+  "napid;": "≋̸",
+  "napos;": "ŉ",
+  "natur;": "♮",
+  "nbump;": "≎̸",
+  "ncong;": "≇",
+  "ndash;": "–",
+  "neArr;": "⇗",
+  "nearr;": "↗",
+  "nedot;": "≐̸",
+  "nesim;": "≂̸",
+  "ngeqq;": "≧̸",
+  "ngsim;": "≵",
+  "nhArr;": "⇎",
+  "nharr;": "↮",
+  "nhpar;": "⫲",
+  "nlArr;": "⇍",
+  "nlarr;": "↚",
+  "nleqq;": "≦̸",
+  "nless;": "≮",
+  "nlsim;": "≴",
+  "nltri;": "⋪",
+  "notin;": "∉",
+  "notni;": "∌",
+  "npart;": "∂̸",
+  "nprec;": "⊀",
+  "nrArr;": "⇏",
+  "nrarr;": "↛",
+  "nrtri;": "⋫",
+  "nsime;": "≄",
+  "nsmid;": "∤",
+  "nspar;": "∦",
+  "nsubE;": "⫅̸",
+  "nsube;": "⊈",
+  "nsucc;": "⊁",
+  "nsupE;": "⫆̸",
+  "nsupe;": "⊉",
+  Ntilde: "Ñ",
+  ntilde: "ñ",
+  "numsp;": " ",
+  "nvsim;": "∼⃒",
+  "nwArr;": "⇖",
+  "nwarr;": "↖",
+  Oacute: "Ó",
+  oacute: "ó",
+  "Ocirc;": "Ô",
+  "ocirc;": "ô",
+  "odash;": "⊝",
+  "OElig;": "Œ",
+  "oelig;": "œ",
+  "ofcir;": "⦿",
+  Ograve: "Ò",
+  ograve: "ò",
+  "ohbar;": "⦵",
+  "olarr;": "↺",
+  "olcir;": "⦾",
+  "oline;": "‾",
+  "Omacr;": "Ō",
+  "omacr;": "ō",
+  "Omega;": "Ω",
+  "omega;": "ω",
+  "operp;": "⦹",
+  "oplus;": "⊕",
+  "orarr;": "↻",
+  "order;": "ℴ",
+  Oslash: "Ø",
+  oslash: "ø",
+  Otilde: "Õ",
+  otilde: "õ",
+  "ovbar;": "⌽",
+  "parsl;": "⫽",
+  "phone;": "☎",
+  "plusb;": "⊞",
+  "pluse;": "⩲",
+  plusmn: "±",
+  "pound;": "£",
+  "prcue;": "≼",
+  "Prime;": "″",
+  "prime;": "′",
+  "prnap;": "⪹",
+  "prsim;": "≾",
   "quest;": "?",
-  "rAarr;": "\u21DB",
-  "radic;": "\u221A",
-  "rangd;": "\u2992",
-  "range;": "\u29A5",
-  "raquo;": "\xBB",
-  "rarrb;": "\u21E5",
-  "rarrc;": "\u2933",
-  "rarrw;": "\u219D",
-  "ratio;": "\u2236",
-  "RBarr;": "\u2910",
-  "rBarr;": "\u290F",
-  "rbarr;": "\u290D",
-  "rbbrk;": "\u2773",
-  "rbrke;": "\u298C",
-  "rceil;": "\u2309",
-  "rdquo;": "\u201D",
-  "reals;": "\u211D",
-  "rhard;": "\u21C1",
-  "rharu;": "\u21C0",
-  "rlarr;": "\u21C4",
-  "rlhar;": "\u21CC",
-  "rnmid;": "\u2AEE",
-  "roang;": "\u27ED",
-  "roarr;": "\u21FE",
-  "robrk;": "\u27E7",
-  "ropar;": "\u2986",
-  "rrarr;": "\u21C9",
-  "rsquo;": "\u2019",
-  "rtrie;": "\u22B5",
-  "rtrif;": "\u25B8",
-  "sbquo;": "\u201A",
-  "sccue;": "\u227D",
-  "Scirc;": "\u015C",
-  "scirc;": "\u015D",
-  "scnap;": "\u2ABA",
-  "scsim;": "\u227F",
-  "sdotb;": "\u22A1",
-  "sdote;": "\u2A66",
-  "seArr;": "\u21D8",
-  "searr;": "\u2198",
-  "setmn;": "\u2216",
-  "sharp;": "\u266F",
-  "Sigma;": "\u03A3",
-  "sigma;": "\u03C3",
-  "simeq;": "\u2243",
-  "simgE;": "\u2AA0",
-  "simlE;": "\u2A9F",
-  "simne;": "\u2246",
-  "slarr;": "\u2190",
-  "smile;": "\u2323",
-  "smtes;": "\u2AAC\uFE00",
-  "sqcap;": "\u2293",
-  "sqcup;": "\u2294",
-  "sqsub;": "\u228F",
-  "sqsup;": "\u2290",
-  "srarr;": "\u2192",
-  "starf;": "\u2605",
-  "strns;": "\xAF",
-  "subnE;": "\u2ACB",
-  "subne;": "\u228A",
-  "supnE;": "\u2ACC",
-  "supne;": "\u228B",
-  "swArr;": "\u21D9",
-  "swarr;": "\u2199",
-  "szlig;": "\xDF",
-  "Theta;": "\u0398",
-  "theta;": "\u03B8",
-  "thkap;": "\u2248",
-  "THORN;": "\xDE",
-  "thorn;": "\xFE",
-  "Tilde;": "\u223C",
-  "tilde;": "\u02DC",
-  "times;": "\xD7",
-  "TRADE;": "\u2122",
-  "trade;": "\u2122",
-  "trisb;": "\u29CD",
-  "TSHcy;": "\u040B",
-  "tshcy;": "\u045B",
-  "twixt;": "\u226C",
-  Uacute: "\xDA",
-  uacute: "\xFA",
-  "Ubrcy;": "\u040E",
-  "ubrcy;": "\u045E",
-  "Ucirc;": "\xDB",
-  "ucirc;": "\xFB",
-  "udarr;": "\u21C5",
-  "udhar;": "\u296E",
-  Ugrave: "\xD9",
-  ugrave: "\xF9",
-  "uharl;": "\u21BF",
-  "uharr;": "\u21BE",
-  "uhblk;": "\u2580",
-  "ultri;": "\u25F8",
-  "Umacr;": "\u016A",
-  "umacr;": "\u016B",
-  "Union;": "\u22C3",
-  "Uogon;": "\u0172",
-  "uogon;": "\u0173",
-  "uplus;": "\u228E",
-  "upsih;": "\u03D2",
-  "UpTee;": "\u22A5",
-  "Uring;": "\u016E",
-  "uring;": "\u016F",
-  "urtri;": "\u25F9",
-  "utdot;": "\u22F0",
-  "utrif;": "\u25B4",
-  "uuarr;": "\u21C8",
-  "varpi;": "\u03D6",
-  "vBarv;": "\u2AE9",
-  "VDash;": "\u22AB",
-  "Vdash;": "\u22A9",
-  "vDash;": "\u22A8",
-  "vdash;": "\u22A2",
-  "veeeq;": "\u225A",
-  "vltri;": "\u22B2",
-  "vnsub;": "\u2282\u20D2",
-  "vnsup;": "\u2283\u20D2",
-  "vprop;": "\u221D",
-  "vrtri;": "\u22B3",
-  "Wcirc;": "\u0174",
-  "wcirc;": "\u0175",
-  "Wedge;": "\u22C0",
-  "wedge;": "\u2227",
-  "xcirc;": "\u25EF",
-  "xdtri;": "\u25BD",
-  "xhArr;": "\u27FA",
-  "xharr;": "\u27F7",
-  "xlArr;": "\u27F8",
-  "xlarr;": "\u27F5",
-  "xodot;": "\u2A00",
-  "xrArr;": "\u27F9",
-  "xrarr;": "\u27F6",
-  "xutri;": "\u25B3",
-  Yacute: "\xDD",
-  yacute: "\xFD",
-  "Ycirc;": "\u0176",
-  "ycirc;": "\u0177",
-  "Aacute;": "\xC1",
-  "aacute;": "\xE1",
-  "Abreve;": "\u0102",
-  "abreve;": "\u0103",
-  "Agrave;": "\xC0",
-  "agrave;": "\xE0",
-  "andand;": "\u2A55",
-  "angmsd;": "\u2221",
-  "angsph;": "\u2222",
-  "apacir;": "\u2A6F",
-  "approx;": "\u2248",
-  "Assign;": "\u2254",
-  "Atilde;": "\xC3",
-  "atilde;": "\xE3",
-  "barvee;": "\u22BD",
-  "Barwed;": "\u2306",
-  "barwed;": "\u2305",
-  "becaus;": "\u2235",
-  "bernou;": "\u212C",
-  "bigcap;": "\u22C2",
-  "bigcup;": "\u22C3",
-  "bigvee;": "\u22C1",
-  "bkarow;": "\u290D",
-  "bottom;": "\u22A5",
-  "bowtie;": "\u22C8",
-  "boxbox;": "\u29C9",
-  "bprime;": "\u2035",
-  "brvbar;": "\xA6",
-  "bullet;": "\u2022",
-  "Bumpeq;": "\u224E",
-  "bumpeq;": "\u224F",
-  "Cacute;": "\u0106",
-  "cacute;": "\u0107",
-  "capand;": "\u2A44",
-  "capcap;": "\u2A4B",
-  "capcup;": "\u2A47",
-  "capdot;": "\u2A40",
-  "Ccaron;": "\u010C",
-  "ccaron;": "\u010D",
-  "Ccedil;": "\xC7",
-  "ccedil;": "\xE7",
-  "circeq;": "\u2257",
-  "cirmid;": "\u2AEF",
-  "Colone;": "\u2A74",
-  "colone;": "\u2254",
+  "rAarr;": "⇛",
+  "radic;": "√",
+  "rangd;": "⦒",
+  "range;": "⦥",
+  "raquo;": "»",
+  "rarrb;": "⇥",
+  "rarrc;": "⤳",
+  "rarrw;": "↝",
+  "ratio;": "∶",
+  "RBarr;": "⤐",
+  "rBarr;": "⤏",
+  "rbarr;": "⤍",
+  "rbbrk;": "❳",
+  "rbrke;": "⦌",
+  "rceil;": "⌉",
+  "rdquo;": "”",
+  "reals;": "ℝ",
+  "rhard;": "⇁",
+  "rharu;": "⇀",
+  "rlarr;": "⇄",
+  "rlhar;": "⇌",
+  "rnmid;": "⫮",
+  "roang;": "⟭",
+  "roarr;": "⇾",
+  "robrk;": "⟧",
+  "ropar;": "⦆",
+  "rrarr;": "⇉",
+  "rsquo;": "’",
+  "rtrie;": "⊵",
+  "rtrif;": "▸",
+  "sbquo;": "‚",
+  "sccue;": "≽",
+  "Scirc;": "Ŝ",
+  "scirc;": "ŝ",
+  "scnap;": "⪺",
+  "scsim;": "≿",
+  "sdotb;": "⊡",
+  "sdote;": "⩦",
+  "seArr;": "⇘",
+  "searr;": "↘",
+  "setmn;": "∖",
+  "sharp;": "♯",
+  "Sigma;": "Σ",
+  "sigma;": "σ",
+  "simeq;": "≃",
+  "simgE;": "⪠",
+  "simlE;": "⪟",
+  "simne;": "≆",
+  "slarr;": "←",
+  "smile;": "⌣",
+  "smtes;": "⪬︀",
+  "sqcap;": "⊓",
+  "sqcup;": "⊔",
+  "sqsub;": "⊏",
+  "sqsup;": "⊐",
+  "srarr;": "→",
+  "starf;": "★",
+  "strns;": "¯",
+  "subnE;": "⫋",
+  "subne;": "⊊",
+  "supnE;": "⫌",
+  "supne;": "⊋",
+  "swArr;": "⇙",
+  "swarr;": "↙",
+  "szlig;": "ß",
+  "Theta;": "Θ",
+  "theta;": "θ",
+  "thkap;": "≈",
+  "THORN;": "Þ",
+  "thorn;": "þ",
+  "Tilde;": "∼",
+  "tilde;": "˜",
+  "times;": "×",
+  "TRADE;": "™",
+  "trade;": "™",
+  "trisb;": "⧍",
+  "TSHcy;": "Ћ",
+  "tshcy;": "ћ",
+  "twixt;": "≬",
+  Uacute: "Ú",
+  uacute: "ú",
+  "Ubrcy;": "Ў",
+  "ubrcy;": "ў",
+  "Ucirc;": "Û",
+  "ucirc;": "û",
+  "udarr;": "⇅",
+  "udhar;": "⥮",
+  Ugrave: "Ù",
+  ugrave: "ù",
+  "uharl;": "↿",
+  "uharr;": "↾",
+  "uhblk;": "▀",
+  "ultri;": "◸",
+  "Umacr;": "Ū",
+  "umacr;": "ū",
+  "Union;": "⋃",
+  "Uogon;": "Ų",
+  "uogon;": "ų",
+  "uplus;": "⊎",
+  "upsih;": "ϒ",
+  "UpTee;": "⊥",
+  "Uring;": "Ů",
+  "uring;": "ů",
+  "urtri;": "◹",
+  "utdot;": "⋰",
+  "utrif;": "▴",
+  "uuarr;": "⇈",
+  "varpi;": "ϖ",
+  "vBarv;": "⫩",
+  "VDash;": "⊫",
+  "Vdash;": "⊩",
+  "vDash;": "⊨",
+  "vdash;": "⊢",
+  "veeeq;": "≚",
+  "vltri;": "⊲",
+  "vnsub;": "⊂⃒",
+  "vnsup;": "⊃⃒",
+  "vprop;": "∝",
+  "vrtri;": "⊳",
+  "Wcirc;": "Ŵ",
+  "wcirc;": "ŵ",
+  "Wedge;": "⋀",
+  "wedge;": "∧",
+  "xcirc;": "◯",
+  "xdtri;": "▽",
+  "xhArr;": "⟺",
+  "xharr;": "⟷",
+  "xlArr;": "⟸",
+  "xlarr;": "⟵",
+  "xodot;": "⨀",
+  "xrArr;": "⟹",
+  "xrarr;": "⟶",
+  "xutri;": "△",
+  Yacute: "Ý",
+  yacute: "ý",
+  "Ycirc;": "Ŷ",
+  "ycirc;": "ŷ",
+  "Aacute;": "Á",
+  "aacute;": "á",
+  "Abreve;": "Ă",
+  "abreve;": "ă",
+  "Agrave;": "À",
+  "agrave;": "à",
+  "andand;": "⩕",
+  "angmsd;": "∡",
+  "angsph;": "∢",
+  "apacir;": "⩯",
+  "approx;": "≈",
+  "Assign;": "≔",
+  "Atilde;": "Ã",
+  "atilde;": "ã",
+  "barvee;": "⊽",
+  "Barwed;": "⌆",
+  "barwed;": "⌅",
+  "becaus;": "∵",
+  "bernou;": "ℬ",
+  "bigcap;": "⋂",
+  "bigcup;": "⋃",
+  "bigvee;": "⋁",
+  "bkarow;": "⤍",
+  "bottom;": "⊥",
+  "bowtie;": "⋈",
+  "boxbox;": "⧉",
+  "bprime;": "‵",
+  "brvbar;": "¦",
+  "bullet;": "•",
+  "Bumpeq;": "≎",
+  "bumpeq;": "≏",
+  "Cacute;": "Ć",
+  "cacute;": "ć",
+  "capand;": "⩄",
+  "capcap;": "⩋",
+  "capcup;": "⩇",
+  "capdot;": "⩀",
+  "Ccaron;": "Č",
+  "ccaron;": "č",
+  "Ccedil;": "Ç",
+  "ccedil;": "ç",
+  "circeq;": "≗",
+  "cirmid;": "⫯",
+  "Colone;": "⩴",
+  "colone;": "≔",
   "commat;": "@",
-  "compfn;": "\u2218",
-  "Conint;": "\u222F",
-  "conint;": "\u222E",
-  "coprod;": "\u2210",
-  "copysr;": "\u2117",
-  "cularr;": "\u21B6",
-  "CupCap;": "\u224D",
-  "cupcap;": "\u2A46",
-  "cupcup;": "\u2A4A",
-  "cupdot;": "\u228D",
-  "curarr;": "\u21B7",
-  "curren;": "\xA4",
-  "cylcty;": "\u232D",
-  "Dagger;": "\u2021",
-  "dagger;": "\u2020",
-  "daleth;": "\u2138",
-  "Dcaron;": "\u010E",
-  "dcaron;": "\u010F",
-  "dfisht;": "\u297F",
-  "divide;": "\xF7",
-  "divonx;": "\u22C7",
-  "dlcorn;": "\u231E",
-  "dlcrop;": "\u230D",
+  "compfn;": "∘",
+  "Conint;": "∯",
+  "conint;": "∮",
+  "coprod;": "∐",
+  "copysr;": "℗",
+  "cularr;": "↶",
+  "CupCap;": "≍",
+  "cupcap;": "⩆",
+  "cupcup;": "⩊",
+  "cupdot;": "⊍",
+  "curarr;": "↷",
+  "curren;": "¤",
+  "cylcty;": "⌭",
+  "Dagger;": "‡",
+  "dagger;": "†",
+  "daleth;": "ℸ",
+  "Dcaron;": "Ď",
+  "dcaron;": "ď",
+  "dfisht;": "⥿",
+  "divide;": "÷",
+  "divonx;": "⋇",
+  "dlcorn;": "⌞",
+  "dlcrop;": "⌍",
   "dollar;": "$",
-  "DotDot;": "\u20DC",
-  "drcorn;": "\u231F",
-  "drcrop;": "\u230C",
-  "Dstrok;": "\u0110",
-  "dstrok;": "\u0111",
-  "Eacute;": "\xC9",
-  "eacute;": "\xE9",
-  "easter;": "\u2A6E",
-  "Ecaron;": "\u011A",
-  "ecaron;": "\u011B",
-  "ecolon;": "\u2255",
-  "Egrave;": "\xC8",
-  "egrave;": "\xE8",
-  "egsdot;": "\u2A98",
-  "elsdot;": "\u2A97",
-  "emptyv;": "\u2205",
-  "emsp13;": "\u2004",
-  "emsp14;": "\u2005",
-  "eparsl;": "\u29E3",
-  "eqcirc;": "\u2256",
+  "DotDot;": "⃜",
+  "drcorn;": "⌟",
+  "drcrop;": "⌌",
+  "Dstrok;": "Đ",
+  "dstrok;": "đ",
+  "Eacute;": "É",
+  "eacute;": "é",
+  "easter;": "⩮",
+  "Ecaron;": "Ě",
+  "ecaron;": "ě",
+  "ecolon;": "≕",
+  "Egrave;": "È",
+  "egrave;": "è",
+  "egsdot;": "⪘",
+  "elsdot;": "⪗",
+  "emptyv;": "∅",
+  "emsp13;": " ",
+  "emsp14;": " ",
+  "eparsl;": "⧣",
+  "eqcirc;": "≖",
   "equals;": "=",
-  "equest;": "\u225F",
-  "Exists;": "\u2203",
-  "female;": "\u2640",
-  "ffilig;": "\uFB03",
-  "ffllig;": "\uFB04",
-  "ForAll;": "\u2200",
-  "forall;": "\u2200",
-  "frac12;": "\xBD",
-  "frac13;": "\u2153",
-  "frac14;": "\xBC",
-  "frac15;": "\u2155",
-  "frac16;": "\u2159",
-  "frac18;": "\u215B",
-  "frac23;": "\u2154",
-  "frac25;": "\u2156",
-  "frac34;": "\xBE",
-  "frac35;": "\u2157",
-  "frac38;": "\u215C",
-  "frac45;": "\u2158",
-  "frac56;": "\u215A",
-  "frac58;": "\u215D",
-  "frac78;": "\u215E",
-  "gacute;": "\u01F5",
-  "Gammad;": "\u03DC",
-  "gammad;": "\u03DD",
-  "Gbreve;": "\u011E",
-  "gbreve;": "\u011F",
-  "Gcedil;": "\u0122",
-  "gesdot;": "\u2A80",
-  "gesles;": "\u2A94",
-  "gtlPar;": "\u2995",
-  "gtrarr;": "\u2978",
-  "gtrdot;": "\u22D7",
-  "gtrsim;": "\u2273",
-  "hairsp;": "\u200A",
-  "hamilt;": "\u210B",
-  "HARDcy;": "\u042A",
-  "hardcy;": "\u044A",
-  "hearts;": "\u2665",
-  "hellip;": "\u2026",
-  "hercon;": "\u22B9",
-  "homtht;": "\u223B",
-  "horbar;": "\u2015",
-  "hslash;": "\u210F",
-  "Hstrok;": "\u0126",
-  "hstrok;": "\u0127",
-  "hybull;": "\u2043",
-  "hyphen;": "\u2010",
-  "Iacute;": "\xCD",
-  "iacute;": "\xED",
-  "Igrave;": "\xCC",
-  "igrave;": "\xEC",
-  "iiiint;": "\u2A0C",
-  "iinfin;": "\u29DC",
-  "incare;": "\u2105",
-  "inodot;": "\u0131",
-  "intcal;": "\u22BA",
-  "iquest;": "\xBF",
-  "isinsv;": "\u22F3",
-  "Itilde;": "\u0128",
-  "itilde;": "\u0129",
-  "Jsercy;": "\u0408",
-  "jsercy;": "\u0458",
-  "kappav;": "\u03F0",
-  "Kcedil;": "\u0136",
-  "kcedil;": "\u0137",
-  "kgreen;": "\u0138",
-  "Lacute;": "\u0139",
-  "lacute;": "\u013A",
-  "lagran;": "\u2112",
-  "Lambda;": "\u039B",
-  "lambda;": "\u03BB",
-  "langle;": "\u27E8",
-  "larrfs;": "\u291D",
-  "larrhk;": "\u21A9",
-  "larrlp;": "\u21AB",
-  "larrpl;": "\u2939",
-  "larrtl;": "\u21A2",
-  "lAtail;": "\u291B",
-  "latail;": "\u2919",
+  "equest;": "≟",
+  "Exists;": "∃",
+  "female;": "♀",
+  "ffilig;": "ﬃ",
+  "ffllig;": "ﬄ",
+  "ForAll;": "∀",
+  "forall;": "∀",
+  "frac12;": "½",
+  "frac13;": "⅓",
+  "frac14;": "¼",
+  "frac15;": "⅕",
+  "frac16;": "⅙",
+  "frac18;": "⅛",
+  "frac23;": "⅔",
+  "frac25;": "⅖",
+  "frac34;": "¾",
+  "frac35;": "⅗",
+  "frac38;": "⅜",
+  "frac45;": "⅘",
+  "frac56;": "⅚",
+  "frac58;": "⅝",
+  "frac78;": "⅞",
+  "gacute;": "ǵ",
+  "Gammad;": "Ϝ",
+  "gammad;": "ϝ",
+  "Gbreve;": "Ğ",
+  "gbreve;": "ğ",
+  "Gcedil;": "Ģ",
+  "gesdot;": "⪀",
+  "gesles;": "⪔",
+  "gtlPar;": "⦕",
+  "gtrarr;": "⥸",
+  "gtrdot;": "⋗",
+  "gtrsim;": "≳",
+  "hairsp;": " ",
+  "hamilt;": "ℋ",
+  "HARDcy;": "Ъ",
+  "hardcy;": "ъ",
+  "hearts;": "♥",
+  "hellip;": "…",
+  "hercon;": "⊹",
+  "homtht;": "∻",
+  "horbar;": "―",
+  "hslash;": "ℏ",
+  "Hstrok;": "Ħ",
+  "hstrok;": "ħ",
+  "hybull;": "⁃",
+  "hyphen;": "‐",
+  "Iacute;": "Í",
+  "iacute;": "í",
+  "Igrave;": "Ì",
+  "igrave;": "ì",
+  "iiiint;": "⨌",
+  "iinfin;": "⧜",
+  "incare;": "℅",
+  "inodot;": "ı",
+  "intcal;": "⊺",
+  "iquest;": "¿",
+  "isinsv;": "⋳",
+  "Itilde;": "Ĩ",
+  "itilde;": "ĩ",
+  "Jsercy;": "Ј",
+  "jsercy;": "ј",
+  "kappav;": "ϰ",
+  "Kcedil;": "Ķ",
+  "kcedil;": "ķ",
+  "kgreen;": "ĸ",
+  "Lacute;": "Ĺ",
+  "lacute;": "ĺ",
+  "lagran;": "ℒ",
+  "Lambda;": "Λ",
+  "lambda;": "λ",
+  "langle;": "⟨",
+  "larrfs;": "⤝",
+  "larrhk;": "↩",
+  "larrlp;": "↫",
+  "larrpl;": "⤹",
+  "larrtl;": "↢",
+  "lAtail;": "⤛",
+  "latail;": "⤙",
   "lbrace;": "{",
   "lbrack;": "[",
-  "Lcaron;": "\u013D",
-  "lcaron;": "\u013E",
-  "Lcedil;": "\u013B",
-  "lcedil;": "\u013C",
-  "ldquor;": "\u201E",
-  "lesdot;": "\u2A7F",
-  "lesges;": "\u2A93",
-  "lfisht;": "\u297C",
-  "lfloor;": "\u230A",
-  "lharul;": "\u296A",
-  "llhard;": "\u296B",
-  "Lmidot;": "\u013F",
-  "lmidot;": "\u0140",
-  "lmoust;": "\u23B0",
-  "loplus;": "\u2A2D",
-  "lowast;": "\u2217",
+  "Lcaron;": "Ľ",
+  "lcaron;": "ľ",
+  "Lcedil;": "Ļ",
+  "lcedil;": "ļ",
+  "ldquor;": "„",
+  "lesdot;": "⩿",
+  "lesges;": "⪓",
+  "lfisht;": "⥼",
+  "lfloor;": "⌊",
+  "lharul;": "⥪",
+  "llhard;": "⥫",
+  "Lmidot;": "Ŀ",
+  "lmidot;": "ŀ",
+  "lmoust;": "⎰",
+  "loplus;": "⨭",
+  "lowast;": "∗",
   "lowbar;": "_",
-  "lparlt;": "\u2993",
-  "lrhard;": "\u296D",
-  "lsaquo;": "\u2039",
-  "lsquor;": "\u201A",
-  "Lstrok;": "\u0141",
-  "lstrok;": "\u0142",
-  "lthree;": "\u22CB",
-  "ltimes;": "\u22C9",
-  "ltlarr;": "\u2976",
-  "ltrPar;": "\u2996",
-  "mapsto;": "\u21A6",
-  "marker;": "\u25AE",
-  "mcomma;": "\u2A29",
+  "lparlt;": "⦓",
+  "lrhard;": "⥭",
+  "lsaquo;": "‹",
+  "lsquor;": "‚",
+  "Lstrok;": "Ł",
+  "lstrok;": "ł",
+  "lthree;": "⋋",
+  "ltimes;": "⋉",
+  "ltlarr;": "⥶",
+  "ltrPar;": "⦖",
+  "mapsto;": "↦",
+  "marker;": "▮",
+  "mcomma;": "⨩",
   "midast;": "*",
-  "midcir;": "\u2AF0",
-  "middot;": "\xB7",
-  "minusb;": "\u229F",
-  "minusd;": "\u2238",
-  "mnplus;": "\u2213",
-  "models;": "\u22A7",
-  "mstpos;": "\u223E",
-  "Nacute;": "\u0143",
-  "nacute;": "\u0144",
-  "nbumpe;": "\u224F\u0338",
-  "Ncaron;": "\u0147",
-  "ncaron;": "\u0148",
-  "Ncedil;": "\u0145",
-  "ncedil;": "\u0146",
-  "nearhk;": "\u2924",
-  "nequiv;": "\u2262",
-  "nesear;": "\u2928",
-  "nexist;": "\u2204",
-  "nltrie;": "\u22EC",
-  "notinE;": "\u22F9\u0338",
-  "nparsl;": "\u2AFD\u20E5",
-  "nprcue;": "\u22E0",
-  "nrarrc;": "\u2933\u0338",
-  "nrarrw;": "\u219D\u0338",
-  "nrtrie;": "\u22ED",
-  "nsccue;": "\u22E1",
-  "nsimeq;": "\u2244",
-  "Ntilde;": "\xD1",
-  "ntilde;": "\xF1",
-  "numero;": "\u2116",
-  "nVDash;": "\u22AF",
-  "nVdash;": "\u22AE",
-  "nvDash;": "\u22AD",
-  "nvdash;": "\u22AC",
-  "nvHarr;": "\u2904",
-  "nvlArr;": "\u2902",
-  "nvrArr;": "\u2903",
-  "nwarhk;": "\u2923",
-  "nwnear;": "\u2927",
-  "Oacute;": "\xD3",
-  "oacute;": "\xF3",
-  "Odblac;": "\u0150",
-  "odblac;": "\u0151",
-  "odsold;": "\u29BC",
-  "Ograve;": "\xD2",
-  "ograve;": "\xF2",
-  "ominus;": "\u2296",
-  "origof;": "\u22B6",
-  "Oslash;": "\xD8",
-  "oslash;": "\xF8",
-  "Otilde;": "\xD5",
-  "otilde;": "\xF5",
-  "Otimes;": "\u2A37",
-  "otimes;": "\u2297",
-  "parsim;": "\u2AF3",
+  "midcir;": "⫰",
+  "middot;": "·",
+  "minusb;": "⊟",
+  "minusd;": "∸",
+  "mnplus;": "∓",
+  "models;": "⊧",
+  "mstpos;": "∾",
+  "Nacute;": "Ń",
+  "nacute;": "ń",
+  "nbumpe;": "≏̸",
+  "Ncaron;": "Ň",
+  "ncaron;": "ň",
+  "Ncedil;": "Ņ",
+  "ncedil;": "ņ",
+  "nearhk;": "⤤",
+  "nequiv;": "≢",
+  "nesear;": "⤨",
+  "nexist;": "∄",
+  "nltrie;": "⋬",
+  "notinE;": "⋹̸",
+  "nparsl;": "⫽⃥",
+  "nprcue;": "⋠",
+  "nrarrc;": "⤳̸",
+  "nrarrw;": "↝̸",
+  "nrtrie;": "⋭",
+  "nsccue;": "⋡",
+  "nsimeq;": "≄",
+  "Ntilde;": "Ñ",
+  "ntilde;": "ñ",
+  "numero;": "№",
+  "nVDash;": "⊯",
+  "nVdash;": "⊮",
+  "nvDash;": "⊭",
+  "nvdash;": "⊬",
+  "nvHarr;": "⤄",
+  "nvlArr;": "⤂",
+  "nvrArr;": "⤃",
+  "nwarhk;": "⤣",
+  "nwnear;": "⤧",
+  "Oacute;": "Ó",
+  "oacute;": "ó",
+  "Odblac;": "Ő",
+  "odblac;": "ő",
+  "odsold;": "⦼",
+  "Ograve;": "Ò",
+  "ograve;": "ò",
+  "ominus;": "⊖",
+  "origof;": "⊶",
+  "Oslash;": "Ø",
+  "oslash;": "ø",
+  "Otilde;": "Õ",
+  "otilde;": "õ",
+  "Otimes;": "⨷",
+  "otimes;": "⊗",
+  "parsim;": "⫳",
   "percnt;": "%",
   "period;": ".",
-  "permil;": "\u2030",
-  "phmmat;": "\u2133",
-  "planck;": "\u210F",
-  "plankv;": "\u210F",
-  "plusdo;": "\u2214",
-  "plusdu;": "\u2A25",
-  "plusmn;": "\xB1",
-  "preceq;": "\u2AAF",
-  "primes;": "\u2119",
-  "prnsim;": "\u22E8",
-  "propto;": "\u221D",
-  "prurel;": "\u22B0",
-  "puncsp;": "\u2008",
-  "qprime;": "\u2057",
-  "Racute;": "\u0154",
-  "racute;": "\u0155",
-  "rangle;": "\u27E9",
-  "rarrap;": "\u2975",
-  "rarrfs;": "\u291E",
-  "rarrhk;": "\u21AA",
-  "rarrlp;": "\u21AC",
-  "rarrpl;": "\u2945",
-  "Rarrtl;": "\u2916",
-  "rarrtl;": "\u21A3",
-  "rAtail;": "\u291C",
-  "ratail;": "\u291A",
+  "permil;": "‰",
+  "phmmat;": "ℳ",
+  "planck;": "ℏ",
+  "plankv;": "ℏ",
+  "plusdo;": "∔",
+  "plusdu;": "⨥",
+  "plusmn;": "±",
+  "preceq;": "⪯",
+  "primes;": "ℙ",
+  "prnsim;": "⋨",
+  "propto;": "∝",
+  "prurel;": "⊰",
+  "puncsp;": " ",
+  "qprime;": "⁗",
+  "Racute;": "Ŕ",
+  "racute;": "ŕ",
+  "rangle;": "⟩",
+  "rarrap;": "⥵",
+  "rarrfs;": "⤞",
+  "rarrhk;": "↪",
+  "rarrlp;": "↬",
+  "rarrpl;": "⥅",
+  "Rarrtl;": "⤖",
+  "rarrtl;": "↣",
+  "rAtail;": "⤜",
+  "ratail;": "⤚",
   "rbrace;": "}",
   "rbrack;": "]",
-  "Rcaron;": "\u0158",
-  "rcaron;": "\u0159",
-  "Rcedil;": "\u0156",
-  "rcedil;": "\u0157",
-  "rdquor;": "\u201D",
-  "rfisht;": "\u297D",
-  "rfloor;": "\u230B",
-  "rharul;": "\u296C",
-  "rmoust;": "\u23B1",
-  "roplus;": "\u2A2E",
-  "rpargt;": "\u2994",
-  "rsaquo;": "\u203A",
-  "rsquor;": "\u2019",
-  "rthree;": "\u22CC",
-  "rtimes;": "\u22CA",
-  "Sacute;": "\u015A",
-  "sacute;": "\u015B",
-  "Scaron;": "\u0160",
-  "scaron;": "\u0161",
-  "Scedil;": "\u015E",
-  "scedil;": "\u015F",
-  "scnsim;": "\u22E9",
-  "searhk;": "\u2925",
-  "seswar;": "\u2929",
-  "sfrown;": "\u2322",
-  "SHCHcy;": "\u0429",
-  "shchcy;": "\u0449",
-  "sigmaf;": "\u03C2",
-  "sigmav;": "\u03C2",
-  "simdot;": "\u2A6A",
-  "smashp;": "\u2A33",
-  "SOFTcy;": "\u042C",
-  "softcy;": "\u044C",
-  "solbar;": "\u233F",
-  "spades;": "\u2660",
-  "sqcaps;": "\u2293\uFE00",
-  "sqcups;": "\u2294\uFE00",
-  "sqsube;": "\u2291",
-  "sqsupe;": "\u2292",
-  "Square;": "\u25A1",
-  "square;": "\u25A1",
-  "squarf;": "\u25AA",
-  "ssetmn;": "\u2216",
-  "ssmile;": "\u2323",
-  "sstarf;": "\u22C6",
-  "subdot;": "\u2ABD",
-  "Subset;": "\u22D0",
-  "subset;": "\u2282",
-  "subsim;": "\u2AC7",
-  "subsub;": "\u2AD5",
-  "subsup;": "\u2AD3",
-  "succeq;": "\u2AB0",
-  "supdot;": "\u2ABE",
-  "Supset;": "\u22D1",
-  "supset;": "\u2283",
-  "supsim;": "\u2AC8",
-  "supsub;": "\u2AD4",
-  "supsup;": "\u2AD6",
-  "swarhk;": "\u2926",
-  "swnwar;": "\u292A",
-  "target;": "\u2316",
-  "Tcaron;": "\u0164",
-  "tcaron;": "\u0165",
-  "Tcedil;": "\u0162",
-  "tcedil;": "\u0163",
-  "telrec;": "\u2315",
-  "there4;": "\u2234",
-  "thetav;": "\u03D1",
-  "thinsp;": "\u2009",
-  "thksim;": "\u223C",
-  "timesb;": "\u22A0",
-  "timesd;": "\u2A30",
-  "topbot;": "\u2336",
-  "topcir;": "\u2AF1",
-  "tprime;": "\u2034",
-  "tridot;": "\u25EC",
-  "Tstrok;": "\u0166",
-  "tstrok;": "\u0167",
-  "Uacute;": "\xDA",
-  "uacute;": "\xFA",
-  "Ubreve;": "\u016C",
-  "ubreve;": "\u016D",
-  "Udblac;": "\u0170",
-  "udblac;": "\u0171",
-  "ufisht;": "\u297E",
-  "Ugrave;": "\xD9",
-  "ugrave;": "\xF9",
-  "ulcorn;": "\u231C",
-  "ulcrop;": "\u230F",
-  "urcorn;": "\u231D",
-  "urcrop;": "\u230E",
-  "Utilde;": "\u0168",
-  "utilde;": "\u0169",
-  "vangrt;": "\u299C",
-  "varphi;": "\u03D5",
-  "varrho;": "\u03F1",
-  "Vdashl;": "\u2AE6",
-  "veebar;": "\u22BB",
-  "vellip;": "\u22EE",
-  "Verbar;": "\u2016",
+  "Rcaron;": "Ř",
+  "rcaron;": "ř",
+  "Rcedil;": "Ŗ",
+  "rcedil;": "ŗ",
+  "rdquor;": "”",
+  "rfisht;": "⥽",
+  "rfloor;": "⌋",
+  "rharul;": "⥬",
+  "rmoust;": "⎱",
+  "roplus;": "⨮",
+  "rpargt;": "⦔",
+  "rsaquo;": "›",
+  "rsquor;": "’",
+  "rthree;": "⋌",
+  "rtimes;": "⋊",
+  "Sacute;": "Ś",
+  "sacute;": "ś",
+  "Scaron;": "Š",
+  "scaron;": "š",
+  "Scedil;": "Ş",
+  "scedil;": "ş",
+  "scnsim;": "⋩",
+  "searhk;": "⤥",
+  "seswar;": "⤩",
+  "sfrown;": "⌢",
+  "SHCHcy;": "Щ",
+  "shchcy;": "щ",
+  "sigmaf;": "ς",
+  "sigmav;": "ς",
+  "simdot;": "⩪",
+  "smashp;": "⨳",
+  "SOFTcy;": "Ь",
+  "softcy;": "ь",
+  "solbar;": "⌿",
+  "spades;": "♠",
+  "sqcaps;": "⊓︀",
+  "sqcups;": "⊔︀",
+  "sqsube;": "⊑",
+  "sqsupe;": "⊒",
+  "Square;": "□",
+  "square;": "□",
+  "squarf;": "▪",
+  "ssetmn;": "∖",
+  "ssmile;": "⌣",
+  "sstarf;": "⋆",
+  "subdot;": "⪽",
+  "Subset;": "⋐",
+  "subset;": "⊂",
+  "subsim;": "⫇",
+  "subsub;": "⫕",
+  "subsup;": "⫓",
+  "succeq;": "⪰",
+  "supdot;": "⪾",
+  "Supset;": "⋑",
+  "supset;": "⊃",
+  "supsim;": "⫈",
+  "supsub;": "⫔",
+  "supsup;": "⫖",
+  "swarhk;": "⤦",
+  "swnwar;": "⤪",
+  "target;": "⌖",
+  "Tcaron;": "Ť",
+  "tcaron;": "ť",
+  "Tcedil;": "Ţ",
+  "tcedil;": "ţ",
+  "telrec;": "⌕",
+  "there4;": "∴",
+  "thetav;": "ϑ",
+  "thinsp;": " ",
+  "thksim;": "∼",
+  "timesb;": "⊠",
+  "timesd;": "⨰",
+  "topbot;": "⌶",
+  "topcir;": "⫱",
+  "tprime;": "‴",
+  "tridot;": "◬",
+  "Tstrok;": "Ŧ",
+  "tstrok;": "ŧ",
+  "Uacute;": "Ú",
+  "uacute;": "ú",
+  "Ubreve;": "Ŭ",
+  "ubreve;": "ŭ",
+  "Udblac;": "Ű",
+  "udblac;": "ű",
+  "ufisht;": "⥾",
+  "Ugrave;": "Ù",
+  "ugrave;": "ù",
+  "ulcorn;": "⌜",
+  "ulcrop;": "⌏",
+  "urcorn;": "⌝",
+  "urcrop;": "⌎",
+  "Utilde;": "Ũ",
+  "utilde;": "ũ",
+  "vangrt;": "⦜",
+  "varphi;": "ϕ",
+  "varrho;": "ϱ",
+  "Vdashl;": "⫦",
+  "veebar;": "⊻",
+  "vellip;": "⋮",
+  "Verbar;": "‖",
   "verbar;": "|",
-  "vsubnE;": "\u2ACB\uFE00",
-  "vsubne;": "\u228A\uFE00",
-  "vsupnE;": "\u2ACC\uFE00",
-  "vsupne;": "\u228B\uFE00",
-  "Vvdash;": "\u22AA",
-  "wedbar;": "\u2A5F",
-  "wedgeq;": "\u2259",
-  "weierp;": "\u2118",
-  "wreath;": "\u2240",
-  "xoplus;": "\u2A01",
-  "xotime;": "\u2A02",
-  "xsqcup;": "\u2A06",
-  "xuplus;": "\u2A04",
-  "xwedge;": "\u22C0",
-  "Yacute;": "\xDD",
-  "yacute;": "\xFD",
-  "Zacute;": "\u0179",
-  "zacute;": "\u017A",
-  "Zcaron;": "\u017D",
-  "zcaron;": "\u017E",
-  "zeetrf;": "\u2128",
-  "alefsym;": "\u2135",
-  "angrtvb;": "\u22BE",
-  "angzarr;": "\u237C",
-  "asympeq;": "\u224D",
-  "backsim;": "\u223D",
-  "Because;": "\u2235",
-  "because;": "\u2235",
-  "bemptyv;": "\u29B0",
-  "between;": "\u226C",
-  "bigcirc;": "\u25EF",
-  "bigodot;": "\u2A00",
-  "bigstar;": "\u2605",
-  "bnequiv;": "\u2261\u20E5",
-  "boxplus;": "\u229E",
-  "Cayleys;": "\u212D",
-  "Cconint;": "\u2230",
-  "ccupssm;": "\u2A50",
-  "Cedilla;": "\xB8",
-  "cemptyv;": "\u29B2",
-  "cirscir;": "\u29C2",
-  "coloneq;": "\u2254",
-  "congdot;": "\u2A6D",
-  "cudarrl;": "\u2938",
-  "cudarrr;": "\u2935",
-  "cularrp;": "\u293D",
-  "curarrm;": "\u293C",
-  "dbkarow;": "\u290F",
-  "ddagger;": "\u2021",
-  "ddotseq;": "\u2A77",
-  "demptyv;": "\u29B1",
-  "Diamond;": "\u22C4",
-  "diamond;": "\u22C4",
-  "digamma;": "\u03DD",
-  "dotplus;": "\u2214",
-  "DownTee;": "\u22A4",
-  "dwangle;": "\u29A6",
-  "Element;": "\u2208",
-  "Epsilon;": "\u0395",
-  "epsilon;": "\u03B5",
-  "eqcolon;": "\u2255",
-  "equivDD;": "\u2A78",
-  "gesdoto;": "\u2A82",
-  "gtquest;": "\u2A7C",
-  "gtrless;": "\u2277",
-  "harrcir;": "\u2948",
-  "Implies;": "\u21D2",
-  "intprod;": "\u2A3C",
-  "isindot;": "\u22F5",
-  "larrbfs;": "\u291F",
-  "larrsim;": "\u2973",
-  "lbrksld;": "\u298F",
-  "lbrkslu;": "\u298D",
-  "ldrdhar;": "\u2967",
-  "LeftTee;": "\u22A3",
-  "lesdoto;": "\u2A81",
-  "lessdot;": "\u22D6",
-  "lessgtr;": "\u2276",
-  "lesssim;": "\u2272",
-  "lotimes;": "\u2A34",
-  "lozenge;": "\u25CA",
-  "ltquest;": "\u2A7B",
-  "luruhar;": "\u2966",
-  "maltese;": "\u2720",
-  "minusdu;": "\u2A2A",
-  "napprox;": "\u2249",
-  "natural;": "\u266E",
-  "nearrow;": "\u2197",
+  "vsubnE;": "⫋︀",
+  "vsubne;": "⊊︀",
+  "vsupnE;": "⫌︀",
+  "vsupne;": "⊋︀",
+  "Vvdash;": "⊪",
+  "wedbar;": "⩟",
+  "wedgeq;": "≙",
+  "weierp;": "℘",
+  "wreath;": "≀",
+  "xoplus;": "⨁",
+  "xotime;": "⨂",
+  "xsqcup;": "⨆",
+  "xuplus;": "⨄",
+  "xwedge;": "⋀",
+  "Yacute;": "Ý",
+  "yacute;": "ý",
+  "Zacute;": "Ź",
+  "zacute;": "ź",
+  "Zcaron;": "Ž",
+  "zcaron;": "ž",
+  "zeetrf;": "ℨ",
+  "alefsym;": "ℵ",
+  "angrtvb;": "⊾",
+  "angzarr;": "⍼",
+  "asympeq;": "≍",
+  "backsim;": "∽",
+  "Because;": "∵",
+  "because;": "∵",
+  "bemptyv;": "⦰",
+  "between;": "≬",
+  "bigcirc;": "◯",
+  "bigodot;": "⨀",
+  "bigstar;": "★",
+  "bnequiv;": "≡⃥",
+  "boxplus;": "⊞",
+  "Cayleys;": "ℭ",
+  "Cconint;": "∰",
+  "ccupssm;": "⩐",
+  "Cedilla;": "¸",
+  "cemptyv;": "⦲",
+  "cirscir;": "⧂",
+  "coloneq;": "≔",
+  "congdot;": "⩭",
+  "cudarrl;": "⤸",
+  "cudarrr;": "⤵",
+  "cularrp;": "⤽",
+  "curarrm;": "⤼",
+  "dbkarow;": "⤏",
+  "ddagger;": "‡",
+  "ddotseq;": "⩷",
+  "demptyv;": "⦱",
+  "Diamond;": "⋄",
+  "diamond;": "⋄",
+  "digamma;": "ϝ",
+  "dotplus;": "∔",
+  "DownTee;": "⊤",
+  "dwangle;": "⦦",
+  "Element;": "∈",
+  "Epsilon;": "Ε",
+  "epsilon;": "ε",
+  "eqcolon;": "≕",
+  "equivDD;": "⩸",
+  "gesdoto;": "⪂",
+  "gtquest;": "⩼",
+  "gtrless;": "≷",
+  "harrcir;": "⥈",
+  "Implies;": "⇒",
+  "intprod;": "⨼",
+  "isindot;": "⋵",
+  "larrbfs;": "⤟",
+  "larrsim;": "⥳",
+  "lbrksld;": "⦏",
+  "lbrkslu;": "⦍",
+  "ldrdhar;": "⥧",
+  "LeftTee;": "⊣",
+  "lesdoto;": "⪁",
+  "lessdot;": "⋖",
+  "lessgtr;": "≶",
+  "lesssim;": "≲",
+  "lotimes;": "⨴",
+  "lozenge;": "◊",
+  "ltquest;": "⩻",
+  "luruhar;": "⥦",
+  "maltese;": "✠",
+  "minusdu;": "⨪",
+  "napprox;": "≉",
+  "natural;": "♮",
+  "nearrow;": "↗",
   "NewLine;": "\n",
-  "nexists;": "\u2204",
-  "NoBreak;": "\u2060",
-  "notinva;": "\u2209",
-  "notinvb;": "\u22F7",
-  "notinvc;": "\u22F6",
-  "NotLess;": "\u226E",
-  "notniva;": "\u220C",
-  "notnivb;": "\u22FE",
-  "notnivc;": "\u22FD",
-  "npolint;": "\u2A14",
-  "npreceq;": "\u2AAF\u0338",
-  "nsqsube;": "\u22E2",
-  "nsqsupe;": "\u22E3",
-  "nsubset;": "\u2282\u20D2",
-  "nsucceq;": "\u2AB0\u0338",
-  "nsupset;": "\u2283\u20D2",
-  "nvinfin;": "\u29DE",
-  "nvltrie;": "\u22B4\u20D2",
-  "nvrtrie;": "\u22B5\u20D2",
-  "nwarrow;": "\u2196",
-  "olcross;": "\u29BB",
-  "Omicron;": "\u039F",
-  "omicron;": "\u03BF",
-  "orderof;": "\u2134",
-  "orslope;": "\u2A57",
-  "OverBar;": "\u203E",
-  "pertenk;": "\u2031",
-  "planckh;": "\u210E",
-  "pluscir;": "\u2A22",
-  "plussim;": "\u2A26",
-  "plustwo;": "\u2A27",
-  "precsim;": "\u227E",
-  "Product;": "\u220F",
-  "quatint;": "\u2A16",
-  "questeq;": "\u225F",
-  "rarrbfs;": "\u2920",
-  "rarrsim;": "\u2974",
-  "rbrksld;": "\u298E",
-  "rbrkslu;": "\u2990",
-  "rdldhar;": "\u2969",
-  "realine;": "\u211B",
-  "rotimes;": "\u2A35",
-  "ruluhar;": "\u2968",
-  "searrow;": "\u2198",
-  "simplus;": "\u2A24",
-  "simrarr;": "\u2972",
-  "subedot;": "\u2AC3",
-  "submult;": "\u2AC1",
-  "subplus;": "\u2ABF",
-  "subrarr;": "\u2979",
-  "succsim;": "\u227F",
-  "supdsub;": "\u2AD8",
-  "supedot;": "\u2AC4",
-  "suphsol;": "\u27C9",
-  "suphsub;": "\u2AD7",
-  "suplarr;": "\u297B",
-  "supmult;": "\u2AC2",
-  "supplus;": "\u2AC0",
-  "swarrow;": "\u2199",
-  "topfork;": "\u2ADA",
-  "triplus;": "\u2A39",
-  "tritime;": "\u2A3B",
-  "UpArrow;": "\u2191",
-  "Uparrow;": "\u21D1",
-  "uparrow;": "\u2191",
-  "Upsilon;": "\u03A5",
-  "upsilon;": "\u03C5",
-  "uwangle;": "\u29A7",
-  "vzigzag;": "\u299A",
-  "zigrarr;": "\u21DD",
-  "andslope;": "\u2A58",
-  "angmsdaa;": "\u29A8",
-  "angmsdab;": "\u29A9",
-  "angmsdac;": "\u29AA",
-  "angmsdad;": "\u29AB",
-  "angmsdae;": "\u29AC",
-  "angmsdaf;": "\u29AD",
-  "angmsdag;": "\u29AE",
-  "angmsdah;": "\u29AF",
-  "angrtvbd;": "\u299D",
-  "approxeq;": "\u224A",
-  "awconint;": "\u2233",
-  "backcong;": "\u224C",
-  "barwedge;": "\u2305",
-  "bbrktbrk;": "\u23B6",
-  "bigoplus;": "\u2A01",
-  "bigsqcup;": "\u2A06",
-  "biguplus;": "\u2A04",
-  "bigwedge;": "\u22C0",
-  "boxminus;": "\u229F",
-  "boxtimes;": "\u22A0",
-  "bsolhsub;": "\u27C8",
-  "capbrcup;": "\u2A49",
-  "circledR;": "\xAE",
-  "circledS;": "\u24C8",
-  "cirfnint;": "\u2A10",
-  "clubsuit;": "\u2663",
-  "cupbrcap;": "\u2A48",
-  "curlyvee;": "\u22CE",
-  "cwconint;": "\u2232",
-  "DDotrahd;": "\u2911",
-  "doteqdot;": "\u2251",
-  "DotEqual;": "\u2250",
-  "dotminus;": "\u2238",
-  "drbkarow;": "\u2910",
-  "dzigrarr;": "\u27FF",
-  "elinters;": "\u23E7",
-  "emptyset;": "\u2205",
-  "eqvparsl;": "\u29E5",
-  "fpartint;": "\u2A0D",
-  "geqslant;": "\u2A7E",
-  "gesdotol;": "\u2A84",
-  "gnapprox;": "\u2A8A",
-  "hksearow;": "\u2925",
-  "hkswarow;": "\u2926",
-  "imagline;": "\u2110",
-  "imagpart;": "\u2111",
-  "infintie;": "\u29DD",
-  "integers;": "\u2124",
-  "Integral;": "\u222B",
-  "intercal;": "\u22BA",
-  "intlarhk;": "\u2A17",
-  "laemptyv;": "\u29B4",
-  "ldrushar;": "\u294B",
-  "leqslant;": "\u2A7D",
-  "lesdotor;": "\u2A83",
-  "LessLess;": "\u2AA1",
-  "llcorner;": "\u231E",
-  "lnapprox;": "\u2A89",
-  "lrcorner;": "\u231F",
-  "lurdshar;": "\u294A",
-  "mapstoup;": "\u21A5",
-  "multimap;": "\u22B8",
-  "naturals;": "\u2115",
-  "ncongdot;": "\u2A6D\u0338",
-  "NotEqual;": "\u2260",
-  "notindot;": "\u22F5\u0338",
-  "NotTilde;": "\u2241",
-  "otimesas;": "\u2A36",
-  "parallel;": "\u2225",
-  "PartialD;": "\u2202",
-  "plusacir;": "\u2A23",
-  "pointint;": "\u2A15",
-  "Precedes;": "\u227A",
-  "precneqq;": "\u2AB5",
-  "precnsim;": "\u22E8",
-  "profalar;": "\u232E",
-  "profline;": "\u2312",
-  "profsurf;": "\u2313",
-  "raemptyv;": "\u29B3",
-  "realpart;": "\u211C",
-  "RightTee;": "\u22A2",
-  "rppolint;": "\u2A12",
-  "rtriltri;": "\u29CE",
-  "scpolint;": "\u2A13",
-  "setminus;": "\u2216",
-  "shortmid;": "\u2223",
-  "smeparsl;": "\u29E4",
-  "sqsubset;": "\u228F",
-  "sqsupset;": "\u2290",
-  "subseteq;": "\u2286",
-  "Succeeds;": "\u227B",
-  "succneqq;": "\u2AB6",
-  "succnsim;": "\u22E9",
-  "SuchThat;": "\u220B",
-  "Superset;": "\u2283",
-  "supseteq;": "\u2287",
-  "thetasym;": "\u03D1",
-  "thicksim;": "\u223C",
-  "timesbar;": "\u2A31",
-  "triangle;": "\u25B5",
-  "triminus;": "\u2A3A",
-  "trpezium;": "\u23E2",
-  "Uarrocir;": "\u2949",
-  "ulcorner;": "\u231C",
+  "nexists;": "∄",
+  "NoBreak;": "⁠",
+  "notinva;": "∉",
+  "notinvb;": "⋷",
+  "notinvc;": "⋶",
+  "NotLess;": "≮",
+  "notniva;": "∌",
+  "notnivb;": "⋾",
+  "notnivc;": "⋽",
+  "npolint;": "⨔",
+  "npreceq;": "⪯̸",
+  "nsqsube;": "⋢",
+  "nsqsupe;": "⋣",
+  "nsubset;": "⊂⃒",
+  "nsucceq;": "⪰̸",
+  "nsupset;": "⊃⃒",
+  "nvinfin;": "⧞",
+  "nvltrie;": "⊴⃒",
+  "nvrtrie;": "⊵⃒",
+  "nwarrow;": "↖",
+  "olcross;": "⦻",
+  "Omicron;": "Ο",
+  "omicron;": "ο",
+  "orderof;": "ℴ",
+  "orslope;": "⩗",
+  "OverBar;": "‾",
+  "pertenk;": "‱",
+  "planckh;": "ℎ",
+  "pluscir;": "⨢",
+  "plussim;": "⨦",
+  "plustwo;": "⨧",
+  "precsim;": "≾",
+  "Product;": "∏",
+  "quatint;": "⨖",
+  "questeq;": "≟",
+  "rarrbfs;": "⤠",
+  "rarrsim;": "⥴",
+  "rbrksld;": "⦎",
+  "rbrkslu;": "⦐",
+  "rdldhar;": "⥩",
+  "realine;": "ℛ",
+  "rotimes;": "⨵",
+  "ruluhar;": "⥨",
+  "searrow;": "↘",
+  "simplus;": "⨤",
+  "simrarr;": "⥲",
+  "subedot;": "⫃",
+  "submult;": "⫁",
+  "subplus;": "⪿",
+  "subrarr;": "⥹",
+  "succsim;": "≿",
+  "supdsub;": "⫘",
+  "supedot;": "⫄",
+  "suphsol;": "⟉",
+  "suphsub;": "⫗",
+  "suplarr;": "⥻",
+  "supmult;": "⫂",
+  "supplus;": "⫀",
+  "swarrow;": "↙",
+  "topfork;": "⫚",
+  "triplus;": "⨹",
+  "tritime;": "⨻",
+  "UpArrow;": "↑",
+  "Uparrow;": "⇑",
+  "uparrow;": "↑",
+  "Upsilon;": "Υ",
+  "upsilon;": "υ",
+  "uwangle;": "⦧",
+  "vzigzag;": "⦚",
+  "zigrarr;": "⇝",
+  "andslope;": "⩘",
+  "angmsdaa;": "⦨",
+  "angmsdab;": "⦩",
+  "angmsdac;": "⦪",
+  "angmsdad;": "⦫",
+  "angmsdae;": "⦬",
+  "angmsdaf;": "⦭",
+  "angmsdag;": "⦮",
+  "angmsdah;": "⦯",
+  "angrtvbd;": "⦝",
+  "approxeq;": "≊",
+  "awconint;": "∳",
+  "backcong;": "≌",
+  "barwedge;": "⌅",
+  "bbrktbrk;": "⎶",
+  "bigoplus;": "⨁",
+  "bigsqcup;": "⨆",
+  "biguplus;": "⨄",
+  "bigwedge;": "⋀",
+  "boxminus;": "⊟",
+  "boxtimes;": "⊠",
+  "bsolhsub;": "⟈",
+  "capbrcup;": "⩉",
+  "circledR;": "®",
+  "circledS;": "Ⓢ",
+  "cirfnint;": "⨐",
+  "clubsuit;": "♣",
+  "cupbrcap;": "⩈",
+  "curlyvee;": "⋎",
+  "cwconint;": "∲",
+  "DDotrahd;": "⤑",
+  "doteqdot;": "≑",
+  "DotEqual;": "≐",
+  "dotminus;": "∸",
+  "drbkarow;": "⤐",
+  "dzigrarr;": "⟿",
+  "elinters;": "⏧",
+  "emptyset;": "∅",
+  "eqvparsl;": "⧥",
+  "fpartint;": "⨍",
+  "geqslant;": "⩾",
+  "gesdotol;": "⪄",
+  "gnapprox;": "⪊",
+  "hksearow;": "⤥",
+  "hkswarow;": "⤦",
+  "imagline;": "ℐ",
+  "imagpart;": "ℑ",
+  "infintie;": "⧝",
+  "integers;": "ℤ",
+  "Integral;": "∫",
+  "intercal;": "⊺",
+  "intlarhk;": "⨗",
+  "laemptyv;": "⦴",
+  "ldrushar;": "⥋",
+  "leqslant;": "⩽",
+  "lesdotor;": "⪃",
+  "LessLess;": "⪡",
+  "llcorner;": "⌞",
+  "lnapprox;": "⪉",
+  "lrcorner;": "⌟",
+  "lurdshar;": "⥊",
+  "mapstoup;": "↥",
+  "multimap;": "⊸",
+  "naturals;": "ℕ",
+  "ncongdot;": "⩭̸",
+  "NotEqual;": "≠",
+  "notindot;": "⋵̸",
+  "NotTilde;": "≁",
+  "otimesas;": "⨶",
+  "parallel;": "∥",
+  "PartialD;": "∂",
+  "plusacir;": "⨣",
+  "pointint;": "⨕",
+  "Precedes;": "≺",
+  "precneqq;": "⪵",
+  "precnsim;": "⋨",
+  "profalar;": "⌮",
+  "profline;": "⌒",
+  "profsurf;": "⌓",
+  "raemptyv;": "⦳",
+  "realpart;": "ℜ",
+  "RightTee;": "⊢",
+  "rppolint;": "⨒",
+  "rtriltri;": "⧎",
+  "scpolint;": "⨓",
+  "setminus;": "∖",
+  "shortmid;": "∣",
+  "smeparsl;": "⧤",
+  "sqsubset;": "⊏",
+  "sqsupset;": "⊐",
+  "subseteq;": "⊆",
+  "Succeeds;": "≻",
+  "succneqq;": "⪶",
+  "succnsim;": "⋩",
+  "SuchThat;": "∋",
+  "Superset;": "⊃",
+  "supseteq;": "⊇",
+  "thetasym;": "ϑ",
+  "thicksim;": "∼",
+  "timesbar;": "⨱",
+  "triangle;": "▵",
+  "triminus;": "⨺",
+  "trpezium;": "⏢",
+  "Uarrocir;": "⥉",
+  "ulcorner;": "⌜",
   "UnderBar;": "_",
-  "urcorner;": "\u231D",
-  "varkappa;": "\u03F0",
-  "varsigma;": "\u03C2",
-  "vartheta;": "\u03D1",
-  "backprime;": "\u2035",
-  "backsimeq;": "\u22CD",
-  "Backslash;": "\u2216",
-  "bigotimes;": "\u2A02",
-  "CenterDot;": "\xB7",
-  "centerdot;": "\xB7",
-  "checkmark;": "\u2713",
-  "CircleDot;": "\u2299",
-  "complexes;": "\u2102",
-  "Congruent;": "\u2261",
-  "Coproduct;": "\u2210",
-  "dotsquare;": "\u22A1",
-  "DoubleDot;": "\xA8",
-  "DownArrow;": "\u2193",
-  "Downarrow;": "\u21D3",
-  "downarrow;": "\u2193",
-  "DownBreve;": "\u0311",
-  "gtrapprox;": "\u2A86",
-  "gtreqless;": "\u22DB",
-  "gvertneqq;": "\u2269\uFE00",
-  "heartsuit;": "\u2665",
-  "HumpEqual;": "\u224F",
-  "LeftArrow;": "\u2190",
-  "Leftarrow;": "\u21D0",
-  "leftarrow;": "\u2190",
-  "LeftFloor;": "\u230A",
-  "lesseqgtr;": "\u22DA",
-  "LessTilde;": "\u2272",
-  "lvertneqq;": "\u2268\uFE00",
-  "Mellintrf;": "\u2133",
-  "MinusPlus;": "\u2213",
-  "ngeqslant;": "\u2A7E\u0338",
-  "nleqslant;": "\u2A7D\u0338",
-  "NotCupCap;": "\u226D",
-  "NotExists;": "\u2204",
-  "NotSubset;": "\u2282\u20D2",
-  "nparallel;": "\u2226",
-  "nshortmid;": "\u2224",
-  "nsubseteq;": "\u2288",
-  "nsupseteq;": "\u2289",
-  "OverBrace;": "\u23DE",
-  "pitchfork;": "\u22D4",
-  "PlusMinus;": "\xB1",
-  "rationals;": "\u211A",
-  "spadesuit;": "\u2660",
-  "subseteqq;": "\u2AC5",
-  "subsetneq;": "\u228A",
-  "supseteqq;": "\u2AC6",
-  "supsetneq;": "\u228B",
-  "Therefore;": "\u2234",
-  "therefore;": "\u2234",
-  "ThinSpace;": "\u2009",
-  "triangleq;": "\u225C",
-  "TripleDot;": "\u20DB",
-  "UnionPlus;": "\u228E",
-  "varpropto;": "\u221D",
-  "Bernoullis;": "\u212C",
-  "circledast;": "\u229B",
-  "CirclePlus;": "\u2295",
-  "complement;": "\u2201",
-  "curlywedge;": "\u22CF",
-  "eqslantgtr;": "\u2A96",
-  "EqualTilde;": "\u2242",
-  "Fouriertrf;": "\u2131",
-  "gtreqqless;": "\u2A8C",
-  "ImaginaryI;": "\u2148",
-  "Laplacetrf;": "\u2112",
-  "LeftVector;": "\u21BC",
-  "lessapprox;": "\u2A85",
-  "lesseqqgtr;": "\u2A8B",
-  "Lleftarrow;": "\u21DA",
-  "lmoustache;": "\u23B0",
-  "longmapsto;": "\u27FC",
-  "mapstodown;": "\u21A7",
-  "mapstoleft;": "\u21A4",
-  "nLeftarrow;": "\u21CD",
-  "nleftarrow;": "\u219A",
-  "NotElement;": "\u2209",
-  "NotGreater;": "\u226F",
-  "nsubseteqq;": "\u2AC5\u0338",
-  "nsupseteqq;": "\u2AC6\u0338",
-  "precapprox;": "\u2AB7",
-  "Proportion;": "\u2237",
-  "RightArrow;": "\u2192",
-  "Rightarrow;": "\u21D2",
-  "rightarrow;": "\u2192",
-  "RightFloor;": "\u230B",
-  "rmoustache;": "\u23B1",
-  "sqsubseteq;": "\u2291",
-  "sqsupseteq;": "\u2292",
-  "subsetneqq;": "\u2ACB",
-  "succapprox;": "\u2AB8",
-  "supsetneqq;": "\u2ACC",
-  "ThickSpace;": "\u205F\u200A",
-  "TildeEqual;": "\u2243",
-  "TildeTilde;": "\u2248",
-  "UnderBrace;": "\u23DF",
-  "UpArrowBar;": "\u2912",
-  "UpTeeArrow;": "\u21A5",
-  "upuparrows;": "\u21C8",
-  "varepsilon;": "\u03F5",
-  "varnothing;": "\u2205",
-  "backepsilon;": "\u03F6",
-  "blacksquare;": "\u25AA",
-  "circledcirc;": "\u229A",
-  "circleddash;": "\u229D",
-  "CircleMinus;": "\u2296",
-  "CircleTimes;": "\u2297",
-  "curlyeqprec;": "\u22DE",
-  "curlyeqsucc;": "\u22DF",
-  "diamondsuit;": "\u2666",
-  "eqslantless;": "\u2A95",
-  "Equilibrium;": "\u21CC",
-  "expectation;": "\u2130",
-  "GreaterLess;": "\u2277",
-  "LeftCeiling;": "\u2308",
-  "LessGreater;": "\u2276",
-  "MediumSpace;": "\u205F",
-  "NotLessLess;": "\u226A\u0338",
-  "NotPrecedes;": "\u2280",
-  "NotSucceeds;": "\u2281",
-  "NotSuperset;": "\u2283\u20D2",
-  "nRightarrow;": "\u21CF",
-  "nrightarrow;": "\u219B",
-  "OverBracket;": "\u23B4",
-  "preccurlyeq;": "\u227C",
-  "precnapprox;": "\u2AB9",
-  "quaternions;": "\u210D",
-  "RightVector;": "\u21C0",
-  "Rrightarrow;": "\u21DB",
-  "RuleDelayed;": "\u29F4",
-  "SmallCircle;": "\u2218",
-  "SquareUnion;": "\u2294",
-  "straightphi;": "\u03D5",
-  "SubsetEqual;": "\u2286",
-  "succcurlyeq;": "\u227D",
-  "succnapprox;": "\u2ABA",
-  "thickapprox;": "\u2248",
-  "UpDownArrow;": "\u2195",
-  "Updownarrow;": "\u21D5",
-  "updownarrow;": "\u2195",
-  "VerticalBar;": "\u2223",
-  "blacklozenge;": "\u29EB",
-  "DownArrowBar;": "\u2913",
-  "DownTeeArrow;": "\u21A7",
-  "ExponentialE;": "\u2147",
-  "exponentiale;": "\u2147",
-  "GreaterEqual;": "\u2265",
-  "GreaterTilde;": "\u2273",
-  "HilbertSpace;": "\u210B",
-  "HumpDownHump;": "\u224E",
-  "Intersection;": "\u22C2",
-  "LeftArrowBar;": "\u21E4",
-  "LeftTeeArrow;": "\u21A4",
-  "LeftTriangle;": "\u22B2",
-  "LeftUpVector;": "\u21BF",
-  "NotCongruent;": "\u2262",
-  "NotHumpEqual;": "\u224F\u0338",
-  "NotLessEqual;": "\u2270",
-  "NotLessTilde;": "\u2274",
-  "Proportional;": "\u221D",
-  "RightCeiling;": "\u2309",
-  "risingdotseq;": "\u2253",
-  "RoundImplies;": "\u2970",
-  "ShortUpArrow;": "\u2191",
-  "SquareSubset;": "\u228F",
-  "triangledown;": "\u25BF",
-  "triangleleft;": "\u25C3",
-  "UnderBracket;": "\u23B5",
-  "varsubsetneq;": "\u228A\uFE00",
-  "varsupsetneq;": "\u228B\uFE00",
+  "urcorner;": "⌝",
+  "varkappa;": "ϰ",
+  "varsigma;": "ς",
+  "vartheta;": "ϑ",
+  "backprime;": "‵",
+  "backsimeq;": "⋍",
+  "Backslash;": "∖",
+  "bigotimes;": "⨂",
+  "CenterDot;": "·",
+  "centerdot;": "·",
+  "checkmark;": "✓",
+  "CircleDot;": "⊙",
+  "complexes;": "ℂ",
+  "Congruent;": "≡",
+  "Coproduct;": "∐",
+  "dotsquare;": "⊡",
+  "DoubleDot;": "¨",
+  "DownArrow;": "↓",
+  "Downarrow;": "⇓",
+  "downarrow;": "↓",
+  "DownBreve;": "̑",
+  "gtrapprox;": "⪆",
+  "gtreqless;": "⋛",
+  "gvertneqq;": "≩︀",
+  "heartsuit;": "♥",
+  "HumpEqual;": "≏",
+  "LeftArrow;": "←",
+  "Leftarrow;": "⇐",
+  "leftarrow;": "←",
+  "LeftFloor;": "⌊",
+  "lesseqgtr;": "⋚",
+  "LessTilde;": "≲",
+  "lvertneqq;": "≨︀",
+  "Mellintrf;": "ℳ",
+  "MinusPlus;": "∓",
+  "ngeqslant;": "⩾̸",
+  "nleqslant;": "⩽̸",
+  "NotCupCap;": "≭",
+  "NotExists;": "∄",
+  "NotSubset;": "⊂⃒",
+  "nparallel;": "∦",
+  "nshortmid;": "∤",
+  "nsubseteq;": "⊈",
+  "nsupseteq;": "⊉",
+  "OverBrace;": "⏞",
+  "pitchfork;": "⋔",
+  "PlusMinus;": "±",
+  "rationals;": "ℚ",
+  "spadesuit;": "♠",
+  "subseteqq;": "⫅",
+  "subsetneq;": "⊊",
+  "supseteqq;": "⫆",
+  "supsetneq;": "⊋",
+  "Therefore;": "∴",
+  "therefore;": "∴",
+  "ThinSpace;": " ",
+  "triangleq;": "≜",
+  "TripleDot;": "⃛",
+  "UnionPlus;": "⊎",
+  "varpropto;": "∝",
+  "Bernoullis;": "ℬ",
+  "circledast;": "⊛",
+  "CirclePlus;": "⊕",
+  "complement;": "∁",
+  "curlywedge;": "⋏",
+  "eqslantgtr;": "⪖",
+  "EqualTilde;": "≂",
+  "Fouriertrf;": "ℱ",
+  "gtreqqless;": "⪌",
+  "ImaginaryI;": "ⅈ",
+  "Laplacetrf;": "ℒ",
+  "LeftVector;": "↼",
+  "lessapprox;": "⪅",
+  "lesseqqgtr;": "⪋",
+  "Lleftarrow;": "⇚",
+  "lmoustache;": "⎰",
+  "longmapsto;": "⟼",
+  "mapstodown;": "↧",
+  "mapstoleft;": "↤",
+  "nLeftarrow;": "⇍",
+  "nleftarrow;": "↚",
+  "NotElement;": "∉",
+  "NotGreater;": "≯",
+  "nsubseteqq;": "⫅̸",
+  "nsupseteqq;": "⫆̸",
+  "precapprox;": "⪷",
+  "Proportion;": "∷",
+  "RightArrow;": "→",
+  "Rightarrow;": "⇒",
+  "rightarrow;": "→",
+  "RightFloor;": "⌋",
+  "rmoustache;": "⎱",
+  "sqsubseteq;": "⊑",
+  "sqsupseteq;": "⊒",
+  "subsetneqq;": "⫋",
+  "succapprox;": "⪸",
+  "supsetneqq;": "⫌",
+  "ThickSpace;": "  ",
+  "TildeEqual;": "≃",
+  "TildeTilde;": "≈",
+  "UnderBrace;": "⏟",
+  "UpArrowBar;": "⤒",
+  "UpTeeArrow;": "↥",
+  "upuparrows;": "⇈",
+  "varepsilon;": "ϵ",
+  "varnothing;": "∅",
+  "backepsilon;": "϶",
+  "blacksquare;": "▪",
+  "circledcirc;": "⊚",
+  "circleddash;": "⊝",
+  "CircleMinus;": "⊖",
+  "CircleTimes;": "⊗",
+  "curlyeqprec;": "⋞",
+  "curlyeqsucc;": "⋟",
+  "diamondsuit;": "♦",
+  "eqslantless;": "⪕",
+  "Equilibrium;": "⇌",
+  "expectation;": "ℰ",
+  "GreaterLess;": "≷",
+  "LeftCeiling;": "⌈",
+  "LessGreater;": "≶",
+  "MediumSpace;": " ",
+  "NotLessLess;": "≪̸",
+  "NotPrecedes;": "⊀",
+  "NotSucceeds;": "⊁",
+  "NotSuperset;": "⊃⃒",
+  "nRightarrow;": "⇏",
+  "nrightarrow;": "↛",
+  "OverBracket;": "⎴",
+  "preccurlyeq;": "≼",
+  "precnapprox;": "⪹",
+  "quaternions;": "ℍ",
+  "RightVector;": "⇀",
+  "Rrightarrow;": "⇛",
+  "RuleDelayed;": "⧴",
+  "SmallCircle;": "∘",
+  "SquareUnion;": "⊔",
+  "straightphi;": "ϕ",
+  "SubsetEqual;": "⊆",
+  "succcurlyeq;": "≽",
+  "succnapprox;": "⪺",
+  "thickapprox;": "≈",
+  "UpDownArrow;": "↕",
+  "Updownarrow;": "⇕",
+  "updownarrow;": "↕",
+  "VerticalBar;": "∣",
+  "blacklozenge;": "⧫",
+  "DownArrowBar;": "⤓",
+  "DownTeeArrow;": "↧",
+  "ExponentialE;": "ⅇ",
+  "exponentiale;": "ⅇ",
+  "GreaterEqual;": "≥",
+  "GreaterTilde;": "≳",
+  "HilbertSpace;": "ℋ",
+  "HumpDownHump;": "≎",
+  "Intersection;": "⋂",
+  "LeftArrowBar;": "⇤",
+  "LeftTeeArrow;": "↤",
+  "LeftTriangle;": "⊲",
+  "LeftUpVector;": "↿",
+  "NotCongruent;": "≢",
+  "NotHumpEqual;": "≏̸",
+  "NotLessEqual;": "≰",
+  "NotLessTilde;": "≴",
+  "Proportional;": "∝",
+  "RightCeiling;": "⌉",
+  "risingdotseq;": "≓",
+  "RoundImplies;": "⥰",
+  "ShortUpArrow;": "↑",
+  "SquareSubset;": "⊏",
+  "triangledown;": "▿",
+  "triangleleft;": "◃",
+  "UnderBracket;": "⎵",
+  "varsubsetneq;": "⊊︀",
+  "varsupsetneq;": "⊋︀",
   "VerticalLine;": "|",
-  "ApplyFunction;": "\u2061",
-  "bigtriangleup;": "\u25B3",
-  "blacktriangle;": "\u25B4",
-  "DifferentialD;": "\u2146",
-  "divideontimes;": "\u22C7",
-  "DoubleLeftTee;": "\u2AE4",
-  "DoubleUpArrow;": "\u21D1",
-  "fallingdotseq;": "\u2252",
-  "hookleftarrow;": "\u21A9",
-  "leftarrowtail;": "\u21A2",
-  "leftharpoonup;": "\u21BC",
-  "LeftTeeVector;": "\u295A",
-  "LeftVectorBar;": "\u2952",
-  "LessFullEqual;": "\u2266",
-  "LongLeftArrow;": "\u27F5",
-  "Longleftarrow;": "\u27F8",
-  "longleftarrow;": "\u27F5",
-  "looparrowleft;": "\u21AB",
-  "measuredangle;": "\u2221",
-  "NotEqualTilde;": "\u2242\u0338",
-  "NotTildeEqual;": "\u2244",
-  "NotTildeTilde;": "\u2249",
-  "ntriangleleft;": "\u22EA",
-  "Poincareplane;": "\u210C",
-  "PrecedesEqual;": "\u2AAF",
-  "PrecedesTilde;": "\u227E",
-  "RightArrowBar;": "\u21E5",
-  "RightTeeArrow;": "\u21A6",
-  "RightTriangle;": "\u22B3",
-  "RightUpVector;": "\u21BE",
-  "shortparallel;": "\u2225",
-  "smallsetminus;": "\u2216",
-  "SucceedsEqual;": "\u2AB0",
-  "SucceedsTilde;": "\u227F",
-  "SupersetEqual;": "\u2287",
-  "triangleright;": "\u25B9",
-  "UpEquilibrium;": "\u296E",
-  "upharpoonleft;": "\u21BF",
-  "varsubsetneqq;": "\u2ACB\uFE00",
-  "varsupsetneqq;": "\u2ACC\uFE00",
-  "VerticalTilde;": "\u2240",
-  "VeryThinSpace;": "\u200A",
-  "curvearrowleft;": "\u21B6",
-  "DiacriticalDot;": "\u02D9",
-  "doublebarwedge;": "\u2306",
-  "DoubleRightTee;": "\u22A8",
-  "downdownarrows;": "\u21CA",
-  "DownLeftVector;": "\u21BD",
-  "GreaterGreater;": "\u2AA2",
-  "hookrightarrow;": "\u21AA",
-  "HorizontalLine;": "\u2500",
-  "InvisibleComma;": "\u2063",
-  "InvisibleTimes;": "\u2062",
-  "LeftDownVector;": "\u21C3",
-  "leftleftarrows;": "\u21C7",
-  "LeftRightArrow;": "\u2194",
-  "Leftrightarrow;": "\u21D4",
-  "leftrightarrow;": "\u2194",
-  "leftthreetimes;": "\u22CB",
-  "LessSlantEqual;": "\u2A7D",
-  "LongRightArrow;": "\u27F6",
-  "Longrightarrow;": "\u27F9",
-  "longrightarrow;": "\u27F6",
-  "looparrowright;": "\u21AC",
-  "LowerLeftArrow;": "\u2199",
-  "NestedLessLess;": "\u226A",
-  "NotGreaterLess;": "\u2279",
-  "NotLessGreater;": "\u2278",
-  "NotSubsetEqual;": "\u2288",
-  "NotVerticalBar;": "\u2224",
-  "nshortparallel;": "\u2226",
-  "ntriangleright;": "\u22EB",
-  "OpenCurlyQuote;": "\u2018",
-  "ReverseElement;": "\u220B",
-  "rightarrowtail;": "\u21A3",
-  "rightharpoonup;": "\u21C0",
-  "RightTeeVector;": "\u295B",
-  "RightVectorBar;": "\u2953",
-  "ShortDownArrow;": "\u2193",
-  "ShortLeftArrow;": "\u2190",
-  "SquareSuperset;": "\u2290",
-  "TildeFullEqual;": "\u2245",
-  "trianglelefteq;": "\u22B4",
-  "upharpoonright;": "\u21BE",
-  "UpperLeftArrow;": "\u2196",
-  "ZeroWidthSpace;": "\u200B",
-  "bigtriangledown;": "\u25BD",
-  "circlearrowleft;": "\u21BA",
-  "CloseCurlyQuote;": "\u2019",
-  "ContourIntegral;": "\u222E",
-  "curvearrowright;": "\u21B7",
-  "DoubleDownArrow;": "\u21D3",
-  "DoubleLeftArrow;": "\u21D0",
-  "downharpoonleft;": "\u21C3",
-  "DownRightVector;": "\u21C1",
-  "leftharpoondown;": "\u21BD",
-  "leftrightarrows;": "\u21C6",
-  "LeftRightVector;": "\u294E",
-  "LeftTriangleBar;": "\u29CF",
-  "LeftUpTeeVector;": "\u2960",
-  "LeftUpVectorBar;": "\u2958",
-  "LowerRightArrow;": "\u2198",
-  "nLeftrightarrow;": "\u21CE",
-  "nleftrightarrow;": "\u21AE",
-  "NotGreaterEqual;": "\u2271",
-  "NotGreaterTilde;": "\u2275",
-  "NotHumpDownHump;": "\u224E\u0338",
-  "NotLeftTriangle;": "\u22EA",
-  "NotSquareSubset;": "\u228F\u0338",
-  "ntrianglelefteq;": "\u22EC",
-  "OverParenthesis;": "\u23DC",
-  "RightDownVector;": "\u21C2",
-  "rightleftarrows;": "\u21C4",
-  "rightsquigarrow;": "\u219D",
-  "rightthreetimes;": "\u22CC",
-  "ShortRightArrow;": "\u2192",
-  "straightepsilon;": "\u03F5",
-  "trianglerighteq;": "\u22B5",
-  "UpperRightArrow;": "\u2197",
-  "vartriangleleft;": "\u22B2",
-  "circlearrowright;": "\u21BB",
-  "DiacriticalAcute;": "\xB4",
+  "ApplyFunction;": "⁡",
+  "bigtriangleup;": "△",
+  "blacktriangle;": "▴",
+  "DifferentialD;": "ⅆ",
+  "divideontimes;": "⋇",
+  "DoubleLeftTee;": "⫤",
+  "DoubleUpArrow;": "⇑",
+  "fallingdotseq;": "≒",
+  "hookleftarrow;": "↩",
+  "leftarrowtail;": "↢",
+  "leftharpoonup;": "↼",
+  "LeftTeeVector;": "⥚",
+  "LeftVectorBar;": "⥒",
+  "LessFullEqual;": "≦",
+  "LongLeftArrow;": "⟵",
+  "Longleftarrow;": "⟸",
+  "longleftarrow;": "⟵",
+  "looparrowleft;": "↫",
+  "measuredangle;": "∡",
+  "NotEqualTilde;": "≂̸",
+  "NotTildeEqual;": "≄",
+  "NotTildeTilde;": "≉",
+  "ntriangleleft;": "⋪",
+  "Poincareplane;": "ℌ",
+  "PrecedesEqual;": "⪯",
+  "PrecedesTilde;": "≾",
+  "RightArrowBar;": "⇥",
+  "RightTeeArrow;": "↦",
+  "RightTriangle;": "⊳",
+  "RightUpVector;": "↾",
+  "shortparallel;": "∥",
+  "smallsetminus;": "∖",
+  "SucceedsEqual;": "⪰",
+  "SucceedsTilde;": "≿",
+  "SupersetEqual;": "⊇",
+  "triangleright;": "▹",
+  "UpEquilibrium;": "⥮",
+  "upharpoonleft;": "↿",
+  "varsubsetneqq;": "⫋︀",
+  "varsupsetneqq;": "⫌︀",
+  "VerticalTilde;": "≀",
+  "VeryThinSpace;": " ",
+  "curvearrowleft;": "↶",
+  "DiacriticalDot;": "˙",
+  "doublebarwedge;": "⌆",
+  "DoubleRightTee;": "⊨",
+  "downdownarrows;": "⇊",
+  "DownLeftVector;": "↽",
+  "GreaterGreater;": "⪢",
+  "hookrightarrow;": "↪",
+  "HorizontalLine;": "─",
+  "InvisibleComma;": "⁣",
+  "InvisibleTimes;": "⁢",
+  "LeftDownVector;": "⇃",
+  "leftleftarrows;": "⇇",
+  "LeftRightArrow;": "↔",
+  "Leftrightarrow;": "⇔",
+  "leftrightarrow;": "↔",
+  "leftthreetimes;": "⋋",
+  "LessSlantEqual;": "⩽",
+  "LongRightArrow;": "⟶",
+  "Longrightarrow;": "⟹",
+  "longrightarrow;": "⟶",
+  "looparrowright;": "↬",
+  "LowerLeftArrow;": "↙",
+  "NestedLessLess;": "≪",
+  "NotGreaterLess;": "≹",
+  "NotLessGreater;": "≸",
+  "NotSubsetEqual;": "⊈",
+  "NotVerticalBar;": "∤",
+  "nshortparallel;": "∦",
+  "ntriangleright;": "⋫",
+  "OpenCurlyQuote;": "‘",
+  "ReverseElement;": "∋",
+  "rightarrowtail;": "↣",
+  "rightharpoonup;": "⇀",
+  "RightTeeVector;": "⥛",
+  "RightVectorBar;": "⥓",
+  "ShortDownArrow;": "↓",
+  "ShortLeftArrow;": "←",
+  "SquareSuperset;": "⊐",
+  "TildeFullEqual;": "≅",
+  "trianglelefteq;": "⊴",
+  "upharpoonright;": "↾",
+  "UpperLeftArrow;": "↖",
+  "ZeroWidthSpace;": "​",
+  "bigtriangledown;": "▽",
+  "circlearrowleft;": "↺",
+  "CloseCurlyQuote;": "’",
+  "ContourIntegral;": "∮",
+  "curvearrowright;": "↷",
+  "DoubleDownArrow;": "⇓",
+  "DoubleLeftArrow;": "⇐",
+  "downharpoonleft;": "⇃",
+  "DownRightVector;": "⇁",
+  "leftharpoondown;": "↽",
+  "leftrightarrows;": "⇆",
+  "LeftRightVector;": "⥎",
+  "LeftTriangleBar;": "⧏",
+  "LeftUpTeeVector;": "⥠",
+  "LeftUpVectorBar;": "⥘",
+  "LowerRightArrow;": "↘",
+  "nLeftrightarrow;": "⇎",
+  "nleftrightarrow;": "↮",
+  "NotGreaterEqual;": "≱",
+  "NotGreaterTilde;": "≵",
+  "NotHumpDownHump;": "≎̸",
+  "NotLeftTriangle;": "⋪",
+  "NotSquareSubset;": "⊏̸",
+  "ntrianglelefteq;": "⋬",
+  "OverParenthesis;": "⏜",
+  "RightDownVector;": "⇂",
+  "rightleftarrows;": "⇄",
+  "rightsquigarrow;": "↝",
+  "rightthreetimes;": "⋌",
+  "ShortRightArrow;": "→",
+  "straightepsilon;": "ϵ",
+  "trianglerighteq;": "⊵",
+  "UpperRightArrow;": "↗",
+  "vartriangleleft;": "⊲",
+  "circlearrowright;": "↻",
+  "DiacriticalAcute;": "´",
   "DiacriticalGrave;": "`",
-  "DiacriticalTilde;": "\u02DC",
-  "DoubleRightArrow;": "\u21D2",
-  "DownArrowUpArrow;": "\u21F5",
-  "downharpoonright;": "\u21C2",
-  "EmptySmallSquare;": "\u25FB",
-  "GreaterEqualLess;": "\u22DB",
-  "GreaterFullEqual;": "\u2267",
-  "LeftAngleBracket;": "\u27E8",
-  "LeftUpDownVector;": "\u2951",
-  "LessEqualGreater;": "\u22DA",
-  "NonBreakingSpace;": "\xA0",
-  "NotPrecedesEqual;": "\u2AAF\u0338",
-  "NotRightTriangle;": "\u22EB",
-  "NotSucceedsEqual;": "\u2AB0\u0338",
-  "NotSucceedsTilde;": "\u227F\u0338",
-  "NotSupersetEqual;": "\u2289",
-  "ntrianglerighteq;": "\u22ED",
-  "rightharpoondown;": "\u21C1",
-  "rightrightarrows;": "\u21C9",
-  "RightTriangleBar;": "\u29D0",
-  "RightUpTeeVector;": "\u295C",
-  "RightUpVectorBar;": "\u2954",
-  "twoheadleftarrow;": "\u219E",
-  "UnderParenthesis;": "\u23DD",
-  "UpArrowDownArrow;": "\u21C5",
-  "vartriangleright;": "\u22B3",
-  "blacktriangledown;": "\u25BE",
-  "blacktriangleleft;": "\u25C2",
-  "DoubleUpDownArrow;": "\u21D5",
-  "DoubleVerticalBar;": "\u2225",
-  "DownLeftTeeVector;": "\u295E",
-  "DownLeftVectorBar;": "\u2956",
-  "FilledSmallSquare;": "\u25FC",
-  "GreaterSlantEqual;": "\u2A7E",
-  "LeftDoubleBracket;": "\u27E6",
-  "LeftDownTeeVector;": "\u2961",
-  "LeftDownVectorBar;": "\u2959",
-  "leftrightharpoons;": "\u21CB",
-  "LeftTriangleEqual;": "\u22B4",
-  "NegativeThinSpace;": "\u200B",
-  "NotGreaterGreater;": "\u226B\u0338",
-  "NotLessSlantEqual;": "\u2A7D\u0338",
-  "NotNestedLessLess;": "\u2AA1\u0338",
-  "NotReverseElement;": "\u220C",
-  "NotSquareSuperset;": "\u2290\u0338",
-  "NotTildeFullEqual;": "\u2247",
-  "RightAngleBracket;": "\u27E9",
-  "rightleftharpoons;": "\u21CC",
-  "RightUpDownVector;": "\u294F",
-  "SquareSubsetEqual;": "\u2291",
-  "twoheadrightarrow;": "\u21A0",
-  "VerticalSeparator;": "\u2758",
-  "blacktriangleright;": "\u25B8",
-  "DownRightTeeVector;": "\u295F",
-  "DownRightVectorBar;": "\u2957",
-  "LongLeftRightArrow;": "\u27F7",
-  "Longleftrightarrow;": "\u27FA",
-  "longleftrightarrow;": "\u27F7",
-  "NegativeThickSpace;": "\u200B",
-  "NotLeftTriangleBar;": "\u29CF\u0338",
-  "PrecedesSlantEqual;": "\u227C",
-  "ReverseEquilibrium;": "\u21CB",
-  "RightDoubleBracket;": "\u27E7",
-  "RightDownTeeVector;": "\u295D",
-  "RightDownVectorBar;": "\u2955",
-  "RightTriangleEqual;": "\u22B5",
-  "SquareIntersection;": "\u2293",
-  "SucceedsSlantEqual;": "\u227D",
-  "DoubleLongLeftArrow;": "\u27F8",
-  "DownLeftRightVector;": "\u2950",
-  "LeftArrowRightArrow;": "\u21C6",
-  "leftrightsquigarrow;": "\u21AD",
-  "NegativeMediumSpace;": "\u200B",
-  "NotGreaterFullEqual;": "\u2267\u0338",
-  "NotRightTriangleBar;": "\u29D0\u0338",
-  "RightArrowLeftArrow;": "\u21C4",
-  "SquareSupersetEqual;": "\u2292",
-  "CapitalDifferentialD;": "\u2145",
-  "DoubleLeftRightArrow;": "\u21D4",
-  "DoubleLongRightArrow;": "\u27F9",
-  "EmptyVerySmallSquare;": "\u25AB",
-  "NestedGreaterGreater;": "\u226B",
-  "NotDoubleVerticalBar;": "\u2226",
-  "NotGreaterSlantEqual;": "\u2A7E\u0338",
-  "NotLeftTriangleEqual;": "\u22EC",
-  "NotSquareSubsetEqual;": "\u22E2",
-  "OpenCurlyDoubleQuote;": "\u201C",
-  "ReverseUpEquilibrium;": "\u296F",
-  "CloseCurlyDoubleQuote;": "\u201D",
-  "DoubleContourIntegral;": "\u222F",
-  "FilledVerySmallSquare;": "\u25AA",
-  "NegativeVeryThinSpace;": "\u200B",
-  "NotPrecedesSlantEqual;": "\u22E0",
-  "NotRightTriangleEqual;": "\u22ED",
-  "NotSucceedsSlantEqual;": "\u22E1",
-  "DiacriticalDoubleAcute;": "\u02DD",
-  "NotSquareSupersetEqual;": "\u22E3",
-  "NotNestedGreaterGreater;": "\u2AA2\u0338",
-  "ClockwiseContourIntegral;": "\u2232",
-  "DoubleLongLeftRightArrow;": "\u27FA",
-  "CounterClockwiseContourIntegral;": "\u2233"
+  "DiacriticalTilde;": "˜",
+  "DoubleRightArrow;": "⇒",
+  "DownArrowUpArrow;": "⇵",
+  "downharpoonright;": "⇂",
+  "EmptySmallSquare;": "◻",
+  "GreaterEqualLess;": "⋛",
+  "GreaterFullEqual;": "≧",
+  "LeftAngleBracket;": "⟨",
+  "LeftUpDownVector;": "⥑",
+  "LessEqualGreater;": "⋚",
+  "NonBreakingSpace;": " ",
+  "NotPrecedesEqual;": "⪯̸",
+  "NotRightTriangle;": "⋫",
+  "NotSucceedsEqual;": "⪰̸",
+  "NotSucceedsTilde;": "≿̸",
+  "NotSupersetEqual;": "⊉",
+  "ntrianglerighteq;": "⋭",
+  "rightharpoondown;": "⇁",
+  "rightrightarrows;": "⇉",
+  "RightTriangleBar;": "⧐",
+  "RightUpTeeVector;": "⥜",
+  "RightUpVectorBar;": "⥔",
+  "twoheadleftarrow;": "↞",
+  "UnderParenthesis;": "⏝",
+  "UpArrowDownArrow;": "⇅",
+  "vartriangleright;": "⊳",
+  "blacktriangledown;": "▾",
+  "blacktriangleleft;": "◂",
+  "DoubleUpDownArrow;": "⇕",
+  "DoubleVerticalBar;": "∥",
+  "DownLeftTeeVector;": "⥞",
+  "DownLeftVectorBar;": "⥖",
+  "FilledSmallSquare;": "◼",
+  "GreaterSlantEqual;": "⩾",
+  "LeftDoubleBracket;": "⟦",
+  "LeftDownTeeVector;": "⥡",
+  "LeftDownVectorBar;": "⥙",
+  "leftrightharpoons;": "⇋",
+  "LeftTriangleEqual;": "⊴",
+  "NegativeThinSpace;": "​",
+  "NotGreaterGreater;": "≫̸",
+  "NotLessSlantEqual;": "⩽̸",
+  "NotNestedLessLess;": "⪡̸",
+  "NotReverseElement;": "∌",
+  "NotSquareSuperset;": "⊐̸",
+  "NotTildeFullEqual;": "≇",
+  "RightAngleBracket;": "⟩",
+  "rightleftharpoons;": "⇌",
+  "RightUpDownVector;": "⥏",
+  "SquareSubsetEqual;": "⊑",
+  "twoheadrightarrow;": "↠",
+  "VerticalSeparator;": "❘",
+  "blacktriangleright;": "▸",
+  "DownRightTeeVector;": "⥟",
+  "DownRightVectorBar;": "⥗",
+  "LongLeftRightArrow;": "⟷",
+  "Longleftrightarrow;": "⟺",
+  "longleftrightarrow;": "⟷",
+  "NegativeThickSpace;": "​",
+  "NotLeftTriangleBar;": "⧏̸",
+  "PrecedesSlantEqual;": "≼",
+  "ReverseEquilibrium;": "⇋",
+  "RightDoubleBracket;": "⟧",
+  "RightDownTeeVector;": "⥝",
+  "RightDownVectorBar;": "⥕",
+  "RightTriangleEqual;": "⊵",
+  "SquareIntersection;": "⊓",
+  "SucceedsSlantEqual;": "≽",
+  "DoubleLongLeftArrow;": "⟸",
+  "DownLeftRightVector;": "⥐",
+  "LeftArrowRightArrow;": "⇆",
+  "leftrightsquigarrow;": "↭",
+  "NegativeMediumSpace;": "​",
+  "NotGreaterFullEqual;": "≧̸",
+  "NotRightTriangleBar;": "⧐̸",
+  "RightArrowLeftArrow;": "⇄",
+  "SquareSupersetEqual;": "⊒",
+  "CapitalDifferentialD;": "ⅅ",
+  "DoubleLeftRightArrow;": "⇔",
+  "DoubleLongRightArrow;": "⟹",
+  "EmptyVerySmallSquare;": "▫",
+  "NestedGreaterGreater;": "≫",
+  "NotDoubleVerticalBar;": "∦",
+  "NotGreaterSlantEqual;": "⩾̸",
+  "NotLeftTriangleEqual;": "⋬",
+  "NotSquareSubsetEqual;": "⋢",
+  "OpenCurlyDoubleQuote;": "“",
+  "ReverseUpEquilibrium;": "⥯",
+  "CloseCurlyDoubleQuote;": "”",
+  "DoubleContourIntegral;": "∯",
+  "FilledVerySmallSquare;": "▪",
+  "NegativeVeryThinSpace;": "​",
+  "NotPrecedesSlantEqual;": "⋠",
+  "NotRightTriangleEqual;": "⋭",
+  "NotSucceedsSlantEqual;": "⋡",
+  "DiacriticalDoubleAcute;": "˝",
+  "NotSquareSupersetEqual;": "⋣",
+  "NotNestedGreaterGreater;": "⪢̸",
+  "ClockwiseContourIntegral;": "∲",
+  "DoubleLongLeftRightArrow;": "⟺",
+  "CounterClockwiseContourIntegral;": "∳"
 };
 var maxCRNameLength;
 var decodeHtml = (rawText, asAttr) => {
@@ -21424,6 +22033,7 @@ var parserOptions = {
       return TRANSITION_GROUP;
     }
   },
+  // https://html.spec.whatwg.org/multipage/parsing.html#tree-construction-dispatcher
   getNamespace(tag2, parent) {
     let ns = parent ? parent.ns : 0;
     if (parent && ns === 2) {
@@ -21452,6 +22062,7 @@ var parserOptions = {
     }
     return ns;
   },
+  // https://html.spec.whatwg.org/multipage/parsing.html#parsing-html-fragments
   getTextMode({ tag: tag2, ns }) {
     if (ns === 0) {
       if (tag2 === "textarea" || tag2 === "title") {
@@ -21482,31 +22093,70 @@ var transformStyle = (node2) => {
 };
 var parseInlineCSS = (cssText, loc) => {
   const normalized = parseStringStyle(cssText);
-  return createSimpleExpression(JSON.stringify(normalized), false, loc, 3);
+  return createSimpleExpression(
+    JSON.stringify(normalized),
+    false,
+    loc,
+    3
+    /* ConstantTypes.CAN_STRINGIFY */
+  );
 };
 function createDOMCompilerError(code, loc) {
   return createCompilerError(code, loc, DOMErrorMessages);
 }
 var DOMErrorMessages = {
-  [50]: `v-html is missing expression.`,
-  [51]: `v-html will override element children.`,
-  [52]: `v-text is missing expression.`,
-  [53]: `v-text will override element children.`,
-  [54]: `v-model can only be used on <input>, <textarea> and <select> elements.`,
-  [55]: `v-model argument is not supported on plain elements.`,
-  [56]: `v-model cannot be used on file inputs since they are read-only. Use a v-on:change listener instead.`,
-  [57]: `Unnecessary value binding used alongside v-model. It will interfere with v-model's behavior.`,
-  [58]: `v-show is missing expression.`,
-  [59]: `<Transition> expects exactly one child element or component.`,
-  [60]: `Tags with side effect (<script> and <style>) are ignored in client component templates.`
+  [
+    51
+    /* DOMErrorCodes.X_V_HTML_NO_EXPRESSION */
+  ]: `v-html is missing expression.`,
+  [
+    52
+    /* DOMErrorCodes.X_V_HTML_WITH_CHILDREN */
+  ]: `v-html will override element children.`,
+  [
+    53
+    /* DOMErrorCodes.X_V_TEXT_NO_EXPRESSION */
+  ]: `v-text is missing expression.`,
+  [
+    54
+    /* DOMErrorCodes.X_V_TEXT_WITH_CHILDREN */
+  ]: `v-text will override element children.`,
+  [
+    55
+    /* DOMErrorCodes.X_V_MODEL_ON_INVALID_ELEMENT */
+  ]: `v-model can only be used on <input>, <textarea> and <select> elements.`,
+  [
+    56
+    /* DOMErrorCodes.X_V_MODEL_ARG_ON_ELEMENT */
+  ]: `v-model argument is not supported on plain elements.`,
+  [
+    57
+    /* DOMErrorCodes.X_V_MODEL_ON_FILE_INPUT_ELEMENT */
+  ]: `v-model cannot be used on file inputs since they are read-only. Use a v-on:change listener instead.`,
+  [
+    58
+    /* DOMErrorCodes.X_V_MODEL_UNNECESSARY_VALUE */
+  ]: `Unnecessary value binding used alongside v-model. It will interfere with v-model's behavior.`,
+  [
+    59
+    /* DOMErrorCodes.X_V_SHOW_NO_EXPRESSION */
+  ]: `v-show is missing expression.`,
+  [
+    60
+    /* DOMErrorCodes.X_TRANSITION_INVALID_CHILDREN */
+  ]: `<Transition> expects exactly one child element or component.`,
+  [
+    61
+    /* DOMErrorCodes.X_IGNORED_SIDE_EFFECT_TAG */
+  ]: `Tags with side effect (<script> and <style>) are ignored in client component templates.`
 };
 var transformVHtml = (dir, node2, context) => {
   const { exp, loc } = dir;
   if (!exp) {
-    context.onError(createDOMCompilerError(50, loc));
+    context.onError(createDOMCompilerError(51, loc));
   }
   if (node2.children.length) {
-    context.onError(createDOMCompilerError(51, loc));
+    context.onError(createDOMCompilerError(52, loc));
     node2.children.length = 0;
   }
   return {
@@ -21518,10 +22168,10 @@ var transformVHtml = (dir, node2, context) => {
 var transformVText = (dir, node2, context) => {
   const { exp, loc } = dir;
   if (!exp) {
-    context.onError(createDOMCompilerError(52, loc));
+    context.onError(createDOMCompilerError(53, loc));
   }
   if (node2.children.length) {
-    context.onError(createDOMCompilerError(53, loc));
+    context.onError(createDOMCompilerError(54, loc));
     node2.children.length = 0;
   }
   return {
@@ -21536,12 +22186,12 @@ var transformModel$1 = (dir, node2, context) => {
     return baseResult;
   }
   if (dir.arg) {
-    context.onError(createDOMCompilerError(55, dir.arg.loc));
+    context.onError(createDOMCompilerError(56, dir.arg.loc));
   }
   function checkDuplicatedValue() {
     const value = findProp(node2, "value");
     if (value) {
-      context.onError(createDOMCompilerError(57, value.loc));
+      context.onError(createDOMCompilerError(58, value.loc));
     }
   }
   const { tag: tag2 } = node2;
@@ -21564,7 +22214,7 @@ var transformModel$1 = (dir, node2, context) => {
               break;
             case "file":
               isInvalidType = true;
-              context.onError(createDOMCompilerError(56, dir.loc));
+              context.onError(createDOMCompilerError(57, dir.loc));
               break;
             default:
               checkDuplicatedValue();
@@ -21585,13 +22235,14 @@ var transformModel$1 = (dir, node2, context) => {
       baseResult.needRuntime = context.helper(directiveToUse);
     }
   } else {
-    context.onError(createDOMCompilerError(54, dir.loc));
+    context.onError(createDOMCompilerError(55, dir.loc));
   }
   baseResult.props = baseResult.props.filter((p) => !(p.key.type === 4 && p.key.content === "modelValue"));
   return baseResult;
 };
 var isEventOptionModifier = makeMap(`passive,once,capture`);
 var isNonKeyModifier = makeMap(
+  // event propagation management
   `stop,prevent,self,ctrl,shift,alt,meta,exact,middle`
 );
 var maybeKeyModifier = makeMap("left,right");
@@ -21660,7 +22311,8 @@ var transformOn$1 = (dir, node2, context) => {
         JSON.stringify(nonKeyModifiers)
       ]);
     }
-    if (keyModifiers.length && (!isStaticExp(key) || isKeyboardEvent(key.content))) {
+    if (keyModifiers.length && // if event name is dynamic, always wrap with keys guard
+    (!isStaticExp(key) || isKeyboardEvent(key.content))) {
       handlerExp = createCallExpression(context.helper(V_ON_WITH_KEYS), [
         handlerExp,
         JSON.stringify(keyModifiers)
@@ -21678,7 +22330,7 @@ var transformOn$1 = (dir, node2, context) => {
 var transformShow = (dir, node2, context) => {
   const { exp, loc } = dir;
   if (!exp) {
-    context.onError(createDOMCompilerError(58, loc));
+    context.onError(createDOMCompilerError(59, loc));
   }
   return {
     props: [],
@@ -21694,7 +22346,7 @@ var transformTransition = (node2, context) => {
           return;
         }
         if (hasMultipleChildren(node2)) {
-          context.onError(createDOMCompilerError(59, {
+          context.onError(createDOMCompilerError(60, {
             start: node2.children[0].loc.start,
             end: node2.children[node2.children.length - 1].loc.end,
             source: ""
@@ -21734,6 +22386,8 @@ var stringifyStatic = (children, context, parent) => {
     if (nc >= 20 || ec2 >= 5) {
       const staticCall = createCallExpression(context.helper(CREATE_STATIC), [
         JSON.stringify(currentChunk.map((node2) => stringifyNode(node2, context)).join("")).replace(expReplaceRE, `" + $1 + "`),
+        // the 2nd argument indicates the number of DOM nodes this static vnode
+        // will insert / hydrate
         String(currentChunk.length)
       ]);
       replaceHoist(currentChunk[0], staticCall, context);
@@ -21924,7 +22578,7 @@ function evaluateConstant(exp) {
 }
 var ignoreSideEffectTags = (node2, context) => {
   if (node2.type === 1 && node2.tagType === 0 && (node2.tag === "script" || node2.tag === "style")) {
-    context.onError(createDOMCompilerError(60, node2.loc));
+    context.onError(createDOMCompilerError(61, node2.loc));
     context.removeNode();
   }
 };
@@ -21943,6 +22597,9 @@ var DOMDirectiveTransforms = {
 function compile(template, options = {}) {
   return baseCompile(template, extend({}, parserOptions, options, {
     nodeTransforms: [
+      // ignore <script> and <tag>
+      // this is not put inside DOMNodeTransforms because that list is used
+      // by compiler-ssr to generate vnode fallback branches
       ignoreSideEffectTags,
       ...DOMNodeTransforms,
       ...options.nodeTransforms || []
@@ -21991,6 +22648,7 @@ var CompilerDOM = Object.freeze({
   createForLoopParams,
   transformExpression,
   processExpression,
+  stringifyExpression,
   buildSlots,
   trackVForSlotScopes,
   trackSlotScopes,
@@ -22167,7 +22825,7 @@ function genVarName(id2, raw, isProd) {
   if (isProd) {
     return hashSum(id2 + raw);
   } else {
-    return `${id2}-${raw.replace(/([^\w-])/g, "_")}`;
+    return `${id2}-${raw.replace(/[ !"#$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, (s) => `\\${s}`)}`;
   }
 }
 function normalizeExpression(exp) {
@@ -24497,7 +25155,7 @@ MagicString.prototype.overwrite = function overwrite(start, end, content, option
     throw new Error("end is out of bounds");
   }
   if (start === end) {
-    throw new Error("Cannot overwrite a zero-length range \u2013 use appendLeft or prependRight instead");
+    throw new Error("Cannot overwrite a zero-length range – use appendLeft or prependRight instead");
   }
   this._split(start);
   this._split(end);
@@ -24720,7 +25378,7 @@ MagicString.prototype._splitChunk = function _splitChunk(chunk, index) {
   if (chunk.edited && chunk.content.length) {
     var loc = getLocator(this.original)(index);
     throw new Error(
-      "Cannot split a chunk that has already been edited (" + loc.line + ":" + loc.column + ' \u2013 "' + chunk.original + '")'
+      "Cannot split a chunk that has already been edited (" + loc.line + ":" + loc.column + ' – "' + chunk.original + '")'
     );
   }
   var newChunk = chunk.split(index);
@@ -25473,6 +26131,7 @@ inspect2.styles = {
   "null": "bold",
   "string": "green",
   "date": "magenta",
+  // "name": intentionally not styling
   "regexp": "red"
 };
 function stylizeWithColor(str, styleType) {
@@ -25494,7 +26153,9 @@ function arrayToHash(array) {
   return hash;
 }
 function formatValue(ctx, value, recurseTimes) {
-  if (ctx.customInspect && value && isFunction$1(value.inspect) && value.inspect !== inspect2 && !(value.constructor && value.constructor.prototype === value)) {
+  if (ctx.customInspect && value && isFunction$1(value.inspect) && // Filter out the util module, it's inspect function is special
+  value.inspect !== inspect2 && // Also filter out any prototype objects using the circular check.
+  !(value.constructor && value.constructor.prototype === value)) {
     var ret = value.inspect(recurseTimes, ctx);
     if (!isString$1(ret)) {
       ret = formatValue(ctx, ret, recurseTimes);
@@ -25720,7 +26381,8 @@ function isFunction$1(arg) {
   return typeof arg === "function";
 }
 function isPrimitive(arg) {
-  return arg === null || typeof arg === "boolean" || typeof arg === "number" || typeof arg === "string" || typeof arg === "symbol" || typeof arg === "undefined";
+  return arg === null || typeof arg === "boolean" || typeof arg === "number" || typeof arg === "string" || typeof arg === "symbol" || // ES6 symbol
+  typeof arg === "undefined";
 }
 function isBuffer$1(maybeBuf) {
   return Buffer2.isBuffer(maybeBuf);
@@ -26510,14 +27172,26 @@ function getImportsExpressionExp(path2, hash, loc, context) {
       exp = context.imports[existingIndex].exp;
     } else {
       name = `_imports_${context.imports.length}`;
-      exp = createSimpleExpression(name, false, loc, 3);
+      exp = createSimpleExpression(
+        name,
+        false,
+        loc,
+        3
+        /* ConstantTypes.CAN_STRINGIFY */
+      );
       context.imports.push({ exp, path: path2 });
     }
     if (!hash) {
       return exp;
     }
     const hashExp = `${name} + '${hash}'`;
-    const finalExp = createSimpleExpression(hashExp, false, loc, 3);
+    const finalExp = createSimpleExpression(
+      hashExp,
+      false,
+      loc,
+      3
+      /* ConstantTypes.CAN_STRINGIFY */
+    );
     if (!context.hoistStatic) {
       return finalExp;
     }
@@ -26525,11 +27199,23 @@ function getImportsExpressionExp(path2, hash, loc, context) {
       return h && h.type === 4 && !h.isStatic && h.content === hashExp;
     });
     if (existingHoistIndex > -1) {
-      return createSimpleExpression(`_hoisted_${existingHoistIndex + 1}`, false, loc, 3);
+      return createSimpleExpression(
+        `_hoisted_${existingHoistIndex + 1}`,
+        false,
+        loc,
+        3
+        /* ConstantTypes.CAN_STRINGIFY */
+      );
     }
     return context.hoist(finalExp);
   } else {
-    return createSimpleExpression(`''`, false, loc, 3);
+    return createSimpleExpression(
+      `''`,
+      false,
+      loc,
+      3
+      /* ConstantTypes.CAN_STRINGIFY */
+    );
   }
 }
 var srcsetTags = ["img", "source"];
@@ -26593,15 +27279,33 @@ var transformSrcset = (node2, context, options = defaultAssetUrlOptions) => {
               if (path2) {
                 const existingImportsIndex = context.imports.findIndex((i) => i.path === path2);
                 if (existingImportsIndex > -1) {
-                  exp2 = createSimpleExpression(`_imports_${existingImportsIndex}`, false, attr.loc, 3);
+                  exp2 = createSimpleExpression(
+                    `_imports_${existingImportsIndex}`,
+                    false,
+                    attr.loc,
+                    3
+                    /* ConstantTypes.CAN_STRINGIFY */
+                  );
                 } else {
-                  exp2 = createSimpleExpression(`_imports_${context.imports.length}`, false, attr.loc, 3);
+                  exp2 = createSimpleExpression(
+                    `_imports_${context.imports.length}`,
+                    false,
+                    attr.loc,
+                    3
+                    /* ConstantTypes.CAN_STRINGIFY */
+                  );
                   context.imports.push({ exp: exp2, path: path2 });
                 }
                 compoundExpression.children.push(exp2);
               }
             } else {
-              const exp2 = createSimpleExpression(`"${url}"`, false, attr.loc, 3);
+              const exp2 = createSimpleExpression(
+                `"${url}"`,
+                false,
+                attr.loc,
+                3
+                /* ConstantTypes.CAN_STRINGIFY */
+              );
               compoundExpression.children.push(exp2);
             }
             const isNotLast = imageCandidates.length - 1 > index2;
@@ -26695,7 +27399,8 @@ function ssrProcessIf(node2, context, disableNestedFragments = false) {
 }
 function processIfBranch(branch, context, disableNestedFragments = false) {
   const { children } = branch;
-  const needFragmentWrapper = !disableNestedFragments && (children.length !== 1 || children[0].type !== 1) && !(children.length === 1 && children[0].type === 11);
+  const needFragmentWrapper = !disableNestedFragments && (children.length !== 1 || children[0].type !== 1) && // optimize away nested fragments when the only child is a ForNode
+  !(children.length === 1 && children[0].type === 11);
   return processChildrenAsStatement(branch, context, needFragmentWrapper);
 }
 var ssrTransformFor = createStructuralDirectiveTransform("for", processFor);
@@ -26721,6 +27426,7 @@ var ssrTransformSlotOutlet = (node2, context) => {
       `_ctx.$slots`,
       slotName,
       slotProps || `{}`,
+      // fallback content placeholder. will be replaced in the process phase
       `null`,
       `_push`,
       `_parent`
@@ -26730,7 +27436,10 @@ var ssrTransformSlotOutlet = (node2, context) => {
     }
     let method = SSR_RENDER_SLOT;
     const parent = context.parent;
-    if (parent && parent.type === 1 && parent.tagType === 1 && resolveComponentType(parent, context, true) === TRANSITION && parent.children.filter((c) => c.type === 1).length === 1) {
+    if (parent && parent.type === 1 && parent.tagType === 1 && resolveComponentType(parent, context, true) === TRANSITION && parent.children.filter(
+      (c) => c.type === 1
+      /* NodeTypes.ELEMENT */
+    ).length === 1) {
       method = SSR_RENDER_SLOT_INNER;
       if (!(context.scopeId && context.slotted !== false)) {
         args.push("null");
@@ -26757,14 +27466,23 @@ function createSSRCompilerError(code, loc) {
   return createCompilerError(code, loc, SSRErrorMessages);
 }
 var SSRErrorMessages = {
-  [61]: `Unsafe attribute name for SSR.`,
-  [62]: `Missing the 'to' prop on teleport element.`,
-  [63]: `Invalid AST node during SSR transform.`
+  [
+    62
+    /* SSRErrorCodes.X_SSR_UNSAFE_ATTR_NAME */
+  ]: `Unsafe attribute name for SSR.`,
+  [
+    63
+    /* SSRErrorCodes.X_SSR_NO_TELEPORT_TARGET */
+  ]: `Missing the 'to' prop on teleport element.`,
+  [
+    64
+    /* SSRErrorCodes.X_SSR_INVALID_AST_NODE */
+  ]: `Invalid AST node during SSR transform.`
 };
 function ssrProcessTeleport(node2, context) {
   const targetProp = findProp(node2, "to");
   if (!targetProp) {
-    context.onError(createSSRCompilerError(62, node2.loc));
+    context.onError(createSSRCompilerError(63, node2.loc));
     return;
   }
   let target;
@@ -26774,16 +27492,25 @@ function ssrProcessTeleport(node2, context) {
     target = targetProp.exp;
   }
   if (!target) {
-    context.onError(createSSRCompilerError(62, targetProp.loc));
+    context.onError(createSSRCompilerError(63, targetProp.loc));
     return;
   }
-  const disabledProp = findProp(node2, "disabled", false, true);
+  const disabledProp = findProp(
+    node2,
+    "disabled",
+    false,
+    true
+    /* allow empty */
+  );
   const disabled = disabledProp ? disabledProp.type === 6 ? `true` : disabledProp.exp || `false` : `false`;
   const contentRenderFn = createFunctionExpression(
     [`_push`],
     void 0,
+    // Body is added later
     true,
+    // newline
     false,
+    // isSlot
     node2.loc
   );
   contentRenderFn.body = processChildrenAsStatement(node2, context);
@@ -26808,8 +27535,11 @@ function ssrTransformSuspense(node2, context) {
         const fn = createFunctionExpression(
           [],
           void 0,
+          // no return, assign body later
           true,
+          // newline
           false,
+          // suspense slots are not treated as normal slots
           loc
         );
         wipEntry.wipSlots.push({
@@ -26848,7 +27578,15 @@ var ssrTransformElement = (node2, context) => {
     const hasCustomDir = node2.props.some((p) => p.type === 7 && !isBuiltInDirective(p.name));
     const needMergeProps = hasDynamicVBind || hasCustomDir;
     if (needMergeProps) {
-      const { props, directives } = buildProps(node2, context, node2.props, false, false, true);
+      const { props, directives } = buildProps(
+        node2,
+        context,
+        node2.props,
+        false,
+        false,
+        true
+        /* ssr */
+      );
       if (props || directives.length) {
         const mergedProps = buildSSRProps(props, directives, context);
         const propsExp = createCallExpression(context.helper(SSR_RENDER_ATTRS), [mergedProps]);
@@ -26876,6 +27614,7 @@ var ssrTransformElement = (node2, context) => {
                   createCallExpression(context.helper(SSR_GET_DYNAMIC_MODEL_PROPS), [
                     tempExp,
                     vModel.exp
+                    // model
                   ])
                 ])
               ])
@@ -26932,14 +27671,20 @@ var ssrTransformElement = (node2, context) => {
                 } else {
                   attrName = node2.tag.indexOf("-") > 0 ? attrName : propsToAttrMap[attrName] || attrName.toLowerCase();
                   if (isBooleanAttr(attrName)) {
-                    openTag.push(createConditionalExpression(createCallExpression(context.helper(SSR_INCLUDE_BOOLEAN_ATTR), [value]), createSimpleExpression(" " + attrName, true), createSimpleExpression("", true), false));
+                    openTag.push(createConditionalExpression(
+                      createCallExpression(context.helper(SSR_INCLUDE_BOOLEAN_ATTR), [value]),
+                      createSimpleExpression(" " + attrName, true),
+                      createSimpleExpression("", true),
+                      false
+                      /* no newline */
+                    ));
                   } else if (isSSRSafeAttrName(attrName)) {
                     openTag.push(createCallExpression(context.helper(SSR_RENDER_ATTR), [
                       key,
                       value
                     ]));
                   } else {
-                    context.onError(createSSRCompilerError(61, key.loc));
+                    context.onError(createSSRCompilerError(62, key.loc));
                   }
                 }
               } else {
@@ -27049,7 +27794,15 @@ function ssrTransformTransitionGroup(node2, context) {
     const tag2 = findProp(node2, "tag");
     if (tag2) {
       const otherProps = node2.props.filter((p) => p !== tag2);
-      const { props, directives } = buildProps(node2, context, otherProps, true, false, true);
+      const { props, directives } = buildProps(
+        node2,
+        context,
+        otherProps,
+        true,
+        false,
+        true
+        /* ssr (skip event listeners) */
+      );
       let propsExp = null;
       if (props || directives.length) {
         propsExp = createCallExpression(context.helper(SSR_RENDER_ATTRS), [
@@ -27078,6 +27831,12 @@ function ssrProcessTransitionGroup(node2, context) {
         node2,
         context,
         false,
+        /**
+         * TransitionGroup has the special runtime behavior of flattening and
+         * concatenating all children into a single fragment (in order for them to
+         * be patched using the same key map) so we need to account for that here
+         * by disabling nested fragment wrappers from being generated.
+         */
         true
       );
       context.pushStringPart(`</`);
@@ -27103,7 +27862,12 @@ var ssrTransformComponent = (node2, context) => {
   if (node2.type !== 1 || node2.tagType !== 1) {
     return;
   }
-  const component = resolveComponentType(node2, context, true);
+  const component = resolveComponentType(
+    node2,
+    context,
+    true
+    /* ssr */
+  );
   const isDynamicComponent = isObject(component) && component.callee === RESOLVE_DYNAMIC_COMPONENT;
   componentTypeMap.set(node2, component);
   if (isSymbol(component)) {
@@ -27134,17 +27898,22 @@ var ssrTransformComponent = (node2, context) => {
     const wipEntries = [];
     wipMap$2.set(node2, wipEntries);
     const buildSSRSlotFn = (props, children, loc) => {
+      const param0 = props && stringifyExpression(props) || `_`;
       const fn = createFunctionExpression(
-        [props || `_`, `_push`, `_parent`, `_scopeId`],
+        [param0, `_push`, `_parent`, `_scopeId`],
         void 0,
+        // no return, assign body later
         true,
+        // newline
         true,
+        // isSlot
         loc
       );
       wipEntries.push({
         type: WIP_SLOT,
         fn,
         children,
+        // also collect the corresponding vnode branch built earlier
         vnodeBranch: vnodeBranches[wipEntries.length]
       });
       return fn;
@@ -27179,7 +27948,10 @@ function ssrProcessComponent(node2, context, parent) {
         context.pushStringPart(``);
       }
       if (component === TRANSITION) {
-        node2.children = node2.children.filter((c) => c.type !== 3);
+        node2.children = node2.children.filter(
+          (c) => c.type !== 3
+          /* NodeTypes.COMMENT */
+        );
       }
       processChildren(node2, context);
     }
@@ -27187,7 +27959,13 @@ function ssrProcessComponent(node2, context, parent) {
     const wipEntries = wipMap$2.get(node2) || [];
     for (let i = 0; i < wipEntries.length; i++) {
       const { fn, vnodeBranch } = wipEntries[i];
-      fn.body = createIfStatement(createSimpleExpression(`_push`, false), processChildrenAsStatement(wipEntries[i], context, false, true), vnodeBranch);
+      fn.body = createIfStatement(createSimpleExpression(`_push`, false), processChildrenAsStatement(
+        wipEntries[i],
+        context,
+        false,
+        true
+        /* withSlotScopeId */
+      ), vnodeBranch);
     }
     if (context.withSlotScopeId) {
       node2.ssrCodegenNode.arguments.push(`_scopeId`);
@@ -27206,6 +27984,7 @@ var vnodeDirectiveTransforms = Object.assign(Object.assign({}, baseDirectiveTran
 function createVNodeSlotBranch(props, children, parentContext) {
   const rawOptions = rawOptionsMap.get(parentContext.root);
   const subOptions = Object.assign(Object.assign({}, rawOptions), {
+    // overwrite with vnode-based transforms
     nodeTransforms: [
       ...vnodeNodeTransforms,
       ...rawOptions.nodeTransforms || []
@@ -27218,6 +27997,8 @@ function createVNodeSlotBranch(props, children, parentContext) {
     tag: "template",
     tagType: 3,
     isSelfClosing: false,
+    // important: provide v-slot="props" on the wrapper for proper
+    // scope analysis
     props: [
       {
         type: 7,
@@ -27350,7 +28131,7 @@ function processChildren(parent, context, asFragment = false, disableNestedFragm
           case 3:
             break;
           default:
-            context.onError(createSSRCompilerError(63, child.loc));
+            context.onError(createSSRCompilerError(64, child.loc));
             const exhaustiveCheck2 = child;
             return exhaustiveCheck2;
         }
@@ -27376,7 +28157,7 @@ function processChildren(parent, context, asFragment = false, disableNestedFragm
       case 8:
         break;
       default:
-        context.onError(createSSRCompilerError(63, child.loc));
+        context.onError(createSSRCompilerError(64, child.loc));
         const exhaustiveCheck = child;
         return exhaustiveCheck;
     }
@@ -27395,12 +28176,13 @@ var ssrTransformModel = (dir, node2, context) => {
   function checkDuplicatedValue() {
     const value = findProp(node2, "value");
     if (value) {
-      context.onError(createDOMCompilerError(57, value.loc));
+      context.onError(createDOMCompilerError(58, value.loc));
     }
   }
   if (node2.tagType === 0) {
     const res = { props: [] };
     const defaultProps = [
+      // default value binding for text type inputs
       createObjectProperty(`value`, model)
     ];
     if (node2.tag === "input") {
@@ -27445,7 +28227,7 @@ var ssrTransformModel = (dir, node2, context) => {
               }
               break;
             case "file":
-              context.onError(createDOMCompilerError(56, dir.loc));
+              context.onError(createDOMCompilerError(57, dir.loc));
               break;
             default:
               checkDuplicatedValue();
@@ -27465,7 +28247,7 @@ var ssrTransformModel = (dir, node2, context) => {
     } else if (node2.tag === "select")
       ;
     else {
-      context.onError(createDOMCompilerError(54, dir.loc));
+      context.onError(createDOMCompilerError(55, dir.loc));
     }
     return res;
   } else {
@@ -27478,17 +28260,29 @@ function findValueBinding(node2) {
 }
 var ssrTransformShow = (dir, node2, context) => {
   if (!dir.exp) {
-    context.onError(createDOMCompilerError(58));
+    context.onError(createDOMCompilerError(
+      59
+      /* DOMErrorCodes.X_V_SHOW_NO_EXPRESSION */
+    ));
   }
   return {
     props: [
-      createObjectProperty(`style`, createConditionalExpression(dir.exp, createSimpleExpression(`null`, false), createObjectExpression([
-        createObjectProperty(`display`, createSimpleExpression(`none`, true))
-      ]), false))
+      createObjectProperty(`style`, createConditionalExpression(
+        dir.exp,
+        createSimpleExpression(`null`, false),
+        createObjectExpression([
+          createObjectProperty(`display`, createSimpleExpression(`none`, true))
+        ]),
+        false
+        /* no newline */
+      ))
     ]
   };
 };
-var filterChild = (node2) => node2.children.filter((n2) => n2.type !== 3);
+var filterChild = (node2) => node2.children.filter(
+  (n2) => n2.type !== 3
+  /* NodeTypes.COMMENT */
+);
 var hasSingleChild = (node2) => filterChild(node2).length === 1;
 var ssrInjectFallthroughAttrs = (node2, context) => {
   if (node2.type === 0) {
@@ -27514,7 +28308,11 @@ var ssrInjectFallthroughAttrs = (node2, context) => {
         if (hasEncounteredIf)
           return;
         hasEncounteredIf = true;
-      } else if (!hasEncounteredIf || !(c.type === 1 && findDir(c, /else/, true))) {
+      } else if (
+        // node before v-if
+        !hasEncounteredIf || // non else nodes
+        !(c.type === 1 && findDir(c, /else/, true))
+      ) {
         return;
       }
     }
@@ -27581,7 +28379,9 @@ function compile$1(template, options = {}) {
     ssr: true,
     inSSR: true,
     scopeId: options.mode === "function" ? null : options.scopeId,
+    // always prefix since compiler-ssr doesn't have size concern
     prefixIdentifiers: true,
+    // disable optimizations that are unnecessary for ssr
     cacheHandlers: false,
     hoistStatic: false
   });
@@ -27600,17 +28400,23 @@ function compile$1(template, options = {}) {
     trackSlotScopes,
     transformStyle,
     ...options.nodeTransforms || []
+    // user transforms
   ], directiveTransforms: Object.assign(
     {
+      // reusing core v-bind
       bind: transformBind,
       on: transformOn,
+      // model and show has dedicated SSR handling
       model: ssrTransformModel,
       show: ssrTransformShow,
+      // the following are ignored during SSR
+      // on: noopDirectiveTransform,
       cloak: noopDirectiveTransform,
       once: noopDirectiveTransform,
       memo: noopDirectiveTransform
     },
     options.directiveTransforms || {}
+    // user transforms
   ) }));
   ssrCodegenTransform(ast, options);
   return generate(ast, options);
@@ -27750,6 +28556,8 @@ function mapLines(oldMap, newMap) {
       },
       original: {
         line: origPosInOldMap.line,
+        // use current column, since the oldMap produced by @vue/compiler-sfc
+        // does not
         column: m.originalColumn
       },
       source: origPosInOldMap.source,
@@ -27870,6 +28678,7 @@ function specifierEnd(input3, end, nodeEnd) {
 }
 var CONVERT_SYMBOL = "$";
 var ESCAPE_SYMBOL = "$$";
+var IMPORT_SOURCE = "vue/macros";
 var shorthands = ["ref", "computed", "shallowRef", "toRef", "customRef"];
 var transformCheckRE = /[^\w]\$(?:\$|ref|computed|shallowRef)?\s*(\(|\<)/;
 function shouldTransform(src) {
@@ -27903,27 +28712,30 @@ function transform$1(src, { filename, sourceMap: sourceMap2, parserPlugins, impo
 }
 function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
   warnExperimental();
-  let convertSymbol = CONVERT_SYMBOL;
-  let escapeSymbol = ESCAPE_SYMBOL;
+  const userImports = /* @__PURE__ */ Object.create(null);
   for (const node2 of ast.body) {
-    if (node2.type === "ImportDeclaration" && node2.source.value === "vue/macros") {
-      s.remove(node2.start + offset, node2.end + offset);
-      for (const specifier of node2.specifiers) {
-        if (specifier.type === "ImportSpecifier") {
-          const imported = specifier.imported.name;
-          const local = specifier.local.name;
-          if (local !== imported) {
-            if (imported === ESCAPE_SYMBOL) {
-              escapeSymbol = local;
-            } else if (imported === CONVERT_SYMBOL) {
-              convertSymbol = local;
-            } else {
-              error2(`macro imports for ref-creating methods do not support aliasing.`, specifier);
-            }
-          }
-        }
+    if (node2.type !== "ImportDeclaration")
+      continue;
+    walkImportDeclaration(node2);
+  }
+  let convertSymbol;
+  let escapeSymbol;
+  for (const { local, imported, source, specifier } of Object.values(userImports)) {
+    if (source === IMPORT_SOURCE) {
+      if (imported === ESCAPE_SYMBOL) {
+        escapeSymbol = local;
+      } else if (imported === CONVERT_SYMBOL) {
+        convertSymbol = local;
+      } else if (imported !== local) {
+        error2(`macro imports for ref-creating methods do not support aliasing.`, specifier);
       }
     }
+  }
+  if (!convertSymbol && !userImports[CONVERT_SYMBOL]) {
+    convertSymbol = CONVERT_SYMBOL;
+  }
+  if (!escapeSymbol && !userImports[ESCAPE_SYMBOL]) {
+    escapeSymbol = ESCAPE_SYMBOL;
   }
   const importedHelpers = /* @__PURE__ */ new Set();
   const rootScope = {};
@@ -27945,7 +28757,26 @@ function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
       propsLocalToPublicMap[local] = key;
     }
   }
+  function walkImportDeclaration(node2) {
+    const source = node2.source.value;
+    if (source === IMPORT_SOURCE) {
+      s.remove(node2.start + offset, node2.end + offset);
+    }
+    for (const specifier of node2.specifiers) {
+      const local = specifier.local.name;
+      const imported = specifier.type === "ImportSpecifier" && specifier.imported.type === "Identifier" && specifier.imported.name || "default";
+      userImports[local] = {
+        source,
+        local,
+        imported,
+        specifier
+      };
+    }
+  }
   function isRefCreationCall(callee) {
+    if (!convertSymbol || currentScope[convertSymbol] !== void 0) {
+      return false;
+    }
     if (callee === convertSymbol) {
       return convertSymbol;
     }
@@ -28042,8 +28873,8 @@ function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
       tempVar = genTempVar();
       s.overwrite(pattern.start + offset, pattern.end + offset, tempVar);
     }
+    let nameId;
     for (const p of pattern.properties) {
-      let nameId;
       let key;
       let defaultValue;
       if (p.type === "ObjectProperty") {
@@ -28093,17 +28924,20 @@ function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
   ${nameId.name} = ${helper("toRef")}(${source}, ${keyStr}${defaultStr})`);
       }
     }
+    if (nameId) {
+      s.appendLeft(call.end + offset, ";");
+    }
   }
   function processRefArrayPattern(pattern, call, tempVar, path2 = []) {
     if (!tempVar) {
       tempVar = genTempVar();
       s.overwrite(pattern.start + offset, pattern.end + offset, tempVar);
     }
+    let nameId;
     for (let i = 0; i < pattern.elements.length; i++) {
       const e = pattern.elements[i];
       if (!e)
         continue;
-      let nameId;
       let defaultValue;
       if (e.type === "Identifier") {
         nameId = e;
@@ -28124,6 +28958,9 @@ function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
         s.appendLeft(call.end + offset, `,
   ${nameId.name} = ${helper("toRef")}(${source}, ${i}${defaultStr})`);
       }
+    }
+    if (nameId) {
+      s.appendLeft(call.end + offset, ";");
     }
   }
   function pathToString(source, path2) {
@@ -28187,7 +29024,7 @@ function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
     if (!propBindingRefs.hasOwnProperty(id2.name)) {
       propBindingRefs[id2.name] = true;
       const publicKey = propsLocalToPublicMap[id2.name];
-      s.prependRight(offset, `const __props_${publicKey} = ${helper(`toRef`)}(__props, '${publicKey}')
+      s.prependRight(offset, `const __props_${publicKey} = ${helper(`toRef`)}(__props, '${publicKey}');
 `);
     }
   }
@@ -28219,7 +29056,8 @@ function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
       if (parent && parent.type.startsWith("TS") && parent.type !== "TSAsExpression" && parent.type !== "TSNonNullExpression" && parent.type !== "TSTypeAssertion") {
         return this.skip();
       }
-      if (node2.type === "Identifier" && !(escapeScope && rootScope[node2.name] !== "prop") && isReferencedIdentifier(node2, parent, parentStack) && !excludedIds.has(node2)) {
+      if (node2.type === "Identifier" && // if inside $$(), skip unless this is a destructured prop binding
+      !(escapeScope && rootScope[node2.name] !== "prop") && isReferencedIdentifier(node2, parent, parentStack) && !excludedIds.has(node2)) {
         let i = scopeStack.length;
         while (i--) {
           if (rewriteId(scopeStack[i], node2, parent, parentStack)) {
@@ -28233,7 +29071,7 @@ function transformAST(ast, s, offset = 0, knownRefs, knownProps) {
         if (refCall && (!parent || parent.type !== "VariableDeclarator")) {
           return error2(`${refCall} can only be used as the initializer of a variable declaration.`, node2);
         }
-        if (callee === escapeSymbol) {
+        if (escapeSymbol && currentScope[escapeSymbol] === void 0 && callee === escapeSymbol) {
           s.remove(node2.callee.start + offset, node2.callee.end + offset);
           escapeScope = node2;
         }
@@ -28381,7 +29219,6 @@ export default ${DEFAULT_VAR}`;
   const bindingMetadata = {};
   const helperImports = /* @__PURE__ */ new Set();
   const userImports = /* @__PURE__ */ Object.create(null);
-  const userImportAlias = /* @__PURE__ */ Object.create(null);
   const scriptBindings = /* @__PURE__ */ Object.create(null);
   const setupBindings = /* @__PURE__ */ Object.create(null);
   let defaultExport;
@@ -28433,10 +29270,22 @@ ${generateCodeFrame(source, e.pos + offset, e.pos + offset + 1)}`;
 ${sfc.filename}
 ${generateCodeFrame(source, node2.start + startOffset, end)}`);
   }
-  function registerUserImport(source2, local, imported, isType, isFromSetup, needTemplateUsageCheck) {
-    if (source2 === "vue" && imported) {
-      userImportAlias[imported] = local;
+  function hoistNode(node2) {
+    const start = node2.start + startOffset;
+    let end = node2.end + startOffset;
+    if (node2.trailingComments && node2.trailingComments.length > 0) {
+      const lastCommentNode = node2.trailingComments[node2.trailingComments.length - 1];
+      end = lastCommentNode.end + startOffset;
     }
+    while (end <= source.length) {
+      if (!/\s/.test(source.charAt(end))) {
+        break;
+      }
+      end++;
+    }
+    s.move(start, end, 0);
+  }
+  function registerUserImport(source2, local, imported, isType, isFromSetup, needTemplateUsageCheck) {
     let isUsedInTemplate = needTemplateUsageCheck;
     if (needTemplateUsageCheck && isTS && sfc.template && !sfc.template.src && !sfc.template.lang) {
       isUsedInTemplate = isImportUsed(local, sfc);
@@ -28444,6 +29293,7 @@ ${generateCodeFrame(source, node2.start + startOffset, end)}`);
     userImports[local] = {
       isType,
       imported: imported || "default",
+      local,
       source: source2,
       isFromSetup,
       isUsedInTemplate
@@ -28473,10 +29323,10 @@ ${generateCodeFrame(source, node2.start + startOffset, end)}`);
         propsDestructureDecl = declId;
         for (const prop of declId.properties) {
           if (prop.type === "ObjectProperty") {
-            if (prop.computed) {
+            const propKey = resolveObjectKey(prop.key, prop.computed);
+            if (!propKey) {
               error2(`${DEFINE_PROPS}() destructure cannot use computed key.`, prop.key);
             }
-            const propKey = prop.key.type === "StringLiteral" ? prop.key.value : prop.key.name;
             if (prop.value.type === "AssignmentPattern") {
               const { left, right } = prop.value;
               if (left.type !== "Identifier") {
@@ -28544,9 +29394,52 @@ Prefer using destructure default values, e.g. const { foo = 1 } = defineProps(..
       }
     }
     if (declId) {
-      emitIdentifier = scriptSetup.content.slice(declId.start, declId.end);
+      emitIdentifier = declId.type === "Identifier" ? declId.name : scriptSetup.content.slice(declId.start, declId.end);
     }
     return true;
+  }
+  function getAstBody() {
+    return scriptAst ? [...scriptSetupAst.body, ...scriptAst.body] : scriptSetupAst.body;
+  }
+  function resolveExtendsType(node2, qualifier, cache = []) {
+    if (node2.type === "TSInterfaceDeclaration" && node2.extends) {
+      node2.extends.forEach((extend2) => {
+        if (extend2.type === "TSExpressionWithTypeArguments" && extend2.expression.type === "Identifier") {
+          const body = getAstBody();
+          for (const node3 of body) {
+            const qualified = isQualifiedType(node3, qualifier, extend2.expression.name);
+            if (qualified) {
+              cache.push(qualified);
+              resolveExtendsType(node3, qualifier, cache);
+              return cache;
+            }
+          }
+        }
+      });
+    }
+    return cache;
+  }
+  function isQualifiedType(node2, qualifier, refName) {
+    if (node2.type === "TSInterfaceDeclaration" && node2.id.name === refName) {
+      return node2.body;
+    } else if (node2.type === "TSTypeAliasDeclaration" && node2.id.name === refName && qualifier(node2.typeAnnotation)) {
+      return node2.typeAnnotation;
+    } else if (node2.type === "ExportNamedDeclaration" && node2.declaration) {
+      return isQualifiedType(node2.declaration, qualifier, refName);
+    }
+  }
+  function filterExtendsType(extendsTypes, bodies) {
+    extendsTypes.forEach((extend2) => {
+      const body = extend2.body;
+      body.forEach((newBody) => {
+        if (newBody.type === "TSPropertySignature" && newBody.key.type === "Identifier") {
+          const name = newBody.key.name;
+          const hasOverride = bodies.some((seenBody) => seenBody.type === "TSPropertySignature" && seenBody.key.type === "Identifier" && seenBody.key.name === name);
+          if (!hasOverride)
+            bodies.push(newBody);
+        }
+      });
+    });
   }
   function resolveQualifiedType(node2, qualifier) {
     if (qualifier(node2)) {
@@ -28554,19 +29447,16 @@ Prefer using destructure default values, e.g. const { foo = 1 } = defineProps(..
     }
     if (node2.type === "TSTypeReference" && node2.typeName.type === "Identifier") {
       const refName = node2.typeName.name;
-      const isQualifiedType = (node3) => {
-        if (node3.type === "TSInterfaceDeclaration" && node3.id.name === refName) {
-          return node3.body;
-        } else if (node3.type === "TSTypeAliasDeclaration" && node3.id.name === refName && qualifier(node3.typeAnnotation)) {
-          return node3.typeAnnotation;
-        } else if (node3.type === "ExportNamedDeclaration" && node3.declaration) {
-          return isQualifiedType(node3.declaration);
-        }
-      };
-      const body = scriptAst ? [...scriptSetupAst.body, ...scriptAst.body] : scriptSetupAst.body;
+      const body = getAstBody();
       for (const node3 of body) {
-        const qualified = isQualifiedType(node3);
+        let qualified = isQualifiedType(node3, qualifier, refName);
         if (qualified) {
+          const extendsTypes = resolveExtendsType(node3, qualifier);
+          if (extendsTypes.length) {
+            const bodies = [...qualified.body];
+            filterExtendsType(extendsTypes, bodies);
+            qualified.body = bodies;
+          }
           return qualified;
         }
       }
@@ -28604,7 +29494,7 @@ Prefer using destructure default values, e.g. const { foo = 1 } = defineProps(..
 )`);
   }
   function hasStaticWithDefaults() {
-    return propsRuntimeDefaults && propsRuntimeDefaults.type === "ObjectExpression" && propsRuntimeDefaults.properties.every((node2) => node2.type === "ObjectProperty" && !node2.computed || node2.type === "ObjectMethod");
+    return propsRuntimeDefaults && propsRuntimeDefaults.type === "ObjectExpression" && propsRuntimeDefaults.properties.every((node2) => node2.type === "ObjectProperty" && (!node2.computed || node2.key.type.endsWith("Literal")) || node2.type === "ObjectMethod");
   }
   function genRuntimeProps(props) {
     const keys = Object.keys(props);
@@ -28620,12 +29510,16 @@ Prefer using destructure default values, e.g. const { foo = 1 } = defineProps(..
       if (destructured) {
         defaultString = `default: ${destructured}`;
       } else if (hasStaticDefaults) {
-        const prop = propsRuntimeDefaults.properties.find((node2) => node2.key.name === key);
+        const prop = propsRuntimeDefaults.properties.find((node2) => {
+          if (node2.type === "SpreadElement")
+            return false;
+          return resolveObjectKey(node2.key, node2.computed) === key;
+        });
         if (prop) {
           if (prop.type === "ObjectProperty") {
             defaultString = `default: ${scriptSetupSource.slice(prop.value.start, prop.value.end)}`;
           } else {
-            defaultString = `default() ${scriptSetupSource.slice(prop.body.start, prop.body.end)}`;
+            defaultString = `${prop.async ? "async " : ""}${prop.kind !== "method" ? `${prop.kind} ` : ""}default() ${scriptSetupSource.slice(prop.body.start, prop.body.end)}`;
           }
         }
       }
@@ -28660,7 +29554,11 @@ Prefer using destructure default values, e.g. const { foo = 1 } = defineProps(..
       const members = node2.type === "TSTypeLiteral" ? node2.members : node2.body;
       for (const m of members) {
         if ((m.type === "TSPropertySignature" || m.type === "TSMethodSignature") && m.typeAnnotation && m.key.type === "Identifier") {
-          if (propsRuntimeDefaults.properties.some((p) => p.key.name === m.key.name)) {
+          if (propsRuntimeDefaults.properties.some((p) => {
+            if (p.type === "SpreadElement")
+              return false;
+            return resolveObjectKey(p.key, p.computed) === m.key.name;
+          })) {
             res += m.key.name + (m.type === "TSMethodSignature" ? "()" : "") + scriptSetupSource.slice(m.typeAnnotation.start, m.typeAnnotation.end) + ", ";
           } else {
             res += scriptSetupSource.slice(m.start, m.typeAnnotation.end) + `, `;
@@ -28672,19 +29570,75 @@ Prefer using destructure default values, e.g. const { foo = 1 } = defineProps(..
       return scriptSetupSource.slice(node2.start, node2.end);
     }
   }
-  let scriptAst;
-  if (script) {
-    scriptAst = parse3(script.content, {
-      plugins,
-      sourceType: "module"
-    }, scriptStartOffset);
+  const scriptAst = script && parse3(script.content, {
+    plugins,
+    sourceType: "module"
+  }, scriptStartOffset);
+  const scriptSetupAst = parse3(scriptSetup.content, {
+    plugins: [
+      ...plugins,
+      // allow top level await but only inside <script setup>
+      "topLevelAwait"
+    ],
+    sourceType: "module"
+  }, startOffset);
+  if (scriptAst) {
     for (const node2 of scriptAst.body) {
       if (node2.type === "ImportDeclaration") {
         for (const specifier of node2.specifiers) {
           const imported = specifier.type === "ImportSpecifier" && specifier.imported.type === "Identifier" && specifier.imported.name;
           registerUserImport(node2.source.value, specifier.local.name, imported, node2.importKind === "type" || specifier.type === "ImportSpecifier" && specifier.importKind === "type", false, !options.inlineTemplate);
         }
-      } else if (node2.type === "ExportDefaultDeclaration") {
+      }
+    }
+  }
+  for (const node2 of scriptSetupAst.body) {
+    if (node2.type === "ImportDeclaration") {
+      hoistNode(node2);
+      let removed = 0;
+      const removeSpecifier = (i) => {
+        const removeLeft = i > removed;
+        removed++;
+        const current = node2.specifiers[i];
+        const next2 = node2.specifiers[i + 1];
+        s.remove(removeLeft ? node2.specifiers[i - 1].end + startOffset : current.start + startOffset, next2 && !removeLeft ? next2.start + startOffset : current.end + startOffset);
+      };
+      for (let i = 0; i < node2.specifiers.length; i++) {
+        const specifier = node2.specifiers[i];
+        const local = specifier.local.name;
+        let imported = specifier.type === "ImportSpecifier" && specifier.imported.type === "Identifier" && specifier.imported.name;
+        if (specifier.type === "ImportNamespaceSpecifier") {
+          imported = "*";
+        }
+        const source2 = node2.source.value;
+        const existing = userImports[local];
+        if (source2 === "vue" && (imported === DEFINE_PROPS || imported === DEFINE_EMITS || imported === DEFINE_EXPOSE)) {
+          warnOnce(`\`${imported}\` is a compiler macro and no longer needs to be imported.`);
+          removeSpecifier(i);
+        } else if (existing) {
+          if (existing.source === source2 && existing.imported === imported) {
+            removeSpecifier(i);
+          } else {
+            error2(`different imports aliased to same local name.`, specifier);
+          }
+        } else {
+          registerUserImport(source2, local, imported, node2.importKind === "type" || specifier.type === "ImportSpecifier" && specifier.importKind === "type", true, !options.inlineTemplate);
+        }
+      }
+      if (node2.specifiers.length && removed === node2.specifiers.length) {
+        s.remove(node2.start + startOffset, node2.end + startOffset);
+      }
+    }
+  }
+  const vueImportAliases = {};
+  for (const key in userImports) {
+    const { source: source2, imported, local } = userImports[key];
+    if (source2 === "vue")
+      vueImportAliases[imported] = local;
+  }
+  if (script && scriptAst) {
+    for (const node2 of scriptAst.body) {
+      if (node2.type === "ExportDefaultDeclaration") {
         defaultExport = node2;
         let optionProperties;
         if (defaultExport.declaration.type === "ObjectExpression") {
@@ -28724,10 +29678,10 @@ const ${DEFAULT_VAR} = ${defaultSpecifier.local.name}
           }
         }
         if (node2.declaration) {
-          walkDeclaration(node2.declaration, scriptBindings, userImportAlias);
+          walkDeclaration(node2.declaration, scriptBindings, vueImportAliases);
         }
       } else if ((node2.type === "VariableDeclaration" || node2.type === "FunctionDeclaration" || node2.type === "ClassDeclaration" || node2.type === "TSEnumDeclaration") && !node2.declare) {
-        walkDeclaration(node2, scriptBindings, userImportAlias);
+        walkDeclaration(node2, scriptBindings, vueImportAliases);
       }
     }
     if (enableReactivityTransform && shouldTransform(script.content)) {
@@ -28745,64 +29699,9 @@ const ${DEFAULT_VAR} = ${defaultSpecifier.local.name}
       s.move(scriptStartOffset, scriptEndOffset, 0);
     }
   }
-  const scriptSetupAst = parse3(scriptSetup.content, {
-    plugins: [
-      ...plugins,
-      "topLevelAwait"
-    ],
-    sourceType: "module"
-  }, startOffset);
   for (const node2 of scriptSetupAst.body) {
-    const start = node2.start + startOffset;
-    let end = node2.end + startOffset;
-    if (node2.trailingComments && node2.trailingComments.length > 0) {
-      const lastCommentNode = node2.trailingComments[node2.trailingComments.length - 1];
-      end = lastCommentNode.end + startOffset;
-    }
-    while (end <= source.length) {
-      if (!/\s/.test(source.charAt(end))) {
-        break;
-      }
-      end++;
-    }
     if (node2.type === "LabeledStatement" && node2.label.name === "ref" && node2.body.type === "ExpressionStatement") {
       error2(`ref sugar using the label syntax was an experimental proposal and has been dropped based on community feedback. Please check out the new proposal at https://github.com/vuejs/rfcs/discussions/369`, node2);
-    }
-    if (node2.type === "ImportDeclaration") {
-      s.move(start, end, 0);
-      let removed = 0;
-      const removeSpecifier = (i) => {
-        const removeLeft = i > removed;
-        removed++;
-        const current = node2.specifiers[i];
-        const next2 = node2.specifiers[i + 1];
-        s.remove(removeLeft ? node2.specifiers[i - 1].end + startOffset : current.start + startOffset, next2 && !removeLeft ? next2.start + startOffset : current.end + startOffset);
-      };
-      for (let i = 0; i < node2.specifiers.length; i++) {
-        const specifier = node2.specifiers[i];
-        const local = specifier.local.name;
-        let imported = specifier.type === "ImportSpecifier" && specifier.imported.type === "Identifier" && specifier.imported.name;
-        if (specifier.type === "ImportNamespaceSpecifier") {
-          imported = "*";
-        }
-        const source2 = node2.source.value;
-        const existing = userImports[local];
-        if (source2 === "vue" && (imported === DEFINE_PROPS || imported === DEFINE_EMITS || imported === DEFINE_EXPOSE)) {
-          warnOnce(`\`${imported}\` is a compiler macro and no longer needs to be imported.`);
-          removeSpecifier(i);
-        } else if (existing) {
-          if (existing.source === source2 && existing.imported === imported) {
-            removeSpecifier(i);
-          } else {
-            error2(`different imports aliased to same local name.`, specifier);
-          }
-        } else {
-          registerUserImport(source2, local, imported, node2.importKind === "type" || specifier.type === "ImportSpecifier" && specifier.importKind === "type", true, !options.inlineTemplate);
-        }
-      }
-      if (node2.specifiers.length && removed === node2.specifiers.length) {
-        s.remove(node2.start + startOffset, node2.end + startOffset);
-      }
     }
     if (node2.type === "ExpressionStatement") {
       if (processDefineProps(node2.expression) || processDefineEmits(node2.expression) || processWithDefaults(node2.expression)) {
@@ -28824,14 +29723,14 @@ const ${DEFAULT_VAR} = ${defaultSpecifier.local.name}
             if (left === 1) {
               s.remove(node2.start + startOffset, node2.end + startOffset);
             } else {
-              let start2 = decl.start + startOffset;
-              let end2 = decl.end + startOffset;
-              if (i < total - 1) {
-                end2 = node2.declarations[i + 1].start + startOffset;
+              let start = decl.start + startOffset;
+              let end = decl.end + startOffset;
+              if (i === 0) {
+                end = node2.declarations[i + 1].start + startOffset;
               } else {
-                start2 = node2.declarations[i - 1].end + startOffset;
+                start = node2.declarations[i - 1].end + startOffset;
               }
-              s.remove(start2, end2);
+              s.remove(start, end);
               left--;
             }
           }
@@ -28839,7 +29738,7 @@ const ${DEFAULT_VAR} = ${defaultSpecifier.local.name}
       }
     }
     if ((node2.type === "VariableDeclaration" || node2.type === "FunctionDeclaration" || node2.type === "ClassDeclaration") && !node2.declare) {
-      walkDeclaration(node2, setupBindings, userImportAlias);
+      walkDeclaration(node2, setupBindings, vueImportAliases);
     }
     if (node2.type === "VariableDeclaration" && !node2.declare || node2.type.endsWith("Statement")) {
       const scope = [scriptSetupAst.body];
@@ -28871,15 +29770,21 @@ const ${DEFAULT_VAR} = ${defaultSpecifier.local.name}
     }
     if (isTS) {
       if (node2.type === "TSEnumDeclaration") {
-        registerBinding(setupBindings, node2.id, "setup-const");
+        registerBinding(
+          setupBindings,
+          node2.id,
+          "setup-const"
+          /* BindingTypes.SETUP_CONST */
+        );
       }
       if (node2.type.startsWith("TS") || node2.type === "ExportNamedDeclaration" && node2.exportKind === "type" || node2.type === "VariableDeclaration" && node2.declare) {
         recordType(node2, declaredTypes);
-        s.move(start, end, 0);
+        hoistNode(node2);
       }
     }
   }
-  if (enableReactivityTransform && (refBindings || shouldTransform(scriptSetup.content)) || propsDestructureDecl) {
+  if (enableReactivityTransform && // normal <script> had ref bindings that maybe used in <script setup>
+  (refBindings || shouldTransform(scriptSetup.content)) || propsDestructureDecl) {
     const { rootRefs, importedHelpers } = transformAST(scriptSetupAst, s, startOffset, refBindings, propsDestructuredBindings);
     refBindings = refBindings ? [...refBindings, ...rootRefs] : rootRefs;
     for (const h of importedHelpers) {
@@ -28949,7 +29854,8 @@ const ${DEFAULT_VAR} = ${defaultSpecifier.local.name}
       bindingMetadata[key] = "setup-ref";
     }
   }
-  if (cssVars.length && !(options.inlineTemplate && ((_a2 = options.templateOptions) === null || _a2 === void 0 ? void 0 : _a2.ssr))) {
+  if (cssVars.length && // no need to do this when targeting SSR
+  !(options.inlineTemplate && ((_a2 = options.templateOptions) === null || _a2 === void 0 ? void 0 : _a2.ssr))) {
     helperImports.add(CSS_VARS_HELPER);
     helperImports.add("unref");
     s.prependRight(startOffset, `
@@ -28962,12 +29868,12 @@ ${genCssVarsCode(cssVars, bindingMetadata, scopeId, isProd)}
   }
   if (propsIdentifier) {
     s.prependLeft(startOffset, `
-const ${propsIdentifier} = __props${propsTypeDecl ? ` as ${genSetupPropsType(propsTypeDecl)}` : ``}
+const ${propsIdentifier} = __props${propsTypeDecl ? ` as ${genSetupPropsType(propsTypeDecl)}` : ``};
 `);
   }
   if (propsDestructureRestId) {
     s.prependLeft(startOffset, `
-const ${propsDestructureRestId} = ${helper(`createPropsRestProxy`)}(__props, ${JSON.stringify(Object.keys(propsDestructuredBindings))})
+const ${propsDestructureRestId} = ${helper(`createPropsRestProxy`)}(__props, ${JSON.stringify(Object.keys(propsDestructuredBindings))});
 `);
   }
   if (hasAwait) {
@@ -28994,7 +29900,18 @@ let __temp${any}, __restore${any}
         allBindings[key] = true;
       }
     }
-    returned = `{ ${Object.keys(allBindings).join(", ")} }`;
+    returned = `{ `;
+    for (const key in allBindings) {
+      if (allBindings[key] === true && userImports[key].source !== "vue" && !userImports[key].source.endsWith(".vue")) {
+        returned += `get ${key}() { return ${key} }, `;
+      } else if (bindingMetadata[key] === "setup-let") {
+        const setArg = key === "v" ? `_v` : `v`;
+        returned += `get ${key}() { return ${key} }, set ${key}(${setArg}) { ${key} = ${setArg} }, `;
+      } else {
+        returned += `${key}, `;
+      }
+    }
+    returned = returned.replace(/, $/, "") + ` }`;
   } else {
     if (sfc.template && !sfc.template.src) {
       if (options.templateOptions && options.templateOptions.ssr) {
@@ -29123,20 +30040,24 @@ ${exposeCall}`);
 function registerBinding(bindings, node2, type) {
   bindings[node2.name] = type;
 }
-function walkDeclaration(node2, bindings, userImportAlias) {
+function walkDeclaration(node2, bindings, userImportAliases) {
   if (node2.type === "VariableDeclaration") {
     const isConst = node2.kind === "const";
     for (const { id: id2, init: init2 } of node2.declarations) {
       const isDefineCall = !!(isConst && isCallOf(init2, (c) => c === DEFINE_PROPS || c === DEFINE_EMITS || c === WITH_DEFAULTS));
       if (id2.type === "Identifier") {
         let bindingType;
-        const userReactiveBinding = userImportAlias["reactive"] || "reactive";
+        const userReactiveBinding = userImportAliases["reactive"];
         if (isCallOf(init2, userReactiveBinding)) {
           bindingType = isConst ? "setup-reactive-const" : "setup-let";
-        } else if (isDefineCall || isConst && canNeverBeRef(init2, userReactiveBinding)) {
+        } else if (
+          // if a declaration is a const literal, we can mark it so that
+          // the generated render fn code doesn't need to unref() it
+          isDefineCall || isConst && canNeverBeRef(init2, userReactiveBinding)
+        ) {
           bindingType = isCallOf(init2, DEFINE_PROPS) ? "setup-reactive-const" : "setup-const";
         } else if (isConst) {
-          if (isCallOf(init2, userImportAlias["ref"] || "ref")) {
+          if (isCallOf(init2, userImportAliases["ref"])) {
             bindingType = "setup-ref";
           } else {
             bindingType = "setup-maybe-ref";
@@ -29336,7 +30257,7 @@ function genRuntimeEmits(emits) {
   emits: [${Array.from(emits).map((p) => JSON.stringify(p)).join(", ")}],` : ``;
 }
 function isCallOf(node2, test) {
-  return !!(node2 && node2.type === "CallExpression" && node2.callee.type === "Identifier" && (typeof test === "string" ? node2.callee.name === test : test(node2.callee.name)));
+  return !!(node2 && test && node2.type === "CallExpression" && node2.callee.type === "Identifier" && (typeof test === "string" ? node2.callee.name === test : test(node2.callee.name)));
 }
 function canNeverBeRef(node2, userReactiveImport) {
   if (isCallOf(node2, userReactiveImport)) {
@@ -29406,13 +30327,11 @@ function analyzeBindingsFromOptions(node2) {
 function getObjectExpressionKeys(node2) {
   const keys = [];
   for (const prop of node2.properties) {
-    if ((prop.type === "ObjectProperty" || prop.type === "ObjectMethod") && !prop.computed) {
-      if (prop.key.type === "Identifier") {
-        keys.push(prop.key.name);
-      } else if (prop.key.type === "StringLiteral") {
-        keys.push(prop.key.value);
-      }
-    }
+    if (prop.type === "SpreadElement")
+      continue;
+    const key = resolveObjectKey(prop.key, prop.computed);
+    if (key)
+      keys.push(String(key));
   }
   return keys;
 }
@@ -29505,6 +30424,8 @@ function stripTemplateString(str) {
 }
 function isImportUsed(local, sfc) {
   return new RegExp(
+    // #4274 escape $ since it's a special char in regex
+    // (and is the only regex special char that is valid in identifiers)
     `[^\\w$_]${local.replace(/\$/g, "\\$")}[^\\w$_]`
   ).test(resolveTemplateUsageCheckString(sfc));
 }
@@ -29518,6 +30439,17 @@ function hmrShouldReload(prevImports, next2) {
     }
   }
   return false;
+}
+function resolveObjectKey(node2, computed2) {
+  switch (node2.type) {
+    case "StringLiteral":
+    case "NumericLiteral":
+      return node2.value;
+    case "Identifier":
+      if (!computed2)
+        return node2.name;
+  }
+  return void 0;
 }
 var DEFAULT_FILENAME = "anonymous.vue";
 var sourceToSFC = createCache();
@@ -29541,10 +30473,13 @@ function parse$4(source, { sourceMap: sourceMap2 = true, filename = DEFAULT_FILE
   };
   const errors2 = [];
   const ast = compiler.parse(source, {
+    // there are no components at SFC parsing level
     isNativeTag: () => true,
+    // preserve all whitespaces
     isPreTag: () => true,
     getTextMode: ({ tag: tag2, props }, parent) => {
-      if (!parent && tag2 !== "template" || tag2 === "template" && props.some((p) => p.type === 6 && p.name === "lang" && p.value && p.value.content && p.value.content !== "html")) {
+      if (!parent && tag2 !== "template" || // <template lang="xxx"> should also be treated as raw text
+      tag2 === "template" && props.some((p) => p.type === 6 && p.name === "lang" && p.value && p.value.content && p.value.content !== "html")) {
         return 2;
       } else {
         return 0;
@@ -29600,6 +30535,9 @@ function parse$4(source, { sourceMap: sourceMap2 = true, filename = DEFAULT_FILE
         break;
     }
   });
+  if (!descriptor.template && !descriptor.script && !descriptor.scriptSetup) {
+    errors2.push(new SyntaxError(`At least one <template> or <script> is required in a single file component.`));
+  }
   if (descriptor.scriptSetup) {
     if (descriptor.scriptSetup.src) {
       errors2.push(new SyntaxError(`<script setup> cannot use the "src" attribute because its syntax will be ambiguous outside of the component.`));
@@ -30762,7 +31700,8 @@ var Node$1 = class {
         if (node2[prop] === value)
           return true;
         node2[prop] = value;
-        if (prop === "prop" || prop === "value" || prop === "name" || prop === "params" || prop === "important" || prop === "text") {
+        if (prop === "prop" || prop === "value" || prop === "name" || prop === "params" || prop === "important" || /* c8 ignore next */
+        prop === "text") {
           node2.markDirty();
         }
         return true;
@@ -32264,6 +33203,8 @@ function IndexedSourceMapConsumer$1(aSourceMap, aSourceMapURL) {
     lastOffset = offset;
     return {
       generatedOffset: {
+        // The offset fields are 0-based, but we use 1-based indices when
+        // encoding/decoding from VLQ.
         generatedLine: offsetLine + 1,
         generatedColumn: offsetColumn + 1
       },
@@ -32819,7 +33760,7 @@ var Input$1 = class {
       throw new Error(`PostCSS received ${css2} instead of CSS string`);
     }
     this.css = css2.toString();
-    if (this.css[0] === "\uFEFF" || this.css[0] === "\uFFFE") {
+    if (this.css[0] === "\uFEFF" || this.css[0] === "￾") {
       this.hasBOM = true;
       this.css = this.css.slice(1);
     } else {
@@ -34246,6 +35187,7 @@ var Parser$1 = class {
       }
     }
   }
+  // Helpers
   getPosition(offset) {
     let pos = this.input.fromOffset(offset);
     return {
@@ -34363,6 +35305,7 @@ var Parser$1 = class {
     }
     return false;
   }
+  // Errors
   unclosedBracket(bracket) {
     throw this.input.error(
       "Unclosed bracket",
@@ -35212,7 +36155,7 @@ var unesc_1 = createCommonjsModule(function(module, exports) {
     var codePoint = parseInt(hex, 16);
     var isSurrogate = codePoint >= 55296 && codePoint <= 57343;
     if (isSurrogate || codePoint === 0 || codePoint > 1114111) {
-      return ["\uFFFD", hex.length + (spaceTerminated ? 1 : 0)];
+      return ["�", hex.length + (spaceTerminated ? 1 : 0)];
     }
     return [String.fromCodePoint(codePoint), hex.length + (spaceTerminated ? 1 : 0)];
   }
@@ -36724,6 +37667,12 @@ var attribute = createCommonjsModule(function(module, exports) {
       set: function set(value) {
         warnOfDeprecatedQuotedAssignment();
       }
+      /**
+       * returns a single (`'`) or double (`"`) quote character if the value is quoted.
+       * returns `null` if the value is not quoted.
+       * returns `undefined` if the quotation state is unknown (this can happen when
+       * the attribute is constructed without specifying a quote mark.)
+       */
     }, {
       key: "quoteMark",
       get: function get() {
@@ -37206,12 +38155,19 @@ var tokenize_1 = createCommonjsModule(function(module, exports) {
       }
       tokens.push([
         tokenType,
+        // [0] Token type
         line,
+        // [1] Starting line
         start - offset,
+        // [2] Starting column
         endLine,
+        // [3] Ending line
         endColumn,
+        // [4] Ending column
         start,
+        // [5] Start position / Source index
         end
+        // [6] End position
       ]);
       if (nextOffset) {
         offset = nextOffset;
@@ -37512,7 +38468,8 @@ var parser$1 = createCommonjsModule(function(module, exports) {
             spaceAfterMeaningfulToken = false;
             break;
           case tokens.word:
-            if (next2 && this.content(next2) === "|" && attr[pos + 2] && attr[pos + 2][_tokenize.FIELDS.TYPE] !== tokens.equals && !node2.operator && !node2.namespace) {
+            if (next2 && this.content(next2) === "|" && attr[pos + 2] && attr[pos + 2][_tokenize.FIELDS.TYPE] !== tokens.equals && // this look-ahead probably fails with comment nodes involved.
+            !node2.operator && !node2.namespace) {
               node2.namespace = content;
               lastAdded = "namespace";
             } else if (!node2.attribute || lastAdded === "attribute" && !spaceAfterMeaningfulToken) {
@@ -38642,7 +39599,13 @@ function rewriteSelector(id2, selector2, selectorRoot, slotted = false) {
         return false;
       }
       if (value === ":slotted" || value === "::v-slotted") {
-        rewriteSelector(id2, n2.nodes[0], selectorRoot, true);
+        rewriteSelector(
+          id2,
+          n2.nodes[0],
+          selectorRoot,
+          true
+          /* slotted */
+        );
         let last2 = n2;
         n2.nodes[0].each((ss) => {
           selector2.insertAfter(last2, ss);
@@ -38670,6 +39633,8 @@ function rewriteSelector(id2, selector2, selectorRoot, slotted = false) {
   if (shouldInject) {
     const idToAdd = slotted ? id2 + "-s" : id2;
     selector2.insertAfter(
+      // If node is null it means we need to inject [id] at the start
+      // insertAfter can handle `null` here
       node2,
       selectorParser.attribute({
         attribute: idToAdd,
@@ -39147,8 +40112,77 @@ var FileSelector = _export_sfc(_sfc_main$6, [["__scopeId", "data-v-cbb0a4e5"]]);
 var u8 = Uint8Array;
 var u16 = Uint16Array;
 var u32 = Uint32Array;
-var fleb = new u8([0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0, 0, 0, 0]);
-var fdeb = new u8([0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 0, 0]);
+var fleb = new u8([
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  2,
+  2,
+  2,
+  2,
+  3,
+  3,
+  3,
+  3,
+  4,
+  4,
+  4,
+  4,
+  5,
+  5,
+  5,
+  5,
+  0,
+  /* unused */
+  0,
+  0,
+  /* impossible */
+  0
+]);
+var fdeb = new u8([
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  2,
+  2,
+  3,
+  3,
+  4,
+  4,
+  5,
+  5,
+  6,
+  6,
+  7,
+  7,
+  8,
+  8,
+  9,
+  9,
+  10,
+  10,
+  11,
+  11,
+  12,
+  12,
+  13,
+  13,
+  /* unused */
+  0,
+  0
+]);
 var clim = new u8([16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15]);
 var freb = function(eb, start) {
   var b = new u16(31);
@@ -39279,6 +40313,7 @@ var ec = [
   "filename too long",
   "stream finishing",
   "invalid zip data"
+  // determined by unknown compression method
 ];
 var err = function(ind, msg, nt) {
   var e = new Error(msg || ec[ind]);
@@ -39855,7 +40890,7 @@ function utoa(data) {
 }
 function atou(base642) {
   const binary = atob(base642);
-  if (binary.startsWith("x\xDA")) {
+  if (binary.startsWith("xÚ")) {
     const buffer = strToU8(binary, true);
     const unzipped = unzlibSync(buffer);
     return strFromU8(unzipped);
@@ -40156,7 +41191,7 @@ function requireCodemirror() {
       }
       var nonASCIISingleCaseWordChar = /[\u00df\u0587\u0590-\u05f4\u0600-\u06ff\u3040-\u309f\u30a0-\u30ff\u3400-\u4db5\u4e00-\u9fcc\uac00-\ud7af]/;
       function isWordCharBasic(ch) {
-        return /\w/.test(ch) || ch > "\x80" && (ch.toUpperCase() != ch.toLowerCase() || nonASCIISingleCaseWordChar.test(ch));
+        return /\w/.test(ch) || ch > "" && (ch.toUpperCase() != ch.toLowerCase() || nonASCIISingleCaseWordChar.test(ch));
       }
       function isWordChar(ch, helper) {
         if (!helper) {
@@ -40518,13 +41553,13 @@ function requireCodemirror() {
       var zwspSupported;
       function zeroWidthElement(measure) {
         if (zwspSupported == null) {
-          var test = elt("span", "\u200B");
+          var test = elt("span", "​");
           removeChildrenAndAdd(measure, elt("span", [test, document.createTextNode("x")]));
           if (measure.firstChild.offsetHeight != 0) {
             zwspSupported = test.offsetWidth <= 1 && test.offsetHeight > 2 && !(ie && ie_version < 8);
           }
         }
-        var node2 = zwspSupported ? elt("span", "\u200B") : elt("span", "\xA0", null, "display: inline-block; width: 1px; margin-right: -1px");
+        var node2 = zwspSupported ? elt("span", "​") : elt("span", " ", null, "display: inline-block; width: 1px; margin-right: -1px");
         node2.setAttribute("cm-text", "");
         return node2;
       }
@@ -40533,7 +41568,7 @@ function requireCodemirror() {
         if (badBidiRects != null) {
           return badBidiRects;
         }
-        var txt = removeChildrenAndAdd(measure, document.createTextNode("A\u062EA"));
+        var txt = removeChildrenAndAdd(measure, document.createTextNode("AخA"));
         var r0 = range2(txt, 0, 1).getBoundingClientRect();
         var r1 = range2(txt, 1, 2).getBoundingClientRect();
         removeChildren(measure);
@@ -41762,7 +42797,7 @@ function requireCodemirror() {
         return builder;
       }
       function defaultSpecialCharPlaceholder(ch) {
-        var token = elt("span", "\u2022", "cm-invalidchar");
+        var token = elt("span", "•", "cm-invalidchar");
         token.title = "\\u" + ch.charCodeAt(0).toString(16);
         token.setAttribute("aria-label", token.title);
         return token;
@@ -41812,7 +42847,7 @@ function requireCodemirror() {
               txt$1.setAttribute("cm-text", "	");
               builder.col += tabWidth;
             } else if (m[0] == "\r" || m[0] == "\n") {
-              txt$1 = content.appendChild(elt("span", m[0] == "\r" ? "\u240D" : "\u2424", "cm-invalidchar"));
+              txt$1 = content.appendChild(elt("span", m[0] == "\r" ? "␍" : "␤", "cm-invalidchar"));
               txt$1.setAttribute("cm-text", m[0]);
               builder.col += 1;
             } else {
@@ -41858,7 +42893,7 @@ function requireCodemirror() {
         for (var i2 = 0; i2 < text.length; i2++) {
           var ch = text.charAt(i2);
           if (ch == " " && spaceBefore && (i2 == text.length - 1 || text.charCodeAt(i2 + 1) == 32)) {
-            ch = "\xA0";
+            ch = " ";
           }
           result2 += ch;
           spaceBefore = ch == " ";
@@ -43229,7 +44264,7 @@ function requireCodemirror() {
       }
       function drawSelectionCursor(cm, head, output) {
         var pos = cursorCoords(cm, head, "div", null, null, !cm.options.singleCursorHeightPerLine);
-        var cursor = output.appendChild(elt("div", "\xA0", "CodeMirror-cursor"));
+        var cursor = output.appendChild(elt("div", " ", "CodeMirror-cursor"));
         cursor.style.left = pos.left + "px";
         cursor.style.top = pos.top + "px";
         cursor.style.height = Math.max(0, pos.bottom - pos.top) * cm.options.cursorHeight + "px";
@@ -43239,7 +44274,7 @@ function requireCodemirror() {
           cursor.style.width = (width > 0 ? width : cm.defaultCharWidth()) + "px";
         }
         if (pos.other) {
-          var otherCursor = output.appendChild(elt("div", "\xA0", "CodeMirror-cursor CodeMirror-secondarycursor"));
+          var otherCursor = output.appendChild(elt("div", " ", "CodeMirror-cursor CodeMirror-secondarycursor"));
           otherCursor.style.display = "";
           otherCursor.style.left = pos.other.left + "px";
           otherCursor.style.top = pos.other.top + "px";
@@ -43510,7 +44545,7 @@ function requireCodemirror() {
           doScroll = false;
         }
         if (doScroll != null && !phantom) {
-          var scrollNode = elt("div", "\u200B", null, "position: absolute;\n                         top: " + (rect.top - display.viewOffset - paddingTop(cm.display)) + "px;\n                         height: " + (rect.bottom - rect.top + scrollGap(cm) + display.barHeight) + "px;\n                         left: " + rect.left + "px; width: " + Math.max(2, rect.right - rect.left) + "px;");
+          var scrollNode = elt("div", "​", null, "position: absolute;\n                         top: " + (rect.top - display.viewOffset - paddingTop(cm.display)) + "px;\n                         height: " + (rect.bottom - rect.top + scrollGap(cm) + display.barHeight) + "px;\n                         left: " + rect.left + "px; width: " + Math.max(2, rect.right - rect.left) + "px;");
           cm.display.lineSpace.appendChild(scrollNode);
           scrollNode.scrollIntoView(doScroll);
           cm.display.lineSpace.removeChild(scrollNode);
@@ -43872,21 +44907,35 @@ function requireCodemirror() {
         cm.curOp = {
           cm,
           viewChanged: false,
+          // Flag that indicates that lines might need to be redrawn
           startHeight: cm.doc.height,
+          // Used to detect need to update scrollbar
           forceUpdate: false,
+          // Used to force a redraw
           updateInput: 0,
+          // Whether to reset the input textarea
           typing: false,
+          // Whether this reset should be careful to leave existing text (for compositing)
           changeObjs: null,
+          // Accumulated changes, for firing change events
           cursorActivityHandlers: null,
+          // Set of handlers to fire cursorActivity on
           cursorActivityCalled: 0,
+          // Tracks which cursorActivity handlers have been called already
           selectionChanged: false,
+          // Whether the selection needs to be redrawn
           updateMaxLine: false,
+          // Set when the widest line needs to be determined anew
           scrollLeft: null,
           scrollTop: null,
+          // Intermediate scroll position, not pushed to DOM yet
           scrollToPos: null,
+          // Used to scroll to a specific position
           focus: false,
           id: ++nextOpId,
+          // Unique ID
           markArrays: null
+          // Used by addMarkedSpan
         };
         pushOperation(cm.curOp);
       }
@@ -45610,6 +46659,7 @@ function requireCodemirror() {
         chunkSize: function() {
           return this.lines.length;
         },
+        // Remove the n lines at offset 'at'.
         removeInner: function(at, n2) {
           for (var i2 = at, e = at + n2; i2 < e; ++i2) {
             var line = this.lines[i2];
@@ -45619,9 +46669,12 @@ function requireCodemirror() {
           }
           this.lines.splice(at, n2);
         },
+        // Helper used to collapse a small branch into a single leaf.
         collapse: function(lines) {
           lines.push.apply(lines, this.lines);
         },
+        // Insert the given array of lines at offset 'at', count them as
+        // having the given height.
         insertInner: function(at, lines, height) {
           this.height += height;
           this.lines = this.lines.slice(0, at).concat(lines).concat(this.lines.slice(at));
@@ -45629,6 +46682,7 @@ function requireCodemirror() {
             lines[i2].parent = this;
           }
         },
+        // Used to iterate over a part of the tree.
         iterN: function(at, n2, op) {
           for (var e = at + n2; at < e; ++at) {
             if (op(this.lines[at])) {
@@ -45709,6 +46763,7 @@ function requireCodemirror() {
             at -= sz;
           }
         },
+        // When a node has grown, check whether it should be split.
         maybeSpill: function() {
           if (this.children.length <= 10) {
             return;
@@ -46165,6 +47220,10 @@ function requireCodemirror() {
       };
       Doc.prototype = createObj(BranchChunk.prototype, {
         constructor: Doc,
+        // Iterate over the document. Supports two forms -- with only one
+        // argument, it calls that for each line in the document. With
+        // three, it iterates over the range given by the first two (with
+        // the second being non-inclusive).
         iter: function(from2, to, op) {
           if (op) {
             this.iterN(from2 - this.first, to - from2, op);
@@ -46172,6 +47231,7 @@ function requireCodemirror() {
             this.iterN(this.first, this.first + this.size, from2);
           }
         },
+        // Non-public interface for adding and removing lines.
         insert: function(at, lines) {
           var height = 0;
           for (var i2 = 0; i2 < lines.length; ++i2) {
@@ -46182,6 +47242,8 @@ function requireCodemirror() {
         remove: function(at, n2) {
           this.removeInner(at - this.first, n2);
         },
+        // From here, the methods are part of the public interface. Most
+        // are also available from CodeMirror (editor) instances.
         getValue: function(lineSep) {
           var lines = getLines(this, this.first, this.first + this.size);
           if (lineSep === false) {
@@ -47474,6 +48536,13 @@ function requireCodemirror() {
             cm.execCommand("insertTab");
           }
         },
+        // Swap the two chars left and right of each selection's head.
+        // Move cursor behind the two swapped characters afterwards.
+        //
+        // Doesn't consider line feeds a character.
+        // Doesn't scan more than one line above to find a character.
+        // Doesn't do anything on an empty line.
+        // Doesn't do anything with non-empty selections.
         transposeChars: function(cm) {
           return runInOp(cm, function() {
             var ranges = cm.listSelections(), newSel = [];
@@ -48401,18 +49470,25 @@ function requireCodemirror() {
         initScrollbars(this);
         this.state = {
           keyMaps: [],
+          // stores maps added by addKeyMap
           overlays: [],
+          // highlighting overlays, as added by addOverlay
           modeGen: 0,
+          // bumped when mode/overlay changes, used to invalidate highlighting info
           overwrite: false,
           delayingBlurEvent: false,
           focused: false,
           suppressEdits: false,
+          // used to disable editing during key handlers when in readOnly mode
           pasteIncoming: -1,
           cutIncoming: -1,
+          // help recognize paste/cut edits in input.poll
           selectingText: false,
           draggingText: false,
           highlight: new Delayed(),
+          // stores highlight worker timeout
           keySeq: null,
+          // Unfinished key sequence
           specialChars: null
         };
         if (options.autofocus && !mobile) {
@@ -48907,6 +49983,8 @@ function requireCodemirror() {
               }
             }
           }),
+          // Fetch the parser token for a given character. Useful for hacks
+          // that want to inspect the mode state (say, for completion).
           getTokenAt: function(pos, precise) {
             return takeToken(this, pos, precise);
           },
@@ -49160,6 +50238,7 @@ function requireCodemirror() {
               }
             }
           }),
+          // Find the word at the given position (as returned by coordsChar).
           findWordAt: function(pos) {
             var doc = this.doc, line = getLine(doc, pos.line).text;
             var start = pos.ch, end = pos.ch;
@@ -50252,7 +51331,7 @@ function requireCodemirror() {
         if (cm.doc.sel == cm.display.selForContextMenu) {
           var first = text.charCodeAt(0);
           if (first == 8203 && !prevInput) {
-            prevInput = "\u200B";
+            prevInput = "​";
           }
           if (first == 8666) {
             this.reset();
@@ -50333,10 +51412,10 @@ function requireCodemirror() {
         function prepareSelectAllHack() {
           if (te2.selectionStart != null) {
             var selected = cm.somethingSelected();
-            var extval = "\u200B" + (selected ? te2.value : "");
-            te2.value = "\u21DA";
+            var extval = "​" + (selected ? te2.value : "");
+            te2.value = "⇚";
             te2.value = extval;
-            input3.prevInput = selected ? "" : "\u200B";
+            input3.prevInput = selected ? "" : "​";
             te2.selectionStart = 1;
             te2.selectionEnd = extval.length;
             display.selForContextMenu = cm.doc.sel;
@@ -50357,7 +51436,7 @@ function requireCodemirror() {
               prepareSelectAllHack();
             }
             var i2 = 0, poll = function() {
-              if (display.selForContextMenu == cm.doc.sel && te2.selectionStart == 0 && te2.selectionEnd > 0 && input3.prevInput == "\u200B") {
+              if (display.selForContextMenu == cm.doc.sel && te2.selectionStart == 0 && te2.selectionEnd > 0 && input3.prevInput == "​") {
                 operation(cm, selectAll)(cm);
               } else if (i2++ < 10) {
                 display.detectingSelectAll = setTimeout(poll, 500);
@@ -52622,6 +53701,7 @@ function requireCss() {
         "word-wrap",
         "writing-mode",
         "z-index",
+        // SVG-specific
         "clip-path",
         "clip-rule",
         "mask",
@@ -54678,7 +55758,8 @@ function requireXmlFold() {
         if (tok.end > pos.ch)
           tagName = tagName.slice(0, tagName.length - tok.end + pos.ch);
         var lowerTagName = tagName.toLowerCase();
-        if (!tagName || tok.type == "string" && (tok.end != pos.ch || !/[\"\']/.test(tok.string.charAt(tok.string.length - 1)) || tok.string.length == 1) || tok.type == "tag" && tagInfo.close || tok.string.indexOf("/") == pos.ch - tok.start - 1 || dontCloseTags && indexOf2(dontCloseTags, lowerTagName) > -1 || closingTagExists(cm, inner.mode.xmlCurrentContext && inner.mode.xmlCurrentContext(state2) || [], tagName, pos, true))
+        if (!tagName || tok.type == "string" && (tok.end != pos.ch || !/[\"\']/.test(tok.string.charAt(tok.string.length - 1)) || tok.string.length == 1) || tok.type == "tag" && tagInfo.close || tok.string.indexOf("/") == pos.ch - tok.start - 1 || // match something like <someTagName />
+        dontCloseTags && indexOf2(dontCloseTags, lowerTagName) > -1 || closingTagExists(cm, inner.mode.xmlCurrentContext && inner.mode.xmlCurrentContext(state2) || [], tagName, pos, true))
           return CodeMirror.Pass;
         var emptyTags = typeof opt == "object" && opt.emptyTags;
         if (emptyTags && indexOf2(emptyTags, tagName) > -1) {
@@ -55120,7 +56201,7 @@ var foldcode = { exports: {} };
     });
     var defaultOptions2 = {
       rangeFinder: CodeMirror.fold.auto,
-      widget: "\u2194",
+      widget: "↔",
       minFoldSize: 0,
       scanUp: false,
       clearOnEnter: true
@@ -55622,7 +56703,7 @@ var _sfc_main$4 = defineComponent({
             createBaseVNode("button", {
               class: "dismiss",
               onClick: _cache[0] || (_cache[0] = ($event) => dismissed.value = true)
-            }, "\u2715")
+            }, "✕")
           ], 2)) : createCommentVNode("", true)
         ]),
         _: 1
@@ -55661,7 +56742,7 @@ var _sfc_main$3 = defineComponent({
   }
 });
 var Editor = _export_sfc(_sfc_main$3, [["__scopeId", "data-v-0384e940"]]);
-var srcdoc = "<!doctype html>\n<html>\n	<head>\n		<style>\n			body {\n				font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto,\n				Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\n			}\n		</style>\n		<style id=\"__sfc-styles\"></style>\n		<script>\n			(() => {\n				let scriptEls = []\n\n				window.process = { env: {} }\n				window.__modules__ = {}\n\n				window.__export__ = (mod, key, get) => {\n					Object.defineProperty(mod, key, {\n						enumerable: true,\n						configurable: true,\n						get\n					})\n				}\n\n				window.__dynamic_import__ = key => {\n					return Promise.resolve(window.__modules__[key])\n				}\n\n				async function handle_message(ev) {\n					let { action, cmd_id } = ev.data;\n					const send_message = (payload) => parent.postMessage( { ...payload }, ev.origin);\n					const send_reply = (payload) => send_message({ ...payload, cmd_id });\n					const send_ok = () => send_reply({ action: 'cmd_ok' });\n					const send_error = (message, stack) => send_reply({ action: 'cmd_error', message, stack });\n\n					if (action === 'eval') {\n						try {\n							if (scriptEls.length) {\n								scriptEls.forEach(el => {\n									document.head.removeChild(el)\n								})\n								scriptEls.length = 0\n							}\n\n							let { script: scripts } = ev.data.args\n							if (typeof scripts === 'string') scripts = [scripts]\n\n							for (const script of scripts) {\n								const scriptEl = document.createElement('script')\n								scriptEl.setAttribute('type', 'module')\n								// send ok in the module script to ensure sequential evaluation\n								// of multiple proxy.eval() calls\n								const done = new Promise((resolve) => {\n									window.__next__ = resolve\n								})\n								scriptEl.innerHTML = script + `\\nwindow.__next__()`\n								document.head.appendChild(scriptEl)\n								scriptEl.onerror = err => send_error(err.message, err.stack)\n								scriptEls.push(scriptEl)\n								await done\n							}\n							send_ok()\n						} catch (e) {\n							send_error(e.message, e.stack);\n						}\n					}\n\n					if (action === 'catch_clicks') {\n						try {\n							const top_origin = ev.origin;\n							document.body.addEventListener('click', event => {\n								if (event.which !== 1) return;\n								if (event.metaKey || event.ctrlKey || event.shiftKey) return;\n								if (event.defaultPrevented) return;\n\n								// ensure target is a link\n								let el = event.target;\n								while (el && el.nodeName !== 'A') el = el.parentNode;\n								if (!el || el.nodeName !== 'A') return;\n\n								if (el.hasAttribute('download') || el.getAttribute('rel') === 'external' || el.target) return;\n\n								event.preventDefault();\n\n								if (el.href.startsWith(top_origin)) {\n									const url = new URL(el.href);\n									if (url.hash[0] === '#') {\n										window.location.hash = url.hash;\n										return;\n									}\n								}\n\n								window.open(el.href, '_blank');\n							});\n							send_ok();\n						} catch(e) {\n							send_error(e.message, e.stack);\n						}\n					}\n				}\n\n				window.addEventListener('message', handle_message, false);\n\n				window.onerror = function (msg, url, lineNo, columnNo, error) {\n					if (msg.includes('module specifier \u201Cvue\u201D')) {\n						// firefox only error, ignore\n						return false\n					}\n					try {\n						parent.postMessage({ action: 'error', value: error }, '*');\n					} catch (e) {\n						parent.postMessage({ action: 'error', value: msg }, '*');\n					}\n				}\n\n				window.addEventListener(\"unhandledrejection\", event => {\n					if (event.reason.message.includes('Cross-origin')) {\n						event.preventDefault()\n						return\n					}\n					try {\n						parent.postMessage({ action: 'unhandledrejection', value: event.reason }, '*');\n					} catch (e) {\n						parent.postMessage({ action: 'unhandledrejection', value: event.reason.message }, '*');\n					}\n				});\n\n				let previous = { level: null, args: null };\n\n				['clear', 'log', 'info', 'dir', 'warn', 'error', 'table'].forEach((level) => {\n					const original = console[level];\n					console[level] = (...args) => {\n						const msg = String(args[0])\n						if (\n							msg.includes('You are running a development build of Vue') ||\n							msg.includes('You are running the esm-bundler build of Vue')\n						) {\n							return\n						}\n						const stringifiedArgs = stringify(args);\n						if (\n							previous.level === level &&\n							previous.args &&\n							previous.args === stringifiedArgs\n						) {\n							parent.postMessage({ action: 'console', level, duplicate: true }, '*');\n						} else {\n							previous = { level, args: stringifiedArgs };\n\n							try {\n								parent.postMessage({ action: 'console', level, args }, '*');\n							} catch (err) {\n								parent.postMessage({ action: 'console', level, args: args.map(a => {\n									return a instanceof Error ? a.message : String(a)\n								}) }, '*');\n							}\n						}\n\n						original(...args);\n					}\n				});\n\n				[\n					{ method: 'group', action: 'console_group' },\n					{ method: 'groupEnd', action: 'console_group_end' },\n					{ method: 'groupCollapsed', action: 'console_group_collapsed' },\n				].forEach((group_action) => {\n					const original = console[group_action.method];\n					console[group_action.method] = (label) => {\n						parent.postMessage({ action: group_action.action, label }, '*');\n\n						original(label);\n					};\n				});\n\n				const timers = new Map();\n				const original_time = console.time;\n				const original_timelog = console.timeLog;\n				const original_timeend = console.timeEnd;\n\n				console.time = (label = 'default') => {\n					original_time(label);\n					timers.set(label, performance.now());\n				}\n				console.timeLog = (label = 'default') => {\n					original_timelog(label);\n					const now = performance.now();\n					if (timers.has(label)) {\n						parent.postMessage({ action: 'console', level: 'system-log', args: [`${label}: ${now - timers.get(label)}ms`] }, '*');\n					} else {\n						parent.postMessage({ action: 'console', level: 'system-warn', args: [`Timer '${label}' does not exist`] }, '*');\n					}\n				}\n				console.timeEnd = (label = 'default') => {\n					original_timeend(label);\n					const now = performance.now();\n					if (timers.has(label)) {\n						parent.postMessage({ action: 'console', level: 'system-log', args: [`${label}: ${now - timers.get(label)}ms`] }, '*');\n					} else {\n						parent.postMessage({ action: 'console', level: 'system-warn', args: [`Timer '${label}' does not exist`] }, '*');\n					}\n					timers.delete(label);\n				};\n\n				const original_assert = console.assert;\n				console.assert = (condition, ...args) => {\n					if (condition) {\n						const stack = new Error().stack;\n						parent.postMessage({ action: 'console', level: 'assert', args, stack }, '*');\n					}\n					original_assert(condition, ...args);\n				};\n\n				const counter = new Map();\n				const original_count = console.count;\n				const original_countreset = console.countReset;\n\n				console.count = (label = 'default') => {\n					counter.set(label, (counter.get(label) || 0) + 1);\n					parent.postMessage({ action: 'console', level: 'system-log', args: `${label}: ${counter.get(label)}` }, '*');\n					original_count(label);\n				};\n\n				console.countReset = (label = 'default') => {\n					if (counter.has(label)) {\n						counter.set(label, 0);\n					} else {\n						parent.postMessage({ action: 'console', level: 'system-warn', args: `Count for '${label}' does not exist` }, '*');\n					}\n					original_countreset(label);\n				};\n\n				const original_trace = console.trace;\n\n				console.trace = (...args) => {\n					const stack = new Error().stack;\n					parent.postMessage({ action: 'console', level: 'trace', args, stack }, '*');\n					original_trace(...args);\n				};\n\n				function stringify(args) {\n					try {\n						return JSON.stringify(args);\n					} catch (error) {\n						return null;\n					}\n				}\n			})()\n		<\/script>\n\n		<!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support (all except Chrome 89+) -->\n		<script async src=\"https://unpkg.com/es-module-shims@1.5.18/dist/es-module-shims.wasm.js\"><\/script>\n		<script type=\"importmap\"><!--IMPORT_MAP--><\/script>\n	</head>\n	<body></body>\n</html>\n";
+var srcdoc = "<!doctype html>\n<html>\n	<head>\n		<style>\n			body {\n				font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto,\n				Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif;\n			}\n		</style>\n		<style id=\"__sfc-styles\"></style>\n		<script>\n			(() => {\n				let scriptEls = []\n\n				window.process = { env: {} }\n				window.__modules__ = {}\n\n				window.__export__ = (mod, key, get) => {\n					Object.defineProperty(mod, key, {\n						enumerable: true,\n						configurable: true,\n						get\n					})\n				}\n\n				window.__dynamic_import__ = key => {\n					return Promise.resolve(window.__modules__[key])\n				}\n\n				async function handle_message(ev) {\n					let { action, cmd_id } = ev.data;\n					const send_message = (payload) => parent.postMessage( { ...payload }, ev.origin);\n					const send_reply = (payload) => send_message({ ...payload, cmd_id });\n					const send_ok = () => send_reply({ action: 'cmd_ok' });\n					const send_error = (message, stack) => send_reply({ action: 'cmd_error', message, stack });\n\n					if (action === 'eval') {\n						try {\n							if (scriptEls.length) {\n								scriptEls.forEach(el => {\n									document.head.removeChild(el)\n								})\n								scriptEls.length = 0\n							}\n\n							let { script: scripts } = ev.data.args\n							if (typeof scripts === 'string') scripts = [scripts]\n\n							for (const script of scripts) {\n								const scriptEl = document.createElement('script')\n								scriptEl.setAttribute('type', 'module')\n								// send ok in the module script to ensure sequential evaluation\n								// of multiple proxy.eval() calls\n								const done = new Promise((resolve) => {\n									window.__next__ = resolve\n								})\n								scriptEl.innerHTML = script + `\\nwindow.__next__()`\n								document.head.appendChild(scriptEl)\n								scriptEl.onerror = err => send_error(err.message, err.stack)\n								scriptEls.push(scriptEl)\n								await done\n							}\n							send_ok()\n						} catch (e) {\n							send_error(e.message, e.stack);\n						}\n					}\n\n					if (action === 'catch_clicks') {\n						try {\n							const top_origin = ev.origin;\n							document.body.addEventListener('click', event => {\n								if (event.which !== 1) return;\n								if (event.metaKey || event.ctrlKey || event.shiftKey) return;\n								if (event.defaultPrevented) return;\n\n								// ensure target is a link\n								let el = event.target;\n								while (el && el.nodeName !== 'A') el = el.parentNode;\n								if (!el || el.nodeName !== 'A') return;\n\n								if (el.hasAttribute('download') || el.getAttribute('rel') === 'external' || el.target) return;\n\n								event.preventDefault();\n\n								if (el.href.startsWith(top_origin)) {\n									const url = new URL(el.href);\n									if (url.hash[0] === '#') {\n										window.location.hash = url.hash;\n										return;\n									}\n								}\n\n								window.open(el.href, '_blank');\n							});\n							send_ok();\n						} catch(e) {\n							send_error(e.message, e.stack);\n						}\n					}\n				}\n\n				window.addEventListener('message', handle_message, false);\n\n				window.onerror = function (msg, url, lineNo, columnNo, error) {\n					if (msg.includes('module specifier “vue”')) {\n						// firefox only error, ignore\n						return false\n					}\n					try {\n						parent.postMessage({ action: 'error', value: error }, '*');\n					} catch (e) {\n						parent.postMessage({ action: 'error', value: msg }, '*');\n					}\n				}\n\n				window.addEventListener(\"unhandledrejection\", event => {\n					if (event.reason.message.includes('Cross-origin')) {\n						event.preventDefault()\n						return\n					}\n					try {\n						parent.postMessage({ action: 'unhandledrejection', value: event.reason }, '*');\n					} catch (e) {\n						parent.postMessage({ action: 'unhandledrejection', value: event.reason.message }, '*');\n					}\n				});\n\n				let previous = { level: null, args: null };\n\n				['clear', 'log', 'info', 'dir', 'warn', 'error', 'table'].forEach((level) => {\n					const original = console[level];\n					console[level] = (...args) => {\n						const msg = String(args[0])\n						if (\n							msg.includes('You are running a development build of Vue') ||\n							msg.includes('You are running the esm-bundler build of Vue')\n						) {\n							return\n						}\n						const stringifiedArgs = stringify(args);\n						if (\n							previous.level === level &&\n							previous.args &&\n							previous.args === stringifiedArgs\n						) {\n							parent.postMessage({ action: 'console', level, duplicate: true }, '*');\n						} else {\n							previous = { level, args: stringifiedArgs };\n\n							try {\n								parent.postMessage({ action: 'console', level, args }, '*');\n							} catch (err) {\n								parent.postMessage({ action: 'console', level, args: args.map(a => {\n									return a instanceof Error ? a.message : String(a)\n								}) }, '*');\n							}\n						}\n\n						original(...args);\n					}\n				});\n\n				[\n					{ method: 'group', action: 'console_group' },\n					{ method: 'groupEnd', action: 'console_group_end' },\n					{ method: 'groupCollapsed', action: 'console_group_collapsed' },\n				].forEach((group_action) => {\n					const original = console[group_action.method];\n					console[group_action.method] = (label) => {\n						parent.postMessage({ action: group_action.action, label }, '*');\n\n						original(label);\n					};\n				});\n\n				const timers = new Map();\n				const original_time = console.time;\n				const original_timelog = console.timeLog;\n				const original_timeend = console.timeEnd;\n\n				console.time = (label = 'default') => {\n					original_time(label);\n					timers.set(label, performance.now());\n				}\n				console.timeLog = (label = 'default') => {\n					original_timelog(label);\n					const now = performance.now();\n					if (timers.has(label)) {\n						parent.postMessage({ action: 'console', level: 'system-log', args: [`${label}: ${now - timers.get(label)}ms`] }, '*');\n					} else {\n						parent.postMessage({ action: 'console', level: 'system-warn', args: [`Timer '${label}' does not exist`] }, '*');\n					}\n				}\n				console.timeEnd = (label = 'default') => {\n					original_timeend(label);\n					const now = performance.now();\n					if (timers.has(label)) {\n						parent.postMessage({ action: 'console', level: 'system-log', args: [`${label}: ${now - timers.get(label)}ms`] }, '*');\n					} else {\n						parent.postMessage({ action: 'console', level: 'system-warn', args: [`Timer '${label}' does not exist`] }, '*');\n					}\n					timers.delete(label);\n				};\n\n				const original_assert = console.assert;\n				console.assert = (condition, ...args) => {\n					if (condition) {\n						const stack = new Error().stack;\n						parent.postMessage({ action: 'console', level: 'assert', args, stack }, '*');\n					}\n					original_assert(condition, ...args);\n				};\n\n				const counter = new Map();\n				const original_count = console.count;\n				const original_countreset = console.countReset;\n\n				console.count = (label = 'default') => {\n					counter.set(label, (counter.get(label) || 0) + 1);\n					parent.postMessage({ action: 'console', level: 'system-log', args: `${label}: ${counter.get(label)}` }, '*');\n					original_count(label);\n				};\n\n				console.countReset = (label = 'default') => {\n					if (counter.has(label)) {\n						counter.set(label, 0);\n					} else {\n						parent.postMessage({ action: 'console', level: 'system-warn', args: `Count for '${label}' does not exist` }, '*');\n					}\n					original_countreset(label);\n				};\n\n				const original_trace = console.trace;\n\n				console.trace = (...args) => {\n					const stack = new Error().stack;\n					parent.postMessage({ action: 'console', level: 'trace', args, stack }, '*');\n					original_trace(...args);\n				};\n\n				function stringify(args) {\n					try {\n						return JSON.stringify(args);\n					} catch (error) {\n						return null;\n					}\n				}\n			})()\n		<\/script>\n\n		<!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support (all except Chrome 89+) -->\n		<script async src=\"https://unpkg.com/es-module-shims@1.5.18/dist/es-module-shims.wasm.js\"><\/script>\n		<script type=\"importmap\"><!--IMPORT_MAP--><\/script>\n	</head>\n	<body></body>\n</html>\n";
 var uid = 1;
 var PreviewProxy = class {
   constructor(iframe, handlers) {
@@ -56796,21 +57877,27 @@ var State2 = class {
     State2.prototype.__init11.call(this);
     State2.prototype.__init12.call(this);
   }
+  // Used to signify the start of a potential arrow function
   __init() {
     this.potentialArrowAt = -1;
   }
+  // Used by Flow to handle an edge case involving function type parsing.
   __init2() {
     this.noAnonFunctionType = false;
   }
+  // Token store.
   __init3() {
     this.tokens = [];
   }
+  // Array of all observed scopes, ordered by their ending position.
   __init4() {
     this.scopes = [];
   }
+  // The current position of the tokenizer in the input.
   __init5() {
     this.pos = 0;
   }
+  // Information about the current token.
   __init6() {
     this.type = TokenType.eof;
   }
@@ -56829,6 +57916,14 @@ var State2 = class {
   __init11() {
     this.scopeDepth = 0;
   }
+  /**
+   * If the parser is in an error state, then the token is always tt.eof and all functions can
+   * keep executing but should be written so they don't get into an infinite loop in this situation.
+   *
+   * This approach, combined with the ability to snapshot and restore state, allows us to implement
+   * backtracking without exceptions and without needing to explicitly propagate error states
+   * everywhere.
+   */
   __init12() {
     this.error = null;
   }
@@ -57187,20 +58282,35 @@ var WHITESPACE_CHARS = [
   charCodes.nonBreakingSpace,
   charCodes.oghamSpaceMark,
   8192,
+  // EN QUAD
   8193,
+  // EM QUAD
   8194,
+  // EN SPACE
   8195,
+  // EM SPACE
   8196,
+  // THREE-PER-EM SPACE
   8197,
+  // FOUR-PER-EM SPACE
   8198,
+  // SIX-PER-EM SPACE
   8199,
+  // FIGURE SPACE
   8200,
+  // PUNCTUATION SPACE
   8201,
+  // THIN SPACE
   8202,
+  // HAIR SPACE
   8239,
+  // NARROW NO-BREAK SPACE
   8287,
+  // MEDIUM MATHEMATICAL SPACE
   12288,
+  // IDEOGRAPHIC SPACE
   65279
+  // ZERO WIDTH NO-BREAK SPACE
 ];
 var skipWhiteSpace2 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g;
 var IS_WHITESPACE = new Uint8Array(65536);
@@ -57241,6 +58351,7 @@ for (let numChar = charCodes.digit0; numChar <= charCodes.digit9; numChar++) {
   IS_IDENTIFIER_START[numChar] = 0;
 }
 var READ_WORD_TREE = new Int32Array([
+  // ""
   -1,
   27,
   594,
@@ -57268,6 +58379,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   8127,
   -1,
+  // "a"
   -1,
   -1,
   54,
@@ -57295,6 +58407,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ab"
   -1,
   -1,
   -1,
@@ -57322,6 +58435,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "abs"
   -1,
   -1,
   -1,
@@ -57349,6 +58463,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "abst"
   -1,
   -1,
   -1,
@@ -57376,6 +58491,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "abstr"
   -1,
   162,
   -1,
@@ -57403,6 +58519,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "abstra"
   -1,
   -1,
   -1,
@@ -57430,6 +58547,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "abstrac"
   -1,
   -1,
   -1,
@@ -57457,6 +58575,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "abstract"
   ContextualKeyword._abstract << 1,
   -1,
   -1,
@@ -57484,6 +58603,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "as"
   ContextualKeyword._as << 1,
   -1,
   -1,
@@ -57511,6 +58631,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   405,
   -1,
+  // "ass"
   -1,
   -1,
   -1,
@@ -57538,6 +58659,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "asse"
   -1,
   -1,
   -1,
@@ -57565,6 +58687,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "asser"
   -1,
   -1,
   -1,
@@ -57592,6 +58715,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "assert"
   -1,
   -1,
   -1,
@@ -57619,6 +58743,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "asserts"
   ContextualKeyword._asserts << 1,
   -1,
   -1,
@@ -57646,6 +58771,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "asy"
   -1,
   -1,
   -1,
@@ -57673,6 +58799,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "asyn"
   -1,
   -1,
   -1,
@@ -57700,6 +58827,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "async"
   ContextualKeyword._async << 1,
   -1,
   -1,
@@ -57727,6 +58855,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "aw"
   -1,
   513,
   -1,
@@ -57754,6 +58883,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "awa"
   -1,
   -1,
   -1,
@@ -57781,6 +58911,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "awai"
   -1,
   -1,
   -1,
@@ -57808,6 +58939,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "await"
   ContextualKeyword._await << 1,
   -1,
   -1,
@@ -57835,6 +58967,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "b"
   -1,
   -1,
   -1,
@@ -57862,6 +58995,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "br"
   -1,
   -1,
   -1,
@@ -57889,6 +59023,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "bre"
   -1,
   675,
   -1,
@@ -57916,6 +59051,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "brea"
   -1,
   -1,
   -1,
@@ -57943,6 +59079,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "break"
   (TokenType._break << 1) + 1,
   -1,
   -1,
@@ -57970,6 +59107,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "c"
   -1,
   756,
   -1,
@@ -57997,6 +59135,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ca"
   -1,
   -1,
   -1,
@@ -58024,6 +59163,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "cas"
   -1,
   -1,
   -1,
@@ -58051,6 +59191,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "case"
   (TokenType._case << 1) + 1,
   -1,
   -1,
@@ -58078,6 +59219,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "cat"
   -1,
   -1,
   -1,
@@ -58105,6 +59247,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "catc"
   -1,
   -1,
   -1,
@@ -58132,6 +59275,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "catch"
   (TokenType._catch << 1) + 1,
   -1,
   -1,
@@ -58159,6 +59303,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ch"
   -1,
   -1,
   -1,
@@ -58186,6 +59331,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "che"
   -1,
   -1,
   -1,
@@ -58213,6 +59359,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "chec"
   -1,
   -1,
   -1,
@@ -58240,6 +59387,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "check"
   -1,
   -1,
   -1,
@@ -58267,6 +59415,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "checks"
   ContextualKeyword._checks << 1,
   -1,
   -1,
@@ -58294,6 +59443,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "cl"
   -1,
   1080,
   -1,
@@ -58321,6 +59471,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "cla"
   -1,
   -1,
   -1,
@@ -58348,6 +59499,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "clas"
   -1,
   -1,
   -1,
@@ -58375,6 +59527,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "class"
   (TokenType._class << 1) + 1,
   -1,
   -1,
@@ -58402,6 +59555,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "co"
   -1,
   -1,
   -1,
@@ -58429,6 +59583,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "con"
   -1,
   -1,
   -1,
@@ -58456,6 +59611,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "cons"
   -1,
   -1,
   -1,
@@ -58483,6 +59639,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "const"
   (TokenType._const << 1) + 1,
   -1,
   -1,
@@ -58510,6 +59667,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "constr"
   -1,
   -1,
   -1,
@@ -58537,6 +59695,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "constru"
   -1,
   -1,
   -1,
@@ -58564,6 +59723,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "construc"
   -1,
   -1,
   -1,
@@ -58591,6 +59751,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "construct"
   -1,
   -1,
   -1,
@@ -58618,6 +59779,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "constructo"
   -1,
   -1,
   -1,
@@ -58645,6 +59807,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "constructor"
   ContextualKeyword._constructor << 1,
   -1,
   -1,
@@ -58672,6 +59835,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "cont"
   -1,
   -1,
   -1,
@@ -58699,6 +59863,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "conti"
   -1,
   -1,
   -1,
@@ -58726,6 +59891,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "contin"
   -1,
   -1,
   -1,
@@ -58753,6 +59919,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "continu"
   -1,
   -1,
   -1,
@@ -58780,6 +59947,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "continue"
   (TokenType._continue << 1) + 1,
   -1,
   -1,
@@ -58807,6 +59975,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "d"
   -1,
   -1,
   -1,
@@ -58834,6 +60003,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "de"
   -1,
   -1,
   1620,
@@ -58861,6 +60031,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "deb"
   -1,
   -1,
   -1,
@@ -58888,6 +60059,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "debu"
   -1,
   -1,
   -1,
@@ -58915,6 +60087,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "debug"
   -1,
   -1,
   -1,
@@ -58942,6 +60115,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "debugg"
   -1,
   -1,
   -1,
@@ -58969,6 +60143,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "debugge"
   -1,
   -1,
   -1,
@@ -58996,6 +60171,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "debugger"
   (TokenType._debugger << 1) + 1,
   -1,
   -1,
@@ -59023,6 +60199,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "dec"
   -1,
   -1,
   -1,
@@ -59050,6 +60227,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "decl"
   -1,
   1836,
   -1,
@@ -59077,6 +60255,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "decla"
   -1,
   -1,
   -1,
@@ -59104,6 +60283,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "declar"
   -1,
   -1,
   -1,
@@ -59131,6 +60311,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "declare"
   ContextualKeyword._declare << 1,
   -1,
   -1,
@@ -59158,6 +60339,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "def"
   -1,
   1944,
   -1,
@@ -59185,6 +60367,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "defa"
   -1,
   -1,
   -1,
@@ -59212,6 +60395,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "defau"
   -1,
   -1,
   -1,
@@ -59239,6 +60423,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "defaul"
   -1,
   -1,
   -1,
@@ -59266,6 +60451,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "default"
   (TokenType._default << 1) + 1,
   -1,
   -1,
@@ -59293,6 +60479,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "del"
   -1,
   -1,
   -1,
@@ -59320,6 +60507,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "dele"
   -1,
   -1,
   -1,
@@ -59347,6 +60535,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "delet"
   -1,
   -1,
   -1,
@@ -59374,6 +60563,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "delete"
   (TokenType._delete << 1) + 1,
   -1,
   -1,
@@ -59401,6 +60591,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "do"
   (TokenType._do << 1) + 1,
   -1,
   -1,
@@ -59428,6 +60619,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "e"
   -1,
   -1,
   -1,
@@ -59455,6 +60647,7 @@ var READ_WORD_TREE = new Int32Array([
   2376,
   -1,
   -1,
+  // "el"
   -1,
   -1,
   -1,
@@ -59482,6 +60675,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "els"
   -1,
   -1,
   -1,
@@ -59509,6 +60703,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "else"
   (TokenType._else << 1) + 1,
   -1,
   -1,
@@ -59536,6 +60731,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "en"
   -1,
   -1,
   -1,
@@ -59563,6 +60759,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "enu"
   -1,
   -1,
   -1,
@@ -59590,6 +60787,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "enum"
   ContextualKeyword._enum << 1,
   -1,
   -1,
@@ -59617,6 +60815,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ex"
   -1,
   -1,
   -1,
@@ -59644,6 +60843,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "exp"
   -1,
   -1,
   -1,
@@ -59671,6 +60871,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "expo"
   -1,
   -1,
   -1,
@@ -59698,6 +60899,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "expor"
   -1,
   -1,
   -1,
@@ -59725,6 +60927,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "export"
   (TokenType._export << 1) + 1,
   -1,
   -1,
@@ -59752,6 +60955,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "exports"
   ContextualKeyword._exports << 1,
   -1,
   -1,
@@ -59779,6 +60983,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ext"
   -1,
   -1,
   -1,
@@ -59806,6 +61011,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "exte"
   -1,
   -1,
   -1,
@@ -59833,6 +61039,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "exten"
   -1,
   -1,
   -1,
@@ -59860,6 +61067,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "extend"
   -1,
   -1,
   -1,
@@ -59887,6 +61095,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "extends"
   (TokenType._extends << 1) + 1,
   -1,
   -1,
@@ -59914,6 +61123,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "f"
   -1,
   2700,
   -1,
@@ -59941,6 +61151,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fa"
   -1,
   -1,
   -1,
@@ -59968,6 +61179,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fal"
   -1,
   -1,
   -1,
@@ -59995,6 +61207,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fals"
   -1,
   -1,
   -1,
@@ -60022,6 +61235,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "false"
   (TokenType._false << 1) + 1,
   -1,
   -1,
@@ -60049,6 +61263,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fi"
   -1,
   -1,
   -1,
@@ -60076,6 +61291,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fin"
   -1,
   2862,
   -1,
@@ -60103,6 +61319,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fina"
   -1,
   -1,
   -1,
@@ -60130,6 +61347,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "final"
   -1,
   -1,
   -1,
@@ -60157,6 +61375,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "finall"
   -1,
   -1,
   -1,
@@ -60184,6 +61403,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   2943,
   -1,
+  // "finally"
   (TokenType._finally << 1) + 1,
   -1,
   -1,
@@ -60211,6 +61431,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fo"
   -1,
   -1,
   -1,
@@ -60238,6 +61459,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "for"
   (TokenType._for << 1) + 1,
   -1,
   -1,
@@ -60265,6 +61487,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fr"
   -1,
   -1,
   -1,
@@ -60292,6 +61515,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fro"
   -1,
   -1,
   -1,
@@ -60319,6 +61543,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "from"
   ContextualKeyword._from << 1,
   -1,
   -1,
@@ -60346,6 +61571,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fu"
   -1,
   -1,
   -1,
@@ -60373,6 +61599,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "fun"
   -1,
   -1,
   -1,
@@ -60400,6 +61627,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "func"
   -1,
   -1,
   -1,
@@ -60427,6 +61655,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "funct"
   -1,
   -1,
   -1,
@@ -60454,6 +61683,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "functi"
   -1,
   -1,
   -1,
@@ -60481,6 +61711,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "functio"
   -1,
   -1,
   -1,
@@ -60508,6 +61739,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "function"
   (TokenType._function << 1) + 1,
   -1,
   -1,
@@ -60535,6 +61767,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "g"
   -1,
   -1,
   -1,
@@ -60562,6 +61795,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ge"
   -1,
   -1,
   -1,
@@ -60589,6 +61823,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "get"
   ContextualKeyword._get << 1,
   -1,
   -1,
@@ -60616,6 +61851,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "gl"
   -1,
   -1,
   -1,
@@ -60643,6 +61879,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "glo"
   -1,
   -1,
   3429,
@@ -60670,6 +61907,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "glob"
   -1,
   3456,
   -1,
@@ -60697,6 +61935,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "globa"
   -1,
   -1,
   -1,
@@ -60724,6 +61963,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "global"
   ContextualKeyword._global << 1,
   -1,
   -1,
@@ -60751,6 +61991,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "i"
   -1,
   -1,
   -1,
@@ -60778,6 +62019,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "if"
   (TokenType._if << 1) + 1,
   -1,
   -1,
@@ -60805,6 +62047,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "im"
   -1,
   -1,
   -1,
@@ -60832,6 +62075,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "imp"
   -1,
   -1,
   -1,
@@ -60859,6 +62103,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "impl"
   -1,
   -1,
   -1,
@@ -60886,6 +62131,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "imple"
   -1,
   -1,
   -1,
@@ -60913,6 +62159,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "implem"
   -1,
   -1,
   -1,
@@ -60940,6 +62187,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "impleme"
   -1,
   -1,
   -1,
@@ -60967,6 +62215,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "implemen"
   -1,
   -1,
   -1,
@@ -60994,6 +62243,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "implement"
   -1,
   -1,
   -1,
@@ -61021,6 +62271,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "implements"
   ContextualKeyword._implements << 1,
   -1,
   -1,
@@ -61048,6 +62299,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "impo"
   -1,
   -1,
   -1,
@@ -61075,6 +62327,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "impor"
   -1,
   -1,
   -1,
@@ -61102,6 +62355,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "import"
   (TokenType._import << 1) + 1,
   -1,
   -1,
@@ -61129,6 +62383,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "in"
   (TokenType._in << 1) + 1,
   -1,
   -1,
@@ -61156,6 +62411,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "inf"
   -1,
   -1,
   -1,
@@ -61183,6 +62439,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "infe"
   -1,
   -1,
   -1,
@@ -61210,6 +62467,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "infer"
   ContextualKeyword._infer << 1,
   -1,
   -1,
@@ -61237,6 +62495,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ins"
   -1,
   -1,
   -1,
@@ -61264,6 +62523,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "inst"
   -1,
   4050,
   -1,
@@ -61291,6 +62551,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "insta"
   -1,
   -1,
   -1,
@@ -61318,6 +62579,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "instan"
   -1,
   -1,
   -1,
@@ -61345,6 +62607,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "instanc"
   -1,
   -1,
   -1,
@@ -61372,6 +62635,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "instance"
   -1,
   -1,
   -1,
@@ -61399,6 +62663,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "instanceo"
   -1,
   -1,
   -1,
@@ -61426,6 +62691,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "instanceof"
   (TokenType._instanceof << 1) + 1,
   -1,
   -1,
@@ -61453,6 +62719,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "int"
   -1,
   -1,
   -1,
@@ -61480,6 +62747,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "inte"
   -1,
   -1,
   -1,
@@ -61507,6 +62775,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "inter"
   -1,
   -1,
   -1,
@@ -61534,6 +62803,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "interf"
   -1,
   4320,
   -1,
@@ -61561,6 +62831,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "interfa"
   -1,
   -1,
   -1,
@@ -61588,6 +62859,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "interfac"
   -1,
   -1,
   -1,
@@ -61615,6 +62887,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "interface"
   ContextualKeyword._interface << 1,
   -1,
   -1,
@@ -61642,6 +62915,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "is"
   ContextualKeyword._is << 1,
   -1,
   -1,
@@ -61669,6 +62943,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "k"
   -1,
   -1,
   -1,
@@ -61696,6 +62971,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ke"
   -1,
   -1,
   -1,
@@ -61723,6 +62999,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   4482,
   -1,
+  // "key"
   -1,
   -1,
   -1,
@@ -61750,6 +63027,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "keyo"
   -1,
   -1,
   -1,
@@ -61777,6 +63055,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "keyof"
   ContextualKeyword._keyof << 1,
   -1,
   -1,
@@ -61804,6 +63083,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "l"
   -1,
   -1,
   -1,
@@ -61831,6 +63111,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "le"
   -1,
   -1,
   -1,
@@ -61858,6 +63139,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "let"
   (TokenType._let << 1) + 1,
   -1,
   -1,
@@ -61885,6 +63167,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "m"
   -1,
   -1,
   -1,
@@ -61912,6 +63195,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "mi"
   -1,
   -1,
   -1,
@@ -61939,6 +63223,7 @@ var READ_WORD_TREE = new Int32Array([
   4698,
   -1,
   -1,
+  // "mix"
   -1,
   -1,
   -1,
@@ -61966,6 +63251,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "mixi"
   -1,
   -1,
   -1,
@@ -61993,6 +63279,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "mixin"
   -1,
   -1,
   -1,
@@ -62020,6 +63307,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "mixins"
   ContextualKeyword._mixins << 1,
   -1,
   -1,
@@ -62047,6 +63335,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "mo"
   -1,
   -1,
   -1,
@@ -62074,6 +63363,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "mod"
   -1,
   -1,
   -1,
@@ -62101,6 +63391,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "modu"
   -1,
   -1,
   -1,
@@ -62128,6 +63419,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "modul"
   -1,
   -1,
   -1,
@@ -62155,6 +63447,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "module"
   ContextualKeyword._module << 1,
   -1,
   -1,
@@ -62182,6 +63475,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "n"
   -1,
   4968,
   -1,
@@ -62209,6 +63503,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "na"
   -1,
   -1,
   -1,
@@ -62236,6 +63531,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "nam"
   -1,
   -1,
   -1,
@@ -62263,6 +63559,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "name"
   -1,
   -1,
   -1,
@@ -62290,6 +63587,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "names"
   -1,
   -1,
   -1,
@@ -62317,6 +63615,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "namesp"
   -1,
   5103,
   -1,
@@ -62344,6 +63643,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "namespa"
   -1,
   -1,
   -1,
@@ -62371,6 +63671,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "namespac"
   -1,
   -1,
   -1,
@@ -62398,6 +63699,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "namespace"
   ContextualKeyword._namespace << 1,
   -1,
   -1,
@@ -62425,6 +63727,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ne"
   -1,
   -1,
   -1,
@@ -62452,6 +63755,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "new"
   (TokenType._new << 1) + 1,
   -1,
   -1,
@@ -62479,6 +63783,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "nu"
   -1,
   -1,
   -1,
@@ -62506,6 +63811,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "nul"
   -1,
   -1,
   -1,
@@ -62533,6 +63839,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "null"
   (TokenType._null << 1) + 1,
   -1,
   -1,
@@ -62560,6 +63867,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "o"
   -1,
   -1,
   -1,
@@ -62587,6 +63895,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "of"
   ContextualKeyword._of << 1,
   -1,
   -1,
@@ -62614,6 +63923,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "op"
   -1,
   5400,
   -1,
@@ -62641,6 +63951,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "opa"
   -1,
   -1,
   -1,
@@ -62668,6 +63979,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "opaq"
   -1,
   -1,
   -1,
@@ -62695,6 +64007,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "opaqu"
   -1,
   -1,
   -1,
@@ -62722,6 +64035,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "opaque"
   ContextualKeyword._opaque << 1,
   -1,
   -1,
@@ -62749,6 +64063,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ov"
   -1,
   -1,
   -1,
@@ -62776,6 +64091,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ove"
   -1,
   -1,
   -1,
@@ -62803,6 +64119,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "over"
   -1,
   -1,
   -1,
@@ -62830,6 +64147,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "overr"
   -1,
   -1,
   -1,
@@ -62857,6 +64175,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "overri"
   -1,
   -1,
   -1,
@@ -62884,6 +64203,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "overrid"
   -1,
   -1,
   -1,
@@ -62911,6 +64231,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "override"
   ContextualKeyword._override << 1,
   -1,
   -1,
@@ -62938,6 +64259,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "p"
   -1,
   -1,
   -1,
@@ -62965,6 +64287,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "pr"
   -1,
   -1,
   -1,
@@ -62992,6 +64315,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "pri"
   -1,
   -1,
   -1,
@@ -63019,6 +64343,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "priv"
   -1,
   5805,
   -1,
@@ -63046,6 +64371,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "priva"
   -1,
   -1,
   -1,
@@ -63073,6 +64399,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "privat"
   -1,
   -1,
   -1,
@@ -63100,6 +64427,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "private"
   ContextualKeyword._private << 1,
   -1,
   -1,
@@ -63127,6 +64455,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "pro"
   -1,
   -1,
   -1,
@@ -63154,6 +64483,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "prot"
   -1,
   -1,
   -1,
@@ -63181,6 +64511,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "prote"
   -1,
   -1,
   -1,
@@ -63208,6 +64539,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "protec"
   -1,
   -1,
   -1,
@@ -63235,6 +64567,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "protect"
   -1,
   -1,
   -1,
@@ -63262,6 +64595,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "protecte"
   -1,
   -1,
   -1,
@@ -63289,6 +64623,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "protected"
   ContextualKeyword._protected << 1,
   -1,
   -1,
@@ -63316,6 +64651,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "proto"
   ContextualKeyword._proto << 1,
   -1,
   -1,
@@ -63343,6 +64679,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "pu"
   -1,
   -1,
   6129,
@@ -63370,6 +64707,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "pub"
   -1,
   -1,
   -1,
@@ -63397,6 +64735,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "publ"
   -1,
   -1,
   -1,
@@ -63424,6 +64763,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "publi"
   -1,
   -1,
   -1,
@@ -63451,6 +64791,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "public"
   ContextualKeyword._public << 1,
   -1,
   -1,
@@ -63478,6 +64819,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "r"
   -1,
   -1,
   -1,
@@ -63505,6 +64847,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "re"
   -1,
   6291,
   -1,
@@ -63532,6 +64875,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "rea"
   -1,
   -1,
   -1,
@@ -63559,6 +64903,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "read"
   -1,
   -1,
   -1,
@@ -63586,6 +64931,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "reado"
   -1,
   -1,
   -1,
@@ -63613,6 +64959,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "readon"
   -1,
   -1,
   -1,
@@ -63640,6 +64987,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "readonl"
   -1,
   -1,
   -1,
@@ -63667,6 +65015,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   6426,
   -1,
+  // "readonly"
   ContextualKeyword._readonly << 1,
   -1,
   -1,
@@ -63694,6 +65043,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "req"
   -1,
   -1,
   -1,
@@ -63721,6 +65071,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "requ"
   -1,
   -1,
   -1,
@@ -63748,6 +65099,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "requi"
   -1,
   -1,
   -1,
@@ -63775,6 +65127,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "requir"
   -1,
   -1,
   -1,
@@ -63802,6 +65155,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "require"
   ContextualKeyword._require << 1,
   -1,
   -1,
@@ -63829,6 +65183,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ret"
   -1,
   -1,
   -1,
@@ -63856,6 +65211,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "retu"
   -1,
   -1,
   -1,
@@ -63883,6 +65239,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "retur"
   -1,
   -1,
   -1,
@@ -63910,6 +65267,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "return"
   (TokenType._return << 1) + 1,
   -1,
   -1,
@@ -63937,6 +65295,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "s"
   -1,
   -1,
   -1,
@@ -63964,6 +65323,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "se"
   -1,
   -1,
   -1,
@@ -63991,6 +65351,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "set"
   ContextualKeyword._set << 1,
   -1,
   -1,
@@ -64018,6 +65379,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "st"
   -1,
   6804,
   -1,
@@ -64045,6 +65407,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "sta"
   -1,
   -1,
   -1,
@@ -64072,6 +65435,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "stat"
   -1,
   -1,
   -1,
@@ -64099,6 +65463,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "stati"
   -1,
   -1,
   -1,
@@ -64126,6 +65491,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "static"
   ContextualKeyword._static << 1,
   -1,
   -1,
@@ -64153,6 +65519,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "su"
   -1,
   -1,
   -1,
@@ -64180,6 +65547,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "sup"
   -1,
   -1,
   -1,
@@ -64207,6 +65575,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "supe"
   -1,
   -1,
   -1,
@@ -64234,6 +65603,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "super"
   (TokenType._super << 1) + 1,
   -1,
   -1,
@@ -64261,6 +65631,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "sw"
   -1,
   -1,
   -1,
@@ -64288,6 +65659,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "swi"
   -1,
   -1,
   -1,
@@ -64315,6 +65687,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "swit"
   -1,
   -1,
   -1,
@@ -64342,6 +65715,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "switc"
   -1,
   -1,
   -1,
@@ -64369,6 +65743,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "switch"
   (TokenType._switch << 1) + 1,
   -1,
   -1,
@@ -64396,6 +65771,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "t"
   -1,
   -1,
   -1,
@@ -64423,6 +65799,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   7452,
   -1,
+  // "th"
   -1,
   -1,
   -1,
@@ -64450,6 +65827,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "thi"
   -1,
   -1,
   -1,
@@ -64477,6 +65855,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "this"
   (TokenType._this << 1) + 1,
   -1,
   -1,
@@ -64504,6 +65883,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "thr"
   -1,
   -1,
   -1,
@@ -64531,6 +65911,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "thro"
   -1,
   -1,
   -1,
@@ -64558,6 +65939,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "throw"
   (TokenType._throw << 1) + 1,
   -1,
   -1,
@@ -64585,6 +65967,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "tr"
   -1,
   -1,
   -1,
@@ -64612,6 +65995,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   7425,
   -1,
+  // "tru"
   -1,
   -1,
   -1,
@@ -64639,6 +66023,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "true"
   (TokenType._true << 1) + 1,
   -1,
   -1,
@@ -64666,6 +66051,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "try"
   (TokenType._try << 1) + 1,
   -1,
   -1,
@@ -64693,6 +66079,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "ty"
   -1,
   -1,
   -1,
@@ -64720,6 +66107,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "typ"
   -1,
   -1,
   -1,
@@ -64747,6 +66135,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "type"
   ContextualKeyword._type << 1,
   -1,
   -1,
@@ -64774,6 +66163,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "typeo"
   -1,
   -1,
   -1,
@@ -64801,6 +66191,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "typeof"
   (TokenType._typeof << 1) + 1,
   -1,
   -1,
@@ -64828,6 +66219,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "u"
   -1,
   -1,
   -1,
@@ -64855,6 +66247,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "un"
   -1,
   -1,
   -1,
@@ -64882,6 +66275,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "uni"
   -1,
   -1,
   -1,
@@ -64909,6 +66303,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "uniq"
   -1,
   -1,
   -1,
@@ -64936,6 +66331,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "uniqu"
   -1,
   -1,
   -1,
@@ -64963,6 +66359,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "unique"
   ContextualKeyword._unique << 1,
   -1,
   -1,
@@ -64990,6 +66387,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "v"
   -1,
   7776,
   -1,
@@ -65017,6 +66415,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "va"
   -1,
   -1,
   -1,
@@ -65044,6 +66443,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "var"
   (TokenType._var << 1) + 1,
   -1,
   -1,
@@ -65071,6 +66471,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "vo"
   -1,
   -1,
   -1,
@@ -65098,6 +66499,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "voi"
   -1,
   -1,
   -1,
@@ -65125,6 +66527,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "void"
   (TokenType._void << 1) + 1,
   -1,
   -1,
@@ -65152,6 +66555,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "w"
   -1,
   -1,
   -1,
@@ -65179,6 +66583,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "wh"
   -1,
   -1,
   -1,
@@ -65206,6 +66611,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "whi"
   -1,
   -1,
   -1,
@@ -65233,6 +66639,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "whil"
   -1,
   -1,
   -1,
@@ -65260,6 +66667,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "while"
   (TokenType._while << 1) + 1,
   -1,
   -1,
@@ -65287,6 +66695,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "wi"
   -1,
   -1,
   -1,
@@ -65314,6 +66723,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "wit"
   -1,
   -1,
   -1,
@@ -65341,6 +66751,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "with"
   (TokenType._with << 1) + 1,
   -1,
   -1,
@@ -65368,6 +66779,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "y"
   -1,
   -1,
   -1,
@@ -65395,6 +66807,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "yi"
   -1,
   -1,
   -1,
@@ -65422,6 +66835,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "yie"
   -1,
   -1,
   -1,
@@ -65449,6 +66863,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "yiel"
   -1,
   -1,
   -1,
@@ -65476,6 +66891,7 @@ var READ_WORD_TREE = new Int32Array([
   -1,
   -1,
   -1,
+  // "yield"
   (TokenType._yield << 1) + 1,
   -1,
   -1,
@@ -65623,6 +67039,19 @@ var Token2 = class {
     this.subscriptStartIndex = null;
     this.nullishStartIndex = null;
   }
+  // Initially false for all tokens, then may be computed in a follow-up step that does scope
+  // analysis.
+  // Initially false for all tokens, but may be set during transform to mark it as containing an
+  // await operation.
+  // For assignments, the index of the RHS. For export tokens, the end of the export.
+  // For class tokens, records if the class is a class expression or a class statement.
+  // Number of times to insert a `nullishCoalesce(` snippet before this token.
+  // Number of times to insert a `)` snippet after this token.
+  // If true, insert an `optionalChain([` snippet before this token.
+  // If true, insert a `])` snippet after this token.
+  // Tag for `.`, `?.`, `[`, `?.[`, `(`, and `?.(` to denote the "root" token for this
+  // subscript chain. This can be used to determine if this chain is an optional chain.
+  // Tag for `??` operators to denote the root token for this nullish coalescing call.
 };
 function next() {
   state.tokens.push(new Token2());
@@ -66199,254 +67628,254 @@ var entities2 = {
   apos: "'",
   lt: "<",
   gt: ">",
-  nbsp: "\xA0",
-  iexcl: "\xA1",
-  cent: "\xA2",
-  pound: "\xA3",
-  curren: "\xA4",
-  yen: "\xA5",
-  brvbar: "\xA6",
-  sect: "\xA7",
-  uml: "\xA8",
-  copy: "\xA9",
-  ordf: "\xAA",
-  laquo: "\xAB",
-  not: "\xAC",
-  shy: "\xAD",
-  reg: "\xAE",
-  macr: "\xAF",
-  deg: "\xB0",
-  plusmn: "\xB1",
-  sup2: "\xB2",
-  sup3: "\xB3",
-  acute: "\xB4",
-  micro: "\xB5",
-  para: "\xB6",
-  middot: "\xB7",
-  cedil: "\xB8",
-  sup1: "\xB9",
-  ordm: "\xBA",
-  raquo: "\xBB",
-  frac14: "\xBC",
-  frac12: "\xBD",
-  frac34: "\xBE",
-  iquest: "\xBF",
-  Agrave: "\xC0",
-  Aacute: "\xC1",
-  Acirc: "\xC2",
-  Atilde: "\xC3",
-  Auml: "\xC4",
-  Aring: "\xC5",
-  AElig: "\xC6",
-  Ccedil: "\xC7",
-  Egrave: "\xC8",
-  Eacute: "\xC9",
-  Ecirc: "\xCA",
-  Euml: "\xCB",
-  Igrave: "\xCC",
-  Iacute: "\xCD",
-  Icirc: "\xCE",
-  Iuml: "\xCF",
-  ETH: "\xD0",
-  Ntilde: "\xD1",
-  Ograve: "\xD2",
-  Oacute: "\xD3",
-  Ocirc: "\xD4",
-  Otilde: "\xD5",
-  Ouml: "\xD6",
-  times: "\xD7",
-  Oslash: "\xD8",
-  Ugrave: "\xD9",
-  Uacute: "\xDA",
-  Ucirc: "\xDB",
-  Uuml: "\xDC",
-  Yacute: "\xDD",
-  THORN: "\xDE",
-  szlig: "\xDF",
-  agrave: "\xE0",
-  aacute: "\xE1",
-  acirc: "\xE2",
-  atilde: "\xE3",
-  auml: "\xE4",
-  aring: "\xE5",
-  aelig: "\xE6",
-  ccedil: "\xE7",
-  egrave: "\xE8",
-  eacute: "\xE9",
-  ecirc: "\xEA",
-  euml: "\xEB",
-  igrave: "\xEC",
-  iacute: "\xED",
-  icirc: "\xEE",
-  iuml: "\xEF",
-  eth: "\xF0",
-  ntilde: "\xF1",
-  ograve: "\xF2",
-  oacute: "\xF3",
-  ocirc: "\xF4",
-  otilde: "\xF5",
-  ouml: "\xF6",
-  divide: "\xF7",
-  oslash: "\xF8",
-  ugrave: "\xF9",
-  uacute: "\xFA",
-  ucirc: "\xFB",
-  uuml: "\xFC",
-  yacute: "\xFD",
-  thorn: "\xFE",
-  yuml: "\xFF",
-  OElig: "\u0152",
-  oelig: "\u0153",
-  Scaron: "\u0160",
-  scaron: "\u0161",
-  Yuml: "\u0178",
-  fnof: "\u0192",
-  circ: "\u02C6",
-  tilde: "\u02DC",
-  Alpha: "\u0391",
-  Beta: "\u0392",
-  Gamma: "\u0393",
-  Delta: "\u0394",
-  Epsilon: "\u0395",
-  Zeta: "\u0396",
-  Eta: "\u0397",
-  Theta: "\u0398",
-  Iota: "\u0399",
-  Kappa: "\u039A",
-  Lambda: "\u039B",
-  Mu: "\u039C",
-  Nu: "\u039D",
-  Xi: "\u039E",
-  Omicron: "\u039F",
-  Pi: "\u03A0",
-  Rho: "\u03A1",
-  Sigma: "\u03A3",
-  Tau: "\u03A4",
-  Upsilon: "\u03A5",
-  Phi: "\u03A6",
-  Chi: "\u03A7",
-  Psi: "\u03A8",
-  Omega: "\u03A9",
-  alpha: "\u03B1",
-  beta: "\u03B2",
-  gamma: "\u03B3",
-  delta: "\u03B4",
-  epsilon: "\u03B5",
-  zeta: "\u03B6",
-  eta: "\u03B7",
-  theta: "\u03B8",
-  iota: "\u03B9",
-  kappa: "\u03BA",
-  lambda: "\u03BB",
-  mu: "\u03BC",
-  nu: "\u03BD",
-  xi: "\u03BE",
-  omicron: "\u03BF",
-  pi: "\u03C0",
-  rho: "\u03C1",
-  sigmaf: "\u03C2",
-  sigma: "\u03C3",
-  tau: "\u03C4",
-  upsilon: "\u03C5",
-  phi: "\u03C6",
-  chi: "\u03C7",
-  psi: "\u03C8",
-  omega: "\u03C9",
-  thetasym: "\u03D1",
-  upsih: "\u03D2",
-  piv: "\u03D6",
-  ensp: "\u2002",
-  emsp: "\u2003",
-  thinsp: "\u2009",
-  zwnj: "\u200C",
-  zwj: "\u200D",
-  lrm: "\u200E",
-  rlm: "\u200F",
-  ndash: "\u2013",
-  mdash: "\u2014",
-  lsquo: "\u2018",
-  rsquo: "\u2019",
-  sbquo: "\u201A",
-  ldquo: "\u201C",
-  rdquo: "\u201D",
-  bdquo: "\u201E",
-  dagger: "\u2020",
-  Dagger: "\u2021",
-  bull: "\u2022",
-  hellip: "\u2026",
-  permil: "\u2030",
-  prime: "\u2032",
-  Prime: "\u2033",
-  lsaquo: "\u2039",
-  rsaquo: "\u203A",
-  oline: "\u203E",
-  frasl: "\u2044",
-  euro: "\u20AC",
-  image: "\u2111",
-  weierp: "\u2118",
-  real: "\u211C",
-  trade: "\u2122",
-  alefsym: "\u2135",
-  larr: "\u2190",
-  uarr: "\u2191",
-  rarr: "\u2192",
-  darr: "\u2193",
-  harr: "\u2194",
-  crarr: "\u21B5",
-  lArr: "\u21D0",
-  uArr: "\u21D1",
-  rArr: "\u21D2",
-  dArr: "\u21D3",
-  hArr: "\u21D4",
-  forall: "\u2200",
-  part: "\u2202",
-  exist: "\u2203",
-  empty: "\u2205",
-  nabla: "\u2207",
-  isin: "\u2208",
-  notin: "\u2209",
-  ni: "\u220B",
-  prod: "\u220F",
-  sum: "\u2211",
-  minus: "\u2212",
-  lowast: "\u2217",
-  radic: "\u221A",
-  prop: "\u221D",
-  infin: "\u221E",
-  ang: "\u2220",
-  and: "\u2227",
-  or: "\u2228",
-  cap: "\u2229",
-  cup: "\u222A",
-  int: "\u222B",
-  there4: "\u2234",
-  sim: "\u223C",
-  cong: "\u2245",
-  asymp: "\u2248",
-  ne: "\u2260",
-  equiv: "\u2261",
-  le: "\u2264",
-  ge: "\u2265",
-  sub: "\u2282",
-  sup: "\u2283",
-  nsub: "\u2284",
-  sube: "\u2286",
-  supe: "\u2287",
-  oplus: "\u2295",
-  otimes: "\u2297",
-  perp: "\u22A5",
-  sdot: "\u22C5",
-  lceil: "\u2308",
-  rceil: "\u2309",
-  lfloor: "\u230A",
-  rfloor: "\u230B",
-  lang: "\u2329",
-  rang: "\u232A",
-  loz: "\u25CA",
-  spades: "\u2660",
-  clubs: "\u2663",
-  hearts: "\u2665",
-  diams: "\u2666"
+  nbsp: " ",
+  iexcl: "¡",
+  cent: "¢",
+  pound: "£",
+  curren: "¤",
+  yen: "¥",
+  brvbar: "¦",
+  sect: "§",
+  uml: "¨",
+  copy: "©",
+  ordf: "ª",
+  laquo: "«",
+  not: "¬",
+  shy: "­",
+  reg: "®",
+  macr: "¯",
+  deg: "°",
+  plusmn: "±",
+  sup2: "²",
+  sup3: "³",
+  acute: "´",
+  micro: "µ",
+  para: "¶",
+  middot: "·",
+  cedil: "¸",
+  sup1: "¹",
+  ordm: "º",
+  raquo: "»",
+  frac14: "¼",
+  frac12: "½",
+  frac34: "¾",
+  iquest: "¿",
+  Agrave: "À",
+  Aacute: "Á",
+  Acirc: "Â",
+  Atilde: "Ã",
+  Auml: "Ä",
+  Aring: "Å",
+  AElig: "Æ",
+  Ccedil: "Ç",
+  Egrave: "È",
+  Eacute: "É",
+  Ecirc: "Ê",
+  Euml: "Ë",
+  Igrave: "Ì",
+  Iacute: "Í",
+  Icirc: "Î",
+  Iuml: "Ï",
+  ETH: "Ð",
+  Ntilde: "Ñ",
+  Ograve: "Ò",
+  Oacute: "Ó",
+  Ocirc: "Ô",
+  Otilde: "Õ",
+  Ouml: "Ö",
+  times: "×",
+  Oslash: "Ø",
+  Ugrave: "Ù",
+  Uacute: "Ú",
+  Ucirc: "Û",
+  Uuml: "Ü",
+  Yacute: "Ý",
+  THORN: "Þ",
+  szlig: "ß",
+  agrave: "à",
+  aacute: "á",
+  acirc: "â",
+  atilde: "ã",
+  auml: "ä",
+  aring: "å",
+  aelig: "æ",
+  ccedil: "ç",
+  egrave: "è",
+  eacute: "é",
+  ecirc: "ê",
+  euml: "ë",
+  igrave: "ì",
+  iacute: "í",
+  icirc: "î",
+  iuml: "ï",
+  eth: "ð",
+  ntilde: "ñ",
+  ograve: "ò",
+  oacute: "ó",
+  ocirc: "ô",
+  otilde: "õ",
+  ouml: "ö",
+  divide: "÷",
+  oslash: "ø",
+  ugrave: "ù",
+  uacute: "ú",
+  ucirc: "û",
+  uuml: "ü",
+  yacute: "ý",
+  thorn: "þ",
+  yuml: "ÿ",
+  OElig: "Œ",
+  oelig: "œ",
+  Scaron: "Š",
+  scaron: "š",
+  Yuml: "Ÿ",
+  fnof: "ƒ",
+  circ: "ˆ",
+  tilde: "˜",
+  Alpha: "Α",
+  Beta: "Β",
+  Gamma: "Γ",
+  Delta: "Δ",
+  Epsilon: "Ε",
+  Zeta: "Ζ",
+  Eta: "Η",
+  Theta: "Θ",
+  Iota: "Ι",
+  Kappa: "Κ",
+  Lambda: "Λ",
+  Mu: "Μ",
+  Nu: "Ν",
+  Xi: "Ξ",
+  Omicron: "Ο",
+  Pi: "Π",
+  Rho: "Ρ",
+  Sigma: "Σ",
+  Tau: "Τ",
+  Upsilon: "Υ",
+  Phi: "Φ",
+  Chi: "Χ",
+  Psi: "Ψ",
+  Omega: "Ω",
+  alpha: "α",
+  beta: "β",
+  gamma: "γ",
+  delta: "δ",
+  epsilon: "ε",
+  zeta: "ζ",
+  eta: "η",
+  theta: "θ",
+  iota: "ι",
+  kappa: "κ",
+  lambda: "λ",
+  mu: "μ",
+  nu: "ν",
+  xi: "ξ",
+  omicron: "ο",
+  pi: "π",
+  rho: "ρ",
+  sigmaf: "ς",
+  sigma: "σ",
+  tau: "τ",
+  upsilon: "υ",
+  phi: "φ",
+  chi: "χ",
+  psi: "ψ",
+  omega: "ω",
+  thetasym: "ϑ",
+  upsih: "ϒ",
+  piv: "ϖ",
+  ensp: " ",
+  emsp: " ",
+  thinsp: " ",
+  zwnj: "‌",
+  zwj: "‍",
+  lrm: "‎",
+  rlm: "‏",
+  ndash: "–",
+  mdash: "—",
+  lsquo: "‘",
+  rsquo: "’",
+  sbquo: "‚",
+  ldquo: "“",
+  rdquo: "”",
+  bdquo: "„",
+  dagger: "†",
+  Dagger: "‡",
+  bull: "•",
+  hellip: "…",
+  permil: "‰",
+  prime: "′",
+  Prime: "″",
+  lsaquo: "‹",
+  rsaquo: "›",
+  oline: "‾",
+  frasl: "⁄",
+  euro: "€",
+  image: "ℑ",
+  weierp: "℘",
+  real: "ℜ",
+  trade: "™",
+  alefsym: "ℵ",
+  larr: "←",
+  uarr: "↑",
+  rarr: "→",
+  darr: "↓",
+  harr: "↔",
+  crarr: "↵",
+  lArr: "⇐",
+  uArr: "⇑",
+  rArr: "⇒",
+  dArr: "⇓",
+  hArr: "⇔",
+  forall: "∀",
+  part: "∂",
+  exist: "∃",
+  empty: "∅",
+  nabla: "∇",
+  isin: "∈",
+  notin: "∉",
+  ni: "∋",
+  prod: "∏",
+  sum: "∑",
+  minus: "−",
+  lowast: "∗",
+  radic: "√",
+  prop: "∝",
+  infin: "∞",
+  ang: "∠",
+  and: "∧",
+  or: "∨",
+  cap: "∩",
+  cup: "∪",
+  int: "∫",
+  there4: "∴",
+  sim: "∼",
+  cong: "≅",
+  asymp: "≈",
+  ne: "≠",
+  equiv: "≡",
+  le: "≤",
+  ge: "≥",
+  sub: "⊂",
+  sup: "⊃",
+  nsub: "⊄",
+  sube: "⊆",
+  supe: "⊇",
+  oplus: "⊕",
+  otimes: "⊗",
+  perp: "⊥",
+  sdot: "⋅",
+  lceil: "⌈",
+  rceil: "⌉",
+  lfloor: "⌊",
+  rfloor: "⌋",
+  lang: "〈",
+  rang: "〉",
+  loz: "◊",
+  spades: "♠",
+  clubs: "♣",
+  hearts: "♥",
+  diams: "♦"
 };
 function getJSXPragmaInfo(options) {
   const [base2, suffix] = splitPragma(options.jsxPragma || "React.createElement");
@@ -66461,6 +67890,7 @@ function splitPragma(pragma) {
   return [pragma.slice(0, dotIndex), pragma.slice(dotIndex)];
 }
 var Transformer = class {
+  // Return true if anything was processed, false otherwise.
   getPrefixCode() {
     return "";
   }
@@ -66509,6 +67939,10 @@ var JSXTransformer = class extends Transformer {
       return "";
     }
   }
+  /**
+   * Lazily calculate line numbers to avoid unneeded work. We assume this is always called in
+   * increasing order by index.
+   */
   getLineNumberForIndex(index) {
     const code = this.tokens.code;
     while (this.lastIndex < index && this.lastIndex < code.length) {
@@ -66583,6 +68017,9 @@ var JSXTransformer = class extends Transformer {
     const literalCode = formatJSXStringValueLiteral(valueCode);
     this.tokens.replaceToken(literalCode + replacementCode);
   }
+  /**
+   * Process the first part of a tag, before any props.
+   */
   processTagIntro() {
     let introEnd = this.tokens.currentIndex() + 1;
     while (this.tokens.tokens[introEnd].isType || !this.tokens.matches2AtIndex(introEnd - 1, TokenType.jsxName, TokenType.jsxName) && !this.tokens.matches2AtIndex(introEnd - 1, TokenType.greaterThan, TokenType.jsxName) && !this.tokens.matches1AtIndex(introEnd, TokenType.braceL) && !this.tokens.matches1AtIndex(introEnd, TokenType.jsxTagEnd) && !this.tokens.matches2AtIndex(introEnd, TokenType.slash, TokenType.jsxTagEnd)) {
@@ -66840,6 +68277,10 @@ var CJSImportProcessor = class {
     }
     this.generateImportReplacements();
   }
+  /**
+   * In TypeScript, import statements that only import types should be removed. This does not count
+   * bare imports.
+   */
   pruneTypeOnlyImports() {
     this.nonTypeIdentifiers = getNonTypeIdentifiers(this.tokens, this.options);
     for (const [path2, importInfo] of this.importInfoByPath.entries()) {
@@ -67011,6 +68452,11 @@ var CJSImportProcessor = class {
       }
     }
   }
+  /**
+   * Walk this export statement just in case it's an export...from statement.
+   * If it is, combine it into the import info for that path. Otherwise, just
+   * bail out; it'll be handled later.
+   */
   preprocessNamedExportAtIndex(index) {
     index += 2;
     const { newIndex, namedImports } = this.getNamedImports(index);
@@ -67089,6 +68535,10 @@ var CJSImportProcessor = class {
     }
     return { newIndex: index, namedImports };
   }
+  /**
+   * Get a mutable import info object for this path, creating one if it doesn't
+   * exist yet.
+   */
   getImportInfo(path2) {
     const existingInfo = this.importInfoByPath.get(path2);
     if (existingInfo) {
@@ -67112,6 +68562,10 @@ var CJSImportProcessor = class {
     }
     this.exportBindingsByLocalName.get(localName).push(exportedName);
   }
+  /**
+   * Return the code to use for the import for this path, or the empty string if
+   * the code has already been "claimed" by a previous import.
+   */
   claimImportCode(importPath) {
     const result2 = this.importsToReplace.get(importPath);
     this.importsToReplace.set(importPath, "");
@@ -67120,6 +68574,9 @@ var CJSImportProcessor = class {
   getIdentifierReplacement(identifierName) {
     return this.identifierReplacements.get(identifierName) || null;
   }
+  /**
+   * Return a string like `exports.foo = exports.bar`.
+   */
   resolveExportBinding(assignedName) {
     const exportedNames = this.exportBindingsByLocalName.get(assignedName);
     if (!exportedNames || exportedNames.length === 0) {
@@ -67127,6 +68584,10 @@ var CJSImportProcessor = class {
     }
     return exportedNames.map((exportedName) => `exports.${exportedName}`).join(" = ");
   }
+  /**
+   * Return all imported/exported names where we might be interested in whether usages of those
+   * names are shadowed.
+   */
   getGlobalNames() {
     return /* @__PURE__ */ new Set([
       ...this.identifierReplacements.keys(),
@@ -67178,6 +68639,10 @@ var HELPERS = {
       Object.defineProperty(exports, localName, {enumerable: true, get: () => obj[importedName]});
     }
   `,
+  // Note that TypeScript and Babel do this differently; TypeScript does a simple existence
+  // check in the exports object and does a plain assignment, whereas Babel uses
+  // defineProperty and builds an object of explicitly-exported names so that star exports can
+  // always take lower precedence. For now, we do the easier TypeScript thing.
   createStarExport: `
     function createStarExport(obj) {
       Object.keys(obj)
@@ -67425,109 +68890,121 @@ var __extends = commonjsGlobal && commonjsGlobal.__extends || function() {
 }();
 Object.defineProperty(util2, "__esModule", { value: true });
 util2.DetailContext = util2.NoopContext = util2.VError = void 0;
-var VError = function(_super) {
-  __extends(VError2, _super);
-  function VError2(path2, message) {
-    var _this = _super.call(this, message) || this;
-    _this.path = path2;
-    Object.setPrototypeOf(_this, VError2.prototype);
-    return _this;
-  }
-  return VError2;
-}(Error);
+var VError = (
+  /** @class */
+  function(_super) {
+    __extends(VError2, _super);
+    function VError2(path2, message) {
+      var _this = _super.call(this, message) || this;
+      _this.path = path2;
+      Object.setPrototypeOf(_this, VError2.prototype);
+      return _this;
+    }
+    return VError2;
+  }(Error)
+);
 util2.VError = VError;
-var NoopContext = function() {
-  function NoopContext2() {
-  }
-  NoopContext2.prototype.fail = function(relPath, message, score) {
-    return false;
-  };
-  NoopContext2.prototype.unionResolver = function() {
-    return this;
-  };
-  NoopContext2.prototype.createContext = function() {
-    return this;
-  };
-  NoopContext2.prototype.resolveUnion = function(ur) {
-  };
-  return NoopContext2;
-}();
+var NoopContext = (
+  /** @class */
+  function() {
+    function NoopContext2() {
+    }
+    NoopContext2.prototype.fail = function(relPath, message, score) {
+      return false;
+    };
+    NoopContext2.prototype.unionResolver = function() {
+      return this;
+    };
+    NoopContext2.prototype.createContext = function() {
+      return this;
+    };
+    NoopContext2.prototype.resolveUnion = function(ur) {
+    };
+    return NoopContext2;
+  }()
+);
 util2.NoopContext = NoopContext;
-var DetailContext = function() {
-  function DetailContext2() {
-    this._propNames = [""];
-    this._messages = [null];
-    this._score = 0;
-  }
-  DetailContext2.prototype.fail = function(relPath, message, score) {
-    this._propNames.push(relPath);
-    this._messages.push(message);
-    this._score += score;
-    return false;
-  };
-  DetailContext2.prototype.unionResolver = function() {
-    return new DetailUnionResolver();
-  };
-  DetailContext2.prototype.resolveUnion = function(unionResolver) {
-    var _a2, _b2;
-    var u = unionResolver;
-    var best = null;
-    for (var _i = 0, _c = u.contexts; _i < _c.length; _i++) {
-      var ctx = _c[_i];
-      if (!best || ctx._score >= best._score) {
-        best = ctx;
+var DetailContext = (
+  /** @class */
+  function() {
+    function DetailContext2() {
+      this._propNames = [""];
+      this._messages = [null];
+      this._score = 0;
+    }
+    DetailContext2.prototype.fail = function(relPath, message, score) {
+      this._propNames.push(relPath);
+      this._messages.push(message);
+      this._score += score;
+      return false;
+    };
+    DetailContext2.prototype.unionResolver = function() {
+      return new DetailUnionResolver();
+    };
+    DetailContext2.prototype.resolveUnion = function(unionResolver) {
+      var _a2, _b2;
+      var u = unionResolver;
+      var best = null;
+      for (var _i = 0, _c = u.contexts; _i < _c.length; _i++) {
+        var ctx = _c[_i];
+        if (!best || ctx._score >= best._score) {
+          best = ctx;
+        }
       }
-    }
-    if (best && best._score > 0) {
-      (_a2 = this._propNames).push.apply(_a2, best._propNames);
-      (_b2 = this._messages).push.apply(_b2, best._messages);
-    }
-  };
-  DetailContext2.prototype.getError = function(path2) {
-    var msgParts = [];
-    for (var i = this._propNames.length - 1; i >= 0; i--) {
-      var p = this._propNames[i];
-      path2 += typeof p === "number" ? "[" + p + "]" : p ? "." + p : "";
-      var m = this._messages[i];
-      if (m) {
-        msgParts.push(path2 + " " + m);
+      if (best && best._score > 0) {
+        (_a2 = this._propNames).push.apply(_a2, best._propNames);
+        (_b2 = this._messages).push.apply(_b2, best._messages);
       }
-    }
-    return new VError(path2, msgParts.join("; "));
-  };
-  DetailContext2.prototype.getErrorDetail = function(path2) {
-    var details = [];
-    for (var i = this._propNames.length - 1; i >= 0; i--) {
-      var p = this._propNames[i];
-      path2 += typeof p === "number" ? "[" + p + "]" : p ? "." + p : "";
-      var message = this._messages[i];
-      if (message) {
-        details.push({ path: path2, message });
+    };
+    DetailContext2.prototype.getError = function(path2) {
+      var msgParts = [];
+      for (var i = this._propNames.length - 1; i >= 0; i--) {
+        var p = this._propNames[i];
+        path2 += typeof p === "number" ? "[" + p + "]" : p ? "." + p : "";
+        var m = this._messages[i];
+        if (m) {
+          msgParts.push(path2 + " " + m);
+        }
       }
-    }
-    var detail = null;
-    for (var i = details.length - 1; i >= 0; i--) {
-      if (detail) {
-        details[i].nested = [detail];
+      return new VError(path2, msgParts.join("; "));
+    };
+    DetailContext2.prototype.getErrorDetail = function(path2) {
+      var details = [];
+      for (var i = this._propNames.length - 1; i >= 0; i--) {
+        var p = this._propNames[i];
+        path2 += typeof p === "number" ? "[" + p + "]" : p ? "." + p : "";
+        var message = this._messages[i];
+        if (message) {
+          details.push({ path: path2, message });
+        }
       }
-      detail = details[i];
-    }
-    return detail;
-  };
-  return DetailContext2;
-}();
+      var detail = null;
+      for (var i = details.length - 1; i >= 0; i--) {
+        if (detail) {
+          details[i].nested = [detail];
+        }
+        detail = details[i];
+      }
+      return detail;
+    };
+    return DetailContext2;
+  }()
+);
 util2.DetailContext = DetailContext;
-var DetailUnionResolver = function() {
-  function DetailUnionResolver2() {
-    this.contexts = [];
-  }
-  DetailUnionResolver2.prototype.createContext = function() {
-    var ctx = new DetailContext();
-    this.contexts.push(ctx);
-    return ctx;
-  };
-  return DetailUnionResolver2;
-}();
+var DetailUnionResolver = (
+  /** @class */
+  function() {
+    function DetailUnionResolver2() {
+      this.contexts = [];
+    }
+    DetailUnionResolver2.prototype.createContext = function() {
+      var ctx = new DetailContext();
+      this.contexts.push(ctx);
+      return ctx;
+    };
+    return DetailUnionResolver2;
+  }()
+);
 (function(exports) {
   var __extends2 = commonjsGlobal && commonjsGlobal.__extends || function() {
     var extendStatics = function(d, b) {
@@ -67551,11 +69028,14 @@ var DetailUnionResolver = function() {
   Object.defineProperty(exports, "__esModule", { value: true });
   exports.basicTypes = exports.BasicType = exports.TParamList = exports.TParam = exports.param = exports.TFunc = exports.func = exports.TProp = exports.TOptional = exports.opt = exports.TIface = exports.iface = exports.TEnumLiteral = exports.enumlit = exports.TEnumType = exports.enumtype = exports.TIntersection = exports.intersection = exports.TUnion = exports.union = exports.TTuple = exports.tuple = exports.TArray = exports.array = exports.TLiteral = exports.lit = exports.TName = exports.name = exports.TType = void 0;
   var util_1 = util2;
-  var TType = function() {
-    function TType2() {
-    }
-    return TType2;
-  }();
+  var TType = (
+    /** @class */
+    function() {
+      function TType2() {
+      }
+      return TType2;
+    }()
+  );
   exports.TType = TType;
   function parseSpec(typeSpec) {
     return typeof typeSpec === "string" ? name(typeSpec) : typeSpec;
@@ -67571,78 +69051,87 @@ var DetailUnionResolver = function() {
     return new TName(value);
   }
   exports.name = name;
-  var TName = function(_super) {
-    __extends2(TName2, _super);
-    function TName2(name2) {
-      var _this = _super.call(this) || this;
-      _this.name = name2;
-      _this._failMsg = "is not a " + name2;
-      return _this;
-    }
-    TName2.prototype.getChecker = function(suite, strict, allowedProps) {
-      var _this = this;
-      var ttype = getNamedType(suite, this.name);
-      var checker = ttype.getChecker(suite, strict, allowedProps);
-      if (ttype instanceof BasicType || ttype instanceof TName2) {
-        return checker;
+  var TName = (
+    /** @class */
+    function(_super) {
+      __extends2(TName2, _super);
+      function TName2(name2) {
+        var _this = _super.call(this) || this;
+        _this.name = name2;
+        _this._failMsg = "is not a " + name2;
+        return _this;
       }
-      return function(value, ctx) {
-        return checker(value, ctx) ? true : ctx.fail(null, _this._failMsg, 0);
+      TName2.prototype.getChecker = function(suite, strict, allowedProps) {
+        var _this = this;
+        var ttype = getNamedType(suite, this.name);
+        var checker = ttype.getChecker(suite, strict, allowedProps);
+        if (ttype instanceof BasicType || ttype instanceof TName2) {
+          return checker;
+        }
+        return function(value, ctx) {
+          return checker(value, ctx) ? true : ctx.fail(null, _this._failMsg, 0);
+        };
       };
-    };
-    return TName2;
-  }(TType);
+      return TName2;
+    }(TType)
+  );
   exports.TName = TName;
   function lit(value) {
     return new TLiteral(value);
   }
   exports.lit = lit;
-  var TLiteral = function(_super) {
-    __extends2(TLiteral2, _super);
-    function TLiteral2(value) {
-      var _this = _super.call(this) || this;
-      _this.value = value;
-      _this.name = JSON.stringify(value);
-      _this._failMsg = "is not " + _this.name;
-      return _this;
-    }
-    TLiteral2.prototype.getChecker = function(suite, strict) {
-      var _this = this;
-      return function(value, ctx) {
-        return value === _this.value ? true : ctx.fail(null, _this._failMsg, -1);
+  var TLiteral = (
+    /** @class */
+    function(_super) {
+      __extends2(TLiteral2, _super);
+      function TLiteral2(value) {
+        var _this = _super.call(this) || this;
+        _this.value = value;
+        _this.name = JSON.stringify(value);
+        _this._failMsg = "is not " + _this.name;
+        return _this;
+      }
+      TLiteral2.prototype.getChecker = function(suite, strict) {
+        var _this = this;
+        return function(value, ctx) {
+          return value === _this.value ? true : ctx.fail(null, _this._failMsg, -1);
+        };
       };
-    };
-    return TLiteral2;
-  }(TType);
+      return TLiteral2;
+    }(TType)
+  );
   exports.TLiteral = TLiteral;
   function array(typeSpec) {
     return new TArray(parseSpec(typeSpec));
   }
   exports.array = array;
-  var TArray = function(_super) {
-    __extends2(TArray2, _super);
-    function TArray2(ttype) {
-      var _this = _super.call(this) || this;
-      _this.ttype = ttype;
-      return _this;
-    }
-    TArray2.prototype.getChecker = function(suite, strict) {
-      var itemChecker = this.ttype.getChecker(suite, strict);
-      return function(value, ctx) {
-        if (!Array.isArray(value)) {
-          return ctx.fail(null, "is not an array", 0);
-        }
-        for (var i = 0; i < value.length; i++) {
-          var ok = itemChecker(value[i], ctx);
-          if (!ok) {
-            return ctx.fail(i, null, 1);
+  var TArray = (
+    /** @class */
+    function(_super) {
+      __extends2(TArray2, _super);
+      function TArray2(ttype) {
+        var _this = _super.call(this) || this;
+        _this.ttype = ttype;
+        return _this;
+      }
+      TArray2.prototype.getChecker = function(suite, strict) {
+        var itemChecker = this.ttype.getChecker(suite, strict);
+        return function(value, ctx) {
+          if (!Array.isArray(value)) {
+            return ctx.fail(null, "is not an array", 0);
           }
-        }
-        return true;
+          for (var i = 0; i < value.length; i++) {
+            var ok = itemChecker(value[i], ctx);
+            if (!ok) {
+              return ctx.fail(i, null, 1);
+            }
+          }
+          return true;
+        };
       };
-    };
-    return TArray2;
-  }(TType);
+      return TArray2;
+    }(TType)
+  );
   exports.TArray = TArray;
   function tuple() {
     var typeSpec = [];
@@ -67654,41 +69143,44 @@ var DetailUnionResolver = function() {
     }));
   }
   exports.tuple = tuple;
-  var TTuple = function(_super) {
-    __extends2(TTuple2, _super);
-    function TTuple2(ttypes) {
-      var _this = _super.call(this) || this;
-      _this.ttypes = ttypes;
-      return _this;
-    }
-    TTuple2.prototype.getChecker = function(suite, strict) {
-      var itemCheckers = this.ttypes.map(function(t) {
-        return t.getChecker(suite, strict);
-      });
-      var checker = function(value, ctx) {
-        if (!Array.isArray(value)) {
-          return ctx.fail(null, "is not an array", 0);
-        }
-        for (var i = 0; i < itemCheckers.length; i++) {
-          var ok = itemCheckers[i](value[i], ctx);
-          if (!ok) {
-            return ctx.fail(i, null, 1);
-          }
-        }
-        return true;
-      };
-      if (!strict) {
-        return checker;
+  var TTuple = (
+    /** @class */
+    function(_super) {
+      __extends2(TTuple2, _super);
+      function TTuple2(ttypes) {
+        var _this = _super.call(this) || this;
+        _this.ttypes = ttypes;
+        return _this;
       }
-      return function(value, ctx) {
-        if (!checker(value, ctx)) {
-          return false;
+      TTuple2.prototype.getChecker = function(suite, strict) {
+        var itemCheckers = this.ttypes.map(function(t) {
+          return t.getChecker(suite, strict);
+        });
+        var checker = function(value, ctx) {
+          if (!Array.isArray(value)) {
+            return ctx.fail(null, "is not an array", 0);
+          }
+          for (var i = 0; i < itemCheckers.length; i++) {
+            var ok = itemCheckers[i](value[i], ctx);
+            if (!ok) {
+              return ctx.fail(i, null, 1);
+            }
+          }
+          return true;
+        };
+        if (!strict) {
+          return checker;
         }
-        return value.length <= itemCheckers.length ? true : ctx.fail(itemCheckers.length, "is extraneous", 2);
+        return function(value, ctx) {
+          if (!checker(value, ctx)) {
+            return false;
+          }
+          return value.length <= itemCheckers.length ? true : ctx.fail(itemCheckers.length, "is extraneous", 2);
+        };
       };
-    };
-    return TTuple2;
-  }(TType);
+      return TTuple2;
+    }(TType)
+  );
   exports.TTuple = TTuple;
   function union() {
     var typeSpec = [];
@@ -67700,46 +69192,49 @@ var DetailUnionResolver = function() {
     }));
   }
   exports.union = union;
-  var TUnion = function(_super) {
-    __extends2(TUnion2, _super);
-    function TUnion2(ttypes) {
-      var _this = _super.call(this) || this;
-      _this.ttypes = ttypes;
-      var names = ttypes.map(function(t) {
-        return t instanceof TName || t instanceof TLiteral ? t.name : null;
-      }).filter(function(n2) {
-        return n2;
-      });
-      var otherTypes = ttypes.length - names.length;
-      if (names.length) {
-        if (otherTypes > 0) {
-          names.push(otherTypes + " more");
-        }
-        _this._failMsg = "is none of " + names.join(", ");
-      } else {
-        _this._failMsg = "is none of " + otherTypes + " types";
-      }
-      return _this;
-    }
-    TUnion2.prototype.getChecker = function(suite, strict) {
-      var _this = this;
-      var itemCheckers = this.ttypes.map(function(t) {
-        return t.getChecker(suite, strict);
-      });
-      return function(value, ctx) {
-        var ur = ctx.unionResolver();
-        for (var i = 0; i < itemCheckers.length; i++) {
-          var ok = itemCheckers[i](value, ur.createContext());
-          if (ok) {
-            return true;
+  var TUnion = (
+    /** @class */
+    function(_super) {
+      __extends2(TUnion2, _super);
+      function TUnion2(ttypes) {
+        var _this = _super.call(this) || this;
+        _this.ttypes = ttypes;
+        var names = ttypes.map(function(t) {
+          return t instanceof TName || t instanceof TLiteral ? t.name : null;
+        }).filter(function(n2) {
+          return n2;
+        });
+        var otherTypes = ttypes.length - names.length;
+        if (names.length) {
+          if (otherTypes > 0) {
+            names.push(otherTypes + " more");
           }
+          _this._failMsg = "is none of " + names.join(", ");
+        } else {
+          _this._failMsg = "is none of " + otherTypes + " types";
         }
-        ctx.resolveUnion(ur);
-        return ctx.fail(null, _this._failMsg, 0);
+        return _this;
+      }
+      TUnion2.prototype.getChecker = function(suite, strict) {
+        var _this = this;
+        var itemCheckers = this.ttypes.map(function(t) {
+          return t.getChecker(suite, strict);
+        });
+        return function(value, ctx) {
+          var ur = ctx.unionResolver();
+          for (var i = 0; i < itemCheckers.length; i++) {
+            var ok = itemCheckers[i](value, ur.createContext());
+            if (ok) {
+              return true;
+            }
+          }
+          ctx.resolveUnion(ur);
+          return ctx.fail(null, _this._failMsg, 0);
+        };
       };
-    };
-    return TUnion2;
-  }(TType);
+      return TUnion2;
+    }(TType)
+  );
   exports.TUnion = TUnion;
   function intersection() {
     var typeSpec = [];
@@ -67751,85 +69246,94 @@ var DetailUnionResolver = function() {
     }));
   }
   exports.intersection = intersection;
-  var TIntersection = function(_super) {
-    __extends2(TIntersection2, _super);
-    function TIntersection2(ttypes) {
-      var _this = _super.call(this) || this;
-      _this.ttypes = ttypes;
-      return _this;
-    }
-    TIntersection2.prototype.getChecker = function(suite, strict) {
-      var allowedProps = /* @__PURE__ */ new Set();
-      var itemCheckers = this.ttypes.map(function(t) {
-        return t.getChecker(suite, strict, allowedProps);
-      });
-      return function(value, ctx) {
-        var ok = itemCheckers.every(function(checker) {
-          return checker(value, ctx);
+  var TIntersection = (
+    /** @class */
+    function(_super) {
+      __extends2(TIntersection2, _super);
+      function TIntersection2(ttypes) {
+        var _this = _super.call(this) || this;
+        _this.ttypes = ttypes;
+        return _this;
+      }
+      TIntersection2.prototype.getChecker = function(suite, strict) {
+        var allowedProps = /* @__PURE__ */ new Set();
+        var itemCheckers = this.ttypes.map(function(t) {
+          return t.getChecker(suite, strict, allowedProps);
         });
-        if (ok) {
-          return true;
-        }
-        return ctx.fail(null, null, 0);
+        return function(value, ctx) {
+          var ok = itemCheckers.every(function(checker) {
+            return checker(value, ctx);
+          });
+          if (ok) {
+            return true;
+          }
+          return ctx.fail(null, null, 0);
+        };
       };
-    };
-    return TIntersection2;
-  }(TType);
+      return TIntersection2;
+    }(TType)
+  );
   exports.TIntersection = TIntersection;
   function enumtype(values) {
     return new TEnumType(values);
   }
   exports.enumtype = enumtype;
-  var TEnumType = function(_super) {
-    __extends2(TEnumType2, _super);
-    function TEnumType2(members) {
-      var _this = _super.call(this) || this;
-      _this.members = members;
-      _this.validValues = /* @__PURE__ */ new Set();
-      _this._failMsg = "is not a valid enum value";
-      _this.validValues = new Set(Object.keys(members).map(function(name2) {
-        return members[name2];
-      }));
-      return _this;
-    }
-    TEnumType2.prototype.getChecker = function(suite, strict) {
-      var _this = this;
-      return function(value, ctx) {
-        return _this.validValues.has(value) ? true : ctx.fail(null, _this._failMsg, 0);
+  var TEnumType = (
+    /** @class */
+    function(_super) {
+      __extends2(TEnumType2, _super);
+      function TEnumType2(members) {
+        var _this = _super.call(this) || this;
+        _this.members = members;
+        _this.validValues = /* @__PURE__ */ new Set();
+        _this._failMsg = "is not a valid enum value";
+        _this.validValues = new Set(Object.keys(members).map(function(name2) {
+          return members[name2];
+        }));
+        return _this;
+      }
+      TEnumType2.prototype.getChecker = function(suite, strict) {
+        var _this = this;
+        return function(value, ctx) {
+          return _this.validValues.has(value) ? true : ctx.fail(null, _this._failMsg, 0);
+        };
       };
-    };
-    return TEnumType2;
-  }(TType);
+      return TEnumType2;
+    }(TType)
+  );
   exports.TEnumType = TEnumType;
   function enumlit(name2, prop) {
     return new TEnumLiteral(name2, prop);
   }
   exports.enumlit = enumlit;
-  var TEnumLiteral = function(_super) {
-    __extends2(TEnumLiteral2, _super);
-    function TEnumLiteral2(enumName, prop) {
-      var _this = _super.call(this) || this;
-      _this.enumName = enumName;
-      _this.prop = prop;
-      _this._failMsg = "is not " + enumName + "." + prop;
-      return _this;
-    }
-    TEnumLiteral2.prototype.getChecker = function(suite, strict) {
-      var _this = this;
-      var ttype = getNamedType(suite, this.enumName);
-      if (!(ttype instanceof TEnumType)) {
-        throw new Error("Type " + this.enumName + " used in enumlit is not an enum type");
+  var TEnumLiteral = (
+    /** @class */
+    function(_super) {
+      __extends2(TEnumLiteral2, _super);
+      function TEnumLiteral2(enumName, prop) {
+        var _this = _super.call(this) || this;
+        _this.enumName = enumName;
+        _this.prop = prop;
+        _this._failMsg = "is not " + enumName + "." + prop;
+        return _this;
       }
-      var val = ttype.members[this.prop];
-      if (!ttype.members.hasOwnProperty(this.prop)) {
-        throw new Error("Unknown value " + this.enumName + "." + this.prop + " used in enumlit");
-      }
-      return function(value, ctx) {
-        return value === val ? true : ctx.fail(null, _this._failMsg, -1);
+      TEnumLiteral2.prototype.getChecker = function(suite, strict) {
+        var _this = this;
+        var ttype = getNamedType(suite, this.enumName);
+        if (!(ttype instanceof TEnumType)) {
+          throw new Error("Type " + this.enumName + " used in enumlit is not an enum type");
+        }
+        var val = ttype.members[this.prop];
+        if (!ttype.members.hasOwnProperty(this.prop)) {
+          throw new Error("Unknown value " + this.enumName + "." + this.prop + " used in enumlit");
+        }
+        return function(value, ctx) {
+          return value === val ? true : ctx.fail(null, _this._failMsg, -1);
+        };
       };
-    };
-    return TEnumLiteral2;
-  }(TType);
+      return TEnumLiteral2;
+    }(TType)
+  );
   exports.TEnumLiteral = TEnumLiteral;
   function makeIfaceProps(props) {
     return Object.keys(props).map(function(name2) {
@@ -67843,107 +69347,116 @@ var DetailUnionResolver = function() {
     return new TIface(bases, makeIfaceProps(props));
   }
   exports.iface = iface;
-  var TIface = function(_super) {
-    __extends2(TIface2, _super);
-    function TIface2(bases, props) {
-      var _this = _super.call(this) || this;
-      _this.bases = bases;
-      _this.props = props;
-      _this.propSet = new Set(props.map(function(p) {
-        return p.name;
-      }));
-      return _this;
-    }
-    TIface2.prototype.getChecker = function(suite, strict, allowedProps) {
-      var _this = this;
-      var baseCheckers = this.bases.map(function(b) {
-        return getNamedType(suite, b).getChecker(suite, strict);
-      });
-      var propCheckers = this.props.map(function(prop) {
-        return prop.ttype.getChecker(suite, strict);
-      });
-      var testCtx = new util_1.NoopContext();
-      var isPropRequired = this.props.map(function(prop, i) {
-        return !prop.isOpt && !propCheckers[i](void 0, testCtx);
-      });
-      var checker = function(value, ctx) {
-        if (typeof value !== "object" || value === null) {
-          return ctx.fail(null, "is not an object", 0);
+  var TIface = (
+    /** @class */
+    function(_super) {
+      __extends2(TIface2, _super);
+      function TIface2(bases, props) {
+        var _this = _super.call(this) || this;
+        _this.bases = bases;
+        _this.props = props;
+        _this.propSet = new Set(props.map(function(p) {
+          return p.name;
+        }));
+        return _this;
+      }
+      TIface2.prototype.getChecker = function(suite, strict, allowedProps) {
+        var _this = this;
+        var baseCheckers = this.bases.map(function(b) {
+          return getNamedType(suite, b).getChecker(suite, strict);
+        });
+        var propCheckers = this.props.map(function(prop) {
+          return prop.ttype.getChecker(suite, strict);
+        });
+        var testCtx = new util_1.NoopContext();
+        var isPropRequired = this.props.map(function(prop, i) {
+          return !prop.isOpt && !propCheckers[i](void 0, testCtx);
+        });
+        var checker = function(value, ctx) {
+          if (typeof value !== "object" || value === null) {
+            return ctx.fail(null, "is not an object", 0);
+          }
+          for (var i = 0; i < baseCheckers.length; i++) {
+            if (!baseCheckers[i](value, ctx)) {
+              return false;
+            }
+          }
+          for (var i = 0; i < propCheckers.length; i++) {
+            var name_1 = _this.props[i].name;
+            var v = value[name_1];
+            if (v === void 0) {
+              if (isPropRequired[i]) {
+                return ctx.fail(name_1, "is missing", 1);
+              }
+            } else {
+              var ok = propCheckers[i](v, ctx);
+              if (!ok) {
+                return ctx.fail(name_1, null, 1);
+              }
+            }
+          }
+          return true;
+        };
+        if (!strict) {
+          return checker;
         }
-        for (var i = 0; i < baseCheckers.length; i++) {
-          if (!baseCheckers[i](value, ctx)) {
+        var propSet = this.propSet;
+        if (allowedProps) {
+          this.propSet.forEach(function(prop) {
+            return allowedProps.add(prop);
+          });
+          propSet = allowedProps;
+        }
+        return function(value, ctx) {
+          if (!checker(value, ctx)) {
             return false;
           }
-        }
-        for (var i = 0; i < propCheckers.length; i++) {
-          var name_1 = _this.props[i].name;
-          var v = value[name_1];
-          if (v === void 0) {
-            if (isPropRequired[i]) {
-              return ctx.fail(name_1, "is missing", 1);
-            }
-          } else {
-            var ok = propCheckers[i](v, ctx);
-            if (!ok) {
-              return ctx.fail(name_1, null, 1);
+          for (var prop in value) {
+            if (!propSet.has(prop)) {
+              return ctx.fail(prop, "is extraneous", 2);
             }
           }
-        }
-        return true;
+          return true;
+        };
       };
-      if (!strict) {
-        return checker;
-      }
-      var propSet = this.propSet;
-      if (allowedProps) {
-        this.propSet.forEach(function(prop) {
-          return allowedProps.add(prop);
-        });
-        propSet = allowedProps;
-      }
-      return function(value, ctx) {
-        if (!checker(value, ctx)) {
-          return false;
-        }
-        for (var prop in value) {
-          if (!propSet.has(prop)) {
-            return ctx.fail(prop, "is extraneous", 2);
-          }
-        }
-        return true;
-      };
-    };
-    return TIface2;
-  }(TType);
+      return TIface2;
+    }(TType)
+  );
   exports.TIface = TIface;
   function opt(typeSpec) {
     return new TOptional(parseSpec(typeSpec));
   }
   exports.opt = opt;
-  var TOptional = function(_super) {
-    __extends2(TOptional2, _super);
-    function TOptional2(ttype) {
-      var _this = _super.call(this) || this;
-      _this.ttype = ttype;
-      return _this;
-    }
-    TOptional2.prototype.getChecker = function(suite, strict) {
-      var itemChecker = this.ttype.getChecker(suite, strict);
-      return function(value, ctx) {
-        return value === void 0 || itemChecker(value, ctx);
+  var TOptional = (
+    /** @class */
+    function(_super) {
+      __extends2(TOptional2, _super);
+      function TOptional2(ttype) {
+        var _this = _super.call(this) || this;
+        _this.ttype = ttype;
+        return _this;
+      }
+      TOptional2.prototype.getChecker = function(suite, strict) {
+        var itemChecker = this.ttype.getChecker(suite, strict);
+        return function(value, ctx) {
+          return value === void 0 || itemChecker(value, ctx);
+        };
       };
-    };
-    return TOptional2;
-  }(TType);
+      return TOptional2;
+    }(TType)
+  );
   exports.TOptional = TOptional;
-  var TProp = function() {
-    function TProp2(name2, ttype, isOpt) {
-      this.name = name2;
-      this.ttype = ttype;
-      this.isOpt = isOpt;
-    }
-    return TProp2;
-  }();
+  var TProp = (
+    /** @class */
+    function() {
+      function TProp2(name2, ttype, isOpt) {
+        this.name = name2;
+        this.ttype = ttype;
+        this.isOpt = isOpt;
+      }
+      return TProp2;
+    }()
+  );
   exports.TProp = TProp;
   function func(resultSpec) {
     var params = [];
@@ -67953,99 +69466,111 @@ var DetailUnionResolver = function() {
     return new TFunc(new TParamList(params), parseSpec(resultSpec));
   }
   exports.func = func;
-  var TFunc = function(_super) {
-    __extends2(TFunc2, _super);
-    function TFunc2(paramList, result2) {
-      var _this = _super.call(this) || this;
-      _this.paramList = paramList;
-      _this.result = result2;
-      return _this;
-    }
-    TFunc2.prototype.getChecker = function(suite, strict) {
-      return function(value, ctx) {
-        return typeof value === "function" ? true : ctx.fail(null, "is not a function", 0);
+  var TFunc = (
+    /** @class */
+    function(_super) {
+      __extends2(TFunc2, _super);
+      function TFunc2(paramList, result2) {
+        var _this = _super.call(this) || this;
+        _this.paramList = paramList;
+        _this.result = result2;
+        return _this;
+      }
+      TFunc2.prototype.getChecker = function(suite, strict) {
+        return function(value, ctx) {
+          return typeof value === "function" ? true : ctx.fail(null, "is not a function", 0);
+        };
       };
-    };
-    return TFunc2;
-  }(TType);
+      return TFunc2;
+    }(TType)
+  );
   exports.TFunc = TFunc;
   function param(name2, typeSpec, isOpt) {
     return new TParam(name2, parseSpec(typeSpec), Boolean(isOpt));
   }
   exports.param = param;
-  var TParam = function() {
-    function TParam2(name2, ttype, isOpt) {
-      this.name = name2;
-      this.ttype = ttype;
-      this.isOpt = isOpt;
-    }
-    return TParam2;
-  }();
+  var TParam = (
+    /** @class */
+    function() {
+      function TParam2(name2, ttype, isOpt) {
+        this.name = name2;
+        this.ttype = ttype;
+        this.isOpt = isOpt;
+      }
+      return TParam2;
+    }()
+  );
   exports.TParam = TParam;
-  var TParamList = function(_super) {
-    __extends2(TParamList2, _super);
-    function TParamList2(params) {
-      var _this = _super.call(this) || this;
-      _this.params = params;
-      return _this;
-    }
-    TParamList2.prototype.getChecker = function(suite, strict) {
-      var _this = this;
-      var itemCheckers = this.params.map(function(t) {
-        return t.ttype.getChecker(suite, strict);
-      });
-      var testCtx = new util_1.NoopContext();
-      var isParamRequired = this.params.map(function(param2, i) {
-        return !param2.isOpt && !itemCheckers[i](void 0, testCtx);
-      });
-      var checker = function(value, ctx) {
-        if (!Array.isArray(value)) {
-          return ctx.fail(null, "is not an array", 0);
-        }
-        for (var i = 0; i < itemCheckers.length; i++) {
-          var p = _this.params[i];
-          if (value[i] === void 0) {
-            if (isParamRequired[i]) {
-              return ctx.fail(p.name, "is missing", 1);
-            }
-          } else {
-            var ok = itemCheckers[i](value[i], ctx);
-            if (!ok) {
-              return ctx.fail(p.name, null, 1);
+  var TParamList = (
+    /** @class */
+    function(_super) {
+      __extends2(TParamList2, _super);
+      function TParamList2(params) {
+        var _this = _super.call(this) || this;
+        _this.params = params;
+        return _this;
+      }
+      TParamList2.prototype.getChecker = function(suite, strict) {
+        var _this = this;
+        var itemCheckers = this.params.map(function(t) {
+          return t.ttype.getChecker(suite, strict);
+        });
+        var testCtx = new util_1.NoopContext();
+        var isParamRequired = this.params.map(function(param2, i) {
+          return !param2.isOpt && !itemCheckers[i](void 0, testCtx);
+        });
+        var checker = function(value, ctx) {
+          if (!Array.isArray(value)) {
+            return ctx.fail(null, "is not an array", 0);
+          }
+          for (var i = 0; i < itemCheckers.length; i++) {
+            var p = _this.params[i];
+            if (value[i] === void 0) {
+              if (isParamRequired[i]) {
+                return ctx.fail(p.name, "is missing", 1);
+              }
+            } else {
+              var ok = itemCheckers[i](value[i], ctx);
+              if (!ok) {
+                return ctx.fail(p.name, null, 1);
+              }
             }
           }
+          return true;
+        };
+        if (!strict) {
+          return checker;
         }
-        return true;
+        return function(value, ctx) {
+          if (!checker(value, ctx)) {
+            return false;
+          }
+          return value.length <= itemCheckers.length ? true : ctx.fail(itemCheckers.length, "is extraneous", 2);
+        };
       };
-      if (!strict) {
-        return checker;
-      }
-      return function(value, ctx) {
-        if (!checker(value, ctx)) {
-          return false;
-        }
-        return value.length <= itemCheckers.length ? true : ctx.fail(itemCheckers.length, "is extraneous", 2);
-      };
-    };
-    return TParamList2;
-  }(TType);
+      return TParamList2;
+    }(TType)
+  );
   exports.TParamList = TParamList;
-  var BasicType = function(_super) {
-    __extends2(BasicType2, _super);
-    function BasicType2(validator, message) {
-      var _this = _super.call(this) || this;
-      _this.validator = validator;
-      _this.message = message;
-      return _this;
-    }
-    BasicType2.prototype.getChecker = function(suite, strict) {
-      var _this = this;
-      return function(value, ctx) {
-        return _this.validator(value) ? true : ctx.fail(null, _this.message, 0);
+  var BasicType = (
+    /** @class */
+    function(_super) {
+      __extends2(BasicType2, _super);
+      function BasicType2(validator, message) {
+        var _this = _super.call(this) || this;
+        _this.validator = validator;
+        _this.message = message;
+        return _this;
+      }
+      BasicType2.prototype.getChecker = function(suite, strict) {
+        var _this = this;
+        return function(value, ctx) {
+          return _this.validator(value) ? true : ctx.fail(null, _this.message, 0);
+        };
       };
-    };
-    return BasicType2;
-  }(TType);
+      return BasicType2;
+    }(TType)
+  );
   exports.BasicType = BasicType;
   exports.basicTypes = {
     any: new BasicType(function(v) {
@@ -68232,104 +69757,107 @@ var DetailUnionResolver = function() {
     return checkers;
   }
   exports.createCheckers = createCheckers;
-  var Checker = function() {
-    function Checker2(suite, ttype, _path2) {
-      if (_path2 === void 0) {
-        _path2 = "value";
-      }
-      this.suite = suite;
-      this.ttype = ttype;
-      this._path = _path2;
-      this.props = /* @__PURE__ */ new Map();
-      if (ttype instanceof types_1.TIface) {
-        for (var _i = 0, _a2 = ttype.props; _i < _a2.length; _i++) {
-          var p = _a2[_i];
-          this.props.set(p.name, p.ttype);
+  var Checker = (
+    /** @class */
+    function() {
+      function Checker2(suite, ttype, _path2) {
+        if (_path2 === void 0) {
+          _path2 = "value";
         }
+        this.suite = suite;
+        this.ttype = ttype;
+        this._path = _path2;
+        this.props = /* @__PURE__ */ new Map();
+        if (ttype instanceof types_1.TIface) {
+          for (var _i = 0, _a2 = ttype.props; _i < _a2.length; _i++) {
+            var p = _a2[_i];
+            this.props.set(p.name, p.ttype);
+          }
+        }
+        this.checkerPlain = this.ttype.getChecker(suite, false);
+        this.checkerStrict = this.ttype.getChecker(suite, true);
       }
-      this.checkerPlain = this.ttype.getChecker(suite, false);
-      this.checkerStrict = this.ttype.getChecker(suite, true);
-    }
-    Checker2.prototype.setReportedPath = function(path2) {
-      this._path = path2;
-    };
-    Checker2.prototype.check = function(value) {
-      return this._doCheck(this.checkerPlain, value);
-    };
-    Checker2.prototype.test = function(value) {
-      return this.checkerPlain(value, new util_1.NoopContext());
-    };
-    Checker2.prototype.validate = function(value) {
-      return this._doValidate(this.checkerPlain, value);
-    };
-    Checker2.prototype.strictCheck = function(value) {
-      return this._doCheck(this.checkerStrict, value);
-    };
-    Checker2.prototype.strictTest = function(value) {
-      return this.checkerStrict(value, new util_1.NoopContext());
-    };
-    Checker2.prototype.strictValidate = function(value) {
-      return this._doValidate(this.checkerStrict, value);
-    };
-    Checker2.prototype.getProp = function(prop) {
-      var ttype = this.props.get(prop);
-      if (!ttype) {
-        throw new Error("Type has no property " + prop);
-      }
-      return new Checker2(this.suite, ttype, this._path + "." + prop);
-    };
-    Checker2.prototype.methodArgs = function(methodName) {
-      var tfunc = this._getMethod(methodName);
-      return new Checker2(this.suite, tfunc.paramList);
-    };
-    Checker2.prototype.methodResult = function(methodName) {
-      var tfunc = this._getMethod(methodName);
-      return new Checker2(this.suite, tfunc.result);
-    };
-    Checker2.prototype.getArgs = function() {
-      if (!(this.ttype instanceof types_1.TFunc)) {
-        throw new Error("getArgs() applied to non-function");
-      }
-      return new Checker2(this.suite, this.ttype.paramList);
-    };
-    Checker2.prototype.getResult = function() {
-      if (!(this.ttype instanceof types_1.TFunc)) {
-        throw new Error("getResult() applied to non-function");
-      }
-      return new Checker2(this.suite, this.ttype.result);
-    };
-    Checker2.prototype.getType = function() {
-      return this.ttype;
-    };
-    Checker2.prototype._doCheck = function(checkerFunc, value) {
-      var noopCtx = new util_1.NoopContext();
-      if (!checkerFunc(value, noopCtx)) {
+      Checker2.prototype.setReportedPath = function(path2) {
+        this._path = path2;
+      };
+      Checker2.prototype.check = function(value) {
+        return this._doCheck(this.checkerPlain, value);
+      };
+      Checker2.prototype.test = function(value) {
+        return this.checkerPlain(value, new util_1.NoopContext());
+      };
+      Checker2.prototype.validate = function(value) {
+        return this._doValidate(this.checkerPlain, value);
+      };
+      Checker2.prototype.strictCheck = function(value) {
+        return this._doCheck(this.checkerStrict, value);
+      };
+      Checker2.prototype.strictTest = function(value) {
+        return this.checkerStrict(value, new util_1.NoopContext());
+      };
+      Checker2.prototype.strictValidate = function(value) {
+        return this._doValidate(this.checkerStrict, value);
+      };
+      Checker2.prototype.getProp = function(prop) {
+        var ttype = this.props.get(prop);
+        if (!ttype) {
+          throw new Error("Type has no property " + prop);
+        }
+        return new Checker2(this.suite, ttype, this._path + "." + prop);
+      };
+      Checker2.prototype.methodArgs = function(methodName) {
+        var tfunc = this._getMethod(methodName);
+        return new Checker2(this.suite, tfunc.paramList);
+      };
+      Checker2.prototype.methodResult = function(methodName) {
+        var tfunc = this._getMethod(methodName);
+        return new Checker2(this.suite, tfunc.result);
+      };
+      Checker2.prototype.getArgs = function() {
+        if (!(this.ttype instanceof types_1.TFunc)) {
+          throw new Error("getArgs() applied to non-function");
+        }
+        return new Checker2(this.suite, this.ttype.paramList);
+      };
+      Checker2.prototype.getResult = function() {
+        if (!(this.ttype instanceof types_1.TFunc)) {
+          throw new Error("getResult() applied to non-function");
+        }
+        return new Checker2(this.suite, this.ttype.result);
+      };
+      Checker2.prototype.getType = function() {
+        return this.ttype;
+      };
+      Checker2.prototype._doCheck = function(checkerFunc, value) {
+        var noopCtx = new util_1.NoopContext();
+        if (!checkerFunc(value, noopCtx)) {
+          var detailCtx = new util_1.DetailContext();
+          checkerFunc(value, detailCtx);
+          throw detailCtx.getError(this._path);
+        }
+      };
+      Checker2.prototype._doValidate = function(checkerFunc, value) {
+        var noopCtx = new util_1.NoopContext();
+        if (checkerFunc(value, noopCtx)) {
+          return null;
+        }
         var detailCtx = new util_1.DetailContext();
         checkerFunc(value, detailCtx);
-        throw detailCtx.getError(this._path);
-      }
-    };
-    Checker2.prototype._doValidate = function(checkerFunc, value) {
-      var noopCtx = new util_1.NoopContext();
-      if (checkerFunc(value, noopCtx)) {
-        return null;
-      }
-      var detailCtx = new util_1.DetailContext();
-      checkerFunc(value, detailCtx);
-      return detailCtx.getErrorDetail(this._path);
-    };
-    Checker2.prototype._getMethod = function(methodName) {
-      var ttype = this.props.get(methodName);
-      if (!ttype) {
-        throw new Error("Type has no property " + methodName);
-      }
-      if (!(ttype instanceof types_1.TFunc)) {
-        throw new Error("Property " + methodName + " is not a method");
-      }
-      return ttype;
-    };
-    return Checker2;
-  }();
+        return detailCtx.getErrorDetail(this._path);
+      };
+      Checker2.prototype._getMethod = function(methodName) {
+        var ttype = this.props.get(methodName);
+        if (!ttype) {
+          throw new Error("Type has no property " + methodName);
+        }
+        if (!(ttype instanceof types_1.TFunc)) {
+          throw new Error("Property " + methodName + " is not a method");
+        }
+        return ttype;
+      };
+      return Checker2;
+    }()
+  );
   exports.Checker = Checker;
 })(dist2);
 var Transform = dist2.union(
@@ -68406,7 +69934,12 @@ function parseBindingAtom(isBlockScope) {
     }
     case TokenType.bracketL: {
       next();
-      parseBindingList(TokenType.bracketR, isBlockScope, true);
+      parseBindingList(
+        TokenType.bracketR,
+        isBlockScope,
+        true
+        /* allowEmpty */
+      );
       return;
     }
     case TokenType.braceL:
@@ -68458,7 +69991,11 @@ function parseAssignableListItem(allowModifiers, isBlockScope) {
   }
   parseMaybeDefault(isBlockScope);
   parseAssignableListItemTypes();
-  parseMaybeDefault(isBlockScope, true);
+  parseMaybeDefault(
+    isBlockScope,
+    true
+    /* leftAlreadyParsed */
+  );
 }
 function parseAssignableListItemTypes() {
   if (isFlowEnabled) {
@@ -68610,7 +70147,10 @@ function tsFillSignature(returnToken) {
   tsTryParseTypeParameters();
   expect(TokenType.parenL);
   state.scopeDepth++;
-  tsParseBindingListForSignature(false);
+  tsParseBindingListForSignature(
+    false
+    /* isBlockScope */
+  );
   state.scopeDepth--;
   if (returnTokenRequired) {
     tsParseTypeOrTypePredicateAnnotation(returnToken);
@@ -68682,7 +70222,10 @@ function tsParseTypeMember() {
   }
   if ((isContextual(ContextualKeyword._get) || isContextual(ContextualKeyword._set)) && tsNextTokenCanFollowModifier())
     ;
-  parsePropertyName(-1);
+  parsePropertyName(
+    -1
+    /* Types don't need context IDs. */
+  );
   tsParsePropertyOrMethodSignature(readonly);
 }
 function tsParseTypeLiteral() {
@@ -69106,7 +70649,10 @@ function tsParseEnumDeclaration() {
 }
 function tsParseModuleBlock() {
   expect(TokenType.braceL);
-  parseBlockBody(TokenType.braceR);
+  parseBlockBody(
+    /* end */
+    TokenType.braceR
+  );
 }
 function tsParseModuleOrNamespaceDeclaration() {
   parseBindingIdentifier(false);
@@ -69164,13 +70710,22 @@ function tsTryParseDeclare() {
       const oldIsType = pushTypeContext(1);
       next();
       const functionStart = state.start;
-      parseFunction(functionStart, true);
+      parseFunction(
+        functionStart,
+        /* isStatement */
+        true
+      );
       popTypeContext(oldIsType);
       return true;
     }
     case TokenType._class: {
       const oldIsType = pushTypeContext(1);
-      parseClass(true, false);
+      parseClass(
+        /* isStatement */
+        true,
+        /* optionalId */
+        false
+      );
       popTypeContext(oldIsType);
       return true;
     }
@@ -69200,7 +70755,11 @@ function tsTryParseDeclare() {
         tsParseAmbientExternalModuleDeclaration();
         matched = true;
       } else {
-        matched = tsParseDeclaration(contextualKeyword, true);
+        matched = tsParseDeclaration(
+          contextualKeyword,
+          /* isBeforeToken */
+          true
+        );
       }
       popTypeContext(oldIsType);
       return matched;
@@ -69210,7 +70769,11 @@ function tsTryParseDeclare() {
   }
 }
 function tsTryParseExportDeclaration() {
-  return tsParseDeclaration(state.contextualKeyword, true);
+  return tsParseDeclaration(
+    state.contextualKeyword,
+    /* isBeforeToken */
+    true
+  );
 }
 function tsParseExpressionStatement(contextualKeyword) {
   switch (contextualKeyword) {
@@ -69230,7 +70793,11 @@ function tsParseExpressionStatement(contextualKeyword) {
       }
       break;
     default:
-      return tsParseDeclaration(contextualKeyword, false);
+      return tsParseDeclaration(
+        contextualKeyword,
+        /* isBeforeToken */
+        false
+      );
   }
   return false;
 }
@@ -69239,7 +70806,12 @@ function tsParseDeclaration(contextualKeyword, isBeforeToken) {
     case ContextualKeyword._abstract:
       if (tsCheckLineTerminator(isBeforeToken) && match(TokenType._class)) {
         state.tokens[state.tokens.length - 1].type = TokenType._abstract;
-        parseClass(true, false);
+        parseClass(
+          /* isStatement */
+          true,
+          /* optionalId */
+          false
+        );
         return true;
       }
       break;
@@ -70247,7 +71819,10 @@ function parseParenAndDistinguishExpression(canBeArrow) {
       }
     }
     if (match(TokenType.ellipsis)) {
-      parseRest(false);
+      parseRest(
+        false
+        /* isBlockScope */
+      );
       parseParenItem();
       break;
     } else {
@@ -70368,19 +71943,31 @@ function parseObj(isPattern, isBlockScope) {
   state.tokens[state.tokens.length - 1].contextId = contextId;
 }
 function isGetterOrSetterMethod(isPattern) {
-  return !isPattern && (match(TokenType.string) || match(TokenType.num) || match(TokenType.bracketL) || match(TokenType.name) || !!(state.type & TokenType.IS_KEYWORD));
+  return !isPattern && (match(TokenType.string) || // get "string"() {}
+  match(TokenType.num) || // get 1() {}
+  match(TokenType.bracketL) || // get ["string"]() {}
+  match(TokenType.name) || // get foo() {}
+  !!(state.type & TokenType.IS_KEYWORD));
 }
 function parseObjectMethod(isPattern, objectContextId) {
   const functionStart = state.start;
   if (match(TokenType.parenL)) {
     if (isPattern)
       unexpected();
-    parseMethod(functionStart, false);
+    parseMethod(
+      functionStart,
+      /* isConstructor */
+      false
+    );
     return true;
   }
   if (isGetterOrSetterMethod(isPattern)) {
     parsePropertyName(objectContextId);
-    parseMethod(functionStart, false);
+    parseMethod(
+      functionStart,
+      /* isConstructor */
+      false
+    );
     return true;
   }
   return false;
@@ -70549,7 +72136,10 @@ function flowParseTypeAndPredicateInitialiser() {
 }
 function flowParseDeclareClass() {
   next();
-  flowParseInterfaceish(true);
+  flowParseInterfaceish(
+    /* isClass */
+    true
+  );
 }
 function flowParseDeclareFunction() {
   next();
@@ -70619,9 +72209,16 @@ function flowParseDeclareExportDeclaration() {
       flowParseType();
       semicolon();
     }
-  } else if (match(TokenType._var) || match(TokenType._function) || match(TokenType._class) || isContextual(ContextualKeyword._opaque)) {
+  } else if (match(TokenType._var) || // declare export var ...
+  match(TokenType._function) || // declare export function ...
+  match(TokenType._class) || // declare export class ...
+  isContextual(ContextualKeyword._opaque)) {
     flowParseDeclare();
-  } else if (match(TokenType.star) || match(TokenType.braceL) || isContextual(ContextualKeyword._interface) || isContextual(ContextualKeyword._type) || isContextual(ContextualKeyword._opaque)) {
+  } else if (match(TokenType.star) || // declare export * from ''
+  match(TokenType.braceL) || // declare export {} ...
+  isContextual(ContextualKeyword._interface) || // declare export interface ...
+  isContextual(ContextualKeyword._type) || // declare export type ...
+  isContextual(ContextualKeyword._opaque)) {
     parseExport();
   } else {
     unexpected();
@@ -71584,7 +73181,10 @@ function parseThrowStatement() {
   semicolon();
 }
 function parseCatchClauseParam() {
-  parseBindingAtom(true);
+  parseBindingAtom(
+    true
+    /* isBlockScope */
+  );
   if (isTypeScriptEnabled) {
     tsTryParseTypeAnnotation();
   }
@@ -71809,7 +73409,11 @@ function parseClassMember(memberStart, classContextId) {
   if (match(TokenType.name) && state.contextualKeyword === ContextualKeyword._static) {
     parseIdentifier();
     if (isClassMethod()) {
-      parseClassMethod(memberStart, false);
+      parseClassMethod(
+        memberStart,
+        /* isConstructor */
+        false
+      );
       return;
     } else if (isClassProperty()) {
       parseClassProperty();
@@ -71833,7 +73437,11 @@ function parseClassMemberWithIsStatic(memberStart, isStatic, classContextId) {
   }
   if (eat(TokenType.star)) {
     parseClassPropertyName(classContextId);
-    parseClassMethod(memberStart, false);
+    parseClassMethod(
+      memberStart,
+      /* isConstructor */
+      false
+    );
     return;
   }
   parseClassPropertyName(classContextId);
@@ -71855,7 +73463,11 @@ function parseClassMemberWithIsStatic(memberStart, isStatic, classContextId) {
     }
     parseClassPropertyName(classContextId);
     parsePostMemberNameModifiers();
-    parseClassMethod(memberStart, false);
+    parseClassMethod(
+      memberStart,
+      false
+      /* isConstructor */
+    );
   } else if ((token.contextualKeyword === ContextualKeyword._get || token.contextualKeyword === ContextualKeyword._set) && !(isLineTerminator() && match(TokenType.star))) {
     if (token.contextualKeyword === ContextualKeyword._get) {
       state.tokens[state.tokens.length - 1].type = TokenType._get;
@@ -71863,7 +73475,11 @@ function parseClassMemberWithIsStatic(memberStart, isStatic, classContextId) {
       state.tokens[state.tokens.length - 1].type = TokenType._set;
     }
     parseClassPropertyName(classContextId);
-    parseClassMethod(memberStart, false);
+    parseClassMethod(
+      memberStart,
+      /* isConstructor */
+      false
+    );
   } else if (isLineTerminator()) {
     parseClassProperty();
   } else {
@@ -72223,6 +73839,9 @@ var TokenProcessor = class {
     TokenProcessor.prototype.__init.call(this);
     TokenProcessor.prototype.__init2.call(this);
   }
+  /**
+   * Make a new TokenProcessor for things like lookahead.
+   */
   snapshot() {
     return { resultCode: this.resultCode, tokenIndex: this.tokenIndex };
   }
@@ -72412,6 +74031,10 @@ var TokenProcessor = class {
   currentIndex() {
     return this.tokenIndex;
   }
+  /**
+   * Move to the next token. Only suitable in preprocessing steps. When
+   * generating new code, you should use copyToken or removeToken.
+   */
   nextToken() {
     if (this.tokenIndex === this.tokens.length) {
       throw new Error("Unexpectedly reached end of input.");
@@ -72795,6 +74418,15 @@ var CJSImportTransformer = class extends Transformer {
     }
     return true;
   }
+  /**
+   * Transform this:
+   * import foo, {bar} from 'baz';
+   * into
+   * var _baz = require('baz'); var _baz2 = _interopRequireDefault(_baz);
+   *
+   * The import code was already generated in the import preprocessing step, so
+   * we just need to look it up.
+   */
   processImport() {
     if (this.tokens.matches2(TokenType._import, TokenType.parenL)) {
       this.tokens.replaceToken("Promise.resolve().then(() => require");
@@ -72821,6 +74453,12 @@ var CJSImportTransformer = class extends Transformer {
       this.tokens.removeToken();
     }
   }
+  /**
+   * Erase this import, and return true if it was either of the form "import type" or contained only
+   * "type" named imports. Such imports should not even do a side-effect import.
+   *
+   * The position should end at the import string.
+   */
   removeImportAndDetectIfType() {
     this.tokens.removeInitialToken();
     if (this.tokens.matchesContextual(ContextualKeyword._type) && !this.tokens.matches1AtIndex(this.tokens.currentIndex() + 1, TokenType.comma) && !this.tokens.matchesContextualAtIndex(this.tokens.currentIndex() + 1, ContextualKeyword._from)) {
@@ -72908,7 +74546,8 @@ var CJSImportTransformer = class extends Transformer {
     if (this.tokens.matches2(TokenType._export, TokenType._var) || this.tokens.matches2(TokenType._export, TokenType._let) || this.tokens.matches2(TokenType._export, TokenType._const)) {
       this.processExportVar();
       return true;
-    } else if (this.tokens.matches2(TokenType._export, TokenType._function) || this.tokens.matches3(TokenType._export, TokenType.name, TokenType._function)) {
+    } else if (this.tokens.matches2(TokenType._export, TokenType._function) || // export async function
+    this.tokens.matches3(TokenType._export, TokenType.name, TokenType._function)) {
       this.processExportFunction();
       return true;
     } else if (this.tokens.matches2(TokenType._export, TokenType._class) || this.tokens.matches3(TokenType._export, TokenType._abstract, TokenType._class)) {
@@ -72960,6 +74599,9 @@ var CJSImportTransformer = class extends Transformer {
     this.tokens.appendCode(` ${assignmentSnippet} =`);
     return true;
   }
+  /**
+   * Process something like `a += 3`, where `a` might be an exported value.
+   */
   processComplexAssignment() {
     const index = this.tokens.currentIndex();
     const identifierToken = this.tokens.tokens[index - 1];
@@ -72982,6 +74624,9 @@ var CJSImportTransformer = class extends Transformer {
     this.tokens.copyToken();
     return true;
   }
+  /**
+   * Process something like `++a`, where `a` might be an exported value.
+   */
   processPreIncDec() {
     const index = this.tokens.currentIndex();
     const identifierToken = this.tokens.tokens[index + 1];
@@ -73003,6 +74648,10 @@ var CJSImportTransformer = class extends Transformer {
     this.tokens.copyToken();
     return true;
   }
+  /**
+   * Process something like `a++`, where `a` might be an exported value.
+   * This starts at the `a`, not at the `++`.
+   */
   processPostIncDec() {
     const index = this.tokens.currentIndex();
     const identifierToken = this.tokens.tokens[index];
@@ -73034,7 +74683,8 @@ var CJSImportTransformer = class extends Transformer {
     return true;
   }
   processExportDefault() {
-    if (this.tokens.matches4(TokenType._export, TokenType._default, TokenType._function, TokenType.name) || this.tokens.matches5(TokenType._export, TokenType._default, TokenType.name, TokenType._function, TokenType.name) && this.tokens.matchesContextualAtIndex(
+    if (this.tokens.matches4(TokenType._export, TokenType._default, TokenType._function, TokenType.name) || // export default async function
+    this.tokens.matches5(TokenType._export, TokenType._default, TokenType.name, TokenType._function, TokenType.name) && this.tokens.matchesContextualAtIndex(
       this.tokens.currentIndex() + 2,
       ContextualKeyword._async
     )) {
@@ -73068,6 +74718,9 @@ var CJSImportTransformer = class extends Transformer {
       this.tokens.appendCode(" =");
     }
   }
+  /**
+   * Transform a declaration like `export var`, `export let`, or `export const`.
+   */
   processExportVar() {
     if (this.isSimpleExportVar()) {
       this.processSimpleExportVar();
@@ -73075,6 +74728,11 @@ var CJSImportTransformer = class extends Transformer {
       this.processComplexExportVar();
     }
   }
+  /**
+   * Determine if the export is of the form:
+   * export var/let/const [varName] = [expr];
+   * In other words, determine if function name inference might apply.
+   */
   isSimpleExportVar() {
     let tokenIndex = this.tokens.currentIndex();
     tokenIndex++;
@@ -73091,6 +74749,19 @@ var CJSImportTransformer = class extends Transformer {
     }
     return true;
   }
+  /**
+   * Transform an `export var` declaration initializing a single variable.
+   *
+   * For example, this:
+   * export const f = () => {};
+   * becomes this:
+   * const f = () => {}; exports.f = f;
+   *
+   * The variable is unused (e.g. exports.f has the true value of the export).
+   * We need to produce an assignment of this form so that the function will
+   * have an inferred name of "f", which wouldn't happen in the more general
+   * case below.
+   */
   processSimpleExportVar() {
     this.tokens.removeInitialToken();
     this.tokens.copyToken();
@@ -73107,6 +74778,13 @@ var CJSImportTransformer = class extends Transformer {
     }
     this.tokens.appendCode(`; exports.${varName} = ${varName}`);
   }
+  /**
+   * Transform normal declaration exports, including handling destructuring.
+   * For example, this:
+   * export const {x: [a = 2, b], c} = d;
+   * becomes this:
+   * ({x: [exports.a = 2, exports.b], c: exports.c} = d;)
+   */
   processComplexExportVar() {
     this.tokens.removeInitialToken();
     this.tokens.removeToken();
@@ -73160,11 +74838,20 @@ var CJSImportTransformer = class extends Transformer {
       this.tokens.appendCode(")");
     }
   }
+  /**
+   * Transform this:
+   * export function foo() {}
+   * into this:
+   * function foo() {} exports.foo = foo;
+   */
   processExportFunction() {
     this.tokens.replaceToken("");
     const name = this.processNamedFunction();
     this.tokens.appendCode(` exports.${name} = ${name};`);
   }
+  /**
+   * Skip past a function with a name and return that name.
+   */
   processNamedFunction() {
     if (this.tokens.matches1(TokenType._function)) {
       this.tokens.copyToken();
@@ -73198,6 +74885,12 @@ var CJSImportTransformer = class extends Transformer {
     this.tokens.copyExpectedToken(TokenType.braceR);
     return name;
   }
+  /**
+   * Transform this:
+   * export class A {}
+   * into this:
+   * class A {} exports.A = A;
+   */
   processExportClass() {
     this.tokens.removeInitialToken();
     if (this.tokens.matches1(TokenType._abstract)) {
@@ -73206,6 +74899,21 @@ var CJSImportTransformer = class extends Transformer {
     const name = this.rootTransformer.processNamedClass();
     this.tokens.appendCode(` exports.${name} = ${name};`);
   }
+  /**
+   * Transform this:
+   * export {a, b as c};
+   * into this:
+   * exports.a = a; exports.c = b;
+   *
+   * OR
+   *
+   * Transform this:
+   * export {a, b as c} from './foo';
+   * into the pre-generated Object.defineProperty code from the ImportProcessor.
+   *
+   * For the first case, if the TypeScript transform is enabled, we need to skip
+   * exports that are only defined as types.
+   */
   processExportBindings() {
     this.tokens.removeInitialToken();
     this.tokens.removeToken();
@@ -73351,6 +75059,12 @@ var ESMImportTransformer = class extends Transformer {
     }
     return true;
   }
+  /**
+   * Remove type bindings from this import, leaving the rest of the import intact.
+   *
+   * Return true if this import was ONLY types, and thus is eligible for removal. This will bail out
+   * of the replacement operation, so we can return early here.
+   */
   removeImportTypeBindings() {
     this.tokens.copyExpectedToken(TokenType._import);
     if (this.tokens.matchesContextual(ContextualKeyword._type) && !this.tokens.matches1AtIndex(this.tokens.currentIndex() + 1, TokenType.comma) && !this.tokens.matchesContextualAtIndex(this.tokens.currentIndex() + 1, ContextualKeyword._from)) {
@@ -73451,7 +75165,8 @@ var ESMImportTransformer = class extends Transformer {
       this.tokens.removeToken();
       return true;
     }
-    const alreadyHasName = this.tokens.matches4(TokenType._export, TokenType._default, TokenType._function, TokenType.name) || this.tokens.matches5(TokenType._export, TokenType._default, TokenType.name, TokenType._function, TokenType.name) && this.tokens.matchesContextualAtIndex(
+    const alreadyHasName = this.tokens.matches4(TokenType._export, TokenType._default, TokenType._function, TokenType.name) || // export default async function
+    this.tokens.matches5(TokenType._export, TokenType._default, TokenType.name, TokenType._function, TokenType.name) && this.tokens.matchesContextualAtIndex(
       this.tokens.currentIndex() + 2,
       ContextualKeyword._async
     ) || this.tokens.matches4(TokenType._export, TokenType._default, TokenType._class, TokenType.name) || this.tokens.matches5(TokenType._export, TokenType._default, TokenType._abstract, TokenType._class, TokenType.name);
@@ -73465,6 +75180,10 @@ var ESMImportTransformer = class extends Transformer {
     }
     return false;
   }
+  /**
+   * In TypeScript, we need to remove named exports that were never declared or only declared as a
+   * type.
+   */
   processNamedExports() {
     if (!this.isTypeScriptTransformEnabled) {
       return false;
@@ -73494,6 +75213,11 @@ var ESMImportTransformer = class extends Transformer {
     this.tokens.copyExpectedToken(TokenType.braceR);
     return true;
   }
+  /**
+   * ESM elides all imports with the rule that we only elide if we see that it's
+   * a type and never see it as a value. This is in contract to CJS, which
+   * elides imports that are completely unknown.
+   */
   shouldElideExportedName(name) {
     return this.isTypeScriptTransformEnabled && this.declarationInfo.typeDeclarations.has(name) && !this.declarationInfo.valueDeclarations.has(name);
   }
@@ -73558,6 +75282,14 @@ var JestHoistTransformer = class extends Transformer {
     }
     return "";
   }
+  /**
+   * Extracts any methods calls on the jest-object that should be hoisted.
+   *
+   * According to the jest docs, https://jestjs.io/docs/en/jest-object#jestmockmodulename-factory-options,
+   * mock, unmock, enableAutomock, disableAutomock, are the methods that should be hoisted.
+   *
+   * We do not apply the same checks of the arguments as babel-plugin-jest-hoist does.
+   */
   extractHoistedCalls() {
     this.tokens.removeToken();
     let followsNonHoistedJestCall = false;
@@ -73646,7 +75378,9 @@ var OptionalChainingNullishTransformer = class extends Transformer {
     }
     const token = this.tokens.currentToken();
     const chainStart = token.subscriptStartIndex;
-    if (chainStart != null && this.tokens.tokens[chainStart].isOptionalChainStart && this.tokens.tokenAtRelativeIndex(-1).type !== TokenType._super) {
+    if (chainStart != null && this.tokens.tokens[chainStart].isOptionalChainStart && // Super subscripts can't be optional (since super is never null/undefined), and the syntax
+    // relies on the subscript being intact, so leave this token alone.
+    this.tokens.tokenAtRelativeIndex(-1).type !== TokenType._super) {
       const param = this.nameManager.claimFreeName("_");
       let arrowStartSnippet;
       if (chainStart > 0 && this.tokens.matches1AtIndex(chainStart - 1, TokenType._delete) && this.isLastSubscriptInChain()) {
@@ -73682,6 +75416,15 @@ var OptionalChainingNullishTransformer = class extends Transformer {
     }
     return false;
   }
+  /**
+   * Determine if the current token is the last of its chain, so that we know whether it's eligible
+   * to have a delete op inserted.
+   *
+   * We can do this by walking forward until we determine one way or another. Each
+   * isOptionalChainStart token must be paired with exactly one isOptionalChainEnd token after it in
+   * a nesting way, so we can track depth and walk to the end of the chain (the point where the
+   * depth goes negative) and see if any other subscript token is after us in the chain.
+   */
   isLastSubscriptInChain() {
     let depth = 0;
     for (let i = this.tokens.currentIndex() + 1; ; i++) {
@@ -73701,6 +75444,13 @@ var OptionalChainingNullishTransformer = class extends Transformer {
       }
     }
   }
+  /**
+   * Determine if we are the open-paren in an expression like super.a()?.b.
+   *
+   * We can do this by walking backward to find the previous subscript. If that subscript was
+   * preceded by a super, then we must be the subscript after it, so if this is a call expression,
+   * we'll need to attach the right context.
+   */
   justSkippedSuper() {
     let depth = 0;
     let index = this.tokens.currentIndex() - 1;
@@ -73761,6 +75511,9 @@ var ReactDisplayNameTransformer = class extends Transformer {
     }
     return false;
   }
+  /**
+   * This is called with the token position at the open-paren.
+   */
   tryProcessCreateClassCall(startIndex) {
     const displayName = this.findDisplayName(startIndex);
     if (!displayName) {
@@ -73802,6 +75555,11 @@ var ReactDisplayNameTransformer = class extends Transformer {
       return baseFilename;
     }
   }
+  /**
+   * We only want to add a display name when this is a function call containing
+   * one argument, which is an object literal without `displayName` as an
+   * existing key.
+   */
   classNeedsDisplayName() {
     let index = this.tokens.currentIndex();
     if (!this.tokens.matches2(TokenType.parenL, TokenType.braceL)) {
@@ -73885,6 +75643,7 @@ ${namesToRegister.map(
   }
 };
 var RESERVED_WORDS = /* @__PURE__ */ new Set([
+  // Reserved keywords as of ECMAScript 2015
   "break",
   "case",
   "catch",
@@ -73918,6 +75677,7 @@ var RESERVED_WORDS = /* @__PURE__ */ new Set([
   "while",
   "with",
   "yield",
+  // Future reserved keywords
   "enum",
   "implements",
   "interface",
@@ -73928,6 +75688,7 @@ var RESERVED_WORDS = /* @__PURE__ */ new Set([
   "public",
   "static",
   "await",
+  // Literals that cannot be used as identifiers
   "false",
   "null",
   "true"
@@ -73991,6 +75752,13 @@ var TypeScriptTransformer = class extends Transformer {
       this.tokens.appendCode(`)(${enumName} || (${enumName} = {}));`);
     }
   }
+  /**
+   * Transform an enum into equivalent JS. This has complexity in a few places:
+   * - TS allows string enums, numeric enums, and a mix of the two styles within an enum.
+   * - Enum keys are allowed to be referenced in later enum values.
+   * - Enum keys are allowed to be strings.
+   * - When enum values are omitted, they should follow an auto-increment behavior.
+   */
   processEnumBody(enumName) {
     let previousValueCode = null;
     while (true) {
@@ -74021,6 +75789,26 @@ var TypeScriptTransformer = class extends Transformer {
       }
     }
   }
+  /**
+   * Detect name information about this enum key, which will be used to determine which code to emit
+   * and whether we should declare a variable as part of this declaration.
+   *
+   * Some cases to keep in mind:
+   * - Enum keys can be implicitly referenced later, e.g. `X = 1, Y = X`. In Sucrase, we implement
+   *   this by declaring a variable `X` so that later expressions can use it.
+   * - In addition to the usual identifier key syntax, enum keys are allowed to be string literals,
+   *   e.g. `"hello world" = 3,`. Template literal syntax is NOT allowed.
+   * - Even if the enum key is defined as a string literal, it may still be referenced by identifier
+   *   later, e.g. `"X" = 1, Y = X`. That means that we need to detect whether or not a string
+   *   literal is identifier-like and emit a variable if so, even if the declaration did not use an
+   *   identifier.
+   * - Reserved keywords like `break` are valid enum keys, but are not valid to be referenced later
+   *   and would be a syntax error if we emitted a variable, so we need to skip the variable
+   *   declaration in those cases.
+   *
+   * The variableName return value captures these nuances: if non-null, we can and must emit a
+   * variable declaration, and if null, we can't and shouldn't.
+   */
   extractEnumKeyInfo(nameToken) {
     if (nameToken.type === TokenType.name) {
       const name = this.tokens.identifierNameForToken(nameToken);
@@ -74038,6 +75826,23 @@ var TypeScriptTransformer = class extends Transformer {
       throw new Error("Expected name or string at beginning of enum element.");
     }
   }
+  /**
+   * Handle an enum member where the RHS is just a string literal (not omitted, not a number, and
+   * not a complex expression). This is the typical form for TS string enums, and in this case, we
+   * do *not* create a reverse mapping.
+   *
+   * This is called after deleting the key token, when the token processor is at the equals sign.
+   *
+   * Example 1:
+   * someKey = "some value"
+   * ->
+   * const someKey = "some value"; MyEnum["someKey"] = someKey;
+   *
+   * Example 2:
+   * "some key" = "some value"
+   * ->
+   * MyEnum["some key"] = "some value";
+   */
   processStringLiteralEnumMember(enumName, nameStringCode, variableName) {
     if (variableName != null) {
       this.tokens.appendCode(`const ${variableName}`);
@@ -74051,6 +75856,31 @@ var TypeScriptTransformer = class extends Transformer {
       this.tokens.appendCode(";");
     }
   }
+  /**
+   * Handle an enum member initialized with an expression on the right-hand side (other than a
+   * string literal). In these cases, we should transform the expression and emit code that sets up
+   * a reverse mapping.
+   *
+   * The TypeScript implementation of this operation distinguishes between expressions that can be
+   * "constant folded" at compile time (i.e. consist of number literals and simple math operations
+   * on those numbers) and ones that are dynamic. For constant expressions, it emits the resolved
+   * numeric value, and auto-incrementing is only allowed in that case. Evaluating expressions at
+   * compile time would add significant complexity to Sucrase, so Sucrase instead leaves the
+   * expression as-is, and will later emit something like `MyEnum["previousKey"] + 1` to implement
+   * auto-incrementing.
+   *
+   * This is called after deleting the key token, when the token processor is at the equals sign.
+   *
+   * Example 1:
+   * someKey = 1 + 1
+   * ->
+   * const someKey = 1 + 1; MyEnum[MyEnum["someKey"] = someKey] = "someKey";
+   *
+   * Example 2:
+   * "some key" = 1 + 1
+   * ->
+   * MyEnum[MyEnum["some key"] = 1 + 1] = "some key";
+   */
   processExplicitValueEnumMember(enumName, nameStringCode, variableName) {
     const rhsEndIndex = this.tokens.currentToken().rhsEndIndex;
     if (rhsEndIndex == null) {
@@ -74074,6 +75904,21 @@ var TypeScriptTransformer = class extends Transformer {
       this.tokens.appendCode(`] = ${nameStringCode};`);
     }
   }
+  /**
+   * Handle an enum member with no right-hand side expression. In this case, the value is the
+   * previous value plus 1, or 0 if there was no previous value. We should also always emit a
+   * reverse mapping.
+   *
+   * Example 1:
+   * someKey2
+   * ->
+   * const someKey2 = someKey1 + 1; MyEnum[MyEnum["someKey2"] = someKey2] = "someKey2";
+   *
+   * Example 2:
+   * "some key 2"
+   * ->
+   * MyEnum[MyEnum["some key 2"] = someKey1 + 1] = "some key 2";
+   */
   processImplicitValueEnumMember(enumName, nameStringCode, variableName, previousValueCode) {
     let valueCode = previousValueCode != null ? `${previousValueCode} + 1` : "0";
     if (variableName != null) {
@@ -74230,6 +76075,9 @@ var RootTransformer = class {
     }
     this.tokens.copyToken();
   }
+  /**
+   * Skip past a class with a name and return that name.
+   */
   processNamedClass() {
     if (!this.tokens.matches2(TokenType._class, TokenType.name)) {
       throw new Error("Expected identifier for exported class name.");
@@ -74268,6 +76116,10 @@ var RootTransformer = class {
       this.tokens.appendCode(` ${staticInitializerStatements.map((s) => `${s};`).join(" ")}`);
     }
   }
+  /**
+   * We want to just handle class fields in all contexts, since TypeScript supports them. Later,
+   * when some JS implementations support class fields, this should be made optional.
+   */
   processClassBody(classInfo, className2) {
     const {
       headerInfo,
@@ -74356,6 +76208,13 @@ var RootTransformer = class {
       ...instanceInitializerNames.map((name) => `${className2}.prototype.${name}.call(this)`)
     ].join(";");
   }
+  /**
+   * Normally it's ok to simply remove type tokens, but we need to be more careful when dealing with
+   * arrow function return types since they can confuse the parser. In that case, we want to move
+   * the close-paren to the same line as the arrow.
+   *
+   * See https://github.com/alangpierce/sucrase/issues/391 for more details.
+   */
   processPossibleArrowParamEnd() {
     if (this.tokens.matches2(TokenType.parenR, TokenType.colon) && this.tokens.tokenAtRelativeIndex(1).isType) {
       let nextNonTypeIndex = this.tokens.currentIndex() + 1;
@@ -74373,6 +76232,16 @@ var RootTransformer = class {
     }
     return false;
   }
+  /**
+   * An async arrow function might be of the form:
+   *
+   * async <
+   *   T
+   * >() => {}
+   *
+   * in which case, removing the type parameters will cause a syntax error. Detect this case and
+   * move the open-paren earlier.
+   */
   processPossibleAsyncArrowWithTypeParams() {
     if (!this.tokens.matchesContextual(ContextualKeyword._async) && !this.tokens.matches1(TokenType._async)) {
       return false;
@@ -74415,59 +76284,62 @@ var build = {};
   exports.LinesAndColumns = void 0;
   var LF = "\n";
   var CR2 = "\r";
-  var LinesAndColumns = function() {
-    function LinesAndColumns2(string2) {
-      this.string = string2;
-      var offsets = [0];
-      for (var offset = 0; offset < string2.length; ) {
-        switch (string2[offset]) {
-          case LF:
-            offset += LF.length;
-            offsets.push(offset);
-            break;
-          case CR2:
-            offset += CR2.length;
-            if (string2[offset] === LF) {
+  var LinesAndColumns = (
+    /** @class */
+    function() {
+      function LinesAndColumns2(string2) {
+        this.string = string2;
+        var offsets = [0];
+        for (var offset = 0; offset < string2.length; ) {
+          switch (string2[offset]) {
+            case LF:
               offset += LF.length;
-            }
-            offsets.push(offset);
-            break;
-          default:
-            offset++;
-            break;
+              offsets.push(offset);
+              break;
+            case CR2:
+              offset += CR2.length;
+              if (string2[offset] === LF) {
+                offset += LF.length;
+              }
+              offsets.push(offset);
+              break;
+            default:
+              offset++;
+              break;
+          }
         }
+        this.offsets = offsets;
       }
-      this.offsets = offsets;
-    }
-    LinesAndColumns2.prototype.locationForIndex = function(index) {
-      if (index < 0 || index > this.string.length) {
-        return null;
-      }
-      var line = 0;
-      var offsets = this.offsets;
-      while (offsets[line + 1] <= index) {
-        line++;
-      }
-      var column = index - offsets[line];
-      return { line, column };
-    };
-    LinesAndColumns2.prototype.indexForLocation = function(location) {
-      var line = location.line, column = location.column;
-      if (line < 0 || line >= this.offsets.length) {
-        return null;
-      }
-      if (column < 0 || column > this.lengthOfLine(line)) {
-        return null;
-      }
-      return this.offsets[line] + column;
-    };
-    LinesAndColumns2.prototype.lengthOfLine = function(line) {
-      var offset = this.offsets[line];
-      var nextOffset = line === this.offsets.length - 1 ? this.string.length : this.offsets[line + 1];
-      return nextOffset - offset;
-    };
-    return LinesAndColumns2;
-  }();
+      LinesAndColumns2.prototype.locationForIndex = function(index) {
+        if (index < 0 || index > this.string.length) {
+          return null;
+        }
+        var line = 0;
+        var offsets = this.offsets;
+        while (offsets[line + 1] <= index) {
+          line++;
+        }
+        var column = index - offsets[line];
+        return { line, column };
+      };
+      LinesAndColumns2.prototype.indexForLocation = function(location) {
+        var line = location.line, column = location.column;
+        if (line < 0 || line >= this.offsets.length) {
+          return null;
+        }
+        if (column < 0 || column > this.lengthOfLine(line)) {
+          return null;
+        }
+        return this.offsets[line] + column;
+      };
+      LinesAndColumns2.prototype.lengthOfLine = function(line) {
+        var offset = this.offsets[line];
+        var nextOffset = line === this.offsets.length - 1 ? this.string.length : this.offsets[line + 1];
+        return nextOffset - offset;
+      };
+      return LinesAndColumns2;
+    }()
+  );
   exports.LinesAndColumns = LinesAndColumns;
   exports["default"] = LinesAndColumns;
 })(build);
@@ -75137,12 +77009,16 @@ export {
   ReplStore,
   compileFile
 };
-/*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
- * @license  MIT
- */
-/*! https://mths.be/cssesc v3.0.0 by @mathias */
-/*! https://mths.be/punycode v1.4.1 by @mathias */
+/*! Bundled license information:
+
+@vue/compiler-sfc/dist/compiler-sfc.esm-browser.js:
+  (*!
+   * The buffer module from node.js, for the browser.
+   *
+   * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+   * @license  MIT
+   *)
+  (*! https://mths.be/punycode v1.4.1 by @mathias *)
+  (*! https://mths.be/cssesc v3.0.0 by @mathias *)
+*/
 //# sourceMappingURL=@vue_repl.js.map

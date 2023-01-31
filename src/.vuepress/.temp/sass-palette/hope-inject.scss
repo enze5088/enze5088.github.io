@@ -1,4 +1,3 @@
-
 @use "sass:color";
 @use "sass:list";
 @use "sass:math";
@@ -11,7 +10,6 @@
 $variables: meta.module-variables("hope-palette");
 
 
-
 @each $name, $value in $variables {
   $key: helper.camel-to-kebab($name);
 
@@ -19,7 +17,7 @@ $variables: meta.module-variables("hope-palette");
     :root {
       #{$key}: #{$value};
     }
-  } @else if helper.color-islegal($value) {
+  } @else if helper.color-is-legal($value) {
     @if meta.global-variable-exists("dark-selector", $module: "hope-config") {
       @include helper.inject-color($key, $value, $dark-selector: hope-config.$dark-selector);
     } @else {
